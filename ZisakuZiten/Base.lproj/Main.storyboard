@@ -33,7 +33,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="1vA-lf-Ex4" id="Cwv-Vg-Sy5"/>
-                        <segue destination="qjd-WJ-vS8" kind="show" identifier="toZiten" id="oxC-ug-aEg"/>
+                        <segue destination="qjd-WJ-vS8" kind="presentation" identifier="toZiten" modalPresentationStyle="fullScreen" id="AlG-fT-Q3t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -45,11 +45,11 @@
             <objects>
                 <viewController id="qjd-WJ-vS8" customClass="ZitenViewController" customModule="ZisakuZiten" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kRz-hQ-WQR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7G4-76-i7H">
-                                <rect key="frame" x="8" y="8" width="398" height="808"/>
+                                <rect key="frame" x="8" y="52" width="398" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
