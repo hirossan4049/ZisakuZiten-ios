@@ -15,6 +15,9 @@
 		D3AB70C0249F076B00DFDDB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3AB70BE249F076B00DFDDB7 /* LaunchScreen.storyboard */; };
 		D3AB70CB249F076B00DFDDB7 /* ZisakuZitenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70CA249F076B00DFDDB7 /* ZisakuZitenTests.swift */; };
 		D3AB70D6249F076B00DFDDB7 /* ZisakuZitenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70D5249F076B00DFDDB7 /* ZisakuZitenUITests.swift */; };
+		D3AB70EB249F1EE700DFDDB7 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70E9249F1EE700DFDDB7 /* GroupTableViewCell.swift */; };
+		D3AB70EC249F1EE700DFDDB7 /* GroupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3AB70EA249F1EE700DFDDB7 /* GroupTableViewCell.xib */; };
+		D3AB70EE249F2B1A00DFDDB7 /* ZitenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70ED249F2B1A00DFDDB7 /* ZitenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		D3AB70D1249F076B00DFDDB7 /* ZisakuZitenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZisakuZitenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3AB70D5249F076B00DFDDB7 /* ZisakuZitenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZisakuZitenUITests.swift; sourceTree = "<group>"; };
 		D3AB70D7249F076B00DFDDB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3AB70E9249F1EE700DFDDB7 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
+		D3AB70EA249F1EE700DFDDB7 /* GroupTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupTableViewCell.xib; sourceTree = "<group>"; };
+		D3AB70ED249F2B1A00DFDDB7 /* ZitenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZitenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,9 @@
 				D3AB70BC249F076B00DFDDB7 /* Assets.xcassets */,
 				D3AB70BE249F076B00DFDDB7 /* LaunchScreen.storyboard */,
 				D3AB70C1249F076B00DFDDB7 /* Info.plist */,
+				D3AB70E9249F1EE700DFDDB7 /* GroupTableViewCell.swift */,
+				D3AB70EA249F1EE700DFDDB7 /* GroupTableViewCell.xib */,
+				D3AB70ED249F2B1A00DFDDB7 /* ZitenViewController.swift */,
 			);
 			path = ZisakuZiten;
 			sourceTree = "<group>";
@@ -235,6 +244,7 @@
 				D3AB70C0249F076B00DFDDB7 /* LaunchScreen.storyboard in Resources */,
 				D3AB70BD249F076B00DFDDB7 /* Assets.xcassets in Resources */,
 				D3AB70BB249F076A00DFDDB7 /* Main.storyboard in Resources */,
+				D3AB70EC249F1EE700DFDDB7 /* GroupTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,9 +269,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3AB70EE249F2B1A00DFDDB7 /* ZitenViewController.swift in Sources */,
 				D3AB70B8249F076A00DFDDB7 /* ViewController.swift in Sources */,
 				D3AB70B4249F076A00DFDDB7 /* AppDelegate.swift in Sources */,
 				D3AB70B6249F076A00DFDDB7 /* SceneDelegate.swift in Sources */,
+				D3AB70EB249F1EE700DFDDB7 /* GroupTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
