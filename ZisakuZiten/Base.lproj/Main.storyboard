@@ -30,6 +30,9 @@
                                 <state key="normal" image="plus" catalog="system">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="create_on_press" destination="BYZ-38-t0r" eventType="touchUpInside" id="eqJ-yL-Mff"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
