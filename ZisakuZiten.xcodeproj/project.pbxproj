@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E8988613597FC18751CFE78 /* Pods_ZisakuZitenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414B85174E0B2EE309638A3E /* Pods_ZisakuZitenTests.framework */; };
+		1ED0FF00FACB1A940F7A7EDF /* Pods_ZisakuZiten_ZisakuZitenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2317EC509AFE1F37142D0597 /* Pods_ZisakuZiten_ZisakuZitenUITests.framework */; };
+		8136D6BD8420788BE2B2311E /* Pods_ZisakuZiten.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E6717DA6FB73D645000A58 /* Pods_ZisakuZiten.framework */; };
 		D3AB70B4249F076A00DFDDB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70B3249F076A00DFDDB7 /* AppDelegate.swift */; };
 		D3AB70B6249F076A00DFDDB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70B5249F076A00DFDDB7 /* SceneDelegate.swift */; };
 		D3AB70B8249F076A00DFDDB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70B7249F076A00DFDDB7 /* ViewController.swift */; };
@@ -18,6 +21,11 @@
 		D3AB70EB249F1EE700DFDDB7 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70E9249F1EE700DFDDB7 /* GroupTableViewCell.swift */; };
 		D3AB70EC249F1EE700DFDDB7 /* GroupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3AB70EA249F1EE700DFDDB7 /* GroupTableViewCell.xib */; };
 		D3AB70EE249F2B1A00DFDDB7 /* ZitenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70ED249F2B1A00DFDDB7 /* ZitenViewController.swift */; };
+		D3AB70F1249F3A8B00DFDDB7 /* ZitenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70EF249F3A8B00DFDDB7 /* ZitenTableViewCell.swift */; };
+		D3AB70F2249F3A8B00DFDDB7 /* ZitenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3AB70F0249F3A8B00DFDDB7 /* ZitenTableViewCell.xib */; };
+		D3AB70F4249F66DE00DFDDB7 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70F3249F66DE00DFDDB7 /* Group.swift */; };
+		D3AB70F6249F888800DFDDB7 /* Ziten.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70F5249F888800DFDDB7 /* Ziten.swift */; };
+		D3AB70F8249F88E400DFDDB7 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70F7249F88E400DFDDB7 /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +46,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2317EC509AFE1F37142D0597 /* Pods_ZisakuZiten_ZisakuZitenUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZisakuZiten_ZisakuZitenUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		414B85174E0B2EE309638A3E /* Pods_ZisakuZitenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZisakuZitenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44C33D623615775691CA1168 /* Pods-ZisakuZiten-ZisakuZitenUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZisakuZiten-ZisakuZitenUITests.release.xcconfig"; path = "Target Support Files/Pods-ZisakuZiten-ZisakuZitenUITests/Pods-ZisakuZiten-ZisakuZitenUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5D6E70AD28E4EBDC97DCB07D /* Pods-ZisakuZiten.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZisakuZiten.release.xcconfig"; path = "Target Support Files/Pods-ZisakuZiten/Pods-ZisakuZiten.release.xcconfig"; sourceTree = "<group>"; };
+		617F337C3E67A6BB3A803229 /* Pods-ZisakuZitenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZisakuZitenTests.release.xcconfig"; path = "Target Support Files/Pods-ZisakuZitenTests/Pods-ZisakuZitenTests.release.xcconfig"; sourceTree = "<group>"; };
+		68E6717DA6FB73D645000A58 /* Pods_ZisakuZiten.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZisakuZiten.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A8D1B79B4FDB77B5BF64472 /* Pods-ZisakuZitenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZisakuZitenTests.debug.xcconfig"; path = "Target Support Files/Pods-ZisakuZitenTests/Pods-ZisakuZitenTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9F53344879C4469E50AF8A01 /* Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig"; path = "Target Support Files/Pods-ZisakuZiten-ZisakuZitenUITests/Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D3AB70B0249F076A00DFDDB7 /* ZisakuZiten.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZisakuZiten.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3AB70B3249F076A00DFDDB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3AB70B5249F076A00DFDDB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +71,12 @@
 		D3AB70E9249F1EE700DFDDB7 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		D3AB70EA249F1EE700DFDDB7 /* GroupTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupTableViewCell.xib; sourceTree = "<group>"; };
 		D3AB70ED249F2B1A00DFDDB7 /* ZitenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZitenViewController.swift; sourceTree = "<group>"; };
+		D3AB70EF249F3A8B00DFDDB7 /* ZitenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZitenTableViewCell.swift; sourceTree = "<group>"; };
+		D3AB70F0249F3A8B00DFDDB7 /* ZitenTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZitenTableViewCell.xib; sourceTree = "<group>"; };
+		D3AB70F3249F66DE00DFDDB7 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		D3AB70F5249F888800DFDDB7 /* Ziten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ziten.swift; sourceTree = "<group>"; };
+		D3AB70F7249F88E400DFDDB7 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		E96D2E82B4094384A88DED24 /* Pods-ZisakuZiten.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZisakuZiten.debug.xcconfig"; path = "Target Support Files/Pods-ZisakuZiten/Pods-ZisakuZiten.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8136D6BD8420788BE2B2311E /* Pods_ZisakuZiten.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E8988613597FC18751CFE78 /* Pods_ZisakuZitenTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,12 +100,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ED0FF00FACB1A940F7A7EDF /* Pods_ZisakuZiten_ZisakuZitenUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6ABDF52055F46616F95BC1F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				68E6717DA6FB73D645000A58 /* Pods_ZisakuZiten.framework */,
+				2317EC509AFE1F37142D0597 /* Pods_ZisakuZiten_ZisakuZitenUITests.framework */,
+				414B85174E0B2EE309638A3E /* Pods_ZisakuZitenTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D1DE104806474D33EBEAE42C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E96D2E82B4094384A88DED24 /* Pods-ZisakuZiten.debug.xcconfig */,
+				5D6E70AD28E4EBDC97DCB07D /* Pods-ZisakuZiten.release.xcconfig */,
+				9F53344879C4469E50AF8A01 /* Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig */,
+				44C33D623615775691CA1168 /* Pods-ZisakuZiten-ZisakuZitenUITests.release.xcconfig */,
+				6A8D1B79B4FDB77B5BF64472 /* Pods-ZisakuZitenTests.debug.xcconfig */,
+				617F337C3E67A6BB3A803229 /* Pods-ZisakuZitenTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D3AB70A7249F076A00DFDDB7 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +137,8 @@
 				D3AB70C9249F076B00DFDDB7 /* ZisakuZitenTests */,
 				D3AB70D4249F076B00DFDDB7 /* ZisakuZitenUITests */,
 				D3AB70B1249F076A00DFDDB7 /* Products */,
+				D1DE104806474D33EBEAE42C /* Pods */,
+				6ABDF52055F46616F95BC1F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +165,11 @@
 				D3AB70E9249F1EE700DFDDB7 /* GroupTableViewCell.swift */,
 				D3AB70EA249F1EE700DFDDB7 /* GroupTableViewCell.xib */,
 				D3AB70ED249F2B1A00DFDDB7 /* ZitenViewController.swift */,
+				D3AB70EF249F3A8B00DFDDB7 /* ZitenTableViewCell.swift */,
+				D3AB70F0249F3A8B00DFDDB7 /* ZitenTableViewCell.xib */,
+				D3AB70F3249F66DE00DFDDB7 /* Group.swift */,
+				D3AB70F5249F888800DFDDB7 /* Ziten.swift */,
+				D3AB70F7249F88E400DFDDB7 /* Category.swift */,
 			);
 			path = ZisakuZiten;
 			sourceTree = "<group>";
@@ -144,9 +199,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3AB70DA249F076B00DFDDB7 /* Build configuration list for PBXNativeTarget "ZisakuZiten" */;
 			buildPhases = (
+				94FC47459B95925B5FCDF6CB /* [CP] Check Pods Manifest.lock */,
 				D3AB70AC249F076A00DFDDB7 /* Sources */,
 				D3AB70AD249F076A00DFDDB7 /* Frameworks */,
 				D3AB70AE249F076A00DFDDB7 /* Resources */,
+				B3EED2DF6E3645D827A40DD7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,6 +218,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3AB70DD249F076B00DFDDB7 /* Build configuration list for PBXNativeTarget "ZisakuZitenTests" */;
 			buildPhases = (
+				36F105055F1C803F8D17ABC9 /* [CP] Check Pods Manifest.lock */,
 				D3AB70C2249F076B00DFDDB7 /* Sources */,
 				D3AB70C3249F076B00DFDDB7 /* Frameworks */,
 				D3AB70C4249F076B00DFDDB7 /* Resources */,
@@ -179,9 +237,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3AB70E0249F076B00DFDDB7 /* Build configuration list for PBXNativeTarget "ZisakuZitenUITests" */;
 			buildPhases = (
+				5FA4E97BF627128B33131CB8 /* [CP] Check Pods Manifest.lock */,
 				D3AB70CD249F076B00DFDDB7 /* Sources */,
 				D3AB70CE249F076B00DFDDB7 /* Frameworks */,
 				D3AB70CF249F076B00DFDDB7 /* Resources */,
+				8AF2418D156A9CB3D2C39CE5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -243,6 +303,7 @@
 			files = (
 				D3AB70C0249F076B00DFDDB7 /* LaunchScreen.storyboard in Resources */,
 				D3AB70BD249F076B00DFDDB7 /* Assets.xcassets in Resources */,
+				D3AB70F2249F3A8B00DFDDB7 /* ZitenTableViewCell.xib in Resources */,
 				D3AB70BB249F076A00DFDDB7 /* Main.storyboard in Resources */,
 				D3AB70EC249F1EE700DFDDB7 /* GroupTableViewCell.xib in Resources */,
 			);
@@ -264,13 +325,120 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		36F105055F1C803F8D17ABC9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZisakuZitenTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FA4E97BF627128B33131CB8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZisakuZiten-ZisakuZitenUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AF2418D156A9CB3D2C39CE5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZisakuZiten-ZisakuZitenUITests/Pods-ZisakuZiten-ZisakuZitenUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZisakuZiten-ZisakuZitenUITests/Pods-ZisakuZiten-ZisakuZitenUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZisakuZiten-ZisakuZitenUITests/Pods-ZisakuZiten-ZisakuZitenUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94FC47459B95925B5FCDF6CB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZisakuZiten-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3EED2DF6E3645D827A40DD7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZisakuZiten/Pods-ZisakuZiten-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZisakuZiten/Pods-ZisakuZiten-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZisakuZiten/Pods-ZisakuZiten-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D3AB70AC249F076A00DFDDB7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3AB70F6249F888800DFDDB7 /* Ziten.swift in Sources */,
+				D3AB70F4249F66DE00DFDDB7 /* Group.swift in Sources */,
+				D3AB70F1249F3A8B00DFDDB7 /* ZitenTableViewCell.swift in Sources */,
 				D3AB70EE249F2B1A00DFDDB7 /* ZitenViewController.swift in Sources */,
 				D3AB70B8249F076A00DFDDB7 /* ViewController.swift in Sources */,
+				D3AB70F8249F88E400DFDDB7 /* Category.swift in Sources */,
 				D3AB70B4249F076A00DFDDB7 /* AppDelegate.swift in Sources */,
 				D3AB70B6249F076A00DFDDB7 /* SceneDelegate.swift in Sources */,
 				D3AB70EB249F1EE700DFDDB7 /* GroupTableViewCell.swift in Sources */,
@@ -444,6 +612,7 @@
 		};
 		D3AB70DB249F076B00DFDDB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E96D2E82B4094384A88DED24 /* Pods-ZisakuZiten.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -462,6 +631,7 @@
 		};
 		D3AB70DC249F076B00DFDDB7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D6E70AD28E4EBDC97DCB07D /* Pods-ZisakuZiten.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -480,6 +650,7 @@
 		};
 		D3AB70DE249F076B00DFDDB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A8D1B79B4FDB77B5BF64472 /* Pods-ZisakuZitenTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -502,6 +673,7 @@
 		};
 		D3AB70DF249F076B00DFDDB7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 617F337C3E67A6BB3A803229 /* Pods-ZisakuZitenTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -524,6 +696,7 @@
 		};
 		D3AB70E1249F076B00DFDDB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F53344879C4469E50AF8A01 /* Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -544,6 +717,7 @@
 		};
 		D3AB70E2249F076B00DFDDB7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44C33D623615775691CA1168 /* Pods-ZisakuZiten-ZisakuZitenUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
