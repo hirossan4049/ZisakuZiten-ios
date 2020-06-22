@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CreateZitenViewController: UIViewController {
     
-    var groupUpdateTime: Date?
+    var group_createTime: Date?
     
 
     @IBOutlet var titleTextField: UITextField!
@@ -22,7 +23,29 @@ class CreateZitenViewController: UIViewController {
 
 
     @IBAction func ok_on_press() {
+        if (titleTextField.text == ""){
+            print("タイトルがない。")
+        }else if (contentTextField.text == ""){
+            print("コンテンツがない。")
+        }else{
+            //FIXME:もしある単語であれば確認Dialog出す。
 
+            let ziten:Ziten = Ziten()
+            let now:Date = Date()
+            ziten.title = titleTextField.text
+            ziten.content = contentTextField.text
+            ziten.createTime = now
+            ziten.updateTime = now
+            let realm = try! Realm()
+            var group = realm.objects(Group.self).filter("ziten_upT_List == %@", group_createTime)[0]
+
+            try! realm.write{
+                group.ziten_upT_List.append(ziten)
+            }
+            print("Done!")
+            self.dismiss(animated: true, completion: nil)
+
+        }
     }
 
     @IBAction func cancel_on_press() {

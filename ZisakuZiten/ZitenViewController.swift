@@ -83,4 +83,11 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
         print("clicked!", indexPath.section)
 
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toCreateZiten" {
+            let nextVC = segue.destination as! CreateZitenViewController
+            nextVC.group_createTime = self.group_createTime
+        }
+    }
 }
