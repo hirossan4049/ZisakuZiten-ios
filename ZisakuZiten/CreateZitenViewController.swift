@@ -29,16 +29,20 @@ class CreateZitenViewController: UIViewController {
             print("コンテンツがない。")
         }else{
             //FIXME:もしある単語であれば確認Dialog出す。
-
+            print("辞典を登録しています.....")
             let ziten:Ziten = Ziten()
             let now:Date = Date()
+            print("ziten now ok.....")
             ziten.title = titleTextField.text
             ziten.content = contentTextField.text
             ziten.createTime = now
             ziten.updateTime = now
+            print("ziten ok.....")
             let realm = try! Realm()
-            var group = realm.objects(Group.self).filter("ziten_upT_List == %@", group_createTime)[0]
-
+            print("open realm.....")
+            var group:Group = realm.objects(Group.self).filter("createTime==%@", group_createTime)[0]
+            print("group created.....")
+            print(group)
             try! realm.write{
                 group.ziten_upT_List.append(ziten)
             }
