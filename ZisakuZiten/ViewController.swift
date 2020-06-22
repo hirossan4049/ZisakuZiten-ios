@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     let cellReuseIdentifier = "cell"
     var groupList: Results<Group>!
-    var clicked_group:Group!
+    var clicked_group: Group!
     @IBOutlet var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -30,15 +30,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.groupList = realm.objects(Group.self)
         print(groupList)
 
+
     }
-    
+
     @IBAction
-    func create_on_press(){
+    func create_on_press() {
         ///FIXME: category
         createGroupDialog()
     }
 
-    func updateGroupDialog(title:String,id:Int){
+    func updateGroupDialog(title: String, id: Int) {
         var alertTextField: UITextField?
         let alert = UIAlertController(
                 title: "グループを編集",
@@ -69,7 +70,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.present(alert, animated: true, completion: nil)
     }
 
-    func createGroupDialog(){
+    func createGroupDialog() {
         var alertTextField: UITextField?
         let alert = UIAlertController(
                 title: "グループを作成",
@@ -105,7 +106,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.present(alert, animated: true, completion: nil)
     }
 
-    func createGroup(title:String){
+    func createGroup(title: String) {
         let instanceGroup: Group = Group()
         let now = Date()
         instanceGroup.title = title
@@ -113,18 +114,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         instanceGroup.updateTime = now
 //        instanceGroup.category
         let insRealm = try! Realm()
-        try! insRealm.write{
+        try! insRealm.write {
             insRealm.add(instanceGroup)
         }
     }
 
-    func updateGroup(title:String,id:Int){
+    func updateGroup(title: String, id: Int) {
         let realm = try! Realm()
-        try! realm.write{
+        try! realm.write {
             groupList[id].title = title
         }
         print("updateGroup saved")
     }
+
+    func deleteGroup(id: Int) {
+        let dialog = UIAlertController(title: "グループを消去", message: "単語も消去されます。本当に消去しますか？", preferredStyle: .actionSheet)
+        let realm = try! Realm()
+        dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            try! realm.write{
+                realm.delete(self.groupList[id])
+            }
+            self.tableView.reloadData()
+        }))
+        dialog.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        // 生成したダイアログを実際に表示します
+        self.present(dialog, animated: true, completion: nil)
+    }
+
 
 
     // List item の数。
@@ -166,29 +182,31 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         headerView.backgroundColor = UIColor.clear
         return headerView
     }
+
     // 右から左へスワイプ
     @available(iOS 11.0, *)
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
         let editAction = UIContextualAction(style: .normal,
                 title: "Edit",
-                handler: {(action: UIContextualAction, view: UIView, completion: (Bool) -> Void) in
+                handler: { (action: UIContextualAction, view: UIView, completion: (Bool) -> Void) in
                     print("Edit")
                     // 処理を実行完了した場合はtrue
                     self.updateGroupDialog(title: self.groupList[indexPath.section].title!, id: indexPath.section)
                     completion(true)
                 })
-        editAction.backgroundColor = UIColor(red: 101/255.0, green: 198/255.0, blue: 187/255.0, alpha: 1)
+        editAction.backgroundColor = UIColor(red: 101 / 255.0, green: 198 / 255.0, blue: 187 / 255.0, alpha: 1)
 
         let deleteAction = UIContextualAction(style: .destructive,
                 title: "Delete",
                 handler: { (action: UIContextualAction, view: UIView, completion: (Bool) -> Void) in
                     print("Delete")
                     // 処理を実行できなかった場合はfalse
+                    self.deleteGroup(id: indexPath.section)
 
                     completion(false)
                 })
-        deleteAction.backgroundColor = UIColor(red: 214/255.0, green: 69/255.0, blue: 65/255.0, alpha: 1)
+        deleteAction.backgroundColor = UIColor(red: 214 / 255.0, green: 69 / 255.0, blue: 65 / 255.0, alpha: 1)
 
         return UISwipeActionsConfiguration(actions: [editAction, deleteAction])
     }
@@ -206,6 +224,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.performSegue(withIdentifier: "toZiten", sender: nil)
 
     }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toZiten" {
             let nextVC = segue.destination as! ZitenViewController
