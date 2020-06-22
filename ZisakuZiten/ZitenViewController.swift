@@ -108,6 +108,11 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 handler: { (action: UIContextualAction, view: UIView, completion: (Bool) -> Void) in
                     print("Delete")
                     // 処理を実行できなかった場合はfalse
+                    let realm = try! Realm()
+                    try! realm.write{
+                        self.ziten_list.remove(at: indexPath.section)
+                    }
+                    tableView.reloadData()
                     completion(false)
                 })
         deleteAction.backgroundColor = UIColor(red: 214/255.0, green: 69/255.0, blue: 65/255.0, alpha: 1)
@@ -125,6 +130,7 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toCreateZiten" {
             let nextVC = segue.destination as! CreateZitenViewController
+            //ただただ作成するだけなら別にいいよね（）
             nextVC.group_createTime = self.group_createTime
             if self.ziten_editor_mode == 1{
                 nextVC.mode = self.ziten_editor_mode
