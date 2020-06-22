@@ -19,6 +19,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("View controller")
         // Do any additional setup after loading the view.
         let nib = UINib(nibName: "GroupTableViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: cellReuseIdentifier)
@@ -37,6 +38,36 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         createGroupDialog()
     }
 
+    func updateGroupDialog(title:String,id:Int){
+        var alertTextField: UITextField?
+        let alert = UIAlertController(
+                title: "グループを編集",
+                message: "グループの名前を入力してください",
+                preferredStyle: UIAlertController.Style.alert)
+        alert.addTextField(
+                configurationHandler: { (textField: UITextField!) in
+                    textField.text = title
+                })
+        alertTextField = alert.textFields![0] as UITextField
+        alert.addAction(
+                UIAlertAction(
+                        title: "Cancel",
+                        style: UIAlertAction.Style.cancel,
+                        handler: nil))
+        alert.addAction(
+                UIAlertAction(
+                        title: "OK",
+                        style: UIAlertAction.Style.default) { _ in
+
+                    if let text = alertTextField?.text {
+                        print("UpdateDialogOK: " + text)
+                        self.updateGroup(title: text, id: id)
+                        self.tableView.reloadData()
+                    }
+                }
+        )
+        self.present(alert, animated: true, completion: nil)
+    }
 
     func createGroupDialog(){
         var alertTextField: UITextField?
@@ -87,6 +118,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
 
+    func updateGroup(title:String,id:Int){
+        let realm = try! Realm()
+        try! realm.write{
+            groupList[id].title = title
+        }
+        print("updateGroup saved")
+    }
+
 
     // List item の数。
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -126,6 +165,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let headerView = UIView()
         headerView.backgroundColor = UIColor.clear
         return headerView
+    }
+    // 右から左へスワイプ
+    @available(iOS 11.0, *)
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+        let editAction = UIContextualAction(style: .normal,
+                title: "Edit",
+                handler: {(action: UIContextualAction, view: UIView, completion: (Bool) -> Void) in
+                    print("Edit")
+                    // 処理を実行完了した場合はtrue
+                    self.updateGroupDialog(title: self.groupList[indexPath.section].title!, id: indexPath.section)
+                    completion(true)
+                })
+        editAction.backgroundColor = UIColor(red: 101/255.0, green: 198/255.0, blue: 187/255.0, alpha: 1)
+
+        let deleteAction = UIContextualAction(style: .destructive,
+                title: "Delete",
+                handler: { (action: UIContextualAction, view: UIView, completion: (Bool) -> Void) in
+                    print("Delete")
+                    // 処理を実行できなかった場合はfalse
+
+                    completion(false)
+                })
+        deleteAction.backgroundColor = UIColor(red: 214/255.0, green: 69/255.0, blue: 65/255.0, alpha: 1)
+
+        return UISwipeActionsConfiguration(actions: [editAction, deleteAction])
     }
 
     // onpress

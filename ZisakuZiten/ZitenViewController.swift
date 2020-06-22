@@ -47,6 +47,7 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
 
     @IBAction func create_on_press(){
+        self.ziten_editor_mode = 0
         self.performSegue(withIdentifier: "toCreateZiten", sender: nil)
     }
 
@@ -113,7 +114,7 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         self.ziten_list.remove(at: indexPath.section)
                     }
                     tableView.reloadData()
-                    completion(false)
+                    completion(true)
                 })
         deleteAction.backgroundColor = UIColor(red: 214/255.0, green: 69/255.0, blue: 65/255.0, alpha: 1)
 
