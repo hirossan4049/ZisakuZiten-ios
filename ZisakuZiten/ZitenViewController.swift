@@ -29,7 +29,12 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         let realm = try! Realm()
         self.ziten_list = realm.objects(Group.self).filter("createTime==%@", group_createTime)[0].ziten_upT_List
-
+        tableView.reloadData()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presentingViewController?.endAppearanceTransition()
+        tableView.reloadData()
     }
     
     @IBAction
@@ -45,7 +50,7 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     // List item の数。
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
+        return self.ziten_list.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,8 +66,9 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.layer.cornerRadius = 8
         cell.clipsToBounds = true
 
-        cell.titleLabel.text = "zitenzitenziten"
-        cell.contentLabel.text = "fafafa"
+        let ziten:Ziten = self.ziten_list[indexPath.section]
+        cell.titleLabel.text = ziten.title
+        cell.contentLabel.text = ziten.content
         return cell
     }
 

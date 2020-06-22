@@ -32,20 +32,16 @@ class CreateZitenViewController: UIViewController {
             print("辞典を登録しています.....")
             let ziten:Ziten = Ziten()
             let now:Date = Date()
-            print("ziten now ok.....")
             ziten.title = titleTextField.text
             ziten.content = contentTextField.text
             ziten.createTime = now
             ziten.updateTime = now
-            print("ziten ok.....")
             let realm = try! Realm()
-            print("open realm.....")
             var group:Group = realm.objects(Group.self).filter("createTime==%@", group_createTime)[0]
-            print("group created.....")
-            print(group)
             try! realm.write{
                 group.ziten_upT_List.append(ziten)
             }
+            print(group)
             print("Done!")
             self.dismiss(animated: true, completion: nil)
 
