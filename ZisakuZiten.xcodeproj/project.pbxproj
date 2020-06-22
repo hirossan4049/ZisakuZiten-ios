@@ -26,7 +26,7 @@
 		D3AB70F4249F66DE00DFDDB7 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70F3249F66DE00DFDDB7 /* Group.swift */; };
 		D3AB70F6249F888800DFDDB7 /* Ziten.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70F5249F888800DFDDB7 /* Ziten.swift */; };
 		D3AB70F8249F88E400DFDDB7 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70F7249F88E400DFDDB7 /* Category.swift */; };
-		D3AB70FA24A09A9A00DFDDB7 /* CreateZitenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70F924A09A9A00DFDDB7 /* CreateZitenViewController.swift */; };
+		D3AB70FA24A09A9A00DFDDB7 /* ZitenEditerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70F924A09A9A00DFDDB7 /* ZitenEditerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,7 +77,7 @@
 		D3AB70F3249F66DE00DFDDB7 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		D3AB70F5249F888800DFDDB7 /* Ziten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ziten.swift; sourceTree = "<group>"; };
 		D3AB70F7249F88E400DFDDB7 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		D3AB70F924A09A9A00DFDDB7 /* CreateZitenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateZitenViewController.swift; sourceTree = "<group>"; };
+		D3AB70F924A09A9A00DFDDB7 /* ZitenEditerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZitenEditerViewController.swift; sourceTree = "<group>"; };
 		E96D2E82B4094384A88DED24 /* Pods-ZisakuZiten.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZisakuZiten.debug.xcconfig"; path = "Target Support Files/Pods-ZisakuZiten/Pods-ZisakuZiten.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,7 +172,7 @@
 				D3AB70F3249F66DE00DFDDB7 /* Group.swift */,
 				D3AB70F5249F888800DFDDB7 /* Ziten.swift */,
 				D3AB70F7249F88E400DFDDB7 /* Category.swift */,
-				D3AB70F924A09A9A00DFDDB7 /* CreateZitenViewController.swift */,
+				D3AB70F924A09A9A00DFDDB7 /* ZitenEditerViewController.swift */,
 			);
 			path = ZisakuZiten;
 			sourceTree = "<group>";
@@ -439,7 +439,7 @@
 				D3AB70F6249F888800DFDDB7 /* Ziten.swift in Sources */,
 				D3AB70F4249F66DE00DFDDB7 /* Group.swift in Sources */,
 				D3AB70F1249F3A8B00DFDDB7 /* ZitenTableViewCell.swift in Sources */,
-				D3AB70FA24A09A9A00DFDDB7 /* CreateZitenViewController.swift in Sources */,
+				D3AB70FA24A09A9A00DFDDB7 /* ZitenEditerViewController.swift in Sources */,
 				D3AB70EE249F2B1A00DFDDB7 /* ZitenViewController.swift in Sources */,
 				D3AB70B8249F076A00DFDDB7 /* ViewController.swift in Sources */,
 				D3AB70F8249F88E400DFDDB7 /* Category.swift in Sources */,

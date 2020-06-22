@@ -197,6 +197,7 @@
                     <navigationItem key="navigationItem" id="ktG-ro-eVE"/>
                     <connections>
                         <outlet property="contentTextField" destination="sJu-jt-GRr" id="YYP-dJ-vzD"/>
+                        <outlet property="explainTextField" destination="D3Z-ib-0sU" id="Qrv-Kw-sGx"/>
                         <outlet property="titleTextField" destination="P6e-CX-NLG" id="A7x-Cm-gas"/>
                     </connections>
                 </viewController>

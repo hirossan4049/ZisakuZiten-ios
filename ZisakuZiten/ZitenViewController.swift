@@ -15,6 +15,10 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
     let cellReuseIdentifier = "cell"
     var group_createTime:Date!
     var ziten_list: List<Ziten>!
+
+    var ziten_editor_mode:Int = 0
+    var edit_ziten_createTime:Date!
+
     @IBOutlet var tableView: UITableView!
 
     
@@ -84,16 +88,48 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return headerView
     }
 
+    // 右から左へスワイプ
+    @available(iOS 11.0, *)
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let editAction = UIContextualAction(style: .normal,
+                title: "Edit",
+                handler: {(action: UIContextualAction, view: UIView, completion: (Bool) -> Void) in
+                    print("Edit")
+                    // 処理を実行完了した場合はtrue
+                    self.ziten_editor_mode = 1
+                    self.edit_ziten_createTime = self.ziten_list[indexPath.section].createTime
+                    self.performSegue(withIdentifier: "toCreateZiten", sender: nil)
+                    completion(true)
+                })
+        editAction.backgroundColor = UIColor(red: 101/255.0, green: 198/255.0, blue: 187/255.0, alpha: 1)
+
+        let deleteAction = UIContextualAction(style: .destructive,
+                title: "Delete",
+                handler: { (action: UIContextualAction, view: UIView, completion: (Bool) -> Void) in
+                    print("Delete")
+                    // 処理を実行できなかった場合はfalse
+                    completion(false)
+                })
+        deleteAction.backgroundColor = UIColor(red: 214/255.0, green: 69/255.0, blue: 65/255.0, alpha: 1)
+
+        return UISwipeActionsConfiguration(actions: [editAction, deleteAction])
+    }
+
     // onpress
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("clicked!", indexPath.section)
 
     }
 
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toCreateZiten" {
             let nextVC = segue.destination as! CreateZitenViewController
             nextVC.group_createTime = self.group_createTime
+            if self.ziten_editor_mode == 1{
+                nextVC.mode = self.ziten_editor_mode
+                nextVC.ziten_createTime = self.edit_ziten_createTime
+            }
         }
     }
 }
