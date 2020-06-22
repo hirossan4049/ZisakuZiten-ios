@@ -69,6 +69,24 @@
                                 <rect key="frame" x="8" y="88" width="398" height="782"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Byl-P4-0z8" customClass="MDCFloatingButton">
+                                <rect key="frame" x="338" y="786" width="60" height="60"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="ELQ-QW-3fY"/>
+                                    <constraint firstAttribute="width" constant="60" id="bit-Hg-f4q"/>
+                                    <constraint firstAttribute="height" constant="60" id="eJU-b4-HLm"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="m10-Bk-I6H"/>
+                                </constraints>
+                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" image="plus" catalog="system">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="create_on_press" destination="qjd-WJ-vS8" eventType="touchUpInside" id="RqJ-Q3-BTU"/>
+                                    <action selector="create_on_press" destination="BYZ-38-t0r" eventType="touchUpInside" id="k2Y-lq-YR9"/>
+                                </connections>
+                            </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rii-OE-Ily">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                             </navigationBar>
@@ -93,6 +111,8 @@
                             <constraint firstItem="iwQ-Xa-uow" firstAttribute="trailing" secondItem="7G4-76-i7H" secondAttribute="trailing" constant="8" id="8GA-cV-KMI"/>
                             <constraint firstItem="7G4-76-i7H" firstAttribute="top" secondItem="Rii-OE-Ily" secondAttribute="bottom" id="DyS-qC-WsQ"/>
                             <constraint firstItem="DcS-me-JYt" firstAttribute="leading" secondItem="iwQ-Xa-uow" secondAttribute="leading" constant="11" id="Q8C-MV-Lnq"/>
+                            <constraint firstItem="iwQ-Xa-uow" firstAttribute="trailing" secondItem="Byl-P4-0z8" secondAttribute="trailing" constant="16" id="RYs-mm-bTD"/>
+                            <constraint firstItem="iwQ-Xa-uow" firstAttribute="bottom" secondItem="Byl-P4-0z8" secondAttribute="bottom" constant="16" id="VeD-cm-pvt"/>
                             <constraint firstItem="Rii-OE-Ily" firstAttribute="top" secondItem="iwQ-Xa-uow" secondAttribute="top" id="iQ9-JF-WJf"/>
                             <constraint firstItem="7G4-76-i7H" firstAttribute="bottom" secondItem="iwQ-Xa-uow" secondAttribute="bottom" constant="8" id="kHi-rs-gBF"/>
                             <constraint firstItem="Rii-OE-Ily" firstAttribute="trailing" secondItem="iwQ-Xa-uow" secondAttribute="trailing" id="qmE-Ao-fdd"/>
@@ -102,11 +122,87 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="7G4-76-i7H" id="qkN-5w-JhI"/>
+                        <segue destination="DqE-N4-rpe" kind="show" identifier="toCreateZiten" id="H3k-d6-bUF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ns7-cb-6s5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1105.7971014492755" y="97.767857142857139"/>
+        </scene>
+        <!--Create Ziten View Controller-->
+        <scene sceneID="MBA-KE-onE">
+            <objects>
+                <viewController id="DqE-N4-rpe" customClass="CreateZitenViewController" customModule="ZisakuZiten" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xu1-rf-Tx3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="YsA-XG-Sr4">
+                                <rect key="frame" x="149.5" y="746" width="115" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Lk-Tp-Iez">
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
+                                        <state key="normal" title="cancel"/>
+                                        <connections>
+                                            <action selector="cancel_on_press" destination="DqE-N4-rpe" eventType="touchUpInside" id="L2h-YY-1HG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJc-ZT-qFa">
+                                        <rect key="frame" x="85" y="0.0" width="30" height="30"/>
+                                        <state key="normal" title="ok"/>
+                                        <connections>
+                                            <action selector="ok_on_press" destination="DqE-N4-rpe" eventType="touchUpInside" id="jx4-a4-WNJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="n4T-as-NpF">
+                                <rect key="frame" x="157" y="379" width="100" height="84"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="単語" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P6e-CX-NLG">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="pzS-ES-fZY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="意味" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sJu-jt-GRr">
+                                        <rect key="frame" x="0.0" y="50" width="100" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="Rz1-Vk-cE3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="単語を作成" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3Z-ib-0sU">
+                                <rect key="frame" x="87" y="252" width="87" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="n4T-as-NpF" firstAttribute="centerY" secondItem="Xu1-rf-Tx3" secondAttribute="centerY" id="JSb-ux-62b"/>
+                            <constraint firstItem="YsA-XG-Sr4" firstAttribute="centerX" secondItem="Xu1-rf-Tx3" secondAttribute="centerX" id="YuK-QA-tQz"/>
+                            <constraint firstItem="n4T-as-NpF" firstAttribute="centerX" secondItem="Xu1-rf-Tx3" secondAttribute="centerX" id="gr1-JY-r6a"/>
+                            <constraint firstItem="xBe-vo-rkD" firstAttribute="bottom" secondItem="YsA-XG-Sr4" secondAttribute="bottom" constant="32" id="vTG-ub-QfL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xBe-vo-rkD"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ktG-ro-eVE"/>
+                    <connections>
+                        <outlet property="contentTextField" destination="sJu-jt-GRr" id="YYP-dJ-vzD"/>
+                        <outlet property="titleTextField" destination="P6e-CX-NLG" id="A7x-Cm-gas"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vtz-uU-2dW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2353.6231884057975" y="-49.553571428571423"/>
         </scene>
     </scenes>
     <resources>

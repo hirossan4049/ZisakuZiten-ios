@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 
     let cellReuseIdentifier = "cell"
+    var group_createTime:Date!
+    var ziten_list: List<Ziten>!
     @IBOutlet var tableView: UITableView!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -21,6 +25,10 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.tableView.register(nib, forCellReuseIdentifier: cellReuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
+        print("texttexttext",group_createTime)
+
+        let realm = try! Realm()
+        self.ziten_list = realm.objects(Group.self).filter("createTime==%@", group_createTime)[0].ziten_upT_List
 
     }
     
@@ -28,6 +36,12 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func back_on_press(){
         self.dismiss(animated: true, completion: nil)
     }
+
+    @IBAction func create_on_press(){
+        self.performSegue(withIdentifier: "toCreateZiten", sender: nil)
+    }
+
+
 
     // List item の数。
     func numberOfSections(in tableView: UITableView) -> Int {

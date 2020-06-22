@@ -11,7 +11,7 @@ import RealmSwift
 
 class Category:Object{
     @objc dynamic var title: String? = nil
-    /// XXX: UIColorが動くかどうかはしらん。
+    //UIColorじゃ動かんかったからとりあえずString....
     @objc dynamic var color: String? = nil
     @objc dynamic var createTime: Date? = nil
 }

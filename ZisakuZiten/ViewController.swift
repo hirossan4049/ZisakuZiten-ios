@@ -13,6 +13,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 
     let cellReuseIdentifier = "cell"
+    var groupList: Results<Group>!
+    var clicked_group:Group!
     @IBOutlet var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -24,7 +26,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
 
         let realm = try! Realm()
-        print(realm.objects(Group.self))
+        self.groupList = realm.objects(Group.self)
+        print(groupList)
 
     }
     
@@ -33,6 +36,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         ///FIXME: category
         createGroupDialog()
     }
+
 
     func createGroupDialog(){
         var alertTextField: UITextField?
@@ -58,6 +62,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     if let text = alertTextField?.text {
                         print("CreateDialogOK: " + text)
                         self.createGroup(title: text)
+//                        self.tableView.beginUpdates()
+//                        self.tableView.insertRows(at: [IndexPath(row: 0, section: self.groupList.count - 1)],
+//                                with: .automatic)
+//                        self.tableView.endUpdates()
+                        self.tableView.reloadData()
                         //                        self.label1.text = text
                     }
                 }
@@ -81,7 +90,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     // List item の数。
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
+        return self.groupList.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -92,12 +101,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        let cell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as GroupTableViewCell!
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GroupTableViewCell
         cell.backgroundColor = UIColor.white
-        cell.layer.borderColor = UIColor.black.cgColor
+//        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.borderColor = UIColor.gray.cgColor
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 8
         cell.clipsToBounds = true
 
-        cell.titleLabel.text = "hello"
+        let group: Group = self.groupList[(indexPath as IndexPath).section]
+        print(group.title)
+        print(group.updateTime)
+        cell.titleLabel.text = group.title
+        ///TODO:カテゴリ系の処理
         cell.categoryLabel.text = "カテゴリ:その他"
         return cell
     }
@@ -117,19 +131,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // onpress
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("clicked!", indexPath.section)
-//        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "ZitenViewController") as? ZitenViewController
+        self.clicked_group = self.groupList[(indexPath as IndexPath).section]
+//        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "toZiten") as? ZitenViewController
 //        self.present(secondViewController!, animated: true, completion: nil)
 
-        // ②遷移先NavigationControllerのインスタンス取得
-        //   Navigation ControllerのStoryboard IDが"NC1"に設定されている例
-        //   インスタンスのクラスはUINavigationController
 //        let nextView = storyboard?.instantiateViewController(withIdentifier: "ZitenViewController") as! UINavigationController
-//
-//           // ③画面遷移（presentメソッドを使う）
 //           self.present(nextView, animated: true, completion: nil)
 
         self.performSegue(withIdentifier: "toZiten", sender: nil)
 
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toZiten" {
+            let nextVC = segue.destination as! ZitenViewController
+            nextVC.group_createTime = self.clicked_group.createTime
+        }
     }
 
 
