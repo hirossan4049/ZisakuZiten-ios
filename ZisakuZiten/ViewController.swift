@@ -11,7 +11,6 @@ import RealmSwift
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-
     let cellReuseIdentifier = "cell"
     var groupList: Results<Group>!
     var clicked_group: Group!
@@ -30,13 +29,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.groupList = realm.objects(Group.self)
         print(groupList)
 
-
+        // 3D Touchが使える端末か確認
+        if self.traitCollection.forceTouchCapability == UIForceTouchCapability.available {
+            // どのビューをPeek and Popの対象にするか指定
+            registerForPreviewing(with: self, sourceView: tableView)
+//            registerForPreviewing(with: self, sourceView: view)
+        }
     }
 
     @IBAction
-    func create_on_press() {
+    func createGroup_on_press() {
         ///FIXME: category
         createGroupDialog()
+    }
+    @IBAction func createCategory_on_press(){
+        let alertView = CreateCategoryDialogViewController(title: "type1AlertView", desc: "説明文はここに入れます。")
+        present(alertView, animated: true, completion: nil)
+    }
+
+    func createCategoryDialog(){
+        
     }
 
     func updateGroupDialog(title: String, id: Int) {
@@ -131,7 +143,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let dialog = UIAlertController(title: "グループを消去", message: "単語も消去されます。本当に消去しますか？", preferredStyle: .actionSheet)
         let realm = try! Realm()
         dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-            try! realm.write{
+            try! realm.write {
                 realm.delete(self.groupList[id])
             }
             self.tableView.reloadData()
@@ -140,7 +152,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // 生成したダイアログを実際に表示します
         self.present(dialog, animated: true, completion: nil)
     }
-
 
 
     // List item の数。
@@ -220,6 +231,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 //        let nextView = storyboard?.instantiateViewController(withIdentifier: "ZitenViewController") as! UINavigationController
 //           self.present(nextView, animated: true, completion: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
 
         self.performSegue(withIdentifier: "toZiten", sender: nil)
 
@@ -235,3 +247,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 }
 
+
+extension ViewController: UIViewControllerPreviewingDelegate {
+    // Peek
+    @available(iOS 10.0, *)
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = tableView.indexPathForRow(at: location) else {
+            return nil
+        }
+//        return ZitenPreviewViewController(indexPath: indexPath)
+//        let clicked = self.groupList[(indexPath as IndexPath).section]
+//        return ZitenViewController(group_createTime: clicked.createTime!)
+        return nil
+    }
+
+    // Pop
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        self.navigationController?.pushViewController(viewControllerToCommit, animated: true)
+    }
+}

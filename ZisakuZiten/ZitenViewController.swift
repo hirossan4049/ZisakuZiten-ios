@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 
+@available(iOS 11.0, *)
 class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 
@@ -21,11 +22,34 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     @IBOutlet var tableView: UITableView!
 
+//    let label: UILabel
+//    init(group_createTime: Date) {
+//        label = UILabel()
+//        tableView = UITableView()
+//        super.init(nibName: nil, bundle: nil)
+//        self.group_createTime = group_createTime
+//        label.text = "hello"
+//        label.textAlignment = .center
+////        self.view.addSubview(label)
+//        self.view.addSubview(tableView)
+//        tableView.translatesAutoresizingMaskIntoConstraints = false
+//        tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+//        tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+//        tableView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+//        tableView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+//    }
+//
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         let nib = UINib(nibName: "ZitenTableViewCell", bundle: nil)
+        self.view.backgroundColor = .white
+
         self.tableView.register(nib, forCellReuseIdentifier: cellReuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
@@ -33,7 +57,7 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         let realm = try! Realm()
         self.ziten_list = realm.objects(Group.self).filter("createTime==%@", group_createTime)[0].ziten_upT_List
-        tableView.reloadData()
+//        tableView.reloadData()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -113,8 +137,8 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     try! realm.write{
                         self.ziten_list.remove(at: indexPath.section)
                     }
-                    tableView.reloadData()
                     completion(true)
+                    tableView.reloadData()
                 })
         deleteAction.backgroundColor = UIColor(red: 214/255.0, green: 69/255.0, blue: 65/255.0, alpha: 1)
 
@@ -124,7 +148,7 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // onpress
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("clicked!", indexPath.section)
-
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 

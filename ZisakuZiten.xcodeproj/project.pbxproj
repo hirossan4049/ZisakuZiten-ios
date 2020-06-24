@@ -10,6 +10,11 @@
 		1E8988613597FC18751CFE78 /* Pods_ZisakuZitenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414B85174E0B2EE309638A3E /* Pods_ZisakuZitenTests.framework */; };
 		1ED0FF00FACB1A940F7A7EDF /* Pods_ZisakuZiten_ZisakuZitenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2317EC509AFE1F37142D0597 /* Pods_ZisakuZiten_ZisakuZitenUITests.framework */; };
 		8136D6BD8420788BE2B2311E /* Pods_ZisakuZiten.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E6717DA6FB73D645000A58 /* Pods_ZisakuZiten.framework */; };
+		D3A6A4DB24A26CBB00CF6C87 /* EditCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A6A4D924A26CBB00CF6C87 /* EditCategoryViewController.swift */; };
+		D3A6A4DF24A36FC800CF6C87 /* CategoryEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A6A4DD24A36FC800CF6C87 /* CategoryEditTableViewCell.swift */; };
+		D3A6A4E024A36FC800CF6C87 /* CategoryEditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3A6A4DE24A36FC800CF6C87 /* CategoryEditTableViewCell.xib */; };
+		D3A96A9A24A1F0D70053639B /* CreateCategoryDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A96A9824A1F0D70053639B /* CreateCategoryDialogViewController.swift */; };
+		D3A96A9B24A1F0D70053639B /* CreateCategoryDialogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3A96A9924A1F0D70053639B /* CreateCategoryDialogViewController.xib */; };
 		D3AB70B4249F076A00DFDDB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70B3249F076A00DFDDB7 /* AppDelegate.swift */; };
 		D3AB70B6249F076A00DFDDB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70B5249F076A00DFDDB7 /* SceneDelegate.swift */; };
 		D3AB70B8249F076A00DFDDB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70B7249F076A00DFDDB7 /* ViewController.swift */; };
@@ -27,6 +32,7 @@
 		D3AB70F6249F888800DFDDB7 /* Ziten.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70F5249F888800DFDDB7 /* Ziten.swift */; };
 		D3AB70F8249F88E400DFDDB7 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70F7249F88E400DFDDB7 /* Category.swift */; };
 		D3AB70FA24A09A9A00DFDDB7 /* ZitenEditerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70F924A09A9A00DFDDB7 /* ZitenEditerViewController.swift */; };
+		D3AB70FE24A113E200DFDDB7 /* ZitenPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70FD24A113E200DFDDB7 /* ZitenPreviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +61,11 @@
 		68E6717DA6FB73D645000A58 /* Pods_ZisakuZiten.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZisakuZiten.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A8D1B79B4FDB77B5BF64472 /* Pods-ZisakuZitenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZisakuZitenTests.debug.xcconfig"; path = "Target Support Files/Pods-ZisakuZitenTests/Pods-ZisakuZitenTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9F53344879C4469E50AF8A01 /* Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig"; path = "Target Support Files/Pods-ZisakuZiten-ZisakuZitenUITests/Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D3A6A4D924A26CBB00CF6C87 /* EditCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryViewController.swift; sourceTree = "<group>"; };
+		D3A6A4DD24A36FC800CF6C87 /* CategoryEditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEditTableViewCell.swift; sourceTree = "<group>"; };
+		D3A6A4DE24A36FC800CF6C87 /* CategoryEditTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryEditTableViewCell.xib; sourceTree = "<group>"; };
+		D3A96A9824A1F0D70053639B /* CreateCategoryDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryDialogViewController.swift; sourceTree = "<group>"; };
+		D3A96A9924A1F0D70053639B /* CreateCategoryDialogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCategoryDialogViewController.xib; sourceTree = "<group>"; };
 		D3AB70B0249F076A00DFDDB7 /* ZisakuZiten.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZisakuZiten.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3AB70B3249F076A00DFDDB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3AB70B5249F076A00DFDDB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +89,7 @@
 		D3AB70F5249F888800DFDDB7 /* Ziten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ziten.swift; sourceTree = "<group>"; };
 		D3AB70F7249F88E400DFDDB7 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		D3AB70F924A09A9A00DFDDB7 /* ZitenEditerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZitenEditerViewController.swift; sourceTree = "<group>"; };
+		D3AB70FD24A113E200DFDDB7 /* ZitenPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZitenPreviewViewController.swift; sourceTree = "<group>"; };
 		E96D2E82B4094384A88DED24 /* Pods-ZisakuZiten.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZisakuZiten.debug.xcconfig"; path = "Target Support Files/Pods-ZisakuZiten/Pods-ZisakuZiten.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,6 +185,12 @@
 				D3AB70F5249F888800DFDDB7 /* Ziten.swift */,
 				D3AB70F7249F88E400DFDDB7 /* Category.swift */,
 				D3AB70F924A09A9A00DFDDB7 /* ZitenEditerViewController.swift */,
+				D3AB70FD24A113E200DFDDB7 /* ZitenPreviewViewController.swift */,
+				D3A96A9824A1F0D70053639B /* CreateCategoryDialogViewController.swift */,
+				D3A96A9924A1F0D70053639B /* CreateCategoryDialogViewController.xib */,
+				D3A6A4D924A26CBB00CF6C87 /* EditCategoryViewController.swift */,
+				D3A6A4DD24A36FC800CF6C87 /* CategoryEditTableViewCell.swift */,
+				D3A6A4DE24A36FC800CF6C87 /* CategoryEditTableViewCell.xib */,
 			);
 			path = ZisakuZiten;
 			sourceTree = "<group>";
@@ -308,6 +326,8 @@
 				D3AB70BD249F076B00DFDDB7 /* Assets.xcassets in Resources */,
 				D3AB70F2249F3A8B00DFDDB7 /* ZitenTableViewCell.xib in Resources */,
 				D3AB70BB249F076A00DFDDB7 /* Main.storyboard in Resources */,
+				D3A6A4E024A36FC800CF6C87 /* CategoryEditTableViewCell.xib in Resources */,
+				D3A96A9B24A1F0D70053639B /* CreateCategoryDialogViewController.xib in Resources */,
 				D3AB70EC249F1EE700DFDDB7 /* GroupTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,11 +459,15 @@
 				D3AB70F6249F888800DFDDB7 /* Ziten.swift in Sources */,
 				D3AB70F4249F66DE00DFDDB7 /* Group.swift in Sources */,
 				D3AB70F1249F3A8B00DFDDB7 /* ZitenTableViewCell.swift in Sources */,
+				D3A6A4DF24A36FC800CF6C87 /* CategoryEditTableViewCell.swift in Sources */,
 				D3AB70FA24A09A9A00DFDDB7 /* ZitenEditerViewController.swift in Sources */,
+				D3A6A4DB24A26CBB00CF6C87 /* EditCategoryViewController.swift in Sources */,
+				D3A96A9A24A1F0D70053639B /* CreateCategoryDialogViewController.swift in Sources */,
 				D3AB70EE249F2B1A00DFDDB7 /* ZitenViewController.swift in Sources */,
 				D3AB70B8249F076A00DFDDB7 /* ViewController.swift in Sources */,
 				D3AB70F8249F88E400DFDDB7 /* Category.swift in Sources */,
 				D3AB70B4249F076A00DFDDB7 /* AppDelegate.swift in Sources */,
+				D3AB70FE24A113E200DFDDB7 /* ZitenPreviewViewController.swift in Sources */,
 				D3AB70B6249F076A00DFDDB7 /* SceneDelegate.swift in Sources */,
 				D3AB70EB249F1EE700DFDDB7 /* GroupTableViewCell.swift in Sources */,
 			);
@@ -622,7 +646,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XR3UW32WU4;
 				INFOPLIST_FILE = ZisakuZiten/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -642,7 +666,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XR3UW32WU4;
 				INFOPLIST_FILE = ZisakuZiten/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
