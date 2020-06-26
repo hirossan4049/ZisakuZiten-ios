@@ -8,61 +8,115 @@
 
 import UIKit
 
-class CreateCategoryDialogViewController: UIViewController,UIViewControllerTransitioningDelegate {
+class CreateCategoryDialogViewController: UIViewController, UIViewControllerTransitioningDelegate {
 
-    @IBOutlet weak var dialogView:UIView!
-    @IBOutlet weak var scrollView:UIScrollView!
-    @IBOutlet weak var colorBtn:UIButton!
+    @IBOutlet weak var dialogView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
-        
-    private var mySegcon : UISegmentedControl!
+    @IBOutlet weak var CategoryItemHeadView: UIView!
+    @IBOutlet weak var CategoryItemBodyView: UIView!
+    @IBOutlet weak var CategoryItemTextField: UITextField!
     
+    @IBOutlet weak var colorBtn: UIButton!
 
-    
+
+    private var mySegcon: UISegmentedControl!
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.2)
         // FIXME:ぼかし入れたいな
         dialogView.layer.cornerRadius = 13
         dialogView.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
-    
+
         // 解決するまで１億年かかった。
-        scrollView.contentSize = CGSize(width: 500, height: 30)
-        
+//        scrollView.contentSize = CGSize(width: 500, height: 30)
+        scrollView.contentSize = CGSize(width: (50 + 10) * 7, height: 30)
+
+
         colorBtn.layer.cornerRadius = 13
 
     }
 
+    // FIXME: switchで書きたい。
+    // thanks https://flatuicolors.com/palette/us
+    @IBAction func selectColorBtn(sender: AnyObject){
+        let btn:UIButton = sender as! UIButton
+        print(btn.tag)
 
-    override init(nibName nibNameOrNil:String?, bundle ninBundleOrNil:Bundle? ){
-        super.init(nibName:nibNameOrNil,bundle:ninBundleOrNil)
+        var hexColor:String!
+        switch btn.tag{
+        case 1:
+            print("light greennish blue")
+            hexColor = "55efc4"
+        case 2:
+            print("faded poster")
+            hexColor = "81ecec"
+        case 3:
+            //Green Darner tail
+            hexColor = "74b9ff"
+        case 4:
+            //Shy Moment
+            hexColor = "a29bfe"
+        case 5:
+            //sour lemon
+            hexColor = "ffeaa7"
+        case 6:
+            //pink glamour
+            hexColor = "ff7675"
+        case 7:
+            //pico-8 pink
+            hexColor = "fd79a8"
+        default:
+            print("exception")
+        }
+        CategoryItemHeadView.backgroundColor = UIColor(hex:hexColor)
+        CategoryItemBodyView.backgroundColor = UIColor(hex:hexColor,alpha: 0.2)
+    }
+
+
+    override init(nibName nibNameOrNil: String?, bundle ninBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: ninBundleOrNil)
         self.transitioningDelegate = self
         self.providesPresentationContextTransitionStyle = true
         self.definesPresentationContext = true
         self.modalPresentationStyle = .custom
 
     }
-    convenience init(title:String,desc:String){
-        self.init(nibName:"CreateCategoryDialogViewController",bundle:nil)
+
+    convenience init(title: String, desc: String) {
+        self.init(nibName: "CreateCategoryDialogViewController", bundle: nil)
 //        titleText = title
 //        messageText = desc
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
 //        return AlertAnimation(show:true)
         return nil
     }
+
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
 //        return AlertAnimation(show:false)
         return nil
     }
-    
+
 }
 
+//hex UIColor
+extension UIColor {
+    convenience init(hex: String, alpha: CGFloat = 1.0) {
+        let v = Int("000000" + hex, radix: 16) ?? 0
+        let r = CGFloat(v / Int(powf(256, 2)) % 256) / 255
+        let g = CGFloat(v / Int(powf(256, 1)) % 256) / 255
+        let b = CGFloat(v / Int(powf(256, 0)) % 256) / 255
+        self.init(red: r, green: g, blue: b, alpha: min(max(alpha, 0), 1))
+    }
+}
 
 
 //class AlertAnimation : NSObject, UIViewControllerAnimatedTransitioning {
