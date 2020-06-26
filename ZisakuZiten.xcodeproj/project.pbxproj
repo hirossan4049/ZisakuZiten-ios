@@ -13,6 +13,7 @@
 		D3A6A4DB24A26CBB00CF6C87 /* EditCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A6A4D924A26CBB00CF6C87 /* EditCategoryViewController.swift */; };
 		D3A6A4DF24A36FC800CF6C87 /* CategoryEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A6A4DD24A36FC800CF6C87 /* CategoryEditTableViewCell.swift */; };
 		D3A6A4E024A36FC800CF6C87 /* CategoryEditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3A6A4DE24A36FC800CF6C87 /* CategoryEditTableViewCell.xib */; };
+		D3A6A4E224A640FA00CF6C87 /* CategoryColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A6A4E124A640FA00CF6C87 /* CategoryColorButton.swift */; };
 		D3A96A9A24A1F0D70053639B /* CreateCategoryDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A96A9824A1F0D70053639B /* CreateCategoryDialogViewController.swift */; };
 		D3A96A9B24A1F0D70053639B /* CreateCategoryDialogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3A96A9924A1F0D70053639B /* CreateCategoryDialogViewController.xib */; };
 		D3AB70B4249F076A00DFDDB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70B3249F076A00DFDDB7 /* AppDelegate.swift */; };
@@ -64,6 +65,7 @@
 		D3A6A4D924A26CBB00CF6C87 /* EditCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryViewController.swift; sourceTree = "<group>"; };
 		D3A6A4DD24A36FC800CF6C87 /* CategoryEditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEditTableViewCell.swift; sourceTree = "<group>"; };
 		D3A6A4DE24A36FC800CF6C87 /* CategoryEditTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryEditTableViewCell.xib; sourceTree = "<group>"; };
+		D3A6A4E124A640FA00CF6C87 /* CategoryColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColorButton.swift; sourceTree = "<group>"; };
 		D3A96A9824A1F0D70053639B /* CreateCategoryDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryDialogViewController.swift; sourceTree = "<group>"; };
 		D3A96A9924A1F0D70053639B /* CreateCategoryDialogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCategoryDialogViewController.xib; sourceTree = "<group>"; };
 		D3AB70B0249F076A00DFDDB7 /* ZisakuZiten.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZisakuZiten.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +193,7 @@
 				D3A6A4D924A26CBB00CF6C87 /* EditCategoryViewController.swift */,
 				D3A6A4DD24A36FC800CF6C87 /* CategoryEditTableViewCell.swift */,
 				D3A6A4DE24A36FC800CF6C87 /* CategoryEditTableViewCell.xib */,
+				D3A6A4E124A640FA00CF6C87 /* CategoryColorButton.swift */,
 			);
 			path = ZisakuZiten;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				D3AB70B4249F076A00DFDDB7 /* AppDelegate.swift in Sources */,
 				D3AB70FE24A113E200DFDDB7 /* ZitenPreviewViewController.swift in Sources */,
 				D3AB70B6249F076A00DFDDB7 /* SceneDelegate.swift in Sources */,
+				D3A6A4E224A640FA00CF6C87 /* CategoryColorButton.swift in Sources */,
 				D3AB70EB249F1EE700DFDDB7 /* GroupTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

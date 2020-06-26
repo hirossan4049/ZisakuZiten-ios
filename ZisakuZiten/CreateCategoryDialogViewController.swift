@@ -11,7 +11,12 @@ import UIKit
 class CreateCategoryDialogViewController: UIViewController,UIViewControllerTransitioningDelegate {
 
     @IBOutlet weak var dialogView:UIView!
+    @IBOutlet weak var scrollView:UIScrollView!
+    @IBOutlet weak var colorBtn:UIButton!
+    
+        
     private var mySegcon : UISegmentedControl!
+    
 
     
     override func viewDidLoad() {
@@ -20,6 +25,11 @@ class CreateCategoryDialogViewController: UIViewController,UIViewControllerTrans
         // FIXME:ぼかし入れたいな
         dialogView.layer.cornerRadius = 13
         dialogView.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
+    
+        // 解決するまで１億年かかった。
+        scrollView.contentSize = CGSize(width: 500, height: 30)
+        
+        colorBtn.layer.cornerRadius = 13
 
     }
 

@@ -10,7 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateCategoryDialogViewController" customModule="ZisakuZiten" customModuleProvider="target">
             <connections>
+                <outlet property="colorBtn" destination="Na5-qG-2P4" id="C3Y-9s-jPv"/>
                 <outlet property="dialogView" destination="lzd-XV-Gsz" id="PzY-IH-C8L"/>
+                <outlet property="scrollView" destination="XPW-Vy-jTr" id="yOb-2A-IX4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,66 +24,88 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lzd-XV-Gsz">
                     <rect key="frame" x="47" y="333" width="320" height="230"/>
                     <subviews>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7T0-TQ-crS">
-                            <rect key="frame" x="24" y="21" width="272" height="60"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7T0-TQ-crS">
+                            <rect key="frame" x="24" y="16" width="272" height="60"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="カテゴリの名前を入力" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XWf-hK-uhZ">
+                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="カテゴリの名前を入力" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XWf-hK-uhZ">
                                     <rect key="frame" x="26" y="13" width="171" height="34"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.99157804250000003" green="0.91374617820000004" blue="0.91372513769999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2TQ-yI-gwQ">
-                                    <rect key="frame" x="0.0" y="3" width="10" height="55"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2TQ-yI-gwQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="10" height="60"/>
                                     <color key="backgroundColor" red="0.87598866220000005" green="0.46806043390000002" blue="0.45902001860000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="10" id="Y4v-Vf-M23"/>
+                                        <constraint firstAttribute="height" constant="60" id="QwM-dE-cVH"/>
+                                        <constraint firstAttribute="width" constant="10" id="tPL-zW-wwY"/>
                                     </constraints>
                                 </view>
                             </subviews>
                             <color key="backgroundColor" red="0.99260371920000001" green="0.91477227210000001" blue="0.91348469259999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstItem="XWf-hK-uhZ" firstAttribute="leading" secondItem="2TQ-yI-gwQ" secondAttribute="trailing" constant="16" id="AXY-19-lb2"/>
+                                <constraint firstAttribute="bottom" secondItem="2TQ-yI-gwQ" secondAttribute="bottom" id="2O6-pI-Cge"/>
+                                <constraint firstItem="2TQ-yI-gwQ" firstAttribute="top" secondItem="7T0-TQ-crS" secondAttribute="top" id="32P-5x-Pip"/>
+                                <constraint firstAttribute="height" constant="60" id="6i6-VQ-wxa"/>
+                                <constraint firstAttribute="width" constant="272" id="Cqb-ZF-zxp"/>
+                                <constraint firstItem="2TQ-yI-gwQ" firstAttribute="leading" secondItem="7T0-TQ-crS" secondAttribute="leading" id="q1E-y4-JaF"/>
                             </constraints>
                         </view>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XPW-Vy-jTr">
                             <rect key="frame" x="8" y="86" width="299" height="39"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="74R-wN-92c">
-                                    <rect key="frame" x="4" y="8" width="350" height="35"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1v1-Qd-kO4">
+                                    <rect key="frame" x="-12" y="5" width="350" height="30"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4i6-dN-xrs">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Na5-qG-2P4" customClass="CategoryColorButton" customModule="ZisakuZiten" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
                                             <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </view>
-                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RmH-zr-YAK">
-                                            <rect key="frame" x="60" y="0.0" width="50" height="35"/>
-                                            <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </view>
-                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SQg-8Z-Be2">
-                                            <rect key="frame" x="120" y="0.0" width="50" height="35"/>
-                                            <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </view>
-                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kti-fQ-1u7">
-                                            <rect key="frame" x="180" y="0.0" width="50" height="35"/>
-                                            <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </view>
-                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zfd-Ww-XMD">
-                                            <rect key="frame" x="240" y="0.0" width="50" height="35"/>
-                                            <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </view>
-                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6xm-qt-UFQ">
-                                            <rect key="frame" x="300" y="0.0" width="50" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="hch-cy-QN7"/>
+                                            </constraints>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBY-rD-cvE" customClass="CategoryColorButton" customModule="ZisakuZiten" customModuleProvider="target">
+                                            <rect key="frame" x="60" y="0.0" width="50" height="30"/>
                                             <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </view>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="Ats-rc-5dV"/>
+                                            </constraints>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgh-6z-1Sa" customClass="CategoryColorButton" customModule="ZisakuZiten" customModuleProvider="target">
+                                            <rect key="frame" x="120" y="0.0" width="50" height="30"/>
+                                            <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="iA9-6X-VS9"/>
+                                            </constraints>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fq8-8A-MSy" customClass="CategoryColorButton" customModule="ZisakuZiten" customModuleProvider="target">
+                                            <rect key="frame" x="180" y="0.0" width="50" height="30"/>
+                                            <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="CQs-1G-Gzl"/>
+                                            </constraints>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39W-kn-l6E" customClass="CategoryColorButton" customModule="ZisakuZiten" customModuleProvider="target">
+                                            <rect key="frame" x="240" y="0.0" width="50" height="30"/>
+                                            <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="9g2-kk-4fw"/>
+                                            </constraints>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7PQ-Yn-Jyk" customClass="CategoryColorButton" customModule="ZisakuZiten" customModuleProvider="target">
+                                            <rect key="frame" x="300" y="0.0" width="50" height="30"/>
+                                            <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="lUz-ab-0M4"/>
+                                            </constraints>
+                                        </button>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="35" id="UHg-Pn-L4E"/>
-                                    </constraints>
                                 </stackView>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="74R-wN-92c" firstAttribute="top" secondItem="XPW-Vy-jTr" secondAttribute="top" constant="8" id="qA3-yu-MhO"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="39" id="qZf-Af-sbC"/>
+                                <constraint firstItem="1v1-Qd-kO4" firstAttribute="centerY" secondItem="XPW-Vy-jTr" secondAttribute="centerY" id="r7E-yU-xqL"/>
                                 <constraint firstAttribute="height" constant="40" id="uem-VX-mgq"/>
                             </constraints>
                             <viewLayoutGuide key="contentLayoutGuide" id="bXs-P5-pZI"/>
@@ -90,23 +114,26 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="XPW-Vy-jTr" firstAttribute="leading" secondItem="lzd-XV-Gsz" secondAttribute="leading" constant="8" id="BbF-8q-2dS"/>
-                        <constraint firstAttribute="width" constant="320" id="Nbg-4z-Vm5"/>
-                        <constraint firstAttribute="height" constant="230" id="Plp-Os-Xbj"/>
-                        <constraint firstAttribute="trailing" secondItem="XPW-Vy-jTr" secondAttribute="trailing" constant="8" id="XFX-0u-FtG"/>
-                        <constraint firstItem="XPW-Vy-jTr" firstAttribute="top" secondItem="7T0-TQ-crS" secondAttribute="bottom" constant="5" id="Zpc-47-nqS"/>
-                        <constraint firstItem="7T0-TQ-crS" firstAttribute="top" secondItem="lzd-XV-Gsz" secondAttribute="top" constant="8" id="kDZ-Ly-VWd"/>
+                        <constraint firstItem="7T0-TQ-crS" firstAttribute="top" secondItem="lzd-XV-Gsz" secondAttribute="top" constant="16" id="74j-8T-DJ0"/>
+                        <constraint firstAttribute="height" constant="230" id="BnI-6J-2Yl"/>
+                        <constraint firstItem="XPW-Vy-jTr" firstAttribute="leading" secondItem="lzd-XV-Gsz" secondAttribute="leading" constant="8" id="L6b-Ll-rXv"/>
+                        <constraint firstItem="7T0-TQ-crS" firstAttribute="leading" secondItem="lzd-XV-Gsz" secondAttribute="leading" constant="24" id="QcP-t3-6o7"/>
+                        <constraint firstAttribute="trailing" secondItem="XPW-Vy-jTr" secondAttribute="trailing" constant="8" id="X9J-Hi-Fyp"/>
+                        <constraint firstAttribute="trailing" secondItem="7T0-TQ-crS" secondAttribute="trailing" constant="24" id="aJn-aw-kKJ"/>
+                        <constraint firstAttribute="width" constant="320" id="bOh-kR-WAI"/>
+                        <constraint firstItem="XPW-Vy-jTr" firstAttribute="top" secondItem="7T0-TQ-crS" secondAttribute="bottom" constant="10" id="p1C-RL-Ojd"/>
+                        <constraint firstItem="7T0-TQ-crS" firstAttribute="centerX" secondItem="lzd-XV-Gsz" secondAttribute="centerX" id="qAk-Jn-cP5"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="lzd-XV-Gsz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="72n-Lz-3b2"/>
-                <constraint firstItem="lzd-XV-Gsz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="DSh-23-xye"/>
+                <constraint firstItem="lzd-XV-Gsz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="1Lb-R8-mua"/>
+                <constraint firstItem="lzd-XV-Gsz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ukK-Zw-8G9"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="-1003" y="-218"/>
+            <point key="canvasLocation" x="-1004.3478260869566" y="-218.30357142857142"/>
         </view>
     </objects>
 </document>
