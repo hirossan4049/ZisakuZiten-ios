@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CreateCategoryDialogViewController: UIViewController, UIViewControllerTransitioningDelegate {
 
     @IBOutlet weak var dialogView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    @IBOutlet weak var CategoryItemHeadView: UIView!
-    @IBOutlet weak var CategoryItemBodyView: UIView!
-    @IBOutlet weak var CategoryItemTextField: UITextField!
+    @IBOutlet weak var categoryItemHeadView: UIView!
+    @IBOutlet weak var categoryItemBodyView: UIView!
+    @IBOutlet weak var categoryItemTextField: UITextField!
 
     var selectCategoryColorId: Int = 1
     let categoryColorList: [String] = ["ff7675","55efc4","81ecec","74b9ff","a29bfe","ffeaa7","fd79a8"]
@@ -33,6 +34,8 @@ class CreateCategoryDialogViewController: UIViewController, UIViewControllerTran
         // FIXME:ぼかし入れたいな
         dialogView.layer.cornerRadius = 13
         dialogView.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
+        
+        categoryItemBodyView.layer.cornerRadius = 10
 
         // 解決するまで１億年かかった。
 //        scrollView.contentSize = CGSize(width: 500, height: 30)
@@ -42,8 +45,17 @@ class CreateCategoryDialogViewController: UIViewController, UIViewControllerTran
         colorBtn.layer.cornerRadius = 13
 
     }
+    
+    override init(nibName nibNameOrNil: String?, bundle ninBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: ninBundleOrNil)
+        self.transitioningDelegate = self
+        self.providesPresentationContextTransitionStyle = true
+        self.definesPresentationContext = true
+        self.modalPresentationStyle = .custom
 
-    // FIXME: switchで書きたい。
+    }
+
+    
     // thanks https://flatuicolors.com/palette/us
     @IBAction func selectColorBtn(sender: AnyObject){
         let btn:UIButton = sender as! UIButton
@@ -81,19 +93,38 @@ class CreateCategoryDialogViewController: UIViewController, UIViewControllerTran
 //            print("exception")
 //        }
         hexColor = categoryColorList[selectCategoryColorId]
-        CategoryItemHeadView.backgroundColor = UIColor(hex:hexColor)
-        CategoryItemBodyView.backgroundColor = UIColor(hex:hexColor,alpha: 0.2)
+        categoryItemHeadView.backgroundColor = UIColor(hex:hexColor)
+        categoryItemBodyView.backgroundColor = UIColor(hex:hexColor,alpha: 0.2)
+    }
+    
+    @IBAction func cancelBtnPrs(){
+        //dismiss
+        self.dismiss(animated: false, completion: nil)
+    }
+    
+    @IBAction func okBtnPrs(){
+        //ok pressed
+        let title:String = categoryItemTextField.text!
+        let colorCode:String = categoryColorList[selectCategoryColorId]
+        print(title)
+        print(colorCode)
+        createCategory(title: title, colorCode: colorCode)
+        self.dismiss(animated: false, completion: nil)
+    }
+    
+    func createCategory(title:String, colorCode:String){
+        let realm:Realm = try! Realm()
+        let category: Category = Category()
+        category.title = title
+        category.colorCode = colorCode
+        category.createTime = Date()
+        try! realm.write(){
+            realm.add(category)
+        }
     }
 
 
-    override init(nibName nibNameOrNil: String?, bundle ninBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: ninBundleOrNil)
-        self.transitioningDelegate = self
-        self.providesPresentationContextTransitionStyle = true
-        self.definesPresentationContext = true
-        self.modalPresentationStyle = .custom
 
-    }
 
     convenience init(title: String, desc: String) {
         self.init(nibName: "CreateCategoryDialogViewController", bundle: nil)
@@ -113,6 +144,13 @@ class CreateCategoryDialogViewController: UIViewController, UIViewControllerTran
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
 //        return AlertAnimation(show:false)
         return nil
+    }
+    
+    //EditText Focus Close
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //        outputText.text = inputText.text
+        print("touchesBegan")
+        self.view.endEditing(true)
     }
 
 }

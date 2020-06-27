@@ -10,9 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateCategoryDialogViewController" customModule="ZisakuZiten" customModuleProvider="target">
             <connections>
-                <outlet property="CategoryItemBodyView" destination="7T0-TQ-crS" id="oez-PI-j9A"/>
-                <outlet property="CategoryItemHeadView" destination="2TQ-yI-gwQ" id="RGS-aL-S2F"/>
                 <outlet property="CategoryItemTextField" destination="XWf-hK-uhZ" id="rOZ-TG-5LP"/>
+                <outlet property="categoryItemBodyView" destination="7T0-TQ-crS" id="MoM-cU-pvj"/>
+                <outlet property="categoryItemHeadView" destination="2TQ-yI-gwQ" id="Jbw-AP-c3N"/>
+                <outlet property="categoryItemTextField" destination="XWf-hK-uhZ" id="hAx-0r-BmL"/>
                 <outlet property="colorBtn" destination="Na5-qG-2P4" id="C3Y-9s-jPv"/>
                 <outlet property="dialogView" destination="lzd-XV-Gsz" id="PzY-IH-C8L"/>
                 <outlet property="scrollView" destination="XPW-Vy-jTr" id="yOb-2A-IX4"/>
@@ -142,6 +143,22 @@
                             <viewLayoutGuide key="contentLayoutGuide" id="bXs-P5-pZI"/>
                             <viewLayoutGuide key="frameLayoutGuide" id="5SB-b2-vK9"/>
                         </scrollView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IoC-1o-W6f">
+                            <rect key="frame" x="266" y="192" width="30" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="OK"/>
+                            <connections>
+                                <action selector="okBtnPrs" destination="-1" eventType="touchUpInside" id="qYJ-or-E9f"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1o-CH-g4S">
+                            <rect key="frame" x="195" y="192" width="48" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Cancel"/>
+                            <connections>
+                                <action selector="cancelBtnPrs" destination="-1" eventType="touchUpInside" id="1E7-du-aKt"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
