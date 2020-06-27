@@ -61,8 +61,18 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1v1-Qd-kO4">
                                     <rect key="frame" x="-12" y="5" width="410" height="30"/>
                                     <subviews>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Na5-qG-2P4" customClass="CategoryColorButton" customModule="ZisakuZiten" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7PQ-Yn-Jyk" customClass="CategoryColorButton" customModule="ZisakuZiten" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                            <color key="backgroundColor" red="0.96673113109999997" green="0.46414983269999999" blue="0.46050363779999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="lUz-ab-0M4"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="selectColorBtnWithSender:" destination="-1" eventType="touchUpInside" id="vMN-fb-2dx"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Na5-qG-2P4" customClass="CategoryColorButton" customModule="ZisakuZiten" customModuleProvider="target">
+                                            <rect key="frame" x="60" y="0.0" width="50" height="30"/>
                                             <color key="backgroundColor" red="0.33341675999999998" green="0.93550139669999999" blue="0.76710027459999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="50" id="hch-cy-QN7"/>
@@ -72,7 +82,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBY-rD-cvE" customClass="CategoryColorButton" customModule="ZisakuZiten" customModuleProvider="target">
-                                            <rect key="frame" x="60" y="0.0" width="50" height="30"/>
+                                            <rect key="frame" x="120" y="0.0" width="50" height="30"/>
                                             <color key="backgroundColor" red="0.50712174180000003" green="0.92499905819999995" blue="0.92528837919999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="50" id="Ats-rc-5dV"/>
@@ -82,7 +92,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgh-6z-1Sa" customClass="CategoryColorButton" customModule="ZisakuZiten" customModuleProvider="target">
-                                            <rect key="frame" x="120" y="0.0" width="50" height="30"/>
+                                            <rect key="frame" x="180" y="0.0" width="50" height="30"/>
                                             <color key="backgroundColor" red="0.45493626590000003" green="0.72373193499999999" blue="0.99973708390000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="50" id="iA9-6X-VS9"/>
@@ -92,7 +102,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fq8-8A-MSy" customClass="CategoryColorButton" customModule="ZisakuZiten" customModuleProvider="target">
-                                            <rect key="frame" x="180" y="0.0" width="50" height="30"/>
+                                            <rect key="frame" x="240" y="0.0" width="50" height="30"/>
                                             <color key="backgroundColor" red="0.63584774730000004" green="0.60938662290000001" blue="0.99434703589999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="50" id="CQs-1G-Gzl"/>
@@ -102,7 +112,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39W-kn-l6E" customClass="CategoryColorButton" customModule="ZisakuZiten" customModuleProvider="target">
-                                            <rect key="frame" x="240" y="0.0" width="50" height="30"/>
+                                            <rect key="frame" x="300" y="0.0" width="50" height="30"/>
                                             <color key="backgroundColor" red="0.9909264445" green="0.918531239" blue="0.65490305419999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="50" id="9g2-kk-4fw"/>
@@ -111,17 +121,7 @@
                                                 <action selector="selectColorBtnWithSender:" destination="-1" eventType="touchUpInside" id="VaM-vf-Jlw"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7PQ-Yn-Jyk" customClass="CategoryColorButton" customModule="ZisakuZiten" customModuleProvider="target">
-                                            <rect key="frame" x="300" y="0.0" width="50" height="30"/>
-                                            <color key="backgroundColor" red="0.96673113109999997" green="0.46414983269999999" blue="0.46050363779999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="50" id="lUz-ab-0M4"/>
-                                            </constraints>
-                                            <connections>
-                                                <action selector="selectColorBtnWithSender:" destination="-1" eventType="touchUpInside" id="vMN-fb-2dx"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g95-qG-Pmd" customClass="CategoryColorButton" customModule="ZisakuZiten" customModuleProvider="target">
+                                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g95-qG-Pmd" customClass="CategoryColorButton" customModule="ZisakuZiten" customModuleProvider="target">
                                             <rect key="frame" x="360" y="0.0" width="50" height="30"/>
                                             <color key="backgroundColor" red="0.96809345479999998" green="0.47565418479999999" blue="0.65908652540000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>

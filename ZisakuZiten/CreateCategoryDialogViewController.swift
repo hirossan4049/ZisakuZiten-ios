@@ -16,6 +16,10 @@ class CreateCategoryDialogViewController: UIViewController, UIViewControllerTran
     @IBOutlet weak var CategoryItemHeadView: UIView!
     @IBOutlet weak var CategoryItemBodyView: UIView!
     @IBOutlet weak var CategoryItemTextField: UITextField!
+
+    var selectCategoryColorId: Int = 1
+    let categoryColorList: [String] = ["ff7675","55efc4","81ecec","74b9ff","a29bfe","ffeaa7","fd79a8"]
+
     
     @IBOutlet weak var colorBtn: UIButton!
 
@@ -46,31 +50,37 @@ class CreateCategoryDialogViewController: UIViewController, UIViewControllerTran
         print(btn.tag)
 
         var hexColor:String!
-        switch btn.tag{
-        case 1:
-            print("light greennish blue")
-            hexColor = "55efc4"
-        case 2:
-            print("faded poster")
-            hexColor = "81ecec"
-        case 3:
-            //Green Darner tail
-            hexColor = "74b9ff"
-        case 4:
-            //Shy Moment
-            hexColor = "a29bfe"
-        case 5:
-            //sour lemon
-            hexColor = "ffeaa7"
-        case 6:
-            //pink glamour
-            hexColor = "ff7675"
-        case 7:
-            //pico-8 pink
-            hexColor = "fd79a8"
-        default:
-            print("exception")
-        }
+        selectCategoryColorId = btn.tag
+//        switch btn.tag{
+//        case 0:
+//            hexColor = "ff7675"
+//            selectCategoryColorId = 0
+//        case 1:
+//            hexColor = "55efc4"
+//            selectCategoryColorId = 1
+//        case 2:
+//            hexColor = "81ecec"
+//            selectCategoryColorId = 2
+//        case 3:
+//            //Green Darner tail
+//            hexColor = "74b9ff"
+//            selectCategoryColorId = 3
+//        case 4:
+//            //Shy Moment
+//            hexColor = "a29bfe"
+//            selectCategoryColorId = 4
+//        case 5:
+//            //sour lemon
+//            hexColor = "ffeaa7"
+//            selectCategoryColorId = 5
+//        case 6:
+//            //pico-8 pink
+//            hexColor = "fd79a8"
+//            selectCategoryColorId = 6
+//        default:
+//            print("exception")
+//        }
+        hexColor = categoryColorList[selectCategoryColorId]
         CategoryItemHeadView.backgroundColor = UIColor(hex:hexColor)
         CategoryItemBodyView.backgroundColor = UIColor(hex:hexColor,alpha: 0.2)
     }
