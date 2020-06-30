@@ -45,8 +45,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         createGroupDialog()
     }
     @IBAction func createCategory_on_press(){
-        let alertView = CreateCategoryDialogViewController(title: "type1AlertView", desc: "説明文はここに入れます。")
-        present(alertView, animated: true, completion: nil)
+        self.performSegue(withIdentifier: "toCategoryEdit", sender: nil)
+//        let alertView = CreateCategoryDialogViewController(title: "type1AlertView", desc: "説明文はここに入れます。")
+//        present(alertView, animated: true, completion: nil)
     }
 
     func createCategoryDialog(){
@@ -155,7 +156,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.present(dialog, animated: true, completion: nil)
     }
 
-
+    // https://www.it-swarm.dev/ja/ios/uitableviewcell%E3%81%AE%E9%96%93%E9%9A%94%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/972967975/
+    
     // List item の数。
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.groupList.count
