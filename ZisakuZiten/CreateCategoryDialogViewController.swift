@@ -17,15 +17,44 @@ class CreateCategoryDialogViewController: UIViewController, UIViewControllerTran
     @IBOutlet weak var categoryItemHeadView: UIView!
     @IBOutlet weak var categoryItemBodyView: UIView!
     @IBOutlet weak var categoryItemTextField: UITextField!
+    
+    @IBOutlet weak var deleteButton: UIButton!
 
     var selectCategoryColorId: Int = 1
     let categoryColorList: [String] = ["ff7675","55efc4","81ecec","74b9ff","a29bfe","ffeaa7","fd79a8"]
+    
+    // 0(default): createMode, 1: EditMode
+    var mode:Int = 0
+    // EditMode Only
+    var createTime:Date!
 
     
     @IBOutlet weak var colorBtn: UIButton!
 
 
     private var mySegcon: UISegmentedControl!
+    
+
+
+    convenience init(mode:Int) {
+        self.init(nibName: "CreateCategoryDialogViewController", bundle: nil)
+        self.mode = mode
+    //        titleText = title
+    //        messageText = desc
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override init(nibName nibNameOrNil: String?, bundle ninBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: ninBundleOrNil)
+        self.transitioningDelegate = self
+        self.providesPresentationContextTransitionStyle = true
+        self.definesPresentationContext = true
+        self.modalPresentationStyle = .custom
+
+    }
 
 
     override func viewDidLoad() {
@@ -40,11 +69,19 @@ class CreateCategoryDialogViewController: UIViewController, UIViewControllerTran
         // 解決するまで１億年かかった。
 //        scrollView.contentSize = CGSize(width: 500, height: 30)
         scrollView.contentSize = CGSize(width: (50 + 10) * 7, height: 30)
-
-
         colorBtn.layer.cornerRadius = 13
 
+        print("CREATEMODE:",mode)
+        print("CREATETIME",createTime)
+        if (self.mode == 0){
+            deleteButton.isHidden = true
+        }else{
+            deleteButton.isHidden = false
+            setValue(createTime: createTime)
+        }
+
     }
+
     override func viewDidAppear(_ animated: Bool){
         super.viewDidAppear(animated)
 //        view.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.2)
@@ -54,17 +91,18 @@ class CreateCategoryDialogViewController: UIViewController, UIViewControllerTran
         print("viewWillAppear")
 //        view.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.2)
     }
-    
-    override init(nibName nibNameOrNil: String?, bundle ninBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: ninBundleOrNil)
-        self.transitioningDelegate = self
-        self.providesPresentationContextTransitionStyle = true
-        self.definesPresentationContext = true
-        self.modalPresentationStyle = .custom
 
+    func setValue(createTime:Date){
+        let realm = try! Realm()
+        let category = realm.objects(Category.self).filter("createTime == %@", createTime)[0]
+        print(category)
+        categoryItemTextField.text = category.title!
+        categoryItemHeadView.backgroundColor = UIColor(hex:category.colorCode!, alpha:1)
+        categoryItemBodyView.backgroundColor = UIColor(hex:category.colorCode!, alpha:0.2)
+        
     }
-
     
+
     // thanks https://flatuicolors.com/palette/us
     @IBAction func selectColorBtn(sender: AnyObject){
         let btn:UIButton = sender as! UIButton
@@ -72,35 +110,6 @@ class CreateCategoryDialogViewController: UIViewController, UIViewControllerTran
 
         var hexColor:String!
         selectCategoryColorId = btn.tag
-//        switch btn.tag{
-//        case 0:
-//            hexColor = "ff7675"
-//            selectCategoryColorId = 0
-//        case 1:
-//            hexColor = "55efc4"
-//            selectCategoryColorId = 1
-//        case 2:
-//            hexColor = "81ecec"
-//            selectCategoryColorId = 2
-//        case 3:
-//            //Green Darner tail
-//            hexColor = "74b9ff"
-//            selectCategoryColorId = 3
-//        case 4:
-//            //Shy Moment
-//            hexColor = "a29bfe"
-//            selectCategoryColorId = 4
-//        case 5:
-//            //sour lemon
-//            hexColor = "ffeaa7"
-//            selectCategoryColorId = 5
-//        case 6:
-//            //pico-8 pink
-//            hexColor = "fd79a8"
-//            selectCategoryColorId = 6
-//        default:
-//            print("exception")
-//        }
         hexColor = categoryColorList[selectCategoryColorId]
         categoryItemHeadView.backgroundColor = UIColor(hex:hexColor)
         categoryItemBodyView.backgroundColor = UIColor(hex:hexColor,alpha: 0.2)
@@ -134,17 +143,6 @@ class CreateCategoryDialogViewController: UIViewController, UIViewControllerTran
     }
 
 
-
-
-    convenience init(title: String, desc: String) {
-        self.init(nibName: "CreateCategoryDialogViewController", bundle: nil)
-//        titleText = title
-//        messageText = desc
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
 //        return AlertAnimation(show:true)

@@ -61,6 +61,8 @@ class EditCategoryViewController: UIViewController, UITableViewDelegate, UITable
         
         let category:Category = self.categoryList[indexPath.section]
         cell.titleLabel.text = category.title!
+        cell.editButton.tag = indexPath.section
+        cell.editButton.addTarget(self, action: "pushEditBtn:", for: .touchUpInside)
         cell.itemTagHeadView.backgroundColor = UIColor(hex: category.colorCode!,alpha: 1)
         cell.itemTagBodyView.backgroundColor = UIColor(hex: category.colorCode!,alpha: 0.2)
         
@@ -81,4 +83,18 @@ class EditCategoryViewController: UIViewController, UITableViewDelegate, UITable
     }
 
 
+    @objc private func pushEditBtn(_ sender:UIButton){
+        print("Clicked",sender.tag)
+        let alertView = CreateCategoryDialogViewController()
+        alertView.modalTransitionStyle = .crossDissolve
+        alertView.mode = 1
+        alertView.createTime = self.categoryList[sender.tag].createTime
+        
+//        alertView.modalPresentationStyle = .fullScreen
+        present(alertView, animated: true, completion: nil)
+        print("CreateCatPress")
+    }
+
+
 }
+

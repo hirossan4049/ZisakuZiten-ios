@@ -15,7 +15,9 @@ class CategoryEditTableViewCell: UITableViewCell {
     
     @IBOutlet weak var itemTagBodyView:UIView!
     @IBOutlet weak var itemTagHeadView:UIView!
-    
+
+    @IBOutlet var editButton:UIButton!
+
     var categoryCreateTime:Date!
 
     override func awakeFromNib() {

@@ -15,6 +15,7 @@
                 <outlet property="categoryItemHeadView" destination="2TQ-yI-gwQ" id="Jbw-AP-c3N"/>
                 <outlet property="categoryItemTextField" destination="XWf-hK-uhZ" id="hAx-0r-BmL"/>
                 <outlet property="colorBtn" destination="Na5-qG-2P4" id="C3Y-9s-jPv"/>
+                <outlet property="deleteButton" destination="MFc-0i-b6H" id="7dT-Mo-ilP"/>
                 <outlet property="dialogView" destination="lzd-XV-Gsz" id="PzY-IH-C8L"/>
                 <outlet property="scrollView" destination="XPW-Vy-jTr" id="yOb-2A-IX4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -158,6 +159,11 @@
                             <connections>
                                 <action selector="cancelBtnPrs" destination="-1" eventType="touchUpInside" id="1E7-du-aKt"/>
                             </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFc-0i-b6H">
+                            <rect key="frame" x="123" y="192" width="45" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Delete"/>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

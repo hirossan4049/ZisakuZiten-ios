@@ -72,6 +72,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="editButton" destination="0U9-Nm-qgG" id="xJT-yT-Ve9"/>
                 <outlet property="itemTagBodyView" destination="D0n-qY-zU4" id="ebd-zI-cMa"/>
                 <outlet property="itemTagHeadView" destination="hqg-wt-EIi" id="WT6-1c-U0h"/>
                 <outlet property="titleLabel" destination="BbK-r5-Nqc" id="Sp3-Mj-9L7"/>
