@@ -13,6 +13,7 @@ class EditCategoryViewController: UIViewController, UITableViewDelegate, UITable
 
 
     @IBOutlet var tableView: UITableView!
+    var categoryList: Results<Category>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +22,34 @@ class EditCategoryViewController: UIViewController, UITableViewDelegate, UITable
         self.tableView.register(nib, forCellReuseIdentifier: "cell")
         tableView.delegate = self
         tableView.dataSource = self
+        
+        let realm = try! Realm()
+        categoryList = realm.objects(Category.self)
     }
+    
+
+    
+    override func viewWillAppear(_ animated: Bool) {
+         presentingViewController?.beginAppearanceTransition(false, animated: animated)
+         super.viewWillAppear(animated)
+        
+        print("ViewWIllPAPPEER")
+     }
+    
 
     @IBAction func createCatPrs() {
         let alertView = CreateCategoryDialogViewController()
+        alertView.modalTransitionStyle = .crossDissolve
+//        alertView.modalPresentationStyle = .fullScreen
         present(alertView, animated: true, completion: nil)
+        print("CreateCatPress")
     }
 
-
+//MEMO [SwiftでUITableViewCellの中にUIButtonを置いてタッチイベントを取得] (https://qiita.com/nmisawa/items/6ffbe6b3c7f2c474c74f)
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
+        print("numberOFSection",self.categoryList.count)
+        return self.categoryList.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,6 +58,12 @@ class EditCategoryViewController: UIViewController, UITableViewDelegate, UITable
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CategoryEditTableViewCell
+        
+        let category:Category = self.categoryList[indexPath.section]
+        cell.titleLabel.text = category.title!
+        cell.itemTagHeadView.backgroundColor = UIColor(hex: category.colorCode!,alpha: 1)
+        cell.itemTagBodyView.backgroundColor = UIColor(hex: category.colorCode!,alpha: 0.2)
+        
         return cell
 
     }

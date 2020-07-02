@@ -27,6 +27,20 @@
                                     <constraint firstAttribute="width" constant="10" id="yFU-yx-OIO"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="n個のグループで使用されています。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5D-Mf-fWR">
+                                <rect key="frame" x="18" y="42" width="201" height="10"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="カテゴリー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BbK-r5-Nqc">
+                                <rect key="frame" x="18" y="13" width="87" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.33087562979567542" blue="0.40393878640532521" alpha="0.12018595950704225" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -60,6 +74,8 @@
             <connections>
                 <outlet property="itemTagBodyView" destination="D0n-qY-zU4" id="ebd-zI-cMa"/>
                 <outlet property="itemTagHeadView" destination="hqg-wt-EIi" id="WT6-1c-U0h"/>
+                <outlet property="titleLabel" destination="BbK-r5-Nqc" id="Sp3-Mj-9L7"/>
+                <outlet property="used_countLabel" destination="G5D-Mf-fWR" id="NFG-Qt-9yy"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="162.05357142857142"/>
         </tableViewCell>

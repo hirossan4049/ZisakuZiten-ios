@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Znh-KR-zuf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uzd-f7-BV9">
-                                <rect key="frame" x="16" y="0.0" width="382" height="808"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTN-cT-Ztb" customClass="MDCFloatingButton">
@@ -28,7 +28,7 @@
                                     <constraint firstAttribute="width" constant="60" id="usR-Sx-Qcd"/>
                                 </constraints>
                                 <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <state key="normal" image="tag" catalog="system"/>
+                                <state key="normal" image="plus" catalog="system"/>
                                 <connections>
                                     <action selector="createCatPrs" destination="TZl-gt-kYH" eventType="touchUpInside" id="yz9-mu-9A7"/>
                                 </connections>
@@ -36,12 +36,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Rhd-cl-91M" firstAttribute="trailing" secondItem="Uzd-f7-BV9" secondAttribute="trailing" constant="16" id="9sA-Gz-ds7"/>
+                            <constraint firstItem="Rhd-cl-91M" firstAttribute="trailing" secondItem="Uzd-f7-BV9" secondAttribute="trailing" id="9sA-Gz-ds7"/>
                             <constraint firstItem="Rhd-cl-91M" firstAttribute="bottom" secondItem="Uzd-f7-BV9" secondAttribute="bottom" id="Pkc-o4-Gkq"/>
                             <constraint firstItem="Rhd-cl-91M" firstAttribute="bottom" secondItem="cTN-cT-Ztb" secondAttribute="bottom" constant="16" id="TVy-gB-paF"/>
                             <constraint firstItem="Uzd-f7-BV9" firstAttribute="top" secondItem="Rhd-cl-91M" secondAttribute="top" id="WFI-rG-3p0"/>
                             <constraint firstItem="Rhd-cl-91M" firstAttribute="trailing" secondItem="cTN-cT-Ztb" secondAttribute="trailing" constant="16" id="XvF-gz-8aL"/>
-                            <constraint firstItem="Uzd-f7-BV9" firstAttribute="leading" secondItem="Rhd-cl-91M" secondAttribute="leading" constant="16" id="gfj-EQ-IWd"/>
+                            <constraint firstItem="Uzd-f7-BV9" firstAttribute="leading" secondItem="Rhd-cl-91M" secondAttribute="leading" id="gfj-EQ-IWd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Rhd-cl-91M"/>
                     </view>
@@ -53,7 +53,25 @@
             </objects>
             <point key="canvasLocation" x="398.55072463768118" y="-741.29464285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="rS2-wY-9gs">
+            <objects>
+                <tabBarController id="Znh-KR-zuf" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="37C-jT-yyd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="ixc-i9-YdJ"/>
+                        <segue destination="0LG-wR-3Vx" kind="relationship" relationship="viewControllers" id="OTA-aO-ZBt"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uhy-MU-uCo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1750" y="168"/>
+        </scene>
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="ZisakuZiten" customModuleProvider="target" sceneMemberID="viewController">
@@ -62,11 +80,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1vA-lf-Ex4">
-                                <rect key="frame" x="16" y="60" width="382" height="802"/>
+                                <rect key="frame" x="16" y="60" width="382" height="753"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdD-Br-p16" customClass="MDCFloatingButton">
-                                <rect key="frame" x="338" y="786" width="60" height="60"/>
+                                <rect key="frame" x="338" y="737" width="60" height="60"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="40U-eD-6Ma"/>
@@ -81,7 +99,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7h8-gA-NRc" customClass="MDCFloatingButton">
-                                <rect key="frame" x="338" y="710" width="60" height="60"/>
+                                <rect key="frame" x="338" y="661" width="60" height="60"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="K5u-WA-bah"/>
@@ -111,6 +129,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house" id="uzh-K1-T6A"/>
                     <connections>
                         <outlet property="tableView" destination="1vA-lf-Ex4" id="Cwv-Vg-Sy5"/>
                         <segue destination="qjd-WJ-vS8" kind="presentation" identifier="toZiten" modalPresentationStyle="fullScreen" id="AlG-fT-Q3t"/>
@@ -120,6 +139,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-10.144927536231885" y="76.339285714285708"/>
+        </scene>
+        <!--Play-->
+        <scene sceneID="903-eu-g0J">
+            <objects>
+                <viewController id="0LG-wR-3Vx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f4L-aU-z6I">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAY ACTIVITY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7I-KZ-foB">
+                                <rect key="frame" x="148" y="437.5" width="118" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Y7I-KZ-foB" firstAttribute="centerX" secondItem="f4L-aU-z6I" secondAttribute="centerX" id="Cl4-ut-ykY"/>
+                            <constraint firstItem="Y7I-KZ-foB" firstAttribute="centerY" secondItem="f4L-aU-z6I" secondAttribute="centerY" id="a0f-5Q-Uf2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VlQ-el-22Q"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Play" image="play" catalog="system" id="RSy-TW-H8L"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3HW-cG-lCh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-448" y="834"/>
         </scene>
         <!--Ziten View Controller-->
         <scene sceneID="S7i-YB-yFQ">
@@ -271,6 +318,8 @@
     </scenes>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="house" catalog="system" width="128" height="110"/>
+        <image name="play" catalog="system" width="120" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="tag" catalog="system" width="128" height="116"/>
     </resources>

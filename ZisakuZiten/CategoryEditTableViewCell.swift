@@ -10,8 +10,8 @@ import UIKit
 
 class CategoryEditTableViewCell: UITableViewCell {
     
-    @IBOutlet var titleTextField:UITextField!
-    @IBOutlet var used_countTextField:UITextField!
+    @IBOutlet var titleLabel:UILabel!
+    @IBOutlet var used_countLabel:UILabel!
     
     @IBOutlet weak var itemTagBodyView:UIView!
     @IBOutlet weak var itemTagHeadView:UIView!

@@ -30,7 +30,7 @@ class CreateCategoryDialogViewController: UIViewController, UIViewControllerTran
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.2)
+        view.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.3)
         // FIXME:ぼかし入れたいな
         dialogView.layer.cornerRadius = 13
         dialogView.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
@@ -44,6 +44,15 @@ class CreateCategoryDialogViewController: UIViewController, UIViewControllerTran
 
         colorBtn.layer.cornerRadius = 13
 
+    }
+    override func viewDidAppear(_ animated: Bool){
+        super.viewDidAppear(animated)
+//        view.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.2)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("viewWillAppear")
+//        view.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.2)
     }
     
     override init(nibName nibNameOrNil: String?, bundle ninBundleOrNil: Bundle?) {
@@ -121,6 +130,7 @@ class CreateCategoryDialogViewController: UIViewController, UIViewControllerTran
         try! realm.write(){
             realm.add(category)
         }
+    
     }
 
 
