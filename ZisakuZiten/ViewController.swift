@@ -170,12 +170,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let cell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as GroupTableViewCell!
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GroupTableViewCell
-        cell.backgroundColor = UIColor.white
+//        cell.backgroundColor = UIColor.white
 //        cell.layer.borderColor = UIColor.black.cgColor
-        cell.layer.borderColor = UIColor.gray.cgColor
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 8
-        cell.clipsToBounds = true
+//        cell.layer.borderColor = UIColor.white.cgColor
+//        cell.layer.borderWidth = 1
+//        cell.layer.cornerRadius = 8
+//        cell.clipsToBounds = true
 
         let group: Group = self.groupList[(indexPath as IndexPath).section]
         print(group.title)

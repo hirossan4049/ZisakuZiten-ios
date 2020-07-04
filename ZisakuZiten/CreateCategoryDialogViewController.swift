@@ -25,6 +25,8 @@ class CreateCategoryDialogViewController: UIViewController, UIViewControllerTran
     
     // 0(default): createMode, 1: EditMode
     var mode:Int = 0
+    let CREATEMODE:Int = 0
+    let EDITMODE:Int = 1
     // EditMode Only
     var createTime:Date!
 
@@ -94,7 +96,7 @@ class CreateCategoryDialogViewController: UIViewController, UIViewControllerTran
 
     func setValue(createTime:Date){
         let realm = try! Realm()
-        let category = realm.objects(Category.self).filter("createTime == %@", createTime)[0]
+        let category = realm.objects(Category.self).filter("createTime == %@", createTime).first!
         print(category)
         categoryItemTextField.text = category.title!
         categoryItemHeadView.backgroundColor = UIColor(hex:category.colorCode!, alpha:1)
@@ -126,9 +128,24 @@ class CreateCategoryDialogViewController: UIViewController, UIViewControllerTran
         let colorCode:String = categoryColorList[selectCategoryColorId]
         print(title)
         print(colorCode)
-        createCategory(title: title, colorCode: colorCode)
+        print(mode)
+        if (mode == CREATEMODE){
+            print("CREATE MODE")
+            createCategory(title: title, colorCode: colorCode)
+        }else if (mode == EDITMODE){
+            print("EDIT MODE")
+            updateCategory(title: title, colorCode: colorCode)
+        }
+
         self.dismiss(animated: false, completion: nil)
     }
+    
+    @IBAction func deleteBtnPrs(){
+        deleteCategory()
+        print("deleted")
+        self.dismiss(animated: false, completion: nil)
+    }
+    
     
     func createCategory(title:String, colorCode:String){
         let realm:Realm = try! Realm()
@@ -139,9 +156,25 @@ class CreateCategoryDialogViewController: UIViewController, UIViewControllerTran
         try! realm.write(){
             realm.add(category)
         }
-    
     }
-
+    
+    func updateCategory(title:String, colorCode:String){
+        let realm:Realm = try! Realm()
+        let category = realm.objects(Category.self).filter("createTime == %@", createTime).first!
+        try! realm.write(){
+            category.title = title
+            category.colorCode = colorCode
+        }
+        print("updated Category")
+    }
+    
+    func deleteCategory(){
+        let realm = try! Realm()
+        let category = realm.objects(Category.self).filter("createTime == %@", createTime).first!
+        try! realm.write(){
+            realm.delete(category)
+        }
+    }
 
 
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {

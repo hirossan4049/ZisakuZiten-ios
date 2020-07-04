@@ -13,10 +13,14 @@ class GroupTableViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var categoryLabel: UILabel!
     @IBOutlet var cateColorView: UIView!
+    @IBOutlet var categoryBodyColorView: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        categoryBodyColorView.layer.cornerRadius = 10
+        categoryBodyColorView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+        cateColorView.layer.cornerRadius = 0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

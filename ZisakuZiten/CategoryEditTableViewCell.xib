@@ -34,9 +34,8 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="カテゴリー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BbK-r5-Nqc">
-                                <rect key="frame" x="18" y="13" width="87" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カテゴリー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BbK-r5-Nqc">
+                                <rect key="frame" x="18" y="13" width="201" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -46,8 +45,11 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="hqg-wt-EIi" secondAttribute="bottom" id="7Zh-yy-mtM"/>
                             <constraint firstItem="hqg-wt-EIi" firstAttribute="leading" secondItem="D0n-qY-zU4" secondAttribute="leading" id="AAZ-Uq-ECU"/>
+                            <constraint firstAttribute="trailing" secondItem="BbK-r5-Nqc" secondAttribute="trailing" constant="8" id="JDj-Xs-gDk"/>
+                            <constraint firstItem="BbK-r5-Nqc" firstAttribute="leading" secondItem="hqg-wt-EIi" secondAttribute="trailing" constant="8" id="Jb4-sS-Li1"/>
                             <constraint firstItem="hqg-wt-EIi" firstAttribute="top" secondItem="D0n-qY-zU4" secondAttribute="top" id="K2j-uj-1dV"/>
                             <constraint firstAttribute="height" constant="60" id="gRE-KK-3f7"/>
+                            <constraint firstItem="BbK-r5-Nqc" firstAttribute="top" secondItem="D0n-qY-zU4" secondAttribute="top" constant="13" id="sud-NU-tOF"/>
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0U9-Nm-qgG" customClass="CategoryColorButton" customModule="ZisakuZiten" customModuleProvider="target">

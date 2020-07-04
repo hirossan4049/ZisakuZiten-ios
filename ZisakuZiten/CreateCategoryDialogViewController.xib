@@ -164,6 +164,9 @@
                             <rect key="frame" x="123" y="192" width="45" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Delete"/>
+                            <connections>
+                                <action selector="deleteBtnPrs" destination="-1" eventType="touchUpInside" id="F7r-ND-cYp"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
