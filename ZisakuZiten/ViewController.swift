@@ -176,6 +176,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        cell.layer.borderWidth = 1
 //        cell.layer.cornerRadius = 8
 //        cell.clipsToBounds = true
+        
+//        // 影の方向（width=右方向、height=下方向、CGSize.zero=方向指定なし）
+//        cell.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+//        // 影の色
+//        cell.layer.shadowColor = UIColor.black.cgColor
+//        // 影の濃さ
+//        cell.layer.shadowOpacity = 0.6
+//        // 影をぼかし
+//        cell.layer.shadowRadius = 4
 
         let group: Group = self.groupList[(indexPath as IndexPath).section]
         print(group.title)
@@ -188,7 +197,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     // spacing 間隔
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 10
+        return 2
     }
 
     // 背景透けるように
