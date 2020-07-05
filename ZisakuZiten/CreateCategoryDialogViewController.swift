@@ -83,14 +83,22 @@ class CreateCategoryDialogViewController: UIViewController, UIViewControllerTran
         }
 
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        presentingViewController?.beginAppearanceTransition(true, animated: animated)
+        presentingViewController?.endAppearanceTransition()
+    }
+
 
     override func viewDidAppear(_ animated: Bool){
         super.viewDidAppear(animated)
+        print("View Did Apper, CreateCategoryDialogViewContro;;rerererer")
 //        view.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.2)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("viewWillAppear")
+        print("viewWillAppear  CreateCategoryDialogViewContro;;rerererer")
 //        view.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.2)
     }
 

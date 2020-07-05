@@ -41,6 +41,13 @@ class CreateZitenViewController: UIViewController {
             contentTextField.text = ziten.content
         }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        presentingViewController?.beginAppearanceTransition(true, animated: animated)
+        presentingViewController?.endAppearanceTransition()
+    }
+
 
     func create_ziten(title: String, content: String) {
         print("辞典を登録しています.....")

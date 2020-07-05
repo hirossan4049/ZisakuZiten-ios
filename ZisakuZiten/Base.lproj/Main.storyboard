@@ -133,7 +133,7 @@
                     <connections>
                         <outlet property="tableView" destination="1vA-lf-Ex4" id="Cwv-Vg-Sy5"/>
                         <segue destination="qjd-WJ-vS8" kind="presentation" identifier="toZiten" modalPresentationStyle="fullScreen" id="AlG-fT-Q3t"/>
-                        <segue destination="TZl-gt-kYH" kind="presentation" identifier="toCategoryEdit" modalPresentationStyle="pageSheet" id="elm-lg-Hew"/>
+                        <segue destination="TZl-gt-kYH" kind="presentation" identifier="toCategoryEdit" modalPresentationStyle="automatic" id="elm-lg-Hew"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

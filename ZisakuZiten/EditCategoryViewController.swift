@@ -32,15 +32,15 @@ class EditCategoryViewController: UIViewController, UITableViewDelegate, UITable
     override func viewWillAppear(_ animated: Bool) {
          presentingViewController?.beginAppearanceTransition(false, animated: animated)
          super.viewWillAppear(animated)
-        
-        print("ViewWIllPAPPEER")
+        tableView.reloadData()
+        print("EDIT ViewWIllPAPPEER")
      }
     
 
     @IBAction func createCatPrs() {
         let alertView = CreateCategoryDialogViewController()
         alertView.modalTransitionStyle = .crossDissolve
-//        alertView.modalPresentationStyle = .fullScreen
+        alertView.modalPresentationStyle = .overCurrentContext
         present(alertView, animated: true, completion: nil)
         print("CreateCatPress")
     }
