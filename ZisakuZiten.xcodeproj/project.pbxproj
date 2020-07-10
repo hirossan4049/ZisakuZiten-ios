@@ -11,6 +11,7 @@
 		1ED0FF00FACB1A940F7A7EDF /* Pods_ZisakuZiten_ZisakuZitenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2317EC509AFE1F37142D0597 /* Pods_ZisakuZiten_ZisakuZitenUITests.framework */; };
 		8136D6BD8420788BE2B2311E /* Pods_ZisakuZiten.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E6717DA6FB73D645000A58 /* Pods_ZisakuZiten.framework */; };
 		D358122424AD60900042FEA7 /* CategoryColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D358122324AD60900042FEA7 /* CategoryColors.swift */; };
+		D37AED8424B84663001E6302 /* UIImage+resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37AED8324B84663001E6302 /* UIImage+resize.swift */; };
 		D3A6A4DB24A26CBB00CF6C87 /* EditCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A6A4D924A26CBB00CF6C87 /* EditCategoryViewController.swift */; };
 		D3A6A4DF24A36FC800CF6C87 /* CategoryEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A6A4DD24A36FC800CF6C87 /* CategoryEditTableViewCell.swift */; };
 		D3A6A4E024A36FC800CF6C87 /* CategoryEditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3A6A4DE24A36FC800CF6C87 /* CategoryEditTableViewCell.xib */; };
@@ -64,6 +65,7 @@
 		6A8D1B79B4FDB77B5BF64472 /* Pods-ZisakuZitenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZisakuZitenTests.debug.xcconfig"; path = "Target Support Files/Pods-ZisakuZitenTests/Pods-ZisakuZitenTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9F53344879C4469E50AF8A01 /* Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig"; path = "Target Support Files/Pods-ZisakuZiten-ZisakuZitenUITests/Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D358122324AD60900042FEA7 /* CategoryColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColors.swift; sourceTree = "<group>"; };
+		D37AED8324B84663001E6302 /* UIImage+resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+resize.swift"; sourceTree = "<group>"; };
 		D3A6A4D924A26CBB00CF6C87 /* EditCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryViewController.swift; sourceTree = "<group>"; };
 		D3A6A4DD24A36FC800CF6C87 /* CategoryEditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEditTableViewCell.swift; sourceTree = "<group>"; };
 		D3A6A4DE24A36FC800CF6C87 /* CategoryEditTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryEditTableViewCell.xib; sourceTree = "<group>"; };
@@ -148,6 +150,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D37AED8224B84631001E6302 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D37AED8324B84663001E6302 /* UIImage+resize.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D3AB70A7249F076A00DFDDB7 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +183,7 @@
 		D3AB70B2249F076A00DFDDB7 /* ZisakuZiten */ = {
 			isa = PBXGroup;
 			children = (
+				D37AED8224B84631001E6302 /* Extensions */,
 				D3AB70B3249F076A00DFDDB7 /* AppDelegate.swift */,
 				D3AB70B5249F076A00DFDDB7 /* SceneDelegate.swift */,
 				D3AB70B7249F076A00DFDDB7 /* ViewController.swift */,
@@ -463,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3AB70F6249F888800DFDDB7 /* Ziten.swift in Sources */,
+				D37AED8424B84663001E6302 /* UIImage+resize.swift in Sources */,
 				D3AB70F4249F66DE00DFDDB7 /* Group.swift in Sources */,
 				D3AB70F1249F3A8B00DFDDB7 /* ZitenTableViewCell.swift in Sources */,
 				D3A6A4DF24A36FC800CF6C87 /* CategoryEditTableViewCell.swift in Sources */,

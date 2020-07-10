@@ -8,8 +8,9 @@
 
 import UIKit
 import RealmSwift
+import SwipeCellKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate {
 
     let cellReuseIdentifier = "cell"
     var groupList: Results<Group>!
@@ -170,6 +171,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let cell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as GroupTableViewCell!
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GroupTableViewCell
+        
+
+        cell.delegate = self
 //        cell.backgroundColor = UIColor.white
 //        cell.layer.borderColor = UIColor.black.cgColor
 //        cell.layer.borderColor = UIColor.white.cgColor
@@ -207,33 +211,66 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return headerView
     }
 
-    // 右から左へスワイプ
-    @available(iOS 11.0, *)
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//    // 右から左へスワイプ
+//    @available(iOS 11.0, *)
+//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//
+//        let editAction = UIContextualAction(style: .normal,
+//                title: "Edit",
+//                handler: { (action: UIContextualAction, view: UIView, completion: (Bool) -> Void) in
+//                    print("Edit")
+//                    // 処理を実行完了した場合はtrue
+//                    self.updateGroupDialog(title: self.groupList[indexPath.section].title!, id: indexPath.section)
+//                    completion(true)
+//                })
+//        editAction.backgroundColor = UIColor(red: 101 / 255.0, green: 198 / 255.0, blue: 187 / 255.0, alpha: 1)
+//
+//        let deleteAction = UIContextualAction(style: .destructive,
+//                title: "Delete",
+//                handler: { (action: UIContextualAction, view: UIView, completion: (Bool) -> Void) in
+//                    print("Delete")
+//                    // 処理を実行できなかった場合はfalse
+//                    self.deleteGroup(id: indexPath.section)
+//
+//                    completion(false)
+//                })
+//        deleteAction.backgroundColor = UIColor(red: 214 / 255.0, green: 69 / 255.0, blue: 65 / 255.0, alpha: 1)
+//        
+//
+//        return UISwipeActionsConfiguration(actions: [editAction, deleteAction])
+//    }
+//    
+    // CELL EDIT
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+        print("CELL EDIT")
 
-        let editAction = UIContextualAction(style: .normal,
-                title: "Edit",
-                handler: { (action: UIContextualAction, view: UIView, completion: (Bool) -> Void) in
-                    print("Edit")
-                    // 処理を実行完了した場合はtrue
-                    self.updateGroupDialog(title: self.groupList[indexPath.section].title!, id: indexPath.section)
-                    completion(true)
-                })
-        editAction.backgroundColor = UIColor(red: 101 / 255.0, green: 198 / 255.0, blue: 187 / 255.0, alpha: 1)
+        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in }
+        var img = UIImage(named: "delete")
+        img?.resize(size: CGSize(width: 1, height: 11))
+        deleteAction.image = img
 
-        let deleteAction = UIContextualAction(style: .destructive,
-                title: "Delete",
-                handler: { (action: UIContextualAction, view: UIView, completion: (Bool) -> Void) in
-                    print("Delete")
-                    // 処理を実行できなかった場合はfalse
-                    self.deleteGroup(id: indexPath.section)
 
-                    completion(false)
-                })
-        deleteAction.backgroundColor = UIColor(red: 214 / 255.0, green: 69 / 255.0, blue: 65 / 255.0, alpha: 1)
+        deleteAction.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+        
 
-        return UISwipeActionsConfiguration(actions: [editAction, deleteAction])
+        return [deleteAction]
     }
+    
+    // option
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeOptions()
+        options.expansionStyle = .destructive
+        options.transitionStyle = .border
+        return options
+    }
+    // trueを返すことでCellのアクションを許可しています
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+
+    
 
     // onpress
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

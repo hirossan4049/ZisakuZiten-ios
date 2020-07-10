@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-class GroupTableViewCell: UITableViewCell {
+//class GroupTableViewCell: UITableViewCell {
+class GroupTableViewCell: SwipeTableViewCell {
+
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var categoryLabel: UILabel!
