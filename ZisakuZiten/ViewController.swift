@@ -245,10 +245,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         guard orientation == .right else { return nil }
         print("CELL EDIT")
 
-        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in }
-        var img = UIImage(named: "delete")
-        img?.resize(size: CGSize(width: 1, height: 11))
-        deleteAction.image = img
+        let deleteAction = SwipeAction(style: .default, title: "Delete") { action, indexPath in return}
+//        var img = UIImage(named: "del_sample")
+//        img?.resize(size: CGSize(width: 100, height: 11))
+        deleteAction.transitionDelegate = ScaleTransition.default
+        
+        deleteAction.image = UIImage(named: "del_sample")
+        deleteAction.title = nil
 
 
         deleteAction.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
