@@ -11,6 +11,8 @@
 		1ED0FF00FACB1A940F7A7EDF /* Pods_ZisakuZiten_ZisakuZitenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2317EC509AFE1F37142D0597 /* Pods_ZisakuZiten_ZisakuZitenUITests.framework */; };
 		8136D6BD8420788BE2B2311E /* Pods_ZisakuZiten.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E6717DA6FB73D645000A58 /* Pods_ZisakuZiten.framework */; };
 		D358122424AD60900042FEA7 /* CategoryColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D358122324AD60900042FEA7 /* CategoryColors.swift */; };
+		D36418D224C13BA2009E0499 /* PlaySelectItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36418D024C13BA2009E0499 /* PlaySelectItemTableViewCell.swift */; };
+		D36418D324C13BA2009E0499 /* PlaySelectItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36418D124C13BA2009E0499 /* PlaySelectItemTableViewCell.xib */; };
 		D37AED8424B84663001E6302 /* UIImage+resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37AED8324B84663001E6302 /* UIImage+resize.swift */; };
 		D3A6A4DB24A26CBB00CF6C87 /* EditCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A6A4D924A26CBB00CF6C87 /* EditCategoryViewController.swift */; };
 		D3A6A4DF24A36FC800CF6C87 /* CategoryEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A6A4DD24A36FC800CF6C87 /* CategoryEditTableViewCell.swift */; };
@@ -36,6 +38,7 @@
 		D3AB70F8249F88E400DFDDB7 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70F7249F88E400DFDDB7 /* Category.swift */; };
 		D3AB70FA24A09A9A00DFDDB7 /* ZitenEditerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70F924A09A9A00DFDDB7 /* ZitenEditerViewController.swift */; };
 		D3AB70FE24A113E200DFDDB7 /* ZitenPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70FD24A113E200DFDDB7 /* ZitenPreviewViewController.swift */; };
+		D3F79FFE24BEFB3500127E7A /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F79FFD24BEFB3500127E7A /* PlayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,8 @@
 		6A8D1B79B4FDB77B5BF64472 /* Pods-ZisakuZitenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZisakuZitenTests.debug.xcconfig"; path = "Target Support Files/Pods-ZisakuZitenTests/Pods-ZisakuZitenTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9F53344879C4469E50AF8A01 /* Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig"; path = "Target Support Files/Pods-ZisakuZiten-ZisakuZitenUITests/Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D358122324AD60900042FEA7 /* CategoryColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColors.swift; sourceTree = "<group>"; };
+		D36418D024C13BA2009E0499 /* PlaySelectItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySelectItemTableViewCell.swift; sourceTree = "<group>"; };
+		D36418D124C13BA2009E0499 /* PlaySelectItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaySelectItemTableViewCell.xib; sourceTree = "<group>"; };
 		D37AED8324B84663001E6302 /* UIImage+resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+resize.swift"; sourceTree = "<group>"; };
 		D3A6A4D924A26CBB00CF6C87 /* EditCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryViewController.swift; sourceTree = "<group>"; };
 		D3A6A4DD24A36FC800CF6C87 /* CategoryEditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEditTableViewCell.swift; sourceTree = "<group>"; };
@@ -96,6 +101,7 @@
 		D3AB70F7249F88E400DFDDB7 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		D3AB70F924A09A9A00DFDDB7 /* ZitenEditerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZitenEditerViewController.swift; sourceTree = "<group>"; };
 		D3AB70FD24A113E200DFDDB7 /* ZitenPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZitenPreviewViewController.swift; sourceTree = "<group>"; };
+		D3F79FFD24BEFB3500127E7A /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		E96D2E82B4094384A88DED24 /* Pods-ZisakuZiten.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZisakuZiten.debug.xcconfig"; path = "Target Support Files/Pods-ZisakuZiten/Pods-ZisakuZiten.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,10 +189,16 @@
 		D3AB70B2249F076A00DFDDB7 /* ZisakuZiten */ = {
 			isa = PBXGroup;
 			children = (
+				D3F79FFF24BEFB4000127E7A /* Play */,
+				D3F79FC424BD4EEA00127E7A /* CategoryView */,
+				D3F79FC324BD4CE300127E7A /* Model */,
 				D37AED8224B84631001E6302 /* Extensions */,
 				D3AB70B3249F076A00DFDDB7 /* AppDelegate.swift */,
 				D3AB70B5249F076A00DFDDB7 /* SceneDelegate.swift */,
 				D3AB70B7249F076A00DFDDB7 /* ViewController.swift */,
+				D3AB70F3249F66DE00DFDDB7 /* Group.swift */,
+				D3AB70F5249F888800DFDDB7 /* Ziten.swift */,
+				D3AB70F7249F88E400DFDDB7 /* Category.swift */,
 				D3AB70B9249F076A00DFDDB7 /* Main.storyboard */,
 				D3AB70BC249F076B00DFDDB7 /* Assets.xcassets */,
 				D3AB70BE249F076B00DFDDB7 /* LaunchScreen.storyboard */,
@@ -196,17 +208,8 @@
 				D3AB70ED249F2B1A00DFDDB7 /* ZitenViewController.swift */,
 				D3AB70EF249F3A8B00DFDDB7 /* ZitenTableViewCell.swift */,
 				D3AB70F0249F3A8B00DFDDB7 /* ZitenTableViewCell.xib */,
-				D3AB70F3249F66DE00DFDDB7 /* Group.swift */,
-				D3AB70F5249F888800DFDDB7 /* Ziten.swift */,
-				D3AB70F7249F88E400DFDDB7 /* Category.swift */,
 				D3AB70F924A09A9A00DFDDB7 /* ZitenEditerViewController.swift */,
 				D3AB70FD24A113E200DFDDB7 /* ZitenPreviewViewController.swift */,
-				D3A96A9824A1F0D70053639B /* CreateCategoryDialogViewController.swift */,
-				D3A96A9924A1F0D70053639B /* CreateCategoryDialogViewController.xib */,
-				D3A6A4D924A26CBB00CF6C87 /* EditCategoryViewController.swift */,
-				D3A6A4DD24A36FC800CF6C87 /* CategoryEditTableViewCell.swift */,
-				D3A6A4DE24A36FC800CF6C87 /* CategoryEditTableViewCell.xib */,
-				D3A6A4E124A640FA00CF6C87 /* CategoryColorButton.swift */,
 				D358122324AD60900042FEA7 /* CategoryColors.swift */,
 			);
 			path = ZisakuZiten;
@@ -228,6 +231,36 @@
 				D3AB70D7249F076B00DFDDB7 /* Info.plist */,
 			);
 			path = ZisakuZitenUITests;
+			sourceTree = "<group>";
+		};
+		D3F79FC324BD4CE300127E7A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D3F79FC424BD4EEA00127E7A /* CategoryView */ = {
+			isa = PBXGroup;
+			children = (
+				D3A96A9824A1F0D70053639B /* CreateCategoryDialogViewController.swift */,
+				D3A96A9924A1F0D70053639B /* CreateCategoryDialogViewController.xib */,
+				D3A6A4D924A26CBB00CF6C87 /* EditCategoryViewController.swift */,
+				D3A6A4DD24A36FC800CF6C87 /* CategoryEditTableViewCell.swift */,
+				D3A6A4DE24A36FC800CF6C87 /* CategoryEditTableViewCell.xib */,
+				D3A6A4E124A640FA00CF6C87 /* CategoryColorButton.swift */,
+			);
+			path = CategoryView;
+			sourceTree = "<group>";
+		};
+		D3F79FFF24BEFB4000127E7A /* Play */ = {
+			isa = PBXGroup;
+			children = (
+				D3F79FFD24BEFB3500127E7A /* PlayViewController.swift */,
+				D36418D024C13BA2009E0499 /* PlaySelectItemTableViewCell.swift */,
+				D36418D124C13BA2009E0499 /* PlaySelectItemTableViewCell.xib */,
+			);
+			path = Play;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +372,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D36418D324C13BA2009E0499 /* PlaySelectItemTableViewCell.xib in Resources */,
 				D3AB70C0249F076B00DFDDB7 /* LaunchScreen.storyboard in Resources */,
 				D3AB70BD249F076B00DFDDB7 /* Assets.xcassets in Resources */,
 				D3AB70F2249F3A8B00DFDDB7 /* ZitenTableViewCell.xib in Resources */,
@@ -473,6 +507,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D36418D224C13BA2009E0499 /* PlaySelectItemTableViewCell.swift in Sources */,
 				D3AB70F6249F888800DFDDB7 /* Ziten.swift in Sources */,
 				D37AED8424B84663001E6302 /* UIImage+resize.swift in Sources */,
 				D3AB70F4249F66DE00DFDDB7 /* Group.swift in Sources */,
@@ -483,6 +518,7 @@
 				D3A96A9A24A1F0D70053639B /* CreateCategoryDialogViewController.swift in Sources */,
 				D3AB70EE249F2B1A00DFDDB7 /* ZitenViewController.swift in Sources */,
 				D3AB70B8249F076A00DFDDB7 /* ViewController.swift in Sources */,
+				D3F79FFE24BEFB3500127E7A /* PlayViewController.swift in Sources */,
 				D3AB70F8249F88E400DFDDB7 /* Category.swift in Sources */,
 				D3AB70B4249F076A00DFDDB7 /* AppDelegate.swift in Sources */,
 				D3AB70FE24A113E200DFDDB7 /* ZitenPreviewViewController.swift in Sources */,
