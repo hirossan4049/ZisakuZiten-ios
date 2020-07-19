@@ -165,7 +165,7 @@
                     <tabBarItem key="tabBarItem" title="Play" image="play" catalog="system" id="RSy-TW-H8L"/>
                     <connections>
                         <outlet property="tableView" destination="xlb-Dz-vM9" id="Vyy-xs-NHq"/>
-                        <segue destination="422-YN-Cg0" kind="presentation" identifier="toQuiz" modalPresentationStyle="fullScreen" id="srw-rX-xZB"/>
+                        <segue destination="422-YN-Cg0" kind="presentation" identifier="" modalPresentationStyle="fullScreen" id="srw-rX-xZB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3HW-cG-lCh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -175,7 +175,7 @@
         <!--test-->
         <scene sceneID="uo0-Mh-b2W">
             <objects>
-                <viewController title="test" modalTransitionStyle="crossDissolve" id="ShM-4q-2gN" customClass="QuizViewController" customModule="ZisakuZiten" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="toQuiz" title="test" modalTransitionStyle="crossDissolve" id="ShM-4q-2gN" customClass="QuizViewController" customModule="ZisakuZiten" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jy2-PZ-7Ga">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

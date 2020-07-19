@@ -61,6 +61,8 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         print(tableView.tag)
 //        self.performSegue(withIdentifier: "toQuiz", sender: nil)
         let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "toQuiz") as! QuizViewController
+        //self.navigationController = UINavigationController(rootViewController: self)
+        print(self.navigationController)
         self.navigationController?.pushViewController(secondViewController, animated: true)
 
 

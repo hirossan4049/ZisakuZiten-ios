@@ -13,10 +13,11 @@ protocol SwipeBackable {
 }
 
 
-class QuizViewController: UIViewController, UIGestureRecognizerDelegate {
+class QuizViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("HEY! QUIZ VIEW CONTROLLER")
 //        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
 //        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
 
