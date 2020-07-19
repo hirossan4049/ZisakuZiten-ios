@@ -14,6 +14,10 @@
 		D36418D224C13BA2009E0499 /* PlaySelectItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36418D024C13BA2009E0499 /* PlaySelectItemTableViewCell.swift */; };
 		D36418D324C13BA2009E0499 /* PlaySelectItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36418D124C13BA2009E0499 /* PlaySelectItemTableViewCell.xib */; };
 		D37AED8424B84663001E6302 /* UIImage+resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37AED8324B84663001E6302 /* UIImage+resize.swift */; };
+		D39FC4E924C3DEB000C4C0A1 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FC4E824C3DEB000C4C0A1 /* Playlist.swift */; };
+		D39FC4EC24C3E76400C4C0A1 /* UIView+asImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FC4EB24C3E76400C4C0A1 /* UIView+asImage.swift */; };
+		D39FC4EF24C403F800C4C0A1 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FC4EE24C403F800C4C0A1 /* QuizViewController.swift */; };
+		D39FC4F124C408E800C4C0A1 /* QuizNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FC4F024C408E800C4C0A1 /* QuizNavigationController.swift */; };
 		D3A6A4DB24A26CBB00CF6C87 /* EditCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A6A4D924A26CBB00CF6C87 /* EditCategoryViewController.swift */; };
 		D3A6A4DF24A36FC800CF6C87 /* CategoryEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A6A4DD24A36FC800CF6C87 /* CategoryEditTableViewCell.swift */; };
 		D3A6A4E024A36FC800CF6C87 /* CategoryEditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3A6A4DE24A36FC800CF6C87 /* CategoryEditTableViewCell.xib */; };
@@ -71,6 +75,10 @@
 		D36418D024C13BA2009E0499 /* PlaySelectItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySelectItemTableViewCell.swift; sourceTree = "<group>"; };
 		D36418D124C13BA2009E0499 /* PlaySelectItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaySelectItemTableViewCell.xib; sourceTree = "<group>"; };
 		D37AED8324B84663001E6302 /* UIImage+resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+resize.swift"; sourceTree = "<group>"; };
+		D39FC4E824C3DEB000C4C0A1 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		D39FC4EB24C3E76400C4C0A1 /* UIView+asImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+asImage.swift"; sourceTree = "<group>"; };
+		D39FC4EE24C403F800C4C0A1 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		D39FC4F024C408E800C4C0A1 /* QuizNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizNavigationController.swift; sourceTree = "<group>"; };
 		D3A6A4D924A26CBB00CF6C87 /* EditCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryViewController.swift; sourceTree = "<group>"; };
 		D3A6A4DD24A36FC800CF6C87 /* CategoryEditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEditTableViewCell.swift; sourceTree = "<group>"; };
 		D3A6A4DE24A36FC800CF6C87 /* CategoryEditTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryEditTableViewCell.xib; sourceTree = "<group>"; };
@@ -160,8 +168,25 @@
 			isa = PBXGroup;
 			children = (
 				D37AED8324B84663001E6302 /* UIImage+resize.swift */,
+				D39FC4EB24C3E76400C4C0A1 /* UIView+asImage.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D39FC4E724C3D9A700C4C0A1 /* MainQuiz */ = {
+			isa = PBXGroup;
+			children = (
+				D39FC4EE24C403F800C4C0A1 /* QuizViewController.swift */,
+				D39FC4F024C408E800C4C0A1 /* QuizNavigationController.swift */,
+			);
+			path = MainQuiz;
+			sourceTree = "<group>";
+		};
+		D39FC4ED24C3F1DC00C4C0A1 /* FlashCard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FlashCard;
 			sourceTree = "<group>";
 		};
 		D3AB70A7249F076A00DFDDB7 = {
@@ -196,9 +221,6 @@
 				D3AB70B3249F076A00DFDDB7 /* AppDelegate.swift */,
 				D3AB70B5249F076A00DFDDB7 /* SceneDelegate.swift */,
 				D3AB70B7249F076A00DFDDB7 /* ViewController.swift */,
-				D3AB70F3249F66DE00DFDDB7 /* Group.swift */,
-				D3AB70F5249F888800DFDDB7 /* Ziten.swift */,
-				D3AB70F7249F88E400DFDDB7 /* Category.swift */,
 				D3AB70B9249F076A00DFDDB7 /* Main.storyboard */,
 				D3AB70BC249F076B00DFDDB7 /* Assets.xcassets */,
 				D3AB70BE249F076B00DFDDB7 /* LaunchScreen.storyboard */,
@@ -236,6 +258,10 @@
 		D3F79FC324BD4CE300127E7A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D3AB70F3249F66DE00DFDDB7 /* Group.swift */,
+				D3AB70F5249F888800DFDDB7 /* Ziten.swift */,
+				D3AB70F7249F88E400DFDDB7 /* Category.swift */,
+				D39FC4E824C3DEB000C4C0A1 /* Playlist.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -256,6 +282,8 @@
 		D3F79FFF24BEFB4000127E7A /* Play */ = {
 			isa = PBXGroup;
 			children = (
+				D39FC4ED24C3F1DC00C4C0A1 /* FlashCard */,
+				D39FC4E724C3D9A700C4C0A1 /* MainQuiz */,
 				D3F79FFD24BEFB3500127E7A /* PlayViewController.swift */,
 				D36418D024C13BA2009E0499 /* PlaySelectItemTableViewCell.swift */,
 				D36418D124C13BA2009E0499 /* PlaySelectItemTableViewCell.xib */,
@@ -512,10 +540,13 @@
 				D37AED8424B84663001E6302 /* UIImage+resize.swift in Sources */,
 				D3AB70F4249F66DE00DFDDB7 /* Group.swift in Sources */,
 				D3AB70F1249F3A8B00DFDDB7 /* ZitenTableViewCell.swift in Sources */,
+				D39FC4F124C408E800C4C0A1 /* QuizNavigationController.swift in Sources */,
 				D3A6A4DF24A36FC800CF6C87 /* CategoryEditTableViewCell.swift in Sources */,
 				D3AB70FA24A09A9A00DFDDB7 /* ZitenEditerViewController.swift in Sources */,
+				D39FC4EF24C403F800C4C0A1 /* QuizViewController.swift in Sources */,
 				D3A6A4DB24A26CBB00CF6C87 /* EditCategoryViewController.swift in Sources */,
 				D3A96A9A24A1F0D70053639B /* CreateCategoryDialogViewController.swift in Sources */,
+				D39FC4EC24C3E76400C4C0A1 /* UIView+asImage.swift in Sources */,
 				D3AB70EE249F2B1A00DFDDB7 /* ZitenViewController.swift in Sources */,
 				D3AB70B8249F076A00DFDDB7 /* ViewController.swift in Sources */,
 				D3F79FFE24BEFB3500127E7A /* PlayViewController.swift in Sources */,
@@ -526,6 +557,7 @@
 				D3A6A4E224A640FA00CF6C87 /* CategoryColorButton.swift in Sources */,
 				D3AB70EB249F1EE700DFDDB7 /* GroupTableViewCell.swift in Sources */,
 				D358122424AD60900042FEA7 /* CategoryColors.swift in Sources */,
+				D39FC4E924C3DEB000C4C0A1 /* Playlist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,6 +17,7 @@ class GroupTableViewCell: SwipeTableViewCell {
     @IBOutlet var categoryLabel: UILabel!
     @IBOutlet var cateColorView: UIView!
     @IBOutlet var categoryBodyColorView: UIView!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,6 +39,8 @@ class GroupTableViewCell: SwipeTableViewCell {
         categoryBodyColorView.layer.shadowOpacity = 0.3
         // 影をぼかし
         categoryBodyColorView.layer.shadowRadius = 2
+        
+//        self.CELL_HIGHT = self.bounds.height
         
     }
 

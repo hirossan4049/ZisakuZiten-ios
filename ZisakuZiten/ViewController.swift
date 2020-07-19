@@ -16,10 +16,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var groupList: Results<Group>!
     var clicked_group: Group!
     @IBOutlet var tableView: UITableView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         print("View controller")
+        
+        
         // Do any additional setup after loading the view.
         let nib = UINib(nibName: "GroupTableViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: cellReuseIdentifier)
@@ -244,20 +247,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         guard orientation == .right else { return nil }
         print("CELL EDIT")
+        print(indexPath)
 
-        let deleteAction = SwipeAction(style: .default, title: "Delete") { action, indexPath in return}
-//        var img = UIImage(named: "del_sample")
-//        img?.resize(size: CGSize(width: 100, height: 11))
+        let row = tableView.cellForRow(at: indexPath)
+        let cellHeight = (row?.bounds.height)!
+
+        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in 
+            action.fulfill(with: .reset)
+        }
+        let img = UIImage(named: "del_sample")
+        let resized_img = img?.resize(size: CGSize(width: cellHeight + 10, height: cellHeight))
         deleteAction.transitionDelegate = ScaleTransition.default
         
-        deleteAction.image = UIImage(named: "del_sample")
+//        deleteAction.image = UIImage(named: "del_sample")
+        
+        deleteAction.image = resized_img
         deleteAction.title = nil
 
-
-        deleteAction.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+        deleteAction.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         
 
-        return [deleteAction]
+        return [deleteAction,deleteAction,deleteAction]
     }
     
     // option

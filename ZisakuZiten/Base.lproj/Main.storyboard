@@ -143,7 +143,7 @@
         <!--Play-->
         <scene sceneID="903-eu-g0J">
             <objects>
-                <viewController id="0LG-wR-3Vx" customClass="PlayViewController" customModule="ZisakuZiten" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="0LG-wR-3Vx" customClass="PlayViewController" customModule="ZisakuZiten" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f4L-aU-z6I">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -165,11 +165,72 @@
                     <tabBarItem key="tabBarItem" title="Play" image="play" catalog="system" id="RSy-TW-H8L"/>
                     <connections>
                         <outlet property="tableView" destination="xlb-Dz-vM9" id="Vyy-xs-NHq"/>
+                        <segue destination="422-YN-Cg0" kind="presentation" identifier="toQuiz" modalPresentationStyle="fullScreen" id="srw-rX-xZB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3HW-cG-lCh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-462" y="748"/>
+        </scene>
+        <!--test-->
+        <scene sceneID="uo0-Mh-b2W">
+            <objects>
+                <viewController title="test" modalTransitionStyle="crossDissolve" id="ShM-4q-2gN" customClass="QuizViewController" customModule="ZisakuZiten" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jy2-PZ-7Ga">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Thc-j8-ZF0">
+                                <rect key="frame" x="86" y="127" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="yEg-9I-0KS"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="so7-nq-G2I">
+                        <barButtonItem key="leftBarButtonItem" title="back" id="mqn-ie-fEa">
+                            <connections>
+                                <action selector="back" destination="ShM-4q-2gN" id="XAf-q7-rre"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o9p-Eu-hxS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1644.9275362318842" y="1530.8035714285713"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="egu-cG-7vo">
+            <objects>
+                <viewController id="kOF-VA-biI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C60-Ho-XSz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iha-pV-tYV">
+                                <rect key="frame" x="57" y="323" width="300" height="250"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="ZwQ-BI-QTq"/>
+                                    <constraint firstAttribute="height" constant="250" id="pO5-aY-Mh2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iha-pV-tYV" firstAttribute="centerY" secondItem="C60-Ho-XSz" secondAttribute="centerY" id="PRf-P8-Ldx"/>
+                            <constraint firstItem="iha-pV-tYV" firstAttribute="centerX" secondItem="C60-Ho-XSz" secondAttribute="centerX" id="ply-Z5-O4T"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MCf-DC-aj3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ns-Xo-z4N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2786.9565217391305" y="1530.8035714285713"/>
         </scene>
         <!--Ziten View Controller-->
         <scene sceneID="S7i-YB-yFQ">
@@ -317,6 +378,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vtz-uU-2dW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1878" y="27"/>
+        </scene>
+        <!--Quiz Navigation Controller-->
+        <scene sceneID="njG-bG-LbA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="422-YN-Cg0" customClass="QuizNavigationController" customModule="ZisakuZiten" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OB2-tE-dxp">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ShM-4q-2gN" kind="relationship" relationship="rootViewController" id="I2W-9o-DFA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1dG-K7-U9R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="734.78260869565224" y="1530.8035714285713"/>
         </scene>
     </scenes>
     <resources>
