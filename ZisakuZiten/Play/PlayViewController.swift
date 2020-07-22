@@ -44,7 +44,7 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     // spacing 間隔
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 10
+        return 30
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -60,7 +60,10 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.deselectRow(at: indexPath, animated: true)
         print(tableView.tag)
 //        self.performSegue(withIdentifier: "toQuiz", sender: nil)
+//        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "toQuiz") as! QuizNavigationController
         let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "toQuiz") as! QuizViewController
+        
+
         //self.navigationController = UINavigationController(rootViewController: self)
         print(self.navigationController)
         self.navigationController?.pushViewController(secondViewController, animated: true)

@@ -23,6 +23,7 @@ class PlaySelectItemTableViewCell: UITableViewCell {
         // Initialization code
 
         BodyView.layer.cornerRadius = 15
+        plyimageView.layer.cornerRadius = 15
 //        plyimageView.layer.cornerRadius = 15
         
 //        BodyView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
@@ -35,7 +36,7 @@ class PlaySelectItemTableViewCell: UITableViewCell {
         // 影の濃さ
         BodyView.layer.shadowOpacity = 0.3
         // 影をぼかし
-        BodyView.layer.shadowRadius = 2
+        BodyView.layer.shadowRadius = 6
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -43,6 +43,7 @@
 		D3AB70FA24A09A9A00DFDDB7 /* ZitenEditerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70F924A09A9A00DFDDB7 /* ZitenEditerViewController.swift */; };
 		D3AB70FE24A113E200DFDDB7 /* ZitenPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70FD24A113E200DFDDB7 /* ZitenPreviewViewController.swift */; };
 		D3F79FFE24BEFB3500127E7A /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F79FFD24BEFB3500127E7A /* PlayViewController.swift */; };
+		D3FEFFDA24C8E0FD0069A356 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FEFFD924C8E0FD0069A356 /* MainTabViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		D3AB70F924A09A9A00DFDDB7 /* ZitenEditerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZitenEditerViewController.swift; sourceTree = "<group>"; };
 		D3AB70FD24A113E200DFDDB7 /* ZitenPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZitenPreviewViewController.swift; sourceTree = "<group>"; };
 		D3F79FFD24BEFB3500127E7A /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		D3FEFFD924C8E0FD0069A356 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		E96D2E82B4094384A88DED24 /* Pods-ZisakuZiten.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZisakuZiten.debug.xcconfig"; path = "Target Support Files/Pods-ZisakuZiten/Pods-ZisakuZiten.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -233,6 +235,7 @@
 				D3AB70F924A09A9A00DFDDB7 /* ZitenEditerViewController.swift */,
 				D3AB70FD24A113E200DFDDB7 /* ZitenPreviewViewController.swift */,
 				D358122324AD60900042FEA7 /* CategoryColors.swift */,
+				D3FEFFD924C8E0FD0069A356 /* MainTabViewController.swift */,
 			);
 			path = ZisakuZiten;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				D3F79FFE24BEFB3500127E7A /* PlayViewController.swift in Sources */,
 				D3AB70F8249F88E400DFDDB7 /* Category.swift in Sources */,
 				D3AB70B4249F076A00DFDDB7 /* AppDelegate.swift in Sources */,
+				D3FEFFDA24C8E0FD0069A356 /* MainTabViewController.swift in Sources */,
 				D3AB70FE24A113E200DFDDB7 /* ZitenPreviewViewController.swift in Sources */,
 				D3AB70B6249F076A00DFDDB7 /* SceneDelegate.swift in Sources */,
 				D3A6A4E224A640FA00CF6C87 /* CategoryColorButton.swift in Sources */,
