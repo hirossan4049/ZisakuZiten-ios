@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Znh-KR-zuf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Znh-KR-zuf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -11,7 +11,7 @@
         <!--Edit Category View Controller-->
         <scene sceneID="wS5-1d-HxJ">
             <objects>
-                <viewController id="TZl-gt-kYH" customClass="EditCategoryViewController" customModule="ZisakuZiten" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TZl-gt-kYH" customClass="EditCategoryViewController" customModule="自作辞典" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BLp-Mt-qBG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,7 +56,7 @@
         <!--Main Tab View Controller-->
         <scene sceneID="rS2-wY-9gs">
             <objects>
-                <tabBarController id="Znh-KR-zuf" customClass="MainTabViewController" customModule="ZisakuZiten" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="Znh-KR-zuf" customClass="MainTabViewController" customModule="自作辞典" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="37C-jT-yyd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -91,7 +91,7 @@
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="ZisakuZiten" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="自作辞典" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,7 +144,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house" id="uzh-K1-T6A"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="list.dash" catalog="system" selectedImage="list.dash" id="uzh-K1-T6A"/>
                     <navigationItem key="navigationItem" id="hTT-4E-B0d"/>
                     <connections>
                         <outlet property="tableView" destination="1vA-lf-Ex4" id="Cwv-Vg-Sy5"/>
@@ -159,12 +159,12 @@
         <!--Play-->
         <scene sceneID="903-eu-g0J">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="0LG-wR-3Vx" customClass="PlayViewController" customModule="ZisakuZiten" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="0LG-wR-3Vx" customClass="PlayViewController" customModule="自作辞典" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f4L-aU-z6I">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xlb-Dz-vM9">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="169" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xlb-Dz-vM9">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
@@ -193,7 +193,7 @@
         <!--test-->
         <scene sceneID="uo0-Mh-b2W">
             <objects>
-                <viewController storyboardIdentifier="toQuiz" title="test" modalTransitionStyle="crossDissolve" id="ShM-4q-2gN" customClass="QuizViewController" customModule="ZisakuZiten" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="toQuiz" title="test" modalTransitionStyle="crossDissolve" id="ShM-4q-2gN" customClass="QuizViewController" customModule="自作辞典" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jy2-PZ-7Ga">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -253,7 +253,7 @@
         <!--Ziten View Controller-->
         <scene sceneID="S7i-YB-yFQ">
             <objects>
-                <viewController id="qjd-WJ-vS8" customClass="ZitenViewController" customModule="ZisakuZiten" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qjd-WJ-vS8" customClass="ZitenViewController" customModule="自作辞典" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kRz-hQ-WQR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -324,7 +324,7 @@
         <!--Create Ziten View Controller-->
         <scene sceneID="MBA-KE-onE">
             <objects>
-                <viewController id="DqE-N4-rpe" customClass="CreateZitenViewController" customModule="ZisakuZiten" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DqE-N4-rpe" customClass="CreateZitenViewController" customModule="自作辞典" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xu1-rf-Tx3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -400,7 +400,7 @@
         <!--Quiz Navigation Controller-->
         <scene sceneID="njG-bG-LbA">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="422-YN-Cg0" customClass="QuizNavigationController" customModule="ZisakuZiten" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="422-YN-Cg0" customClass="QuizNavigationController" customModule="自作辞典" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OB2-tE-dxp">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -418,7 +418,7 @@
     </scenes>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
-        <image name="house" catalog="system" width="128" height="110"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="play" catalog="system" width="120" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="tag" catalog="system" width="128" height="116"/>

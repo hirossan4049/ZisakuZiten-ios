@@ -10,6 +10,7 @@
 		1E8988613597FC18751CFE78 /* Pods_ZisakuZitenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414B85174E0B2EE309638A3E /* Pods_ZisakuZitenTests.framework */; };
 		1ED0FF00FACB1A940F7A7EDF /* Pods_ZisakuZiten_ZisakuZitenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2317EC509AFE1F37142D0597 /* Pods_ZisakuZiten_ZisakuZitenUITests.framework */; };
 		8136D6BD8420788BE2B2311E /* Pods_ZisakuZiten.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E6717DA6FB73D645000A58 /* Pods_ZisakuZiten.framework */; };
+		D335623A24C96C9E0057D12B /* UIColor+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = D335623924C96C9E0057D12B /* UIColor+random.swift */; };
 		D358122424AD60900042FEA7 /* CategoryColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D358122324AD60900042FEA7 /* CategoryColors.swift */; };
 		D36418D224C13BA2009E0499 /* PlaySelectItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36418D024C13BA2009E0499 /* PlaySelectItemTableViewCell.swift */; };
 		D36418D324C13BA2009E0499 /* PlaySelectItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36418D124C13BA2009E0499 /* PlaySelectItemTableViewCell.xib */; };
@@ -72,6 +73,7 @@
 		68E6717DA6FB73D645000A58 /* Pods_ZisakuZiten.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZisakuZiten.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A8D1B79B4FDB77B5BF64472 /* Pods-ZisakuZitenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZisakuZitenTests.debug.xcconfig"; path = "Target Support Files/Pods-ZisakuZitenTests/Pods-ZisakuZitenTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9F53344879C4469E50AF8A01 /* Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig"; path = "Target Support Files/Pods-ZisakuZiten-ZisakuZitenUITests/Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D335623924C96C9E0057D12B /* UIColor+random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+random.swift"; sourceTree = "<group>"; };
 		D358122324AD60900042FEA7 /* CategoryColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColors.swift; sourceTree = "<group>"; };
 		D36418D024C13BA2009E0499 /* PlaySelectItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySelectItemTableViewCell.swift; sourceTree = "<group>"; };
 		D36418D124C13BA2009E0499 /* PlaySelectItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaySelectItemTableViewCell.xib; sourceTree = "<group>"; };
@@ -86,7 +88,7 @@
 		D3A6A4E124A640FA00CF6C87 /* CategoryColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColorButton.swift; sourceTree = "<group>"; };
 		D3A96A9824A1F0D70053639B /* CreateCategoryDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryDialogViewController.swift; sourceTree = "<group>"; };
 		D3A96A9924A1F0D70053639B /* CreateCategoryDialogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCategoryDialogViewController.xib; sourceTree = "<group>"; };
-		D3AB70B0249F076A00DFDDB7 /* ZisakuZiten.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZisakuZiten.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3AB70B0249F076A00DFDDB7 /* 自作辞典.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "自作辞典.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3AB70B3249F076A00DFDDB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3AB70B5249F076A00DFDDB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D3AB70B7249F076A00DFDDB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -166,11 +168,33 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D335623724C95FFD0057D12B /* Ziten */ = {
+			isa = PBXGroup;
+			children = (
+				D3AB70ED249F2B1A00DFDDB7 /* ZitenViewController.swift */,
+				D3AB70EF249F3A8B00DFDDB7 /* ZitenTableViewCell.swift */,
+				D3AB70F0249F3A8B00DFDDB7 /* ZitenTableViewCell.xib */,
+				D3AB70F924A09A9A00DFDDB7 /* ZitenEditerViewController.swift */,
+				D3AB70FD24A113E200DFDDB7 /* ZitenPreviewViewController.swift */,
+			);
+			path = Ziten;
+			sourceTree = "<group>";
+		};
+		D335623824C9616F0057D12B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				D3AB70B3249F076A00DFDDB7 /* AppDelegate.swift */,
+				D3AB70B5249F076A00DFDDB7 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		D37AED8224B84631001E6302 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				D37AED8324B84663001E6302 /* UIImage+resize.swift */,
 				D39FC4EB24C3E76400C4C0A1 /* UIView+asImage.swift */,
+				D335623924C96C9E0057D12B /* UIColor+random.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -206,7 +230,7 @@
 		D3AB70B1249F076A00DFDDB7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D3AB70B0249F076A00DFDDB7 /* ZisakuZiten.app */,
+				D3AB70B0249F076A00DFDDB7 /* 自作辞典.app */,
 				D3AB70C6249F076B00DFDDB7 /* ZisakuZitenTests.xctest */,
 				D3AB70D1249F076B00DFDDB7 /* ZisakuZitenUITests.xctest */,
 			);
@@ -216,12 +240,12 @@
 		D3AB70B2249F076A00DFDDB7 /* ZisakuZiten */ = {
 			isa = PBXGroup;
 			children = (
+				D335623824C9616F0057D12B /* Application */,
+				D335623724C95FFD0057D12B /* Ziten */,
 				D3F79FFF24BEFB4000127E7A /* Play */,
 				D3F79FC424BD4EEA00127E7A /* CategoryView */,
 				D3F79FC324BD4CE300127E7A /* Model */,
 				D37AED8224B84631001E6302 /* Extensions */,
-				D3AB70B3249F076A00DFDDB7 /* AppDelegate.swift */,
-				D3AB70B5249F076A00DFDDB7 /* SceneDelegate.swift */,
 				D3AB70B7249F076A00DFDDB7 /* ViewController.swift */,
 				D3AB70B9249F076A00DFDDB7 /* Main.storyboard */,
 				D3AB70BC249F076B00DFDDB7 /* Assets.xcassets */,
@@ -229,11 +253,6 @@
 				D3AB70C1249F076B00DFDDB7 /* Info.plist */,
 				D3AB70E9249F1EE700DFDDB7 /* GroupTableViewCell.swift */,
 				D3AB70EA249F1EE700DFDDB7 /* GroupTableViewCell.xib */,
-				D3AB70ED249F2B1A00DFDDB7 /* ZitenViewController.swift */,
-				D3AB70EF249F3A8B00DFDDB7 /* ZitenTableViewCell.swift */,
-				D3AB70F0249F3A8B00DFDDB7 /* ZitenTableViewCell.xib */,
-				D3AB70F924A09A9A00DFDDB7 /* ZitenEditerViewController.swift */,
-				D3AB70FD24A113E200DFDDB7 /* ZitenPreviewViewController.swift */,
 				D358122324AD60900042FEA7 /* CategoryColors.swift */,
 				D3FEFFD924C8E0FD0069A356 /* MainTabViewController.swift */,
 			);
@@ -313,7 +332,7 @@
 			);
 			name = ZisakuZiten;
 			productName = ZisakuZiten;
-			productReference = D3AB70B0249F076A00DFDDB7 /* ZisakuZiten.app */;
+			productReference = D3AB70B0249F076A00DFDDB7 /* 自作辞典.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D3AB70C5249F076B00DFDDB7 /* ZisakuZitenTests */ = {
@@ -555,6 +574,7 @@
 				D3F79FFE24BEFB3500127E7A /* PlayViewController.swift in Sources */,
 				D3AB70F8249F88E400DFDDB7 /* Category.swift in Sources */,
 				D3AB70B4249F076A00DFDDB7 /* AppDelegate.swift in Sources */,
+				D335623A24C96C9E0057D12B /* UIColor+random.swift in Sources */,
 				D3FEFFDA24C8E0FD0069A356 /* MainTabViewController.swift in Sources */,
 				D3AB70FE24A113E200DFDDB7 /* ZitenPreviewViewController.swift in Sources */,
 				D3AB70B6249F076A00DFDDB7 /* SceneDelegate.swift in Sources */,
@@ -744,7 +764,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.com.com.ZisakuZiten;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "自作辞典";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -764,7 +784,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.com.com.ZisakuZiten;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "自作辞典";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

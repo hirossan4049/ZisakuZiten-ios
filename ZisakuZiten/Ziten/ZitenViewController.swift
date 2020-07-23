@@ -48,9 +48,11 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         let nib = UINib(nibName: "ZitenTableViewCell", bundle: nil)
+        print("Ziten Nib",nib)
         self.view.backgroundColor = .white
 
         self.tableView.register(nib, forCellReuseIdentifier: cellReuseIdentifier)
+
         tableView.delegate = self
         tableView.dataSource = self
         print("texttexttext",group_createTime)

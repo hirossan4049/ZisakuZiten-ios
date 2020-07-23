@@ -25,10 +25,16 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.dataSource = self
         tableView.delegate = self
         
-        playlists.append(Playlist(title: "titlevtyvhjkljhgcfctyctctuycuycytcycytctycyee", detail: "fiegieg"))
-        playlists.append(Playlist(title: "title2222", detail: "12345"))
+        // memory ok...?
+        playlists.append(Playlist(title: "FlashCard", detail: "単語と意味が交互に表示されます。"))
+        playlists.append(Playlist(title: "Quiz", detail: "苦手な単語を中心的にクイズできます。"))
         playlists.append(Playlist(title: "title23334", detail: "faff"))
         playlists.append(Playlist(title: "444", detail: "rtg"))
+        playlists.append(Playlist(title: "ti55tleee", detail: "asdfgmjingr"))
+        playlists.append(Playlist(title: "ti55tleee", detail: "asdfgmjingr"))
+        playlists.append(Playlist(title: "ti55tleee", detail: "asdfgmjingr"))
+        playlists.append(Playlist(title: "ti55tleee", detail: "asdfgmjingr"))
+        playlists.append(Playlist(title: "ti55tleee", detail: "asdfgmjingr"))
         playlists.append(Playlist(title: "ti55tleee", detail: "asdfgmjingr"))
         
 
@@ -44,13 +50,14 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     // spacing 間隔
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30
+        return 10
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PlaySelectItemTableViewCell
         cell.tag = indexPath.row
-        let playlist = self.playlists[indexPath.row]
+        let playlist = self.playlists[indexPath.section]
         cell.titleLabel.text = playlist.title
         cell.detailLabel.text = playlist.detail
         return cell
@@ -70,6 +77,13 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
 
        }
+    
+    // 背景透けるように
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
+    }
     
     
     

@@ -26,6 +26,9 @@ class PlaySelectItemTableViewCell: UITableViewCell {
         plyimageView.layer.cornerRadius = 15
 //        plyimageView.layer.cornerRadius = 15
         
+        // FIXME: TESTTESTEEETTETETE
+        plyimageView.backgroundColor = UIColor.randomColor
+        
 //        BodyView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
         
 

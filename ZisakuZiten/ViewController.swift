@@ -10,7 +10,34 @@ import UIKit
 import RealmSwift
 import SwipeCellKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate, UIViewControllerPreviewingDelegate {
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        print("PRESSED")
+        self.performSegue(withIdentifier: "toZiten", sender: nil)
+
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        print("3D Touched!")
+        guard let indexPath = tableView.indexPathForRow(at: location) else { return nil }
+        self.clicked_group = self.groupList[(indexPath as IndexPath).section]
+        print("in TableView 3DTouch")
+//        let  detailViewController = createDetailViewControllerIndexPath(indexPath: indexPath)
+        var viewController = ZitenViewController(nibName: nil, bundle: nil)
+        viewController.group_createTime = self.clicked_group.createTime
+        print(viewController.group_createTime)
+        return UIViewController()
+
+//
+//        if let (url, rect) = tableView.frame.{
+//            previewingContext.sourceRect = self.view.convert(rect, from: textView)
+//            let controller = WebViewController(nibName: nil, bundle: nil)
+//            controller.url = url
+//            return controller
+//        }
+//        return nil
+    }
+    
 
     let cellReuseIdentifier = "cell"
     var groupList: Results<Group>!
@@ -22,7 +49,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         print("View controller")
         
-        
+        self.view.backgroundColor = .white
         // Do any additional setup after loading the view.
         let nib = UINib(nibName: "GroupTableViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: cellReuseIdentifier)
@@ -204,7 +231,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     // spacing 間隔
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 2
+        return 5
     }
 
     // 背景透けるように
@@ -264,7 +291,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         deleteAction.image = resized_img
         deleteAction.title = nil
 
-        deleteAction.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        deleteAction.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
         
 
         return [deleteAction,deleteAction,deleteAction]
@@ -299,9 +326,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.performSegue(withIdentifier: "toZiten", sender: nil)
 
     }
+    
+    // 3D Touch
+//    func previewingContext(_ previewingContext: UIViewControllerPreviewing,
+//        viewControllerForLocation location: CGPoint) -> UIViewController? {
+//
+//        print("3D touched!")
+//
+////        let locationInTextView = self.view.convert(location, to: textView)
+////
+////        if let (url, rect) = getInfo(locationInTextView: locationInTextView) {
+////            previewingContext.sourceRect = self.view.convert(rect, from: textView)
+////            let controller = WebViewController(nibName: nil, bundle: nil)
+////            controller.url = url
+////            return controller
+////        }
+//
+//        return nil
+//    }
+
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toZiten" {
+            print("toZiten prepare")
             let nextVC = segue.destination as! ZitenViewController
             nextVC.group_createTime = self.clicked_group.createTime
         }
@@ -311,21 +358,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 }
 
 
-extension ViewController: UIViewControllerPreviewingDelegate {
-    // Peek
-    @available(iOS 10.0, *)
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        guard let indexPath = tableView.indexPathForRow(at: location) else {
-            return nil
-        }
-//        return ZitenPreviewViewController(indexPath: indexPath)
-//        let clicked = self.groupList[(indexPath as IndexPath).section]
-//        return ZitenViewController(group_createTime: clicked.createTime!)
-        return nil
-    }
-
-    // Pop
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        self.navigationController?.pushViewController(viewControllerToCommit, animated: true)
-    }
-}
+//extension ViewController: UIViewControllerPreviewingDelegate {
+//    // Peek
+//    @available(iOS 10.0, *)
+//    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+//        guard let indexPath = tableView.indexPathForRow(at: location) else {
+//            print("3D TOuch pressed")
+//            return nil
+//        }
+////        return ZitenPreviewViewController(indexPath: indexPath)
+////        let clicked = self.groupList[(indexPath as IndexPath).section]
+////        return ZitenViewController(group_createTime: clicked.createTime!)
+//        return nil
+//    }
+//
+//    // Pop
+//    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+//        self.navigationController?.pushViewController(viewControllerToCommit, animated: true)
+//    }
+//}
