@@ -147,6 +147,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="list.dash" catalog="system" selectedImage="list.dash" id="uzh-K1-T6A"/>
                     <navigationItem key="navigationItem" id="hTT-4E-B0d"/>
                     <connections>
+                        <outlet property="createBtn" destination="vdD-Br-p16" id="CpZ-7A-iXI"/>
                         <outlet property="tableView" destination="1vA-lf-Ex4" id="Cwv-Vg-Sy5"/>
                         <segue destination="b6P-Pn-etv" kind="presentation" identifier="toZiten" modalPresentationStyle="fullScreen" id="AlG-fT-Q3t"/>
                         <segue destination="TZl-gt-kYH" kind="presentation" identifier="toCategoryEdit" modalPresentationStyle="automatic" id="elm-lg-Hew"/>
@@ -291,6 +292,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="e3c-5n-7Ke"/>
                     <connections>
+                        <outlet property="createBtn" destination="Byl-P4-0z8" id="Vht-yF-rbW"/>
                         <outlet property="tableView" destination="7G4-76-i7H" id="qkN-5w-JhI"/>
                         <segue destination="DqE-N4-rpe" kind="show" identifier="toCreateZiten" id="H3k-d6-bUF"/>
                     </connections>

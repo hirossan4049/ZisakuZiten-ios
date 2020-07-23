@@ -19,7 +19,10 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     var ziten_editor_mode:Int = 0
     var edit_ziten_createTime:Date!
+    
+    var PREVIEW_MODE = false
 
+    @IBOutlet var createBtn: UIButton!
     @IBOutlet var tableView: UITableView!
 
 //    let label: UILabel
@@ -60,6 +63,10 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let realm = try! Realm()
         self.ziten_list = realm.objects(Group.self).filter("createTime==%@", group_createTime)[0].ziten_upT_List
 //        tableView.reloadData()
+        
+        if PREVIEW_MODE{
+            self.createBtn.isHidden = true
+        }
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import SwipeCellKit
+import AudioToolbox
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate, UIViewControllerPreviewingDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
@@ -22,14 +23,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         print("3D Touched!")
-        guard let indexPath = tableView.indexPathForRow(at: location) else { return nil }
-        self.clicked_group = self.groupList[(indexPath as IndexPath).section]
-        print("in TableView 3DTouch")
+//        AudioServicesPlaySystemSound( 1102 )
 
-        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "toZiten") as! ZitenViewController
-        secondViewController.group_createTime = self.clicked_group.createTime
+        let indexPath = tableView.indexPathForRow(at: location)
+        print(createBtn.bounds.contains(location))
         
-        return secondViewController
+        if (indexPath != nil){
+            self.clicked_group = self.groupList[(indexPath! as IndexPath).section]
+            print("in TableView 3DTouch")
+
+            let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "toZiten") as! ZitenViewController
+            secondViewController.PREVIEW_MODE = true
+            secondViewController.group_createTime = self.clicked_group.createTime
+            
+            return secondViewController
+            
+        }else if(false){
+            // floating button
+            
+        }else{
+            return nil
+        }
 
 //
 //        if let (url, rect) = tableView.frame.{
@@ -46,12 +60,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var groupList: Results<Group>!
     var clicked_group: Group!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet private weak var createBtn:UIButton!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         print("View controller")
-        
         self.view.backgroundColor = .white
         // Do any additional setup after loading the view.
         let nib = UINib(nibName: "GroupTableViewCell", bundle: nil)
@@ -72,6 +86,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //            registerForPreviewing(with: self, sourceView: view)
         }
     }
+    
+
 
     @IBAction
     func createGroup_on_press() {
