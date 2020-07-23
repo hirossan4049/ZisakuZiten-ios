@@ -24,6 +24,7 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.tableView.register(nib, forCellReuseIdentifier: "cell")
         tableView.dataSource = self
         tableView.delegate = self
+
         
         // memory ok...?
         playlists.append(Playlist(title: "FlashCard", detail: "単語と意味が交互に表示されます。"))

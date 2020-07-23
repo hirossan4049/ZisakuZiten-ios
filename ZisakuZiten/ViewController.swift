@@ -13,7 +13,10 @@ import SwipeCellKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate, UIViewControllerPreviewingDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         print("PRESSED")
-        self.performSegue(withIdentifier: "toZiten", sender: nil)
+//        self.performSegue(withIdentifier: "toZiten", sender: nil)
+        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "toZiten") as! ZitenViewController
+        secondViewController.group_createTime = self.clicked_group.createTime
+        self.navigationController?.pushViewController(secondViewController, animated: true)
 
     }
     
@@ -22,11 +25,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         guard let indexPath = tableView.indexPathForRow(at: location) else { return nil }
         self.clicked_group = self.groupList[(indexPath as IndexPath).section]
         print("in TableView 3DTouch")
-//        let  detailViewController = createDetailViewControllerIndexPath(indexPath: indexPath)
-        var viewController = ZitenViewController(nibName: nil, bundle: nil)
-        viewController.group_createTime = self.clicked_group.createTime
-        print(viewController.group_createTime)
-        return UIViewController()
+
+        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "toZiten") as! ZitenViewController
+        secondViewController.group_createTime = self.clicked_group.createTime
+        
+        return secondViewController
 
 //
 //        if let (url, rect) = tableView.frame.{
@@ -323,7 +326,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //           self.present(nextView, animated: true, completion: nil)
         tableView.deselectRow(at: indexPath, animated: true)
 
-        self.performSegue(withIdentifier: "toZiten", sender: nil)
+//        self.performSegue(withIdentifier: "toZiten", sender: nil)
+        
+        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "toZiten") as! ZitenViewController
+        secondViewController.group_createTime = self.clicked_group.createTime
+        //self.navigationController = UINavigationController(rootViewController: self)
+        print(self.navigationController)
+        self.navigationController?.pushViewController(secondViewController, animated: true)
+
 
     }
     
