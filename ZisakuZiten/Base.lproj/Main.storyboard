@@ -307,6 +307,7 @@ HIS IS COMMENT.これはコメントです。</string>
                         <barButtonItem key="leftBarButtonItem" title="back" id="mqn-ie-fEa"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="chevronDownImg" destination="8oS-qb-VbZ" id="GbB-eF-qcq"/>
                         <outlet property="groupSelectView" destination="mm5-AO-9md" id="22u-xi-cBP"/>
                     </connections>
                 </viewController>

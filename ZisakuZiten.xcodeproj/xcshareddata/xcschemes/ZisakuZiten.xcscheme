@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D3AB70AF249F076A00DFDDB7"
-               BuildableName = "ZisakuZiten.app"
+               BuildableName = "&#x81ea;&#x4f5c;&#x8f9e;&#x5178;.app"
                BlueprintName = "ZisakuZiten"
                ReferencedContainer = "container:ZisakuZiten.xcodeproj">
             </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D3AB70AF249F076A00DFDDB7"
-            BuildableName = "ZisakuZiten.app"
+            BuildableName = "&#x81ea;&#x4f5c;&#x8f9e;&#x5178;.app"
             BlueprintName = "ZisakuZiten"
             ReferencedContainer = "container:ZisakuZiten.xcodeproj">
          </BuildableReference>
@@ -82,7 +82,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D3AB70AF249F076A00DFDDB7"
-            BuildableName = "ZisakuZiten.app"
+            BuildableName = "&#x81ea;&#x4f5c;&#x8f9e;&#x5178;.app"
             BlueprintName = "ZisakuZiten"
             ReferencedContainer = "container:ZisakuZiten.xcodeproj">
          </BuildableReference>
