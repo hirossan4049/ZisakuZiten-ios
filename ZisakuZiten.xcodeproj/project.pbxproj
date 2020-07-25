@@ -12,6 +12,13 @@
 		8136D6BD8420788BE2B2311E /* Pods_ZisakuZiten.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E6717DA6FB73D645000A58 /* Pods_ZisakuZiten.framework */; };
 		D335623A24C96C9E0057D12B /* UIColor+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = D335623924C96C9E0057D12B /* UIColor+random.swift */; };
 		D335623C24C988170057D12B /* PlayNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D335623B24C988170057D12B /* PlayNavigationController.swift */; };
+		D335623E24CB243E0057D12B /* SelectGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D335623D24CB243E0057D12B /* SelectGroupView.swift */; };
+		D335624024CB244B0057D12B /* SelectGroupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D335623F24CB244B0057D12B /* SelectGroupView.xib */; };
+		D335624224CC56BC0057D12B /* PlayStartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D335624124CC56BC0057D12B /* PlayStartButton.swift */; };
+		D335624424CC5E460057D12B /* PlayStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D335624324CC5E460057D12B /* PlayStartViewController.swift */; };
+		D335624624CC5F110057D12B /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D335624524CC5F110057D12B /* UIColor+hex.swift */; };
+		D335624924CC68B10057D12B /* PlaySelecterPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D335624724CC68B10057D12B /* PlaySelecterPopupViewController.swift */; };
+		D335624A24CC68B10057D12B /* PlaySelecterPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D335624824CC68B10057D12B /* PlaySelecterPopupViewController.xib */; };
 		D358122424AD60900042FEA7 /* CategoryColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D358122324AD60900042FEA7 /* CategoryColors.swift */; };
 		D36418D224C13BA2009E0499 /* PlaySelectItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36418D024C13BA2009E0499 /* PlaySelectItemTableViewCell.swift */; };
 		D36418D324C13BA2009E0499 /* PlaySelectItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36418D124C13BA2009E0499 /* PlaySelectItemTableViewCell.xib */; };
@@ -76,6 +83,13 @@
 		9F53344879C4469E50AF8A01 /* Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig"; path = "Target Support Files/Pods-ZisakuZiten-ZisakuZitenUITests/Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D335623924C96C9E0057D12B /* UIColor+random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+random.swift"; sourceTree = "<group>"; };
 		D335623B24C988170057D12B /* PlayNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayNavigationController.swift; sourceTree = "<group>"; };
+		D335623D24CB243E0057D12B /* SelectGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupView.swift; sourceTree = "<group>"; };
+		D335623F24CB244B0057D12B /* SelectGroupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectGroupView.xib; sourceTree = "<group>"; };
+		D335624124CC56BC0057D12B /* PlayStartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayStartButton.swift; sourceTree = "<group>"; };
+		D335624324CC5E460057D12B /* PlayStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayStartViewController.swift; sourceTree = "<group>"; };
+		D335624524CC5F110057D12B /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
+		D335624724CC68B10057D12B /* PlaySelecterPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySelecterPopupViewController.swift; sourceTree = "<group>"; };
+		D335624824CC68B10057D12B /* PlaySelecterPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaySelecterPopupViewController.xib; sourceTree = "<group>"; };
 		D358122324AD60900042FEA7 /* CategoryColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColors.swift; sourceTree = "<group>"; };
 		D36418D024C13BA2009E0499 /* PlaySelectItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySelectItemTableViewCell.swift; sourceTree = "<group>"; };
 		D36418D124C13BA2009E0499 /* PlaySelectItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaySelectItemTableViewCell.xib; sourceTree = "<group>"; };
@@ -197,6 +211,7 @@
 				D37AED8324B84663001E6302 /* UIImage+resize.swift */,
 				D39FC4EB24C3E76400C4C0A1 /* UIView+asImage.swift */,
 				D335623924C96C9E0057D12B /* UIColor+random.swift */,
+				D335624524CC5F110057D12B /* UIColor+hex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -312,6 +327,12 @@
 				D3F79FFD24BEFB3500127E7A /* PlayViewController.swift */,
 				D36418D024C13BA2009E0499 /* PlaySelectItemTableViewCell.swift */,
 				D36418D124C13BA2009E0499 /* PlaySelectItemTableViewCell.xib */,
+				D335623D24CB243E0057D12B /* SelectGroupView.swift */,
+				D335623F24CB244B0057D12B /* SelectGroupView.xib */,
+				D335624124CC56BC0057D12B /* PlayStartButton.swift */,
+				D335624324CC5E460057D12B /* PlayStartViewController.swift */,
+				D335624724CC68B10057D12B /* PlaySelecterPopupViewController.swift */,
+				D335624824CC68B10057D12B /* PlaySelecterPopupViewController.xib */,
 			);
 			path = Play;
 			sourceTree = "<group>";
@@ -426,10 +447,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D36418D324C13BA2009E0499 /* PlaySelectItemTableViewCell.xib in Resources */,
+				D335624024CB244B0057D12B /* SelectGroupView.xib in Resources */,
 				D3AB70C0249F076B00DFDDB7 /* LaunchScreen.storyboard in Resources */,
 				D3AB70BD249F076B00DFDDB7 /* Assets.xcassets in Resources */,
 				D3AB70F2249F3A8B00DFDDB7 /* ZitenTableViewCell.xib in Resources */,
 				D3AB70BB249F076A00DFDDB7 /* Main.storyboard in Resources */,
+				D335624A24CC68B10057D12B /* PlaySelecterPopupViewController.xib in Resources */,
 				D3A6A4E024A36FC800CF6C87 /* CategoryEditTableViewCell.xib in Resources */,
 				D3A96A9B24A1F0D70053639B /* CreateCategoryDialogViewController.xib in Resources */,
 				D3AB70EC249F1EE700DFDDB7 /* GroupTableViewCell.xib in Resources */,
@@ -576,14 +599,19 @@
 				D3AB70EE249F2B1A00DFDDB7 /* ZitenViewController.swift in Sources */,
 				D3AB70B8249F076A00DFDDB7 /* ViewController.swift in Sources */,
 				D3F79FFE24BEFB3500127E7A /* PlayViewController.swift in Sources */,
+				D335623E24CB243E0057D12B /* SelectGroupView.swift in Sources */,
+				D335624424CC5E460057D12B /* PlayStartViewController.swift in Sources */,
 				D3AB70F8249F88E400DFDDB7 /* Category.swift in Sources */,
 				D3AB70B4249F076A00DFDDB7 /* AppDelegate.swift in Sources */,
 				D335623A24C96C9E0057D12B /* UIColor+random.swift in Sources */,
+				D335624224CC56BC0057D12B /* PlayStartButton.swift in Sources */,
 				D3FEFFDA24C8E0FD0069A356 /* MainTabViewController.swift in Sources */,
 				D3AB70FE24A113E200DFDDB7 /* ZitenPreviewViewController.swift in Sources */,
+				D335624924CC68B10057D12B /* PlaySelecterPopupViewController.swift in Sources */,
 				D3AB70B6249F076A00DFDDB7 /* SceneDelegate.swift in Sources */,
 				D3A6A4E224A640FA00CF6C87 /* CategoryColorButton.swift in Sources */,
 				D3AB70EB249F1EE700DFDDB7 /* GroupTableViewCell.swift in Sources */,
+				D335624624CC5F110057D12B /* UIColor+hex.swift in Sources */,
 				D358122424AD60900042FEA7 /* CategoryColors.swift in Sources */,
 				D39FC4E924C3DEB000C4C0A1 /* Playlist.swift in Sources */,
 			);
