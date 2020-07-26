@@ -37,6 +37,10 @@ class PlayStartViewController: UIViewController {
         groupSelectView.layer.borderWidth = 1
         
         
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.pickerExitCall),
+                                               name: .toExitView,
+                                               object: nil)
         
         // Do any additional setup after loading the view.
     }
@@ -95,6 +99,8 @@ class PlayStartViewController: UIViewController {
         imanimator.startAnimation()
 //        self.view.willRemoveSubview(groupPickerViewOwner.groupPickerView)
         //animation
+        
+        // ======== DROPDOWN SELECT LISTVIEW REMOVE =======
         let timing = UICubicTimingParameters(animationCurve: .linear)
         // アニメーションの時間を2秒、タイミングパラメータに上で定義したtimingをセット
         let y:CGFloat = groupSelectView.frame.origin.y + groupSelectView.frame.size.height
@@ -116,8 +122,14 @@ class PlayStartViewController: UIViewController {
 
     @objc func groupPickerClicked(sender: UITapGestureRecognizer) {
         print("tap")
-        isGroupPickerDraw = !isGroupPickerDraw
+//        isGroupPickerDraw = !isGroupPickerDraw
+        isGroupPickerDraw.toggle()
         print(isGroupPickerDraw)
+    }
+    
+    @objc func pickerExitCall(){
+        print("Exit called!!")
+        isGroupPickerDraw = false
     }
 
 }

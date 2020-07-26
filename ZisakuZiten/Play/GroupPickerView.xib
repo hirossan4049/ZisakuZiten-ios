@@ -18,16 +18,16 @@
                     <rect key="frame" x="0.0" y="0.0" width="426" height="458"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uad-LQ-3CX">
-                            <rect key="frame" x="15" y="15" width="396" height="428"/>
+                            <rect key="frame" x="5" y="5" width="416" height="448"/>
                             <color key="backgroundColor" red="1" green="0.34462122750000002" blue="0.7359986208" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                         </tableView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="uad-LQ-3CX" secondAttribute="trailing" constant="15" id="A2e-qh-5OD"/>
-                        <constraint firstAttribute="bottom" secondItem="uad-LQ-3CX" secondAttribute="bottom" constant="15" id="aaK-Pg-vHh"/>
-                        <constraint firstItem="uad-LQ-3CX" firstAttribute="top" secondItem="QsL-Dq-bwo" secondAttribute="top" constant="15" id="dox-NZ-898"/>
-                        <constraint firstItem="uad-LQ-3CX" firstAttribute="leading" secondItem="QsL-Dq-bwo" secondAttribute="leading" constant="15" id="rMx-fx-kfe"/>
+                        <constraint firstAttribute="trailing" secondItem="uad-LQ-3CX" secondAttribute="trailing" constant="5" id="A2e-qh-5OD"/>
+                        <constraint firstAttribute="bottom" secondItem="uad-LQ-3CX" secondAttribute="bottom" constant="5" id="aaK-Pg-vHh"/>
+                        <constraint firstItem="uad-LQ-3CX" firstAttribute="top" secondItem="QsL-Dq-bwo" secondAttribute="top" constant="5" id="dox-NZ-898"/>
+                        <constraint firstItem="uad-LQ-3CX" firstAttribute="leading" secondItem="QsL-Dq-bwo" secondAttribute="leading" constant="5" id="rMx-fx-kfe"/>
                     </constraints>
                 </view>
             </subviews>
@@ -41,6 +41,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="radiusView" destination="QsL-Dq-bwo" id="WJU-DN-OAc"/>
+                <outlet property="tableView" destination="uad-LQ-3CX" id="cFI-uA-Erc"/>
             </connections>
             <point key="canvasLocation" x="146.37681159420291" y="267.85714285714283"/>
         </view>

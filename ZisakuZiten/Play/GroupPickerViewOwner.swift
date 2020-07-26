@@ -12,6 +12,7 @@ import UIKit
 class GroupPickerViewOwner: NSObject {
 
     var groupPickerView: UIView!
+    
 
     override init() {
         super.init()
