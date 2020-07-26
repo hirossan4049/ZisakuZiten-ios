@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import RealmSwift
 
 class PlayStartViewController: UIViewController {
     
     @IBOutlet weak var groupSelectView: UIView!
     @IBOutlet weak var chevronDownImg: UIImageView!
+    @IBOutlet weak var selectLabel:UILabel!
+    @IBOutlet weak var startBtn:PlayStartButton!
+    @IBOutlet weak var erorrLabel:UILabel!
     let groupPickerViewOwner:GroupPickerViewOwner = GroupPickerViewOwner()
+    
+    let NO_SELECTED_TEXT:String = "-- No Selected --"
+    var PLAYSTART_GROUP_COUNT:Int = 4
+    var selected_createTime:Date? = nil
 
     
     var isGroupPickerDraw:Bool = false{
@@ -35,13 +43,15 @@ class PlayStartViewController: UIViewController {
         groupSelectView.layer.cornerRadius = 17
         groupSelectView.layer.borderColor = UIColor(hex: "EBEBEB").cgColor
         groupSelectView.layer.borderWidth = 1
-        
-        
+                
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(self.pickerExitCall),
+                                               selector: #selector(self.pickerExitCall(_:)),
                                                name: .toExitView,
                                                object: nil)
         
+        self.startBtn.btnStatus(isEnb:false)
+        self.selectLabel.text = NO_SELECTED_TEXT
+        self.erorrLabel.isHidden = true
         // Do any additional setup after loading the view.
     }
     
@@ -127,9 +137,36 @@ class PlayStartViewController: UIViewController {
         print(isGroupPickerDraw)
     }
     
-    @objc func pickerExitCall(){
+    @objc func pickerExitCall(_ notification: NSNotification){
         print("Exit called!!")
+        let createTime = notification.userInfo!["createTime"]
+        self.selected_createTime = createTime! as! Date
+        let realm = try! Realm()
+        let text = realm.objects(Group.self).filter("createTime==%@", createTime)[0].title
+        selectLabel.text = text
         isGroupPickerDraw = false
+        selected_Group_playruncheck()
+    }
+    
+    func selected_Group_playruncheck() -> Bool{
+        let realm = try! Realm()
+        let group = realm.objects(Group.self).filter("createTime==%@", self.selected_createTime)[0]
+        
+        if group.ziten_upT_List.count < self.PLAYSTART_GROUP_COUNT{
+            self.startBtn.btnStatus(isEnb: false)
+            errorTextDraw(error: "単語がn個以上必要です")
+            return false
+        }else{
+            self.erorrLabel.isHidden = true
+            self.startBtn.btnStatus(isEnb: true)
+            return true
+        }
+    }
+    
+    func errorTextDraw(error:String){
+        print("ERORR:",error)
+        self.erorrLabel.isHidden = false
+        self.erorrLabel.text = error
     }
 
 }

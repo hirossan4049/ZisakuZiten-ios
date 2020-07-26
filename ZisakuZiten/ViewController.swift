@@ -75,8 +75,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         let realm = try! Realm()
         self.groupList = realm.objects(Group.self)
-        print(groupList)
-        print(realm.objects(Category.self))
+//        print(groupList)
+//        print(realm.objects(Category.self))
 
 
         // 3D Touchが使える端末か確認

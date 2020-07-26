@@ -52,3 +52,14 @@ class PlayStartButton: UIButton {
 
 }
 
+//extension UIButton{
+//    open override var isEnabled: Bool {
+//        didSet{
+//            if isEnabled{
+//                self.backgroundColor = UIColor(hex: "FF9931")
+//            }else{
+//                self.backgroundColor = UIColor(hex: "D0D0D0")
+//            }
+//        }
+//    }
+//}

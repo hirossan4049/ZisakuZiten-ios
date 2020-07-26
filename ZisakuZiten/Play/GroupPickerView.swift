@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import RealmSwift
 
 
 class GroupPickerView: UIView, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet private weak var radiusView:UIView!
     @IBOutlet private weak var tableView:UITableView!
-        
+    
+    public var selected_Id:Int = 0
+    
+    private var groupList:Results<Group>!
+            
 
 
 
@@ -38,12 +43,18 @@ class GroupPickerView: UIView, UITableViewDataSource, UITableViewDelegate {
         // Drawing code
 //        self.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         print("GROUP PICKERVIEW")
-        radiusView.layer.cornerRadius = 15
-        print(radiusView.subviews)
+        
+        let realm = try! Realm()
+        self.groupList = realm.objects(Group.self)
+        
+        radiusView.layer.cornerRadius = 15        
+        radiusView.layer.borderColor = UIColor(hex: "EBEBEB").cgColor
+        radiusView.layer.borderWidth = 1
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.reloadData()
+        
         
 
 
@@ -54,22 +65,23 @@ class GroupPickerView: UIView, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.groupList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = "hello"
+        cell.textLabel?.text = self.groupList[indexPath.row].title
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("CLICKED")
-        exitPost()
+        exitPost(createTime: self.groupList[indexPath.row].createTime!)
     }
     
     
-    func exitPost(){
-        NotificationCenter.default.post(name: .toExitView,object: nil)
+    func exitPost(createTime:Date){
+        let postArgs:[String: Date] = ["createTime": createTime]
+        NotificationCenter.default.post(name: .toExitView,object: nil,userInfo: postArgs)
     }
     
 

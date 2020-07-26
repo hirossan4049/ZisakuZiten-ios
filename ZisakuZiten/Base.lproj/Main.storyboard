@@ -173,7 +173,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="HH4-0r-b6d" firstAttribute="centerY" secondItem="Kp8-RJ-Laz" secondAttribute="centerY" id="OiX-kR-Ljf"/>
                             <constraint firstItem="HH4-0r-b6d" firstAttribute="centerX" secondItem="Kp8-RJ-Laz" secondAttribute="centerX" id="omI-0E-Y8m"/>
@@ -250,6 +250,12 @@ HIS IS COMMENT.これはコメントです。</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ERROR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gv-aG-oXS">
+                                <rect key="frame" x="20" y="250.5" width="378" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yyo-ah-OsV" customClass="PlayStartButton" customModule="自作辞典" customModuleProvider="target">
                                 <rect key="frame" x="20" y="726" width="374" height="55"/>
                                 <color key="backgroundColor" red="1" green="0.34462122750000002" blue="0.7359986208" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -262,7 +268,7 @@ HIS IS COMMENT.これはコメントです。</string>
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mm5-AO-9md">
-                                <rect key="frame" x="20" y="263.5" width="374" height="55"/>
+                                <rect key="frame" x="20" y="277.5" width="374" height="55"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-- No Selected --" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4x-L7-yar">
                                         <rect key="frame" x="16" y="17" width="133" height="21"/>
@@ -286,19 +292,24 @@ HIS IS COMMENT.これはコメントです。</string>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="yEg-9I-0KS" firstAttribute="trailing" secondItem="6gv-aG-oXS" secondAttribute="trailing" constant="16" id="1Cb-99-tOd"/>
+                            <constraint firstItem="6gv-aG-oXS" firstAttribute="leading" secondItem="yEg-9I-0KS" secondAttribute="leading" constant="16" id="5sq-ad-5sn"/>
+                            <constraint firstItem="6gv-aG-oXS" firstAttribute="leading" secondItem="yEg-9I-0KS" secondAttribute="leading" constant="20" id="A8H-rQ-lJr"/>
                             <constraint firstItem="Yyo-ah-OsV" firstAttribute="leading" secondItem="yEg-9I-0KS" secondAttribute="leading" constant="20" id="BCp-1t-UPx"/>
+                            <constraint firstItem="mm5-AO-9md" firstAttribute="top" secondItem="6gv-aG-oXS" secondAttribute="bottom" constant="6" id="BPY-3q-fk4"/>
                             <constraint firstItem="XbV-PA-dpl" firstAttribute="leading" secondItem="yEg-9I-0KS" secondAttribute="leading" constant="30" id="JhI-d2-SIv"/>
                             <constraint firstItem="yEg-9I-0KS" firstAttribute="trailing" secondItem="mm5-AO-9md" secondAttribute="trailing" constant="20" id="LSr-NL-ABi"/>
                             <constraint firstItem="yEg-9I-0KS" firstAttribute="bottom" secondItem="Yyo-ah-OsV" secondAttribute="bottom" constant="32" id="Ldz-YA-AWD"/>
                             <constraint firstItem="Thc-j8-ZF0" firstAttribute="top" secondItem="yEg-9I-0KS" secondAttribute="top" constant="25" id="WNZ-W9-na6"/>
                             <constraint firstItem="Thc-j8-ZF0" firstAttribute="leading" secondItem="yEg-9I-0KS" secondAttribute="leading" constant="16" id="XuF-s8-2Xq"/>
                             <constraint firstItem="XbV-PA-dpl" firstAttribute="top" secondItem="Thc-j8-ZF0" secondAttribute="bottom" constant="8" id="YJP-Ba-mEt"/>
+                            <constraint firstItem="6gv-aG-oXS" firstAttribute="top" secondItem="yZh-0z-a2u" secondAttribute="bottom" constant="3" id="YdJ-yd-NsE"/>
                             <constraint firstItem="yZh-0z-a2u" firstAttribute="top" secondItem="XbV-PA-dpl" secondAttribute="bottom" constant="16" id="nyL-S4-8cn"/>
                             <constraint firstItem="yZh-0z-a2u" firstAttribute="leading" secondItem="yEg-9I-0KS" secondAttribute="leading" constant="16" id="qIE-GN-bjC"/>
-                            <constraint firstItem="mm5-AO-9md" firstAttribute="top" secondItem="yZh-0z-a2u" secondAttribute="bottom" constant="16" id="v1k-bI-sb4"/>
                             <constraint firstItem="mm5-AO-9md" firstAttribute="leading" secondItem="yEg-9I-0KS" secondAttribute="leading" constant="20" id="vc7-Ik-SEn"/>
+                            <constraint firstItem="yEg-9I-0KS" firstAttribute="trailing" secondItem="6gv-aG-oXS" secondAttribute="trailing" constant="16" id="xXN-kr-qE0"/>
                             <constraint firstItem="yEg-9I-0KS" firstAttribute="trailing" secondItem="Yyo-ah-OsV" secondAttribute="trailing" constant="20" id="zaQ-gh-OfL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yEg-9I-0KS"/>
@@ -308,7 +319,10 @@ HIS IS COMMENT.これはコメントです。</string>
                     </navigationItem>
                     <connections>
                         <outlet property="chevronDownImg" destination="8oS-qb-VbZ" id="GbB-eF-qcq"/>
+                        <outlet property="erorrLabel" destination="6gv-aG-oXS" id="feh-TX-SJp"/>
                         <outlet property="groupSelectView" destination="mm5-AO-9md" id="22u-xi-cBP"/>
+                        <outlet property="selectLabel" destination="N4x-L7-yar" id="e0f-QG-KkS"/>
+                        <outlet property="startBtn" destination="Yyo-ah-OsV" id="wJ1-2T-Vg6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o9p-Eu-hxS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
