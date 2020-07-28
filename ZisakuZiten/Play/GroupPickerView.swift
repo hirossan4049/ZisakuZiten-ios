@@ -55,7 +55,6 @@ class GroupPickerView: UIView, UITableViewDataSource, UITableViewDelegate {
         self.tableView.delegate = self
         self.tableView.reloadData()
         
-        
 
 
     }

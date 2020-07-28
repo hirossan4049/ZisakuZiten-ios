@@ -11,15 +11,19 @@ import RealmSwift
 
 class PlayStartViewController: UIViewController {
     
+    @IBOutlet weak var titleLabel:UILabel!
+    @IBOutlet weak var commentLabel:UILabel!
+    
     @IBOutlet weak var groupSelectView: UIView!
     @IBOutlet weak var chevronDownImg: UIImageView!
     @IBOutlet weak var selectLabel:UILabel!
     @IBOutlet weak var startBtn:PlayStartButton!
     @IBOutlet weak var erorrLabel:UILabel!
+    
+    var playItem:PlayListItem!
     let groupPickerViewOwner:GroupPickerViewOwner = GroupPickerViewOwner()
     
     let NO_SELECTED_TEXT:String = "-- No Selected --"
-    var PLAYSTART_GROUP_COUNT:Int = 4
     var selected_createTime:Date? = nil
 
     
@@ -52,7 +56,29 @@ class PlayStartViewController: UIViewController {
         self.startBtn.btnStatus(isEnb:false)
         self.selectLabel.text = NO_SELECTED_TEXT
         self.erorrLabel.isHidden = true
+        
+        // TEST
+//        self.playItem = Playlist().flashcard
+        
+        //
+        self.titleLabel.text = self.playItem.title
+        self.commentLabel.text = self.playItem.comment
+        
         // Do any additional setup after loading the view.
+        selected_Group_playruncheck()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        selected_Group_playruncheck()
+
+    }
+    
+    @IBAction func startOnClick(){
+        let playVC = FlashCardViewController(nibName: "FlashCardViewController", bundle: nil)
+        playVC.createTime = self.selected_createTime
+        playVC.modalPresentationStyle = .fullScreen
+        self.present(playVC, animated: true, completion: nil)
     }
     
     func add_groupPickerView(){
@@ -149,10 +175,14 @@ class PlayStartViewController: UIViewController {
     }
     
     func selected_Group_playruncheck() -> Bool{
+        if self.selected_createTime == nil{
+            print("NIL")
+            return false
+        }
         let realm = try! Realm()
-        let group = realm.objects(Group.self).filter("createTime==%@", self.selected_createTime)[0]
+        let group = realm.objects(Group.self).filter("createTime==%@", self.selected_createTime!)[0]
         
-        if group.ziten_upT_List.count < self.PLAYSTART_GROUP_COUNT{
+        if group.ziten_upT_List.count < self.playItem.groupMinCount{
             self.startBtn.btnStatus(isEnb: false)
             errorTextDraw(error: "単語がn個以上必要です")
             return false

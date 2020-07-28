@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FlashCardViewController" customModule="自作辞典" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundView" destination="cn6-mM-hdx" id="aSG-Ar-wZn"/>
+                <outlet property="mainLabel" destination="ioY-ik-gwt" id="fjo-0V-URV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cn6-mM-hdx">
+                    <rect key="frame" x="57" y="323" width="300" height="250"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioY-ik-gwt">
+                            <rect key="frame" x="16" y="16" width="268" height="218"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="250" id="GVw-Mz-N18"/>
+                        <constraint firstAttribute="width" constant="300" id="MT9-ZY-ciY"/>
+                        <constraint firstItem="ioY-ik-gwt" firstAttribute="top" secondItem="cn6-mM-hdx" secondAttribute="top" constant="16" id="SDy-Z3-DcD"/>
+                        <constraint firstAttribute="bottom" secondItem="ioY-ik-gwt" secondAttribute="bottom" constant="16" id="TlT-r0-juk"/>
+                        <constraint firstItem="ioY-ik-gwt" firstAttribute="leading" secondItem="cn6-mM-hdx" secondAttribute="leading" constant="16" id="UbT-cv-JoN"/>
+                        <constraint firstAttribute="trailing" secondItem="ioY-ik-gwt" secondAttribute="trailing" constant="16" id="b80-2c-uKd"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZy-8C-btH">
+                    <rect key="frame" x="340" y="44" width="62" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="終了する">
+                        <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                    </state>
+                    <connections>
+                        <action selector="dismissClicked" destination="-1" eventType="touchUpInside" id="Oc2-I9-0dh"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="cn6-mM-hdx" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="67F-CO-2Wm"/>
+                <constraint firstItem="cn6-mM-hdx" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="q9K-QQ-p3N"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="149" y="117"/>
+        </view>
+    </objects>
+</document>

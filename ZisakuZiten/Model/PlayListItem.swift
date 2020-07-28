@@ -1,0 +1,26 @@
+//
+//  PlayListItem.swift
+//  ZisakuZiten
+//
+//  Created by unkonow on 2020/07/27.
+//  Copyright © 2020 unkonow. All rights reserved.
+//
+
+import Foundation
+
+// Playlistとかぶってるのまずい。
+class PlayListItem: NSObject {
+    
+    var title:String
+    var subtitle:String
+    var comment:String
+    var groupMinCount:Int
+//    var viewController:NSObject
+    
+    init(title:String,subtitle:String,comment:String,groupMinCount:Int) {
+        self.title = title
+        self.subtitle = subtitle
+        self.comment = comment
+        self.groupMinCount = groupMinCount
+    }
+}

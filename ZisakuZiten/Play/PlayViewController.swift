@@ -12,7 +12,8 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     @IBOutlet private weak var tableView: UITableView!
     
-    var playlists:[Playlist] = []
+//    var playlists:[Playlist] = []
+    var playlists:[PlayListItem] = []
     
 
     override func viewDidLoad() {
@@ -24,19 +25,15 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.tableView.register(nib, forCellReuseIdentifier: "cell")
         tableView.dataSource = self
         tableView.delegate = self
-
+        
+        self.playlists = Playlist().getAllItems()
         
         // memory ok...?
-        playlists.append(Playlist(title: "FlashCard", detail: "単語と意味が交互に表示されます。"))
-        playlists.append(Playlist(title: "Quiz", detail: "苦手な単語を中心的にクイズできます。"))
-        playlists.append(Playlist(title: "音声で再生", detail: "単語と意味を読み上げてくれます。"))
-        playlists.append(Playlist(title: "444", detail: "rtg"))
-        playlists.append(Playlist(title: "ti55tleee", detail: "asdfgmjingr"))
-        playlists.append(Playlist(title: "ti55tleee", detail: "asdfgmjingr"))
-        playlists.append(Playlist(title: "ti55tleee", detail: "asdfgmjingr"))
-        playlists.append(Playlist(title: "ti55tleee", detail: "asdfgmjingr"))
-        playlists.append(Playlist(title: "ti55tleee", detail: "asdfgmjingr"))
-        playlists.append(Playlist(title: "ti55tleee", detail: "asdfgmjingr"))
+//        playlists.append(Playlist(title: "FlashCard", detail: "単語と意味が交互に表示されます。"))
+//        playlists.append(Playlist(title: "Quiz", detail: "苦手な単語を中心的にクイズできます。"))
+//        playlists.append(Playlist(title: "音声で再生", detail: "単語と意味を読み上げてくれます。"))
+//        playlists.append(Playlist(title: "444", detail: "rtg"))
+
         
 
     }
@@ -60,7 +57,7 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.tag = indexPath.row
         let playlist = self.playlists[indexPath.section]
         cell.titleLabel.text = playlist.title
-        cell.detailLabel.text = playlist.detail
+//        cell.detailLabel.text = playlist.detail
         return cell
     }
     
@@ -70,8 +67,7 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        self.performSegue(withIdentifier: "toQuiz", sender: nil)
 //        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "toQuiz") as! QuizNavigationController
         let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "toQuiz") as! PlayStartViewController
-        
-
+        secondViewController.playItem = self.playlists[indexPath.section]
         //self.navigationController = UINavigationController(rootViewController: self)
         print(self.navigationController)
         self.navigationController?.pushViewController(secondViewController, animated: true)
