@@ -220,8 +220,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let cell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as GroupTableViewCell!
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GroupTableViewCell
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
-
+        let selectionView = UIView()
+        selectionView.backgroundColor = UIColor.red
+        cell.selectedBackgroundView = selectionView
         cell.delegate = self
 //        cell.backgroundColor = UIColor.white
 //        cell.layer.borderColor = UIColor.black.cgColor

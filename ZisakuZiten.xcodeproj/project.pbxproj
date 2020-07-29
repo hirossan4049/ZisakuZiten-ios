@@ -26,7 +26,6 @@
 		D37AED8424B84663001E6302 /* UIImage+resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37AED8324B84663001E6302 /* UIImage+resize.swift */; };
 		D39FC4E924C3DEB000C4C0A1 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FC4E824C3DEB000C4C0A1 /* Playlist.swift */; };
 		D39FC4EC24C3E76400C4C0A1 /* UIView+asImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FC4EB24C3E76400C4C0A1 /* UIView+asImage.swift */; };
-		D39FC4EF24C403F800C4C0A1 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FC4EE24C403F800C4C0A1 /* QuizViewController.swift */; };
 		D39FC4F124C408E800C4C0A1 /* QuizNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FC4F024C408E800C4C0A1 /* QuizNavigationController.swift */; };
 		D3A6A4DB24A26CBB00CF6C87 /* EditCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A6A4D924A26CBB00CF6C87 /* EditCategoryViewController.swift */; };
 		D3A6A4DF24A36FC800CF6C87 /* CategoryEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A6A4DD24A36FC800CF6C87 /* CategoryEditTableViewCell.swift */; };
@@ -54,6 +53,8 @@
 		D3AB70FE24A113E200DFDDB7 /* ZitenPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70FD24A113E200DFDDB7 /* ZitenPreviewViewController.swift */; };
 		D3C0984F24D015BA00419F45 /* FlashCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C0984D24D015BA00419F45 /* FlashCardViewController.swift */; };
 		D3C0985024D015BA00419F45 /* FlashCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3C0984E24D015BA00419F45 /* FlashCardViewController.xib */; };
+		D3C0985324D10D6F00419F45 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C0985124D10D6F00419F45 /* QuizViewController.swift */; };
+		D3C0985424D10D6F00419F45 /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3C0985224D10D6F00419F45 /* QuizViewController.xib */; };
 		D3C594DD24CDF07200066E42 /* PlayListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C594DC24CDF07200066E42 /* PlayListItem.swift */; };
 		D3F79FFE24BEFB3500127E7A /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F79FFD24BEFB3500127E7A /* PlayViewController.swift */; };
 		D3FEFFDA24C8E0FD0069A356 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FEFFD924C8E0FD0069A356 /* MainTabViewController.swift */; };
@@ -101,7 +102,6 @@
 		D37AED8324B84663001E6302 /* UIImage+resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+resize.swift"; sourceTree = "<group>"; };
 		D39FC4E824C3DEB000C4C0A1 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		D39FC4EB24C3E76400C4C0A1 /* UIView+asImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+asImage.swift"; sourceTree = "<group>"; };
-		D39FC4EE24C403F800C4C0A1 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		D39FC4F024C408E800C4C0A1 /* QuizNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizNavigationController.swift; sourceTree = "<group>"; };
 		D3A6A4D924A26CBB00CF6C87 /* EditCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryViewController.swift; sourceTree = "<group>"; };
 		D3A6A4DD24A36FC800CF6C87 /* CategoryEditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEditTableViewCell.swift; sourceTree = "<group>"; };
@@ -135,6 +135,8 @@
 		D3AB70FD24A113E200DFDDB7 /* ZitenPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZitenPreviewViewController.swift; sourceTree = "<group>"; };
 		D3C0984D24D015BA00419F45 /* FlashCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardViewController.swift; sourceTree = "<group>"; };
 		D3C0984E24D015BA00419F45 /* FlashCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlashCardViewController.xib; sourceTree = "<group>"; };
+		D3C0985124D10D6F00419F45 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		D3C0985224D10D6F00419F45 /* QuizViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
 		D3C594DC24CDF07200066E42 /* PlayListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListItem.swift; sourceTree = "<group>"; };
 		D3F79FFD24BEFB3500127E7A /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		D3FEFFD924C8E0FD0069A356 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
@@ -227,8 +229,9 @@
 		D39FC4E724C3D9A700C4C0A1 /* MainQuiz */ = {
 			isa = PBXGroup;
 			children = (
-				D39FC4EE24C403F800C4C0A1 /* QuizViewController.swift */,
 				D39FC4F024C408E800C4C0A1 /* QuizNavigationController.swift */,
+				D3C0985124D10D6F00419F45 /* QuizViewController.swift */,
+				D3C0985224D10D6F00419F45 /* QuizViewController.xib */,
 			);
 			path = MainQuiz;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				D3A6A4E024A36FC800CF6C87 /* CategoryEditTableViewCell.xib in Resources */,
 				D3A96A9B24A1F0D70053639B /* CreateCategoryDialogViewController.xib in Resources */,
 				D3AB70EC249F1EE700DFDDB7 /* GroupTableViewCell.xib in Resources */,
+				D3C0985424D10D6F00419F45 /* QuizViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,6 +601,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D36418D224C13BA2009E0499 /* PlaySelectItemTableViewCell.swift in Sources */,
+				D3C0985324D10D6F00419F45 /* QuizViewController.swift in Sources */,
 				D3AB70F6249F888800DFDDB7 /* Ziten.swift in Sources */,
 				D37AED8424B84663001E6302 /* UIImage+resize.swift in Sources */,
 				D335623C24C988170057D12B /* PlayNavigationController.swift in Sources */,
@@ -608,7 +613,6 @@
 				D335624C24CC78650057D12B /* GroupPickerView.swift in Sources */,
 				D3C594DD24CDF07200066E42 /* PlayListItem.swift in Sources */,
 				D3AB70FA24A09A9A00DFDDB7 /* ZitenEditerViewController.swift in Sources */,
-				D39FC4EF24C403F800C4C0A1 /* QuizViewController.swift in Sources */,
 				D3A6A4DB24A26CBB00CF6C87 /* EditCategoryViewController.swift in Sources */,
 				D3A96A9A24A1F0D70053639B /* CreateCategoryDialogViewController.swift in Sources */,
 				D39FC4EC24C3E76400C4C0A1 /* UIView+asImage.swift in Sources */,

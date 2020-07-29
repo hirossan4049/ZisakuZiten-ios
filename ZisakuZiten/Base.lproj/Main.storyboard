@@ -183,7 +183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mMn-jn-lca" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-462" y="2284"/>
+            <point key="canvasLocation" x="-463" y="1732"/>
         </scene>
         <!--Play View Controller-->
         <scene sceneID="903-eu-g0J">
@@ -232,7 +232,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XbV-PA-dpl">
-                                <rect key="frame" x="30" y="153" width="362.33333333333331" height="45"/>
+                                <rect key="frame" x="30" y="153" width="329" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="9xF-Y5-wEz"/>
                                 </constraints>
@@ -308,6 +308,7 @@ HIS IS COMMENT.これはコメントです。</string>
                             <constraint firstItem="Thc-j8-ZF0" firstAttribute="leading" secondItem="yEg-9I-0KS" secondAttribute="leading" constant="16" id="XuF-s8-2Xq"/>
                             <constraint firstItem="XbV-PA-dpl" firstAttribute="top" secondItem="Thc-j8-ZF0" secondAttribute="bottom" constant="8" id="YJP-Ba-mEt"/>
                             <constraint firstItem="6gv-aG-oXS" firstAttribute="top" secondItem="yZh-0z-a2u" secondAttribute="bottom" constant="3" id="YdJ-yd-NsE"/>
+                            <constraint firstAttribute="trailing" secondItem="XbV-PA-dpl" secondAttribute="trailing" constant="16" id="fqg-dM-Noj"/>
                             <constraint firstItem="yZh-0z-a2u" firstAttribute="top" secondItem="XbV-PA-dpl" secondAttribute="bottom" constant="16" id="nyL-S4-8cn"/>
                             <constraint firstItem="yZh-0z-a2u" firstAttribute="leading" secondItem="yEg-9I-0KS" secondAttribute="leading" constant="16" id="qIE-GN-bjC"/>
                             <constraint firstItem="mm5-AO-9md" firstAttribute="leading" secondItem="yEg-9I-0KS" secondAttribute="leading" constant="20" id="vc7-Ik-SEn"/>
@@ -316,9 +317,7 @@ HIS IS COMMENT.これはコメントです。</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yEg-9I-0KS"/>
                     </view>
-                    <navigationItem key="navigationItem" id="so7-nq-G2I">
-                        <barButtonItem key="leftBarButtonItem" title="back" id="mqn-ie-fEa"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="so7-nq-G2I"/>
                     <connections>
                         <outlet property="chevronDownImg" destination="8oS-qb-VbZ" id="GbB-eF-qcq"/>
                         <outlet property="commentLabel" destination="XbV-PA-dpl" id="aKX-Mf-fKf"/>
@@ -332,7 +331,7 @@ HIS IS COMMENT.これはコメントです。</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o9p-Eu-hxS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="XW9-dF-gnm"/>
             </objects>
-            <point key="canvasLocation" x="1421.7391304347827" y="747.99107142857144"/>
+            <point key="canvasLocation" x="1686" y="748"/>
         </scene>
         <!--ss-->
         <scene sceneID="S7i-YB-yFQ">

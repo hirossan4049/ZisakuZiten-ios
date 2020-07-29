@@ -54,9 +54,11 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PlaySelectItemTableViewCell
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         cell.tag = indexPath.row
         let playlist = self.playlists[indexPath.section]
         cell.titleLabel.text = playlist.title
+        cell.detailLabel.text = playlist.subtitle
 //        cell.detailLabel.text = playlist.detail
         return cell
     }
@@ -74,6 +76,18 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
 
        }
+    
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! PlaySelectItemTableViewCell
+        print("didHightlightRowAt")
+        cell.bodyView.backgroundColor = .lightGray
+    }
+    func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! PlaySelectItemTableViewCell
+        cell.bodyView.backgroundColor = .white
+//        cell?.backgroundView
+        
+    }
     
     // 背景透けるように
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

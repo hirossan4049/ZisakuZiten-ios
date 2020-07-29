@@ -23,6 +23,10 @@ class FlashCardViewController: UIViewController {
         super.viewDidLoad()
         self.backgroundView.layer.cornerRadius = 13
         
+        //Viewのクリックを
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(nextWord(sender:)))
+        backgroundView.addGestureRecognizer(tapGesture)
+        
         let realm = try! Realm()
         self.group = realm.objects(Group.self).filter("createTime==%@",createTime)[0].ziten_upT_List
 
@@ -34,13 +38,14 @@ class FlashCardViewController: UIViewController {
 
     }
     
-    func nextWord(){
+    @objc func nextWord(sender: UITapGestureRecognizer){
         UIView.transition(with: backgroundView, duration: 0.3, options: [.transitionFlipFromRight], animations: nil, completion: nil)
         setFlashCard()
     }
     
     func setFlashCard(){
-        if self.counter > self.group.count{
+        print(self.counter,self.group.count)
+        if self.counter >= (self.group.count * 2){
             mainLabel.text =  "END"
             return
         }
@@ -56,8 +61,8 @@ class FlashCardViewController: UIViewController {
     }
     
     @IBAction func dismissClicked(){
-//        self.dismiss(animated: true, completion: nil)
-        nextWord()
+        self.dismiss(animated: true, completion: nil)
+        
 //        UIView.transition(with: backgroundView, duration: 0.3, options: [.transitionFlipFromRight], animations: nil, completion: nil)
 //        mainLabel.text = "ura"
         

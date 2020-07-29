@@ -75,7 +75,8 @@ class PlayStartViewController: UIViewController {
     }
     
     @IBAction func startOnClick(){
-        let playVC = FlashCardViewController(nibName: "FlashCardViewController", bundle: nil)
+        let playVC = self.playItem.viewController
+//        let playVC = FlashCardViewController(nibName: "FlashCardViewController", bundle: nil)
         playVC.createTime = self.selected_createTime
         playVC.modalPresentationStyle = .fullScreen
         self.present(playVC, animated: true, completion: nil)
@@ -157,7 +158,7 @@ class PlayStartViewController: UIViewController {
     
 
     @objc func groupPickerClicked(sender: UITapGestureRecognizer) {
-        print("tap")
+        print("tap",sender)
 //        isGroupPickerDraw = !isGroupPickerDraw
         isGroupPickerDraw.toggle()
         print(isGroupPickerDraw)

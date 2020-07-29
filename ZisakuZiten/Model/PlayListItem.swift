@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // Playlistとかぶってるのまずい。
 class PlayListItem: NSObject {
@@ -15,12 +16,14 @@ class PlayListItem: NSObject {
     var subtitle:String
     var comment:String
     var groupMinCount:Int
+    var viewController:UIViewController
 //    var viewController:NSObject
     
-    init(title:String,subtitle:String,comment:String,groupMinCount:Int) {
+    init(title:String,subtitle:String,comment:String,groupMinCount:Int,viewController:UIViewController) {
         self.title = title
         self.subtitle = subtitle
         self.comment = comment
         self.groupMinCount = groupMinCount
+        self.viewController = viewController
     }
 }

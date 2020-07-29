@@ -2,34 +2,20 @@
 //  QuizViewController.swift
 //  ZisakuZiten
 //
-//  Created by unkonow on 2020/07/19.
+//  Created by unkonow on 2020/07/29.
 //  Copyright © 2020 unkonow. All rights reserved.
 //
 
 import UIKit
 
-protocol SwipeBackable {
-    func setSwipeBack()
-}
-
-
 class QuizViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("HEY! QUIZ VIEW CONTROLLER")
-//        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
-//        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
 
-//        navigationController?.interactivePopGestureRecognizer?.delegate = nil
         // Do any additional setup after loading the view.
     }
-    
-    
-    @IBAction func back(){
-//        navigationController?.popViewController(animated: true)
-    }
-    
+
 
     /*
     // MARK: - Navigation
@@ -42,4 +28,3 @@ class QuizViewController: UIViewController {
     */
 
 }
-

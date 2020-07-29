@@ -39,9 +39,8 @@
                         <constraint firstAttribute="trailing" secondItem="ioY-ik-gwt" secondAttribute="trailing" constant="16" id="b80-2c-uKd"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZy-8C-btH">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZy-8C-btH">
                     <rect key="frame" x="340" y="44" width="62" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="終了する">
                         <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                     </state>
@@ -53,6 +52,8 @@
             <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
             <constraints>
                 <constraint firstItem="cn6-mM-hdx" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="67F-CO-2Wm"/>
+                <constraint firstItem="kZy-8C-btH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="GUS-h9-NTk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kZy-8C-btH" secondAttribute="trailing" constant="12" id="b12-DY-8j3"/>
                 <constraint firstItem="cn6-mM-hdx" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="q9K-QQ-p3N"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
