@@ -61,7 +61,9 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
         print("texttexttext",group_createTime)
 
         let realm = try! Realm()
-        self.ziten_list = realm.objects(Group.self).filter("createTime==%@", group_createTime)[0].ziten_upT_List
+        let group = realm.objects(Group.self).filter("createTime==%@", group_createTime)[0]
+        self.ziten_list = group.ziten_upT_List
+        self.title = group.title
 //        tableView.reloadData()
         
         if PREVIEW_MODE{

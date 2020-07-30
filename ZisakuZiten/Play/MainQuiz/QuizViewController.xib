@@ -9,6 +9,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuizViewController" customModule="自作辞典" customModuleProvider="target">
             <connections>
+                <outlet property="btn1" destination="tD7-nr-SLs" id="CG6-mC-SyW"/>
+                <outlet property="btn2" destination="qaU-ce-mNy" id="AFw-vY-lcf"/>
+                <outlet property="btn3" destination="Yk6-pN-UPE" id="Ydg-sJ-Zfl"/>
+                <outlet property="btn4" destination="jpb-pS-D2p" id="MMc-JX-FPu"/>
+                <outlet property="mainLabel" destination="CQT-wL-hzI" id="yho-yE-xLS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,22 +22,17 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQT-wL-hzI">
-                    <rect key="frame" x="186" y="205" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPh-Bi-SYN">
-                    <rect key="frame" x="348" y="69" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPh-Bi-SYN">
+                    <rect key="frame" x="352" y="50" width="46" height="30"/>
+                    <state key="normal" title="閉じる"/>
+                    <connections>
+                        <action selector="exit" destination="-1" eventType="touchUpInside" id="m6W-bh-IFI"/>
+                    </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="xjS-zV-x9v">
                     <rect key="frame" x="16" y="557" width="382" height="273"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tD7-nr-SLs">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tD7-nr-SLs" customClass="PlayStartButton" customModule="自作辞典" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="382" height="45"/>
                             <color key="backgroundColor" red="1" green="0.34462122750000002" blue="0.7359986208" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
@@ -66,11 +66,48 @@
                         </button>
                     </subviews>
                 </stackView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lzg-RQ-fgo">
+                    <rect key="frame" x="68" y="182" width="278" height="148"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Sc-Rl-oWt">
+                            <rect key="frame" x="0.0" y="0.0" width="350" height="200"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQT-wL-hzI">
+                                    <rect key="frame" x="0.0" y="0.0" width="350" height="200"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="45"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="CQT-wL-hzI" firstAttribute="leading" secondItem="5Sc-Rl-oWt" secondAttribute="leading" id="6Oo-Hd-iBa"/>
+                                <constraint firstAttribute="trailing" secondItem="CQT-wL-hzI" secondAttribute="trailing" id="H8A-Dm-nkh"/>
+                                <constraint firstItem="CQT-wL-hzI" firstAttribute="top" secondItem="5Sc-Rl-oWt" secondAttribute="top" id="dSX-cQ-6Sy"/>
+                                <constraint firstAttribute="bottom" secondItem="CQT-wL-hzI" secondAttribute="bottom" id="qci-3H-9ph"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="1j5-Bp-Vcu"/>
+                        <constraint firstItem="uDq-kj-XZq" firstAttribute="trailing" secondItem="5Sc-Rl-oWt" secondAttribute="trailing" id="2ew-M5-kV3"/>
+                        <constraint firstItem="5Sc-Rl-oWt" firstAttribute="leading" secondItem="uDq-kj-XZq" secondAttribute="leading" id="Hhs-LR-AcF"/>
+                        <constraint firstItem="5Sc-Rl-oWt" firstAttribute="top" secondItem="uDq-kj-XZq" secondAttribute="top" id="Mls-hd-P36"/>
+                        <constraint firstItem="5Sc-Rl-oWt" firstAttribute="bottom" secondItem="uDq-kj-XZq" secondAttribute="bottom" id="yIo-vZ-t4u"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="0bk-UA-01C"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="uDq-kj-XZq"/>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="iPh-Bi-SYN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="6" id="0ub-wu-fqp"/>
                 <constraint firstItem="xjS-zV-x9v" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3wq-ss-8as"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iPh-Bi-SYN" secondAttribute="trailing" constant="16" id="8Zd-hz-87h"/>
+                <constraint firstItem="Lzg-RQ-fgo" firstAttribute="top" secondItem="iPh-Bi-SYN" secondAttribute="bottom" constant="120" id="NcQ-pG-d3i"/>
+                <constraint firstItem="Lzg-RQ-fgo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="O3c-9W-foo"/>
                 <constraint firstItem="xjS-zV-x9v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="OEs-AB-goL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Lzg-RQ-fgo" secondAttribute="trailing" constant="32" id="TO7-hH-mYW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xjS-zV-x9v" secondAttribute="bottom" constant="32" id="gCT-ZC-NA1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xjS-zV-x9v" secondAttribute="trailing" constant="16" id="uq0-Zv-1Jf"/>
             </constraints>
