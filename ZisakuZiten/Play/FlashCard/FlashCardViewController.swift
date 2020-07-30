@@ -9,13 +9,13 @@
 import UIKit
 import RealmSwift
 
-class FlashCardViewController: UIViewController {
+class FlashCardViewController: PlayBaseViewController {
     
     @IBOutlet weak var mainLabel:UILabel!
     @IBOutlet weak var backgroundView:UIView!
     
     var group:List<Ziten>!
-    var createTime:Date!
+//    var createTime:Date!
     // 偶数 表 奇数 裏
     var counter:Int = 0
 

@@ -1,21 +1,23 @@
 //
-//  QuizViewController.swift
+//  PlayBaseViewController.swift
 //  ZisakuZiten
 //
-//  Created by unkonow on 2020/07/29.
+//  Created by unkonow on 2020/07/30.
 //  Copyright © 2020 unkonow. All rights reserved.
 //
 
 import UIKit
 
-class QuizViewController: PlayBaseViewController {
+class PlayBaseViewController: UIViewController {
+    
+    var createTime:Date!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
+    
 
     /*
     // MARK: - Navigation

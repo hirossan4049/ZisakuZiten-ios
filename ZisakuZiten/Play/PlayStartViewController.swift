@@ -75,7 +75,7 @@ class PlayStartViewController: UIViewController {
     }
     
     @IBAction func startOnClick(){
-        let playVC = self.playItem.viewController
+        let playVC = self.playItem.viewController as! PlayBaseViewController
 //        let playVC = FlashCardViewController(nibName: "FlashCardViewController", bundle: nil)
         playVC.createTime = self.selected_createTime
         playVC.modalPresentationStyle = .fullScreen

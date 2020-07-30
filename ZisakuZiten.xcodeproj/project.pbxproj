@@ -55,6 +55,7 @@
 		D3C0985024D015BA00419F45 /* FlashCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3C0984E24D015BA00419F45 /* FlashCardViewController.xib */; };
 		D3C0985324D10D6F00419F45 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C0985124D10D6F00419F45 /* QuizViewController.swift */; };
 		D3C0985424D10D6F00419F45 /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3C0985224D10D6F00419F45 /* QuizViewController.xib */; };
+		D3C0985624D2E65900419F45 /* PlayBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C0985524D2E65900419F45 /* PlayBaseViewController.swift */; };
 		D3C594DD24CDF07200066E42 /* PlayListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C594DC24CDF07200066E42 /* PlayListItem.swift */; };
 		D3F79FFE24BEFB3500127E7A /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F79FFD24BEFB3500127E7A /* PlayViewController.swift */; };
 		D3FEFFDA24C8E0FD0069A356 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FEFFD924C8E0FD0069A356 /* MainTabViewController.swift */; };
@@ -137,6 +138,7 @@
 		D3C0984E24D015BA00419F45 /* FlashCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlashCardViewController.xib; sourceTree = "<group>"; };
 		D3C0985124D10D6F00419F45 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		D3C0985224D10D6F00419F45 /* QuizViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
+		D3C0985524D2E65900419F45 /* PlayBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBaseViewController.swift; sourceTree = "<group>"; };
 		D3C594DC24CDF07200066E42 /* PlayListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListItem.swift; sourceTree = "<group>"; };
 		D3F79FFD24BEFB3500127E7A /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		D3FEFFD924C8E0FD0069A356 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				D39FC4ED24C3F1DC00C4C0A1 /* FlashCard */,
 				D39FC4E724C3D9A700C4C0A1 /* MainQuiz */,
 				D3F79FFD24BEFB3500127E7A /* PlayViewController.swift */,
+				D3C0985524D2E65900419F45 /* PlayBaseViewController.swift */,
 				D36418D024C13BA2009E0499 /* PlaySelectItemTableViewCell.swift */,
 				D36418D124C13BA2009E0499 /* PlaySelectItemTableViewCell.xib */,
 				D335623D24CB243E0057D12B /* SelectGroupView.swift */,
@@ -623,6 +626,7 @@
 				D335624424CC5E460057D12B /* PlayStartViewController.swift in Sources */,
 				D3AB70F8249F88E400DFDDB7 /* Category.swift in Sources */,
 				D3AB70B4249F076A00DFDDB7 /* AppDelegate.swift in Sources */,
+				D3C0985624D2E65900419F45 /* PlayBaseViewController.swift in Sources */,
 				D3C0984F24D015BA00419F45 /* FlashCardViewController.swift in Sources */,
 				D335623A24C96C9E0057D12B /* UIColor+random.swift in Sources */,
 				D335624224CC56BC0057D12B /* PlayStartButton.swift in Sources */,
