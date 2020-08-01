@@ -39,30 +39,42 @@
                                 <constraint firstAttribute="height" constant="45" id="WOP-zB-0TQ"/>
                             </constraints>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="onClickWithSender:" destination="-1" eventType="touchUpInside" id="aEo-NC-hkU"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaU-ce-mNy">
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaU-ce-mNy">
                             <rect key="frame" x="0.0" y="76" width="382" height="45"/>
                             <color key="backgroundColor" red="1" green="0.34462122750000002" blue="0.7359986208" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="eYX-4s-XJY"/>
                             </constraints>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="onClickWithSender:" destination="-1" eventType="touchUpInside" id="3Bd-JK-2dF"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yk6-pN-UPE">
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yk6-pN-UPE">
                             <rect key="frame" x="0.0" y="152" width="382" height="45"/>
                             <color key="backgroundColor" red="1" green="0.34462122750000002" blue="0.7359986208" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="CKG-oh-Ye9"/>
                             </constraints>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="onClickWithSender:" destination="-1" eventType="touchUpInside" id="rjP-gS-hiI"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpb-pS-D2p">
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpb-pS-D2p">
                             <rect key="frame" x="0.0" y="228" width="382" height="45"/>
                             <color key="backgroundColor" red="1" green="0.34462122750000002" blue="0.7359986208" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="5CQ-Ua-mub"/>
                             </constraints>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="onClickWithSender:" destination="-1" eventType="touchUpInside" id="6sc-RK-WVs"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>

@@ -14,7 +14,7 @@ class FlashCardViewController: PlayBaseViewController {
     @IBOutlet weak var mainLabel:UILabel!
     @IBOutlet weak var backgroundView:UIView!
     
-    var group:List<Ziten>!
+    var zitens:List<Ziten>!
 //    var createTime:Date!
     // 偶数 表 奇数 裏
     var counter:Int = 0
@@ -28,14 +28,18 @@ class FlashCardViewController: PlayBaseViewController {
         backgroundView.addGestureRecognizer(tapGesture)
         
         let realm = try! Realm()
-        self.group = realm.objects(Group.self).filter("createTime==%@",createTime)[0].ziten_upT_List
+        self.zitens = realm.objects(Group.self).filter("createTime==%@",createTime)[0].ziten_upT_List
 
         mainLabel.adjustsFontSizeToFitWidth = true
 //        mainLabel.text = self.group[0].title
-        setFlashCard()
+//        setFlashCard()
         // Do any additional setup after loading the view.
 
 
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setFlashCard()
     }
     
     @objc func nextWord(sender: UITapGestureRecognizer){
@@ -44,25 +48,26 @@ class FlashCardViewController: PlayBaseViewController {
     }
     
     func setFlashCard(){
-        print(self.counter,self.group.count)
-        if self.counter >= (self.group.count * 2){
+        print(self.counter,self.zitens.count)
+        if self.counter >= (self.zitens.count * 2){
             mainLabel.text =  "END"
             return
         }
         if counter % 2 == 0{
             mainLabel.textColor = .black
-            mainLabel.text =  self.group[counter / 2].title
+            mainLabel.text =  self.zitens[counter / 2].title
         }
         else{
             mainLabel.textColor = .red
-            mainLabel.text = self.group[(self.counter - 1) / 2].content
+            mainLabel.text = self.zitens[(self.counter - 1) / 2].content
         }
         self.counter += 1
     }
     
     @IBAction func dismissClicked(){
         self.dismiss(animated: true, completion: nil)
-        
+        self.counter = 0
+
 //        UIView.transition(with: backgroundView, duration: 0.3, options: [.transitionFlipFromRight], animations: nil, completion: nil)
 //        mainLabel.text = "ura"
         
