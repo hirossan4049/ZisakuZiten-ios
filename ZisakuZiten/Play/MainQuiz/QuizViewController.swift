@@ -19,45 +19,71 @@ class QuizViewController: PlayBaseViewController {
     @IBOutlet weak var mainLabel: UILabel!
     
     var zitens:List<Ziten>!
+    var buttons:[UIButton]!
+    var tmp_ziten:Ziten!
+    var correct_list:[Ziten]!
+    var incorrect_list:[Ziten]!
+    var counter:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let realm = try! Realm()
         self.zitens = realm.objects(Group.self).filter("createTime==%@",createTime)[0].ziten_upT_List
-        btn_settings()
         mainLabel.adjustsFontSizeToFitWidth = true
+        self.buttons = [btn1,btn2,btn3,btn4]
+
         // ScrollViewどうしよ
         mainLabel.text = "絶対王政（ぜったいおうせい、英語: absolute monarchism）は、王が絶対的な権力を行使する政治の形態を指す。 絶対主義や絶対君主制とも呼ばれる絶対王政（ぜったいおうせい、英語: absolute monarchism）は、王が絶対的な権力を行使する政治の形態を指す。 絶対主義や絶対君主制とも呼ばれる絶対王政（ぜったいおうせい、英語: absolute monarchism）は、王が絶対的な権力を行使する政治の形態を指す。 絶対主義や絶対君主制とも呼ばれる絶対王政（ぜったいおうせい、英語: absolute monarchism）は、王が絶対的な権力を行使する政治の形態を指す。 絶対主義や絶対君主制とも呼ばれる。"
         // Do any additional setup after loading the view.
+        btn_settings()
         set()
+
+    }
+    
+    func reset(){
+        self.counter = 0
     }
     
     func set(){
+        if self.counter <= self.zitens.count{
+            normal_quiz()
+        }else if self.counter % 3 == 0{
+            normal_quiz()
+        }else{
+            excellent_quiz()
+        }
+        self.counter += 1
+        
+    }
+    
+    func normal_quiz(){
         var shuffled = self.zitens.shuffled()
         
-        // Python [zitens[x] for x in range(4)]
-//        let ans = self.zitens[0]
-//        let oth1 = self.zitens[1].content
-//        let oth2 = self.zitens[2].content
-//        let oth3 = self.zitens[3].content
-//        
-        var buttons = [btn1,btn2,btn3,btn4]
-        buttons.shuffle()
-        for item in buttons{
-            item?.setTitle(shuffled.first?.title, for: .normal)
+//        var buttons = [btn1,btn2,btn3,btn4]
+        var shuffled_buttons:[UIButton] = self.buttons
+        // tag all 0
+        for item in shuffled_buttons{ item.tag = 0 }
+        shuffled_buttons.shuffle()
+        mainLabel.text = shuffled.first?.title
+        self.tmp_ziten = shuffled.first
+        shuffled_buttons[0].tag = 1
+        for item in shuffled_buttons{
+            item.setTitle(shuffled.first?.content, for: .normal)
             shuffled.removeFirst()
         }
-        
-        
+    }
+
+    
+    func excellent_quiz(){
+        print(incorrect_list.isEmpty)
         
     }
     
     func btn_settings(){
-        btn1.layer.cornerRadius = 13
-        btn2.layer.cornerRadius = 13
-        btn3.layer.cornerRadius = 13
-        btn4.layer.cornerRadius = 13
-
+        for item in self.buttons{item.layer.cornerRadius = 13}
+    }
+    func btns_enable(bool:Bool){
+        for item in self.buttons{item.isEnabled = bool}
     }
     
     @IBAction func exit(){
@@ -67,12 +93,14 @@ class QuizViewController: PlayBaseViewController {
     // Quiz 4 Buttons click event
     @IBAction func onClick(sender:UIButton){
         print(sender.tag);
-//        switch sender.tag {
-//        case 0:
-//
-//        default:
-//            return
-//        }
+        if sender.tag == 0{
+            // uncorrect
+            print("uncorerct")
+        }else{
+            //correct
+            print("correct!")
+            set()
+        }
     }
 
 
