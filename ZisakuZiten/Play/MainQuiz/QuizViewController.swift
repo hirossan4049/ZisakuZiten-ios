@@ -75,7 +75,7 @@ class QuizViewController: PlayBaseViewController {
 
     
     func excellent_quiz(){
-        print(incorrect_list.isEmpty)
+        print(incorrect_list?.isEmpty)
         
     }
     

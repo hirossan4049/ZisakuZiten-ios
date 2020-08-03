@@ -225,7 +225,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let selectionView = UIView()
         selectionView.backgroundColor = UIColor.red
         cell.selectedBackgroundView = selectionView
+        
+        var logo = UIImage(named: "testTitleImg.png")
+        logo = logo?.resize(size: CGSize(width: 200, height: 40))
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
         cell.delegate = self
+        
 //        cell.backgroundColor = UIColor.white
 //        cell.layer.borderColor = UIColor.black.cgColor
 //        cell.layer.borderColor = UIColor.white.cgColor

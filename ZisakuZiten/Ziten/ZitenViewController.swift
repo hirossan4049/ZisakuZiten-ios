@@ -101,9 +101,10 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //        let cell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as GroupTableViewCell!
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ZitenTableViewCell
         cell.backgroundColor = UIColor.white
-        cell.layer.borderColor = UIColor.black.cgColor
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 8
+//        cell.layer.borderColor = UIColor.black.cgColor
+//        cell.layer.borderColor = UIColor(hex: "878787").cgColor
+//        cell.layer.borderWidth = 1
+//        cell.layer.cornerRadius = 8
         cell.clipsToBounds = true
 
         let ziten:Ziten = self.ziten_list[indexPath.section]

@@ -22,7 +22,7 @@ class GroupTableViewCell: SwipeTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        categoryBodyColorView.layer.cornerRadius = 10
+        categoryBodyColorView.layer.cornerRadius = 7
         categoryBodyColorView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
         
         // thanks https://qiita.com/hachinobu/items/dc2ff32fa2be6b78ea86
@@ -40,6 +40,8 @@ class GroupTableViewCell: SwipeTableViewCell {
         // 影をぼかし
         categoryBodyColorView.layer.shadowRadius = 2
         
+        titleLabel.font = UIFont(name: "KosugiMaru-Regular", size: 17)
+
 //        self.CELL_HIGHT = self.bounds.height
         
     }
