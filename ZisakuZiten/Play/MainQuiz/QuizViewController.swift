@@ -37,11 +37,18 @@ class QuizViewController: PlayBaseViewController {
         // Do any additional setup after loading the view.
         btn_settings()
         set()
+        
+
+        let isCorrectPupup:isCorrectPopupViewController = self.storyboard?.instantiateViewController(withIdentifier: "isCorrectPupupViewController") as! isCorrectPopupViewController
+        isCorrectPupup.modalPresentationStyle = .overFullScreen
+        isCorrectPupup.modalTransitionStyle = .crossDissolve
+
+        self.present(isCorrectPupup, animated: false, completion: nil)
 
     }
     
     func reset(){
-        self.counter = 0
+        self.counter = 0    
     }
     
     func set(){

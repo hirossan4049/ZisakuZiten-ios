@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="isCorrectPopupViewController" customModule="自作辞典" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="LJM-s7-w3Z" id="ecG-Ed-CkZ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XdM-9J-i89">
+                    <rect key="frame" x="107" y="348" width="200" height="200"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="correctImg" translatesAutoresizingMaskIntoConstraints="NO" id="LJM-s7-w3Z">
+                            <rect key="frame" x="50" y="16" width="100" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="8Od-kh-SFD"/>
+                                <constraint firstAttribute="height" constant="100" id="mza-tR-dZa"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.68430897887323938" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="LJM-s7-w3Z" firstAttribute="top" secondItem="XdM-9J-i89" secondAttribute="top" constant="16" id="2K2-wE-4Zv"/>
+                        <constraint firstAttribute="width" constant="200" id="fid-GF-fId"/>
+                        <constraint firstAttribute="height" constant="200" id="mW9-PC-Iqu"/>
+                        <constraint firstItem="LJM-s7-w3Z" firstAttribute="centerX" secondItem="XdM-9J-i89" secondAttribute="centerX" id="poi-9X-aYU"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="正解！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDT-uK-5da">
+                    <rect key="frame" x="181" y="499" width="52" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.092071963028169015" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="XdM-9J-i89" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OpF-d9-DXF"/>
+                <constraint firstItem="XdM-9J-i89" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="xCJ-UN-Gpj"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="119"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="correctImg" width="640" height="640"/>
+    </resources>
+</document>

@@ -21,6 +21,8 @@
 		D335624E24CC789E0057D12B /* GroupPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D335624D24CC789E0057D12B /* GroupPickerView.xib */; };
 		D335625024CC8F6C0057D12B /* GroupPickerViewOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D335624F24CC8F6C0057D12B /* GroupPickerViewOwner.swift */; };
 		D33692A624D7AF310027FB17 /* KosugiMaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D33692A524D7AF310027FB17 /* KosugiMaru-Regular.ttf */; };
+		D33692A924D91E0A0027FB17 /* isCorrectPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33692A724D91E0A0027FB17 /* isCorrectPopupViewController.swift */; };
+		D33692AA24D91E0A0027FB17 /* isCorrectPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D33692A824D91E0A0027FB17 /* isCorrectPopupViewController.xib */; };
 		D358122424AD60900042FEA7 /* CategoryColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D358122324AD60900042FEA7 /* CategoryColors.swift */; };
 		D36418D224C13BA2009E0499 /* PlaySelectItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36418D024C13BA2009E0499 /* PlaySelectItemTableViewCell.swift */; };
 		D36418D324C13BA2009E0499 /* PlaySelectItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36418D124C13BA2009E0499 /* PlaySelectItemTableViewCell.xib */; };
@@ -99,6 +101,8 @@
 		D335624D24CC789E0057D12B /* GroupPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupPickerView.xib; sourceTree = "<group>"; };
 		D335624F24CC8F6C0057D12B /* GroupPickerViewOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPickerViewOwner.swift; sourceTree = "<group>"; };
 		D33692A524D7AF310027FB17 /* KosugiMaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KosugiMaru-Regular.ttf"; path = "../../../../../../../Downloads/Kosugi_Maru/KosugiMaru-Regular.ttf"; sourceTree = "<group>"; };
+		D33692A724D91E0A0027FB17 /* isCorrectPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isCorrectPopupViewController.swift; sourceTree = "<group>"; };
+		D33692A824D91E0A0027FB17 /* isCorrectPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = isCorrectPopupViewController.xib; sourceTree = "<group>"; };
 		D358122324AD60900042FEA7 /* CategoryColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColors.swift; sourceTree = "<group>"; };
 		D36418D024C13BA2009E0499 /* PlaySelectItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySelectItemTableViewCell.swift; sourceTree = "<group>"; };
 		D36418D124C13BA2009E0499 /* PlaySelectItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaySelectItemTableViewCell.xib; sourceTree = "<group>"; };
@@ -254,6 +258,8 @@
 				D39FC4F024C408E800C4C0A1 /* QuizNavigationController.swift */,
 				D3C0985124D10D6F00419F45 /* QuizViewController.swift */,
 				D3C0985224D10D6F00419F45 /* QuizViewController.xib */,
+				D33692A724D91E0A0027FB17 /* isCorrectPopupViewController.swift */,
+				D33692A824D91E0A0027FB17 /* isCorrectPopupViewController.xib */,
 			);
 			path = MainQuiz;
 			sourceTree = "<group>";
@@ -495,6 +501,7 @@
 				D3A96A9B24A1F0D70053639B /* CreateCategoryDialogViewController.xib in Resources */,
 				D33692A624D7AF310027FB17 /* KosugiMaru-Regular.ttf in Resources */,
 				D3AB70EC249F1EE700DFDDB7 /* GroupTableViewCell.xib in Resources */,
+				D33692AA24D91E0A0027FB17 /* isCorrectPopupViewController.xib in Resources */,
 				D3C0985424D10D6F00419F45 /* QuizViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -657,6 +664,7 @@
 				D3AB70EB249F1EE700DFDDB7 /* GroupTableViewCell.swift in Sources */,
 				D335624624CC5F110057D12B /* UIColor+hex.swift in Sources */,
 				D358122424AD60900042FEA7 /* CategoryColors.swift in Sources */,
+				D33692A924D91E0A0027FB17 /* isCorrectPopupViewController.swift in Sources */,
 				D39FC4E924C3DEB000C4C0A1 /* Playlist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
