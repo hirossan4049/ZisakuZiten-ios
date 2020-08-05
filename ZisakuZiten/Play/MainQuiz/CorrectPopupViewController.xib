@@ -7,8 +7,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="isCorrectPopupViewController" customModule="自作辞典" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CorrectPopupViewController" customModule="自作辞典" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundView" destination="XdM-9J-i89" id="aD9-a9-Ruv"/>
                 <outlet property="imageView" destination="LJM-s7-w3Z" id="ecG-Ed-CkZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -28,22 +29,23 @@
                                 <constraint firstAttribute="height" constant="100" id="mza-tR-dZa"/>
                             </constraints>
                         </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正解" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDT-uK-5da">
+                            <rect key="frame" x="82.5" y="149" width="35" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.68430897887323938" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="LJM-s7-w3Z" firstAttribute="top" secondItem="XdM-9J-i89" secondAttribute="top" constant="16" id="2K2-wE-4Zv"/>
+                        <constraint firstItem="RDT-uK-5da" firstAttribute="centerX" secondItem="XdM-9J-i89" secondAttribute="centerX" id="Bbq-KW-Izv"/>
                         <constraint firstAttribute="width" constant="200" id="fid-GF-fId"/>
+                        <constraint firstAttribute="bottom" secondItem="RDT-uK-5da" secondAttribute="bottom" constant="30" id="l0P-XV-WVA"/>
                         <constraint firstAttribute="height" constant="200" id="mW9-PC-Iqu"/>
                         <constraint firstItem="LJM-s7-w3Z" firstAttribute="centerX" secondItem="XdM-9J-i89" secondAttribute="centerX" id="poi-9X-aYU"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="正解！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDT-uK-5da">
-                    <rect key="frame" x="181" y="499" width="52" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.092071963028169015" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>

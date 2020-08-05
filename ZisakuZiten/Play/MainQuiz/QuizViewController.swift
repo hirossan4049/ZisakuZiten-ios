@@ -39,16 +39,17 @@ class QuizViewController: PlayBaseViewController {
         set()
         
 
-        let isCorrectPupup:isCorrectPopupViewController = self.storyboard?.instantiateViewController(withIdentifier: "isCorrectPupupViewController") as! isCorrectPopupViewController
-        isCorrectPupup.modalPresentationStyle = .overFullScreen
-        isCorrectPupup.modalTransitionStyle = .crossDissolve
+//        let isCorrectPupup:CorrectPopupViewController = self.storyboard?.instantiateViewController(withIdentifier: "CorrectPupupViewController") as! CorrectPopupViewController
+//        isCorrectPupup.modalPresentationStyle = .overFullScreen
+//        isCorrectPupup.modalTransitionStyle = .crossDissolve
+        
 
-        self.present(isCorrectPupup, animated: false, completion: nil)
+//        self.present(isCorrectPupup, animated: false, completion: nil)
 
     }
     
     func reset(){
-        self.counter = 0    
+        self.counter = 0
     }
     
     func set(){
@@ -94,7 +95,13 @@ class QuizViewController: PlayBaseViewController {
     }
     
     @IBAction func exit(){
-        self.dismiss(animated: true, completion: nil)
+        let alertView = CorrectPopupViewController()
+        alertView.isCorrect = true
+        alertView.modalTransitionStyle = .crossDissolve
+        alertView.modalPresentationStyle = .overCurrentContext
+        present(alertView, animated: false, completion: nil)
+
+//        self.dismiss(animated: true, completion: nil)
     }
     
     // Quiz 4 Buttons click event
