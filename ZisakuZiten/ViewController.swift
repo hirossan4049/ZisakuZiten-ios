@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 import SwipeCellKit
 import AudioToolbox
+import ViewAnimator
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate, UIViewControllerPreviewingDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
@@ -77,7 +78,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.groupList = realm.objects(Group.self)
 //        print(groupList)
 //        print(realm.objects(Category.self))
-
+        
+        
+        
 
         // 3D Touchが使える端末か確認
         if self.traitCollection.forceTouchCapability == UIForceTouchCapability.available {
@@ -85,6 +88,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             registerForPreviewing(with: self, sourceView: tableView)
 //            registerForPreviewing(with: self, sourceView: view)
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        cell_animation()
+    }
+    
+    func cell_animation(){
+        let fromAnimation = AnimationType.from(direction: .right, offset: 30.0)
+        let zoomAnimation = AnimationType.zoom(scale: 0.2)
+        UIView.animate(views: tableView.visibleCells,
+                       animations: [fromAnimation, zoomAnimation], delay: 0.1)
     }
     
 
@@ -164,6 +179,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //                                with: .automatic)
 //                        self.tableView.endUpdates()
                         self.tableView.reloadData()
+                        
                         //                        self.label1.text = text
                     }
                 }

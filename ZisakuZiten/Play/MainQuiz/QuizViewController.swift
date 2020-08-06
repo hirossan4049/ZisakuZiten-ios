@@ -95,13 +95,8 @@ class QuizViewController: PlayBaseViewController {
     }
     
     @IBAction func exit(){
-        let alertView = CorrectPopupViewController()
-        alertView.isCorrect = true
-        alertView.modalTransitionStyle = .crossDissolve
-        alertView.modalPresentationStyle = .overCurrentContext
-        present(alertView, animated: false, completion: nil)
 
-//        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     // Quiz 4 Buttons click event
@@ -110,10 +105,23 @@ class QuizViewController: PlayBaseViewController {
         if sender.tag == 0{
             // uncorrect
             print("uncorerct")
+            correctDraw(isCorrect: false)
         }else{
             //correct
             print("correct!")
+            correctDraw(isCorrect: true)
             set()
+        }
+    }
+    
+    func correctDraw(isCorrect:Bool){
+        let alertView = CorrectPopupViewController()
+        alertView.isCorrect = isCorrect
+        alertView.modalTransitionStyle = .crossDissolve
+        alertView.modalPresentationStyle = .overCurrentContext
+        present(alertView, animated: false, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            alertView.dismiss(animated: false, completion: nil)
         }
     }
 

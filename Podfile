@@ -7,7 +7,7 @@ target 'ZisakuZiten' do
   pod 'RealmSwift'
   pod 'SwipeCellKit'
   pod 'MaterialComponents/Buttons'
-
+  pod "ViewAnimator"
   # Pods for ZisakuZiten
 
   target 'ZisakuZitenTests' do

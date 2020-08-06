@@ -11,14 +11,18 @@ import UIKit
 class CorrectPopupViewController: UIViewController {
     @IBOutlet weak var imageView:UIImageView!
     @IBOutlet weak var backgroundView:UIView!
-    weak var img:UIImage!
+    @IBOutlet weak var textLabel:UILabel!
+    var img:UIImage!
+    var text:String = ""
     
     var isCorrect:Bool = false{
         didSet{
             if isCorrect{
                 self.img = UIImage(named: "correctImg")
+                self.text = "正解"
             }else{
                 self.img = UIImage(named: "incorrectImg")
+                self.text = "不正解"
             }
         }
     }
@@ -29,6 +33,8 @@ class CorrectPopupViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         imageView.image = img
+        textLabel.text = text
+        
 //        self.backgroundView.addBlur()
         self.backgroundView.layer.cornerRadius = 10
 
