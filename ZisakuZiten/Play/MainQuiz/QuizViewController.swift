@@ -55,6 +55,14 @@ class QuizViewController: PlayBaseViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let realm = try! Realm()
+        self.zitens = realm.objects(Group.self).filter("createTime==%@",createTime)[0].ziten_upT_List
+        reset()
+        set()
+    }
+    
     func reset(){
         self.counter = 0
     }

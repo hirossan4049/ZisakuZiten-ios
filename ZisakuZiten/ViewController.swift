@@ -326,8 +326,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in 
             action.fulfill(with: .reset)
         }
-        let img = UIImage(named: "del_sample")
-        let resized_img = img?.resize(size: CGSize(width: cellHeight + 10, height: cellHeight))
+        let btn:CategoryColorButton = CategoryColorButton()
+        btn.backgroundColor = .red
+        btn.tintColor = .green
+        
+        btn.setTitle("Delete", for: .normal)
+        
+//        let img = UIImage(named: "del_sample")
+        let img = btn.asImage()
+        
+        let resized_img = img.resize(size: CGSize(width: cellHeight + 10, height: cellHeight))
         deleteAction.transitionDelegate = ScaleTransition.default
         
 //        deleteAction.image = UIImage(named: "del_sample")
@@ -335,7 +343,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         deleteAction.image = resized_img
         deleteAction.title = nil
 
-        deleteAction.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
+        deleteAction.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         
 
         return [deleteAction,deleteAction,deleteAction]

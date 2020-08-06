@@ -232,6 +232,8 @@
 		D33692A324D775B20027FB17 /* Gorup */ = {
 			isa = PBXGroup;
 			children = (
+				D3AB70E9249F1EE700DFDDB7 /* GroupTableViewCell.swift */,
+				D3AB70EA249F1EE700DFDDB7 /* GroupTableViewCell.xib */,
 				D335624B24CC78650057D12B /* GroupPickerView.swift */,
 				D335624D24CC789E0057D12B /* GroupPickerView.xib */,
 				D335624F24CC8F6C0057D12B /* GroupPickerViewOwner.swift */,
@@ -320,11 +322,8 @@
 				D3AB70BC249F076B00DFDDB7 /* Assets.xcassets */,
 				D3AB70BE249F076B00DFDDB7 /* LaunchScreen.storyboard */,
 				D3AB70C1249F076B00DFDDB7 /* Info.plist */,
-				D3AB70E9249F1EE700DFDDB7 /* GroupTableViewCell.swift */,
-				D3AB70EA249F1EE700DFDDB7 /* GroupTableViewCell.xib */,
-				D358122324AD60900042FEA7 /* CategoryColors.swift */,
-				D3FEFFD924C8E0FD0069A356 /* MainTabViewController.swift */,
 				D335623B24C988170057D12B /* PlayNavigationController.swift */,
+				D3FEFFD924C8E0FD0069A356 /* MainTabViewController.swift */,
 			);
 			path = ZisakuZiten;
 			sourceTree = "<group>";
@@ -350,6 +349,7 @@
 		D3F79FC324BD4CE300127E7A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D358122324AD60900042FEA7 /* CategoryColors.swift */,
 				D3AB70F3249F66DE00DFDDB7 /* Group.swift */,
 				D3AB70F5249F888800DFDDB7 /* Ziten.swift */,
 				D3AB70F7249F88E400DFDDB7 /* Category.swift */,
