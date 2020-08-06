@@ -20,10 +20,12 @@
 		D335624C24CC78650057D12B /* GroupPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D335624B24CC78650057D12B /* GroupPickerView.swift */; };
 		D335624E24CC789E0057D12B /* GroupPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D335624D24CC789E0057D12B /* GroupPickerView.xib */; };
 		D335625024CC8F6C0057D12B /* GroupPickerViewOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D335624F24CC8F6C0057D12B /* GroupPickerViewOwner.swift */; };
-		D33692A624D7AF310027FB17 /* KosugiMaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D33692A524D7AF310027FB17 /* KosugiMaru-Regular.ttf */; };
 		D33692A924D91E0A0027FB17 /* CorrectPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33692A724D91E0A0027FB17 /* CorrectPopupViewController.swift */; };
 		D33692AA24D91E0A0027FB17 /* CorrectPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D33692A824D91E0A0027FB17 /* CorrectPopupViewController.xib */; };
 		D33692AC24DAA0A20027FB17 /* UIView+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33692AB24DAA0A20027FB17 /* UIView+Blur.swift */; };
+		D33692AE24DBE84A0027FB17 /* QuizItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33692AD24DBE84A0027FB17 /* QuizItemButton.swift */; };
+		D33692B024DBE9860027FB17 /* UIColor+convertToRGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33692AF24DBE9860027FB17 /* UIColor+convertToRGBA.swift */; };
+		D33692B124DBF84A0027FB17 /* KosugiMaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D33692A524D7AF310027FB17 /* KosugiMaru-Regular.ttf */; };
 		D358122424AD60900042FEA7 /* CategoryColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D358122324AD60900042FEA7 /* CategoryColors.swift */; };
 		D36418D224C13BA2009E0499 /* PlaySelectItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36418D024C13BA2009E0499 /* PlaySelectItemTableViewCell.swift */; };
 		D36418D324C13BA2009E0499 /* PlaySelectItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36418D124C13BA2009E0499 /* PlaySelectItemTableViewCell.xib */; };
@@ -105,6 +107,8 @@
 		D33692A724D91E0A0027FB17 /* CorrectPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectPopupViewController.swift; sourceTree = "<group>"; };
 		D33692A824D91E0A0027FB17 /* CorrectPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CorrectPopupViewController.xib; sourceTree = "<group>"; };
 		D33692AB24DAA0A20027FB17 /* UIView+Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Blur.swift"; sourceTree = "<group>"; };
+		D33692AD24DBE84A0027FB17 /* QuizItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizItemButton.swift; sourceTree = "<group>"; };
+		D33692AF24DBE9860027FB17 /* UIColor+convertToRGBA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+convertToRGBA.swift"; sourceTree = "<group>"; };
 		D358122324AD60900042FEA7 /* CategoryColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColors.swift; sourceTree = "<group>"; };
 		D36418D024C13BA2009E0499 /* PlaySelectItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySelectItemTableViewCell.swift; sourceTree = "<group>"; };
 		D36418D124C13BA2009E0499 /* PlaySelectItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaySelectItemTableViewCell.xib; sourceTree = "<group>"; };
@@ -251,6 +255,7 @@
 				D335623924C96C9E0057D12B /* UIColor+random.swift */,
 				D335624524CC5F110057D12B /* UIColor+hex.swift */,
 				D33692AB24DAA0A20027FB17 /* UIView+Blur.swift */,
+				D33692AF24DBE9860027FB17 /* UIColor+convertToRGBA.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				D3C0985224D10D6F00419F45 /* QuizViewController.xib */,
 				D33692A724D91E0A0027FB17 /* CorrectPopupViewController.swift */,
 				D33692A824D91E0A0027FB17 /* CorrectPopupViewController.xib */,
+				D33692AD24DBE84A0027FB17 /* QuizItemButton.swift */,
 			);
 			path = MainQuiz;
 			sourceTree = "<group>";
@@ -492,6 +498,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D33692B124DBF84A0027FB17 /* KosugiMaru-Regular.ttf in Resources */,
 				D36418D324C13BA2009E0499 /* PlaySelectItemTableViewCell.xib in Resources */,
 				D335624024CB244B0057D12B /* SelectGroupView.xib in Resources */,
 				D3C0985024D015BA00419F45 /* FlashCardViewController.xib in Resources */,
@@ -502,7 +509,6 @@
 				D3AB70BB249F076A00DFDDB7 /* Main.storyboard in Resources */,
 				D3A6A4E024A36FC800CF6C87 /* CategoryEditTableViewCell.xib in Resources */,
 				D3A96A9B24A1F0D70053639B /* CreateCategoryDialogViewController.xib in Resources */,
-				D33692A624D7AF310027FB17 /* KosugiMaru-Regular.ttf in Resources */,
 				D3AB70EC249F1EE700DFDDB7 /* GroupTableViewCell.xib in Resources */,
 				D33692AA24D91E0A0027FB17 /* CorrectPopupViewController.xib in Resources */,
 				D3C0985424D10D6F00419F45 /* QuizViewController.xib in Resources */,
@@ -638,6 +644,7 @@
 				D3AB70F6249F888800DFDDB7 /* Ziten.swift in Sources */,
 				D37AED8424B84663001E6302 /* UIImage+resize.swift in Sources */,
 				D335623C24C988170057D12B /* PlayNavigationController.swift in Sources */,
+				D33692AE24DBE84A0027FB17 /* QuizItemButton.swift in Sources */,
 				D3AB70F4249F66DE00DFDDB7 /* Group.swift in Sources */,
 				D3AB70F1249F3A8B00DFDDB7 /* ZitenTableViewCell.swift in Sources */,
 				D335625024CC8F6C0057D12B /* GroupPickerViewOwner.swift in Sources */,
@@ -655,6 +662,7 @@
 				D3F79FFE24BEFB3500127E7A /* PlayViewController.swift in Sources */,
 				D335623E24CB243E0057D12B /* SelectGroupView.swift in Sources */,
 				D335624424CC5E460057D12B /* PlayStartViewController.swift in Sources */,
+				D33692B024DBE9860027FB17 /* UIColor+convertToRGBA.swift in Sources */,
 				D3AB70F8249F88E400DFDDB7 /* Category.swift in Sources */,
 				D3AB70B4249F076A00DFDDB7 /* AppDelegate.swift in Sources */,
 				D3C0985624D2E65900419F45 /* PlayBaseViewController.swift in Sources */,

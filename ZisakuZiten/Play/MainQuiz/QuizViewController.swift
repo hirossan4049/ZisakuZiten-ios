@@ -17,6 +17,7 @@ class QuizViewController: PlayBaseViewController {
     @IBOutlet weak var btn4: UIButton!
     
     @IBOutlet weak var mainLabel: UILabel!
+    @IBOutlet weak var mainLabelBackView:UIView!
     
     var zitens:List<Ziten>!
     var buttons:[UIButton]!
@@ -31,6 +32,12 @@ class QuizViewController: PlayBaseViewController {
         self.zitens = realm.objects(Group.self).filter("createTime==%@",createTime)[0].ziten_upT_List
         mainLabel.adjustsFontSizeToFitWidth = true
         self.buttons = [btn1,btn2,btn3,btn4]
+        
+        mainLabelBackView.layer.cornerRadius = 13
+        mainLabelBackView.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        mainLabelBackView.layer.shadowColor = UIColor.black.cgColor
+        mainLabelBackView.layer.shadowOpacity = 0.2
+        mainLabelBackView.layer.shadowRadius = 10
 
         // ScrollViewどうしよ
         mainLabel.text = "絶対王政（ぜったいおうせい、英語: absolute monarchism）は、王が絶対的な権力を行使する政治の形態を指す。 絶対主義や絶対君主制とも呼ばれる絶対王政（ぜったいおうせい、英語: absolute monarchism）は、王が絶対的な権力を行使する政治の形態を指す。 絶対主義や絶対君主制とも呼ばれる絶対王政（ぜったいおうせい、英語: absolute monarchism）は、王が絶対的な権力を行使する政治の形態を指す。 絶対主義や絶対君主制とも呼ばれる絶対王政（ぜったいおうせい、英語: absolute monarchism）は、王が絶対的な権力を行使する政治の形態を指す。 絶対主義や絶対君主制とも呼ばれる。"
@@ -110,7 +117,6 @@ class QuizViewController: PlayBaseViewController {
             //correct
             print("correct!")
             correctDraw(isCorrect: true)
-            set()
         }
     }
     
@@ -122,6 +128,7 @@ class QuizViewController: PlayBaseViewController {
         present(alertView, animated: false, completion: nil)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             alertView.dismiss(animated: false, completion: nil)
+            self.set()
         }
     }
 
