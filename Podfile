@@ -8,6 +8,7 @@ target 'ZisakuZiten' do
   pod 'SwipeCellKit'
   pod 'MaterialComponents/Buttons'
   pod "ViewAnimator"
+  pod 'AMScrollingNavbar'
   # Pods for ZisakuZiten
 
   target 'ZisakuZitenTests' do

@@ -11,8 +11,9 @@ import RealmSwift
 import SwipeCellKit
 import AudioToolbox
 import ViewAnimator
+import AMScrollingNavbar
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate, UIViewControllerPreviewingDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate, UIViewControllerPreviewingDelegate, ScrollingNavigationControllerDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         print("PRESSED")
 //        self.performSegue(withIdentifier: "toZiten", sender: nil)
@@ -62,6 +63,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var clicked_group: Group!
     @IBOutlet var tableView: UITableView!
     @IBOutlet private weak var createBtn:UIButton!
+    @IBOutlet weak var toolbar: UIToolbar!
     
 
     override func viewDidLoad() {
@@ -79,8 +81,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        print(groupList)
 //        print(realm.objects(Category.self))
         
-        
-        
 
         // 3D Touchが使える端末か確認
         if self.traitCollection.forceTouchCapability == UIForceTouchCapability.available {
@@ -88,18 +88,46 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             registerForPreviewing(with: self, sourceView: tableView)
 //            registerForPreviewing(with: self, sourceView: view)
         }
+        
+        
+//        cell_animation()
+    }
+    
+    override func viewDidLayoutSubviews(){
+        super.viewDidLayoutSubviews()
+        cell_animation()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        cell_animation()
+//        cell_animation()
+        if let navigationController = self.navigationController as? ScrollingNavigationController {
+          if let tabBarController = tabBarController {
+            navigationController.followScrollView(tableView, delay: 0, scrollSpeedFactor: 2, followers: [NavigationBarFollower(view: tabBarController.tabBar, direction: .scrollDown)])
+          } else {
+            navigationController.followScrollView(tableView, delay: 0.0, scrollSpeedFactor: 2)
+          }
+          navigationController.scrollingNavbarDelegate = self
+          navigationController.expandOnActive = false
+        }
+    }
+    
+    func scrollingNavigationController(_ controller: ScrollingNavigationController, didChangeState state: NavigationBarState) {
+      switch state {
+      case .collapsed:
+        print("navbar collapsed")
+      case .expanded:
+        print("navbar expanded")
+      case .scrolling:
+        print("navbar is moving")
+      }
     }
     
     func cell_animation(){
-        let fromAnimation = AnimationType.from(direction: .right, offset: 30.0)
-        let zoomAnimation = AnimationType.zoom(scale: 0.2)
+        let fromAnimation = AnimationType.from(direction: .bottom, offset: 0.0)
+        let zoomAnimation = AnimationType.zoom(scale: 0.3)
         UIView.animate(views: tableView.visibleCells,
-                       animations: [fromAnimation, zoomAnimation], delay: 0.1)
+                       animations: [fromAnimation, zoomAnimation], delay: 0)
     }
     
 

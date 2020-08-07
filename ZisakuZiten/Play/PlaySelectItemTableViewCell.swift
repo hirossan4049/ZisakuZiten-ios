@@ -41,6 +41,7 @@ class PlaySelectItemTableViewCell: UITableViewCell {
         // 影をぼかし
         bodyView.layer.shadowRadius = 6
     }
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

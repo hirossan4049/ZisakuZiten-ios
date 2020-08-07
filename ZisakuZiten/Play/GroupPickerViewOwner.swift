@@ -18,4 +18,5 @@ class GroupPickerViewOwner: NSObject {
         super.init()
         groupPickerView = UINib(nibName: "GroupPickerView", bundle: Bundle.main).instantiate(withOwner: self, options: nil).first as? UIView
     }
+
 }

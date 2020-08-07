@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ViewAnimator
+
 
 class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -36,6 +38,19 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
+//        UIView.animate(views: tableView.visibleCells, animations: animations, completion: {})
+    }
+    
+    override func viewDidLayoutSubviews(){
+        super.viewDidLayoutSubviews()
+        let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
+        UIView.animate(views: tableView.visibleCells, animations: animations, completion: {})
+        
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {

@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import ViewAnimator
 
 
 class GroupPickerView: UIView, UITableViewDataSource, UITableViewDelegate {
@@ -55,7 +56,8 @@ class GroupPickerView: UIView, UITableViewDataSource, UITableViewDelegate {
         self.tableView.delegate = self
         self.tableView.reloadData()
         
-
+        let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
+        UIView.animate(views: tableView.visibleCells, animations: animations, completion: {})
 
     }
 
@@ -79,6 +81,12 @@ class GroupPickerView: UIView, UITableViewDataSource, UITableViewDelegate {
     
     
     func exitPost(createTime:Date){
+//        let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
+//        UIView.animate(views: tableView.visibleCells, animations: animations, reversed: true,
+//                       initialAlpha: 1.0, finalAlpha: 0.0, completion: {
+//                        
+//        })
+        
         let postArgs:[String: Date] = ["createTime": createTime]
         NotificationCenter.default.post(name: .toExitView,object: nil,userInfo: postArgs)
     }
