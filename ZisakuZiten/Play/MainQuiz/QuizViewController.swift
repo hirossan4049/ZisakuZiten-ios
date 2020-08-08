@@ -18,18 +18,22 @@ class QuizViewController: PlayBaseViewController {
     
     @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var mainLabelBackView:UIView!
+    @IBOutlet weak var exitButton:UIButton!
     
-    var zitens:List<Ziten>!
+    var zitens:[Ziten]!
+//    var shuffled_zitens:List<Ziten>!
     var buttons:[UIButton]!
     var tmp_ziten:Ziten!
     var correct_list:[Ziten]!
     var incorrect_list:[Ziten]!
     var counter:Int = 0
+    let NUMBER_OF_QUIZ:Int = 30
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let realm = try! Realm()
-        self.zitens = realm.objects(Group.self).filter("createTime==%@",createTime)[0].ziten_upT_List
+        let zitens = realm.objects(Group.self).filter("createTime==%@",createTime)[0].ziten_upT_List
+        self.zitens = zitens.shuffled()
         mainLabel.adjustsFontSizeToFitWidth = true
         self.buttons = [btn1,btn2,btn3,btn4]
         
@@ -38,6 +42,10 @@ class QuizViewController: PlayBaseViewController {
         mainLabelBackView.layer.shadowColor = UIColor.black.cgColor
         mainLabelBackView.layer.shadowOpacity = 0.2
         mainLabelBackView.layer.shadowRadius = 10
+        
+        exitButton.imageView?.contentMode = .scaleAspectFit
+        exitButton.contentHorizontalAlignment = .fill
+        exitButton.contentVerticalAlignment = .fill
 
         // ScrollViewどうしよ
 
@@ -58,7 +66,8 @@ class QuizViewController: PlayBaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let realm = try! Realm()
-        self.zitens = realm.objects(Group.self).filter("createTime==%@",createTime)[0].ziten_upT_List
+        let zitens = realm.objects(Group.self).filter("createTime==%@",createTime)[0].ziten_upT_List
+        self.zitens = zitens.shuffled()
         reset()
         set()
     }
@@ -80,20 +89,22 @@ class QuizViewController: PlayBaseViewController {
     }
     
     func normal_quiz(){
-        var shuffled = self.zitens.shuffled()
+//        var shuffled:List<Ziten> = self.zitens.shuffled()
         
 //        var buttons = [btn1,btn2,btn3,btn4]
         var shuffled_buttons:[UIButton] = self.buttons
         // tag all 0
         for item in shuffled_buttons{ item.tag = 0 }
         shuffled_buttons.shuffle()
-        mainLabel.text = shuffled.first?.title
-        self.tmp_ziten = shuffled.first
+        mainLabel.text = self.zitens.first?.title
+        self.tmp_ziten = self.zitens.first
         shuffled_buttons[0].tag = 1
         for item in shuffled_buttons{
-            item.setTitle(shuffled.first?.content, for: .normal)
-            shuffled.removeFirst()
+            print("ZITEN COUNT",self.zitens.count,self.zitens.first?.title)
+            item.setTitle(self.zitens.first?.content, for: .normal)
+            self.zitens.removeFirst()
         }
+//        self.zitens = shuffled
     }
 
     

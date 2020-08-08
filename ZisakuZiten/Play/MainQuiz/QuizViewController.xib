@@ -18,6 +18,7 @@
                 <outlet property="btn2" destination="qaU-ce-mNy" id="AFw-vY-lcf"/>
                 <outlet property="btn3" destination="Yk6-pN-UPE" id="Ydg-sJ-Zfl"/>
                 <outlet property="btn4" destination="jpb-pS-D2p" id="MMc-JX-FPu"/>
+                <outlet property="exitButton" destination="iPh-Bi-SYN" id="kyd-J0-tK8"/>
                 <outlet property="mainLabel" destination="CQT-wL-hzI" id="yho-yE-xLS"/>
                 <outlet property="mainLabelBackView" destination="s9F-yX-DG3" id="2qP-yE-Ot0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -28,9 +29,15 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPh-Bi-SYN">
-                    <rect key="frame" x="352" y="50" width="46" height="30"/>
-                    <state key="normal" title="閉じる"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPh-Bi-SYN">
+                    <rect key="frame" x="363" y="50" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="Lwd-yJ-s5p"/>
+                        <constraint firstAttribute="height" constant="35" id="QIu-4d-gWd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                    <color key="tintColor" red="0.96809345479999998" green="0.47565418479999999" blue="0.65908652540000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" image="multiply.circle.fill" catalog="system"/>
                     <connections>
                         <action selector="exit" destination="-1" eventType="touchUpInside" id="m6W-bh-IFI"/>
                     </connections>
@@ -85,7 +92,7 @@
                     </subviews>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s9F-yX-DG3">
-                    <rect key="frame" x="16" y="87" width="382" height="250"/>
+                    <rect key="frame" x="16" y="89" width="382" height="250"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQT-wL-hzI">
                             <rect key="frame" x="16" y="16" width="350" height="218"/>
@@ -106,7 +113,7 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="s9F-yX-DG3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="43" id="0Zh-Lp-66o"/>
+                <constraint firstItem="s9F-yX-DG3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="45" id="0Zh-Lp-66o"/>
                 <constraint firstItem="iPh-Bi-SYN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="6" id="0ub-wu-fqp"/>
                 <constraint firstItem="xjS-zV-x9v" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3wq-ss-8as"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iPh-Bi-SYN" secondAttribute="trailing" constant="16" id="8Zd-hz-87h"/>
@@ -120,4 +127,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
         </view>
     </objects>
+    <resources>
+        <image name="multiply.circle.fill" catalog="system" width="128" height="121"/>
+    </resources>
 </document>
