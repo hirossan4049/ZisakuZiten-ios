@@ -9,6 +9,7 @@ target 'ZisakuZiten' do
   pod 'MaterialComponents/Buttons'
   pod "ViewAnimator"
   pod 'AMScrollingNavbar'
+  pod 'Log'
   # Pods for ZisakuZiten
 
   target 'ZisakuZitenTests' do

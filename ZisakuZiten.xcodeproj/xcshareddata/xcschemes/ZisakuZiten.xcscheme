@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D3AB70AF249F076A00DFDDB7"
-               BuildableName = "&#x81ea;&#x4f5c;&#x8f9e;&#x5178;.app"
+               BuildableName = "&#33258;&#20316;&#36766;&#20856;.app"
                BlueprintName = "ZisakuZiten"
                ReferencedContainer = "container:ZisakuZiten.xcodeproj">
             </BuildableReference>
@@ -65,11 +65,15 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D3AB70AF249F076A00DFDDB7"
-            BuildableName = "&#x81ea;&#x4f5c;&#x8f9e;&#x5178;.app"
+            BuildableName = "&#33258;&#20316;&#36766;&#20856;.app"
             BlueprintName = "ZisakuZiten"
             ReferencedContainer = "container:ZisakuZiten.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <LocationScenarioReference
+         identifier = "com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier"
+         referenceType = "1">
+      </LocationScenarioReference>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -82,7 +86,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D3AB70AF249F076A00DFDDB7"
-            BuildableName = "&#x81ea;&#x4f5c;&#x8f9e;&#x5178;.app"
+            BuildableName = "&#33258;&#20316;&#36766;&#20856;.app"
             BlueprintName = "ZisakuZiten"
             ReferencedContainer = "container:ZisakuZiten.xcodeproj">
          </BuildableReference>

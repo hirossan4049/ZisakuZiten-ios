@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Log
 
 class QuizViewController: PlayBaseViewController {
     
@@ -19,21 +20,22 @@ class QuizViewController: PlayBaseViewController {
     @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var mainLabelBackView:UIView!
     @IBOutlet weak var exitButton:UIButton!
+    @IBOutlet weak var correctRateLabel:UILabel!
+    
+    let log = Logger()
     
     var zitens:[Ziten]!
 //    var shuffled_zitens:List<Ziten>!
     var buttons:[UIButton]!
     var tmp_ziten:Ziten!
-    var correct_list:[Ziten]!
-    var incorrect_list:[Ziten]!
+    var correct_list:[Ziten]! = []
+    var incorrect_list:[Ziten]! = []
     var counter:Int = 0
+    var correct_counter:Int = 0
     let NUMBER_OF_QUIZ:Int = 30
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let realm = try! Realm()
-        let zitens = realm.objects(Group.self).filter("createTime==%@",createTime)[0].ziten_upT_List
-        self.zitens = zitens.shuffled()
         mainLabel.adjustsFontSizeToFitWidth = true
         self.buttons = [btn1,btn2,btn3,btn4]
         
@@ -50,6 +52,7 @@ class QuizViewController: PlayBaseViewController {
         // ScrollViewどうしよ
 
         // Do any additional setup after loading the view.
+        reset()
         btn_settings()
         set()
         
@@ -65,24 +68,37 @@ class QuizViewController: PlayBaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let realm = try! Realm()
-        let zitens = realm.objects(Group.self).filter("createTime==%@",createTime)[0].ziten_upT_List
-        self.zitens = zitens.shuffled()
         reset()
         set()
     }
     
     func reset(){
         self.counter = 0
+        let realm = try! Realm()
+        let zitens = realm.objects(Group.self).filter("createTime==%@",createTime)[0].ziten_upT_List
+        self.zitens = zitens.shuffled()
     }
     
     func set(){
         if self.counter <= self.zitens.count{
+            log.debug("quiz : NOMAL")
             normal_quiz()
         }else if self.counter % 3 == 0{
-            normal_quiz()
+            log.debug("quiz : NOMAL mod 3")
+            if self.zitens.isEmpty{
+                random_quiz()
+            }else{
+                log.debug("quiz : NOMAL (mod3,but zitens is empty)")
+                normal_quiz()
+            }
         }else{
-            excellent_quiz()
+            if self.incorrect_list.isEmpty{
+                log.debug("quiz : NOMAL (incorrect_list is empty)")
+                random_quiz()
+            }else{
+                log.debug("quiz : excellent quiz.")
+                excellent_quiz()
+            }
         }
         self.counter += 1
         
@@ -101,15 +117,62 @@ class QuizViewController: PlayBaseViewController {
         shuffled_buttons[0].tag = 1
         for item in shuffled_buttons{
             print("ZITEN COUNT",self.zitens.count,self.zitens.first?.title)
-            item.setTitle(self.zitens.first?.content, for: .normal)
-            self.zitens.removeFirst()
+            if self.zitens.count == 0{
+                item.setTitle(random_ziten().content, for: .normal)
+            }
+            else{
+                item.setTitle(self.zitens.first?.content, for: .normal)
+                self.zitens.removeFirst()
+            }
         }
 //        self.zitens = shuffled
+    }
+    
+    func random_quiz(){
+        log.debug("THIS IS RAMDOM QUIZ")
+        var shuffled_buttons:[UIButton] = self.buttons
+        // tag all reset
+        for item in shuffled_buttons{ item.tag = 0 }
+        shuffled_buttons.shuffle()
+        
+        var ztns = random_zitenList()
+        while true{
+            log.debug("ziten tempziten same... repart")
+            ztns = random_zitenList()
+            if ztns[0] == self.tmp_ziten{
+            }else{
+                break
+            }
+        }
+            
+        mainLabel.text = ztns[0].title
+        self.tmp_ziten = ztns[0]
+        shuffled_buttons[0].tag = 1
+        for item in shuffled_buttons{
+            item.setTitle(ztns[0].content, for: .normal)
+            ztns.remove(at: 0)
+            
+        }
+    }
+    
+    // 適当に返すだけ。
+    func random_ziten() -> Ziten{
+        // FIXME: 毎回取得するのなんかやだ。
+        let realm = try! Realm()
+        let l_zitens = realm.objects(Group.self).filter("createTime==%@",createTime)[0].ziten_upT_List
+        //ランダムな数字にして取ったほうが早そう。
+        let random_int = Int.random(in: 0 ... l_zitens.count)
+        return l_zitens[random_int]
+    }
+    func random_zitenList() -> [Ziten]{
+        let realm = try! Realm()
+        let l_zitens = realm.objects(Group.self).filter("createTime==%@",createTime)[0].ziten_upT_List
+        return l_zitens.shuffled()
     }
 
     
     func excellent_quiz(){
-        print(incorrect_list?.isEmpty)
+        log.debug(incorrect_list?.isEmpty)
         
     }
     
@@ -135,6 +198,7 @@ class QuizViewController: PlayBaseViewController {
         }else{
             //correct
             print("correct!")
+            self.correct_counter += 1
             correctDraw(isCorrect: true)
         }
     }
@@ -147,10 +211,16 @@ class QuizViewController: PlayBaseViewController {
         present(alertView, animated: false, completion: nil)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             alertView.dismiss(animated: false, completion: nil)
+            self.setCorrectCounter()
             self.set()
         }
+    }
+    
+    func setCorrectCounter(){
+        correctRateLabel.text = "\(self.counter)問中\(self.correct_counter)正解"
     }
 
 
 
 }
+

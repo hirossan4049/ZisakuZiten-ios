@@ -18,6 +18,7 @@
                 <outlet property="btn2" destination="qaU-ce-mNy" id="AFw-vY-lcf"/>
                 <outlet property="btn3" destination="Yk6-pN-UPE" id="Ydg-sJ-Zfl"/>
                 <outlet property="btn4" destination="jpb-pS-D2p" id="MMc-JX-FPu"/>
+                <outlet property="correctRateLabel" destination="uvp-XN-UsA" id="o4X-IT-sU0"/>
                 <outlet property="exitButton" destination="iPh-Bi-SYN" id="kyd-J0-tK8"/>
                 <outlet property="mainLabel" destination="CQT-wL-hzI" id="yho-yE-xLS"/>
                 <outlet property="mainLabelBackView" destination="s9F-yX-DG3" id="2qP-yE-Ot0"/>
@@ -95,19 +96,30 @@
                     <rect key="frame" x="16" y="89" width="382" height="250"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQT-wL-hzI">
-                            <rect key="frame" x="16" y="16" width="350" height="218"/>
+                            <rect key="frame" x="16" y="16" width="350" height="197.5"/>
                             <fontDescription key="fontDescription" name="MotoyaLMaru-W3-90ms-RKSJ-H" family="MotoyaLMaru" pointSize="45"/>
                             <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0問中0問正解" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvp-XN-UsA">
+                            <rect key="frame" x="271" y="221.5" width="95" height="20.5"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20.5" id="p4o-1X-uKV"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="CQT-wL-hzI" secondAttribute="bottom" constant="16" id="353-Xp-YCh"/>
                         <constraint firstAttribute="trailing" secondItem="CQT-wL-hzI" secondAttribute="trailing" constant="16" id="A6Z-5W-4HJ"/>
-                        <constraint firstItem="CQT-wL-hzI" firstAttribute="top" secondItem="s9F-yX-DG3" secondAttribute="top" constant="16" id="RyV-Rz-GuE"/>
+                        <constraint firstAttribute="bottom" secondItem="uvp-XN-UsA" secondAttribute="bottom" constant="8" id="FTb-di-hGM"/>
+                        <constraint firstAttribute="trailing" secondItem="uvp-XN-UsA" secondAttribute="trailing" constant="16" id="Lur-Y9-WlK"/>
+                        <constraint firstItem="uvp-XN-UsA" firstAttribute="top" secondItem="CQT-wL-hzI" secondAttribute="bottom" constant="8" id="hUA-UH-1Un"/>
                         <constraint firstItem="CQT-wL-hzI" firstAttribute="leading" secondItem="s9F-yX-DG3" secondAttribute="leading" constant="16" id="pGt-Kx-QUl"/>
                         <constraint firstAttribute="height" constant="250" id="rG9-9I-w4q"/>
+                        <constraint firstItem="CQT-wL-hzI" firstAttribute="top" secondItem="s9F-yX-DG3" secondAttribute="top" constant="16" id="u6r-TZ-hhA"/>
                     </constraints>
                 </view>
             </subviews>

@@ -1,5 +1,6 @@
 PODS:
   - AMScrollingNavbar (5.6.1)
+  - Log (2.0)
   - MaterialComponents/AnimationTiming (109.8.0)
   - MaterialComponents/Availability (109.8.0)
   - MaterialComponents/Buttons (109.8.0):
@@ -56,6 +57,7 @@ PODS:
 
 DEPENDENCIES:
   - AMScrollingNavbar
+  - Log
   - MaterialComponents/Buttons
   - RealmSwift
   - SwipeCellKit
@@ -64,6 +66,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - AMScrollingNavbar
+    - Log
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
@@ -74,6 +77,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AMScrollingNavbar: 602dd7a26efd0edb40d67ec20b5ee80b9f573bbb
+  Log: 73fab10e8b88f15cef5f322b12c9be87cf19ee6e
   MaterialComponents: 00df0652f52cd6968b02d531bd2e6956b0f907b8
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
@@ -82,6 +86,6 @@ SPEC CHECKSUMS:
   SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
   ViewAnimator: 5af1c6f3b310f012bf081259c43717aa54fbae73
 
-PODFILE CHECKSUM: 441c9a50f77221b4fec659862d22d2210f56e7f1
+PODFILE CHECKSUM: 2e9a91721696d0534330f27e70ca6b176a9bb781
 
 COCOAPODS: 1.9.1
