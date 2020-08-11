@@ -30,6 +30,7 @@ class QuizViewController: PlayBaseViewController {
     var tmp_ziten:Ziten!
     var correct_list:[Ziten]! = []
     var incorrect_list:[Ziten]! = []
+    var finished_list:[Ziten]! = []
     var counter:Int = 0
     var correct_counter:Int = 0
     let NUMBER_OF_QUIZ:Int = 30
@@ -139,7 +140,8 @@ class QuizViewController: PlayBaseViewController {
         while true{
             log.debug("ziten tempziten same... repart")
             ztns = random_zitenList()
-            if ztns[0] == self.tmp_ziten{
+            if ztns[0].createTime == self.tmp_ziten.createTime{
+                log.debug("ziten temp ziten same repear...")
             }else{
                 break
             }
@@ -193,12 +195,16 @@ class QuizViewController: PlayBaseViewController {
         print(sender.tag);
         if sender.tag == 0{
             // uncorrect
-            print("uncorerct")
+            print("incorerct")
+            self.incorrect_list.append(self.tmp_ziten)
+            self.finished_list.append(self.tmp_ziten)
             correctDraw(isCorrect: false)
         }else{
             //correct
             print("correct!")
             self.correct_counter += 1
+            self.correct_list.append(self.tmp_ziten)
+            self.finished_list.append(self.tmp_ziten)
             correctDraw(isCorrect: true)
         }
     }
