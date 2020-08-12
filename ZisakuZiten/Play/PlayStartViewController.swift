@@ -44,7 +44,7 @@ class PlayStartViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(groupPickerClicked(sender:)))
         print(tapGesture)
         groupSelectView.addGestureRecognizer(tapGesture)
-        groupSelectView.layer.cornerRadius = 17
+        groupSelectView.layer.cornerRadius = 20
         groupSelectView.layer.borderColor = UIColor(hex: "EBEBEB").cgColor
         groupSelectView.layer.borderWidth = 1
                 

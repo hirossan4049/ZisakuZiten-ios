@@ -270,16 +270,16 @@ HIS IS COMMENT.これはコメントです。</string>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mm5-AO-9md">
-                                <rect key="frame" x="20" y="277.66666666666669" width="335" height="55"/>
+                                <rect key="frame" x="20" y="277.66666666666669" width="335" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-- No Selected --" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4x-L7-yar">
-                                        <rect key="frame" x="16" y="17" width="133" height="21"/>
+                                        <rect key="frame" x="16" y="14.666666666666629" width="133" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8oS-qb-VbZ">
-                                        <rect key="frame" x="300.66666666666669" y="22.666666666666643" width="18.333333333333314" height="10.666666666666671"/>
+                                        <rect key="frame" x="300.66666666666669" y="19.999999999999957" width="18.333333333333314" height="10.666666666666671"/>
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                 </subviews>
@@ -288,7 +288,7 @@ HIS IS COMMENT.これはコメントです。</string>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="8oS-qb-VbZ" secondAttribute="trailing" constant="16" id="32u-0C-9Bc"/>
                                     <constraint firstItem="8oS-qb-VbZ" firstAttribute="centerY" secondItem="mm5-AO-9md" secondAttribute="centerY" id="6ms-Gx-1Dt"/>
-                                    <constraint firstAttribute="height" constant="55" id="HzD-TA-jkh"/>
+                                    <constraint firstAttribute="height" constant="50" id="HzD-TA-jkh"/>
                                     <constraint firstItem="N4x-L7-yar" firstAttribute="centerY" secondItem="mm5-AO-9md" secondAttribute="centerY" id="OLi-26-GSa"/>
                                     <constraint firstItem="N4x-L7-yar" firstAttribute="leading" secondItem="mm5-AO-9md" secondAttribute="leading" constant="16" id="u3h-PD-uzz"/>
                                 </constraints>

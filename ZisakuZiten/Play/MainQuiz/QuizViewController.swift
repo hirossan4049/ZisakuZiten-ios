@@ -157,7 +157,7 @@ class QuizViewController: PlayBaseViewController {
         }
     }
     
-    // 適当に返すだけ。
+    // 適当に返すだけ
     func random_ziten() -> Ziten{
         // FIXME: 毎回取得するのなんかやだ。
         let realm = try! Realm()
@@ -174,8 +174,8 @@ class QuizViewController: PlayBaseViewController {
 
     
     func excellent_quiz(){
-        log.debug(incorrect_list?.isEmpty)
-        
+        log.debug(incorrect_list?.isEmpty)aaa
+        let answr = self.incorrect_list.first
     }
     
     func btn_settings(){
