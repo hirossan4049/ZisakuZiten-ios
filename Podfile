@@ -10,6 +10,7 @@ target 'ZisakuZiten' do
   pod "ViewAnimator"
   pod 'AMScrollingNavbar'
   pod 'Log'
+  pod "MBCircularProgressBar"
   # Pods for ZisakuZiten
 
   target 'ZisakuZitenTests' do

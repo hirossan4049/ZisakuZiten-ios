@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuizGradeViewController" customModule="自作辞典" customModuleProvider="target">
+            <connections>
+                <outlet property="pageView" destination="hg3-jU-ZlX" id="jWu-Ri-WAZ"/>
+                <outlet property="progressBarView" destination="RZA-rZ-XgX" id="fw7-TV-sXu"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZA-rZ-XgX" customClass="MBCircularProgressBarView">
+                    <rect key="frame" x="82" y="76" width="250" height="250"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="250" id="1QX-Hb-ob8"/>
+                        <constraint firstAttribute="width" constant="250" id="hGG-e7-kzO"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                            <real key="value" value="100"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hg3-jU-ZlX">
+                    <rect key="frame" x="16" y="436" width="382" height="432"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="432" id="Iz2-JT-yZW"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hg3-jU-ZlX" secondAttribute="trailing" constant="16" id="8nB-cE-GGC"/>
+                <constraint firstItem="hg3-jU-ZlX" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="6" id="LaG-eV-IkK"/>
+                <constraint firstItem="hg3-jU-ZlX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Sbc-3i-ptU"/>
+                <constraint firstItem="RZA-rZ-XgX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wo2-V3-f8o"/>
+                <constraint firstItem="RZA-rZ-XgX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="y75-b0-ePd"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
+        </view>
+    </objects>
+</document>

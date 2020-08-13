@@ -1,14 +1,14 @@
 //
-//  QuizGradeViewController.swift
+//  QuizinCorrectCountPageItemViewController.swift
 //  ZisakuZiten
 //
-//  Created by unkonow on 2020/08/07.
+//  Created by unkonow on 2020/08/13.
 //  Copyright © 2020 unkonow. All rights reserved.
 //
 
 import UIKit
 
-class QuizGradeViewController: UIViewController {
+class QuizinCorrectCountPageItemViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

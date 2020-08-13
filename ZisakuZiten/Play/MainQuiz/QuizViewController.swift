@@ -174,8 +174,26 @@ class QuizViewController: PlayBaseViewController {
 
     
     func excellent_quiz(){
-        log.debug(incorrect_list?.isEmpty)aaa
+        log.debug(incorrect_list?.isEmpty)
         let answr = self.incorrect_list.first
+        let randomlist = random_zitenList().shuffled()
+        var shuffled_list = [answr,randomlist[0],randomlist[1],randomlist[2]]
+
+        var shuffled_buttons:[UIButton] = self.buttons
+        // tag all reset
+        for item in shuffled_buttons{ item.tag = 0 }
+        shuffled_buttons.shuffle()
+
+        mainLabel.text = shuffled_list[0]!.title
+        self.tmp_ziten = shuffled_list[0]!
+        shuffled_buttons[0].tag = 1
+        for item in shuffled_buttons{
+            item.setTitle(shuffled_list[0]!.content, for: .normal)
+            shuffled_list.remove(at: 0)
+        }
+
+        self.incorrect_list.remove(at:0)
+        //log.debug("incorrect_list",self.incorrect_list)
     }
     
     func btn_settings(){
@@ -186,8 +204,11 @@ class QuizViewController: PlayBaseViewController {
     }
     
     @IBAction func exit(){
-
-        self.dismiss(animated: true, completion: nil)
+        let playVC = QuizGradeViewController()
+//        let playVC = FlashCardViewController(nibName: "FlashCardViewController", bundle: nil)
+        playVC.modalPresentationStyle = .fullScreen
+        self.present(playVC, animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
     }
     
     // Quiz 4 Buttons click event

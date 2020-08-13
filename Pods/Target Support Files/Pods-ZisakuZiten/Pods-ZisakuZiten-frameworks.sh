@@ -199,6 +199,7 @@ fi
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AMScrollingNavbar/AMScrollingNavbar.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Log/Log.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MBCircularProgressBar/MBCircularProgressBar.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework"
@@ -210,6 +211,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AMScrollingNavbar/AMScrollingNavbar.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Log/Log.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MBCircularProgressBar/MBCircularProgressBar.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework"

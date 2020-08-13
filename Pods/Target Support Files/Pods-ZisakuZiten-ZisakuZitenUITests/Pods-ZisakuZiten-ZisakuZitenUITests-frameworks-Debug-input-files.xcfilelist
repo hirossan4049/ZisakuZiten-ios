@@ -1,6 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-ZisakuZiten-ZisakuZitenUITests/Pods-ZisakuZiten-ZisakuZitenUITests-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/AMScrollingNavbar/AMScrollingNavbar.framework
 ${BUILT_PRODUCTS_DIR}/Log/Log.framework
+${BUILT_PRODUCTS_DIR}/MBCircularProgressBar/MBCircularProgressBar.framework
 ${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework
 ${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework
 ${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework

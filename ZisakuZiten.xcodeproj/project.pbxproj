@@ -31,6 +31,12 @@
 		D358122424AD60900042FEA7 /* CategoryColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D358122324AD60900042FEA7 /* CategoryColors.swift */; };
 		D36418D224C13BA2009E0499 /* PlaySelectItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36418D024C13BA2009E0499 /* PlaySelectItemTableViewCell.swift */; };
 		D36418D324C13BA2009E0499 /* PlaySelectItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36418D124C13BA2009E0499 /* PlaySelectItemTableViewCell.xib */; };
+		D36F823924E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F823724E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.swift */; };
+		D36F823A24E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36F823824E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.xib */; };
+		D374B96924E56AF900745360 /* QuizGradePageItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D374B96724E56AF900745360 /* QuizGradePageItemViewController.swift */; };
+		D374B96A24E56AF900745360 /* QuizGradePageItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D374B96824E56AF900745360 /* QuizGradePageItemViewController.xib */; };
+		D374B97224E56D5E00745360 /* QuizGradePageItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D374B97024E56D5E00745360 /* QuizGradePageItemTableViewCell.swift */; };
+		D374B97324E56D5E00745360 /* QuizGradePageItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D374B97124E56D5E00745360 /* QuizGradePageItemTableViewCell.xib */; };
 		D37AED8424B84663001E6302 /* UIImage+resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37AED8324B84663001E6302 /* UIImage+resize.swift */; };
 		D39FC4E924C3DEB000C4C0A1 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FC4E824C3DEB000C4C0A1 /* Playlist.swift */; };
 		D39FC4EC24C3E76400C4C0A1 /* UIView+asImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FC4EB24C3E76400C4C0A1 /* UIView+asImage.swift */; };
@@ -116,6 +122,12 @@
 		D358122324AD60900042FEA7 /* CategoryColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColors.swift; sourceTree = "<group>"; };
 		D36418D024C13BA2009E0499 /* PlaySelectItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySelectItemTableViewCell.swift; sourceTree = "<group>"; };
 		D36418D124C13BA2009E0499 /* PlaySelectItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaySelectItemTableViewCell.xib; sourceTree = "<group>"; };
+		D36F823724E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizinCorrectCountPageItemViewController.swift; sourceTree = "<group>"; };
+		D36F823824E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizinCorrectCountPageItemViewController.xib; sourceTree = "<group>"; };
+		D374B96724E56AF900745360 /* QuizGradePageItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGradePageItemViewController.swift; sourceTree = "<group>"; };
+		D374B96824E56AF900745360 /* QuizGradePageItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizGradePageItemViewController.xib; sourceTree = "<group>"; };
+		D374B97024E56D5E00745360 /* QuizGradePageItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGradePageItemTableViewCell.swift; sourceTree = "<group>"; };
+		D374B97124E56D5E00745360 /* QuizGradePageItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizGradePageItemTableViewCell.xib; sourceTree = "<group>"; };
 		D37AED8324B84663001E6302 /* UIImage+resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+resize.swift"; sourceTree = "<group>"; };
 		D39FC4E824C3DEB000C4C0A1 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		D39FC4EB24C3E76400C4C0A1 /* UIView+asImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+asImage.swift"; sourceTree = "<group>"; };
@@ -250,6 +262,21 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		D374B96F24E56CE500745360 /* Grade */ = {
+			isa = PBXGroup;
+			children = (
+				D33692B224DD9B140027FB17 /* QuizGradeViewController.swift */,
+				D33692B324DD9B140027FB17 /* QuizGradeViewController.xib */,
+				D374B96724E56AF900745360 /* QuizGradePageItemViewController.swift */,
+				D374B96824E56AF900745360 /* QuizGradePageItemViewController.xib */,
+				D374B97024E56D5E00745360 /* QuizGradePageItemTableViewCell.swift */,
+				D374B97124E56D5E00745360 /* QuizGradePageItemTableViewCell.xib */,
+				D36F823724E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.swift */,
+				D36F823824E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.xib */,
+			);
+			path = Grade;
+			sourceTree = "<group>";
+		};
 		D37AED8224B84631001E6302 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,8 +299,7 @@
 				D33692A724D91E0A0027FB17 /* CorrectPopupViewController.swift */,
 				D33692A824D91E0A0027FB17 /* CorrectPopupViewController.xib */,
 				D33692AD24DBE84A0027FB17 /* QuizItemButton.swift */,
-				D33692B224DD9B140027FB17 /* QuizGradeViewController.swift */,
-				D33692B324DD9B140027FB17 /* QuizGradeViewController.xib */,
+				D374B96F24E56CE500745360 /* Grade */,
 			);
 			path = MainQuiz;
 			sourceTree = "<group>";
@@ -507,8 +533,11 @@
 				D33692B124DBF84A0027FB17 /* KosugiMaru-Regular.ttf in Resources */,
 				D36418D324C13BA2009E0499 /* PlaySelectItemTableViewCell.xib in Resources */,
 				D335624024CB244B0057D12B /* SelectGroupView.xib in Resources */,
+				D374B96A24E56AF900745360 /* QuizGradePageItemViewController.xib in Resources */,
+				D374B97324E56D5E00745360 /* QuizGradePageItemTableViewCell.xib in Resources */,
 				D3C0985024D015BA00419F45 /* FlashCardViewController.xib in Resources */,
 				D33692B524DD9B140027FB17 /* QuizGradeViewController.xib in Resources */,
+				D36F823A24E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.xib in Resources */,
 				D335624E24CC789E0057D12B /* GroupPickerView.xib in Resources */,
 				D3AB70C0249F076B00DFDDB7 /* LaunchScreen.storyboard in Resources */,
 				D3AB70BD249F076B00DFDDB7 /* Assets.xcassets in Resources */,
@@ -650,6 +679,7 @@
 				D3C0985324D10D6F00419F45 /* QuizViewController.swift in Sources */,
 				D3AB70F6249F888800DFDDB7 /* Ziten.swift in Sources */,
 				D37AED8424B84663001E6302 /* UIImage+resize.swift in Sources */,
+				D36F823924E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.swift in Sources */,
 				D335623C24C988170057D12B /* PlayNavigationController.swift in Sources */,
 				D33692AE24DBE84A0027FB17 /* QuizItemButton.swift in Sources */,
 				D3AB70F4249F66DE00DFDDB7 /* Group.swift in Sources */,
@@ -669,6 +699,8 @@
 				D3AB70B8249F076A00DFDDB7 /* ViewController.swift in Sources */,
 				D3F79FFE24BEFB3500127E7A /* PlayViewController.swift in Sources */,
 				D335623E24CB243E0057D12B /* SelectGroupView.swift in Sources */,
+				D374B96924E56AF900745360 /* QuizGradePageItemViewController.swift in Sources */,
+				D374B97224E56D5E00745360 /* QuizGradePageItemTableViewCell.swift in Sources */,
 				D335624424CC5E460057D12B /* PlayStartViewController.swift in Sources */,
 				D33692B024DBE9860027FB17 /* UIColor+convertToRGBA.swift in Sources */,
 				D3AB70F8249F88E400DFDDB7 /* Category.swift in Sources */,
