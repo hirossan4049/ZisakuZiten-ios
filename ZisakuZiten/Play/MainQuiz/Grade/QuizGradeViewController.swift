@@ -16,14 +16,21 @@ class QuizGradeViewController: UIViewController, UIPageViewControllerDataSource,
     var viewControllersArray:Array<UIViewController> = []
     var pageControl: UIPageControl!
 
+    var finished_list:[Ziten]! = []
+    var finished_isCorrectList:[Bool] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 正解したやつとかここで処理するとグッチャグチャになりそうだから向こうでやる。これぐらいならメモリ大丈夫やろ（軽視
         let vc1 = QuizinCorrectCountPageItemViewController()
         vc1.view.tag = 0
+        vc1.finished_isCorrectList = self.finished_isCorrectList
+        vc1.finished_list = self.finished_list
         let vc2 = QuizGradePageItemViewController()
         vc2.view.tag = 1
+        vc2.finished_isCorrectList = self.finished_isCorrectList
+        vc2.finished_list = self.finished_list
         viewControllersArray.append(vc1)
         viewControllersArray.append(vc2)
         
@@ -47,8 +54,8 @@ class QuizGradeViewController: UIViewController, UIPageViewControllerDataSource,
         self.pageView.addSubview(pageViewController.view!)
         
         //PageControlの生成
-        pageControl = UIPageControl(frame: CGRect(x:0, y:self.pageView.frame.height - 25, width:self.pageView.frame.width, height:25))
-//        pageControl.backgroundColor = .orange
+        pageControl = UIPageControl(frame: CGRect(x:0, y:self.pageView.frame.height, width:self.pageView.frame.width, height:100))
+        pageControl.backgroundColor = .orange
         
         // PageControlするページ数を設定する.
         pageControl.numberOfPages = 2
@@ -64,8 +71,19 @@ class QuizGradeViewController: UIViewController, UIPageViewControllerDataSource,
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         UIView.animate(withDuration: 1.0, delay: 0.0, options: .allowAnimatedContent, animations: {
-            self.progressBarView.value = 55
+            print("CORRECT COUNT",self.getCorrectCount(),  round((self.getCorrectCount()/30) * 100))
+            self.progressBarView.value = round(self.getCorrectCount()/30 * 100)
         }, completion: nil)
+    }
+    
+    func getCorrectCount() -> Int{
+        var count = 0
+        for i in self.finished_isCorrectList{
+            if i{
+                count += 1
+            }
+        }
+        return count
     }
     
 
@@ -82,7 +100,6 @@ class QuizGradeViewController: UIViewController, UIPageViewControllerDataSource,
 //        let vc = UIViewController()
 //        vc.view.backgroundColor = UIColor.randomColor
 //        vc.view.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        let vc2 = QuizGradePageItemViewController()
 
         return viewControllersArray[index]
     }

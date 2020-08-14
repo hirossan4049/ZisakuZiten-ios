@@ -31,6 +31,7 @@ class QuizViewController: PlayBaseViewController {
     var correct_list:[Ziten]! = []
     var incorrect_list:[Ziten]! = []
     var finished_list:[Ziten]! = []
+    var finished_isCorrectList:[Bool] = []
     var counter:Int = 0
     var correct_counter:Int = 0
     let NUMBER_OF_QUIZ:Int = 30
@@ -205,6 +206,8 @@ class QuizViewController: PlayBaseViewController {
     
     @IBAction func exit(){
         let playVC = QuizGradeViewController()
+        playVC.finished_isCorrectList = self.finished_isCorrectList
+        playVC.finished_list = self.finished_list
 //        let playVC = FlashCardViewController(nibName: "FlashCardViewController", bundle: nil)
         playVC.modalPresentationStyle = .fullScreen
         self.present(playVC, animated: true, completion: nil)
@@ -219,6 +222,7 @@ class QuizViewController: PlayBaseViewController {
             print("incorerct")
             self.incorrect_list.append(self.tmp_ziten)
             self.finished_list.append(self.tmp_ziten)
+            self.finished_isCorrectList.append(false)
             correctDraw(isCorrect: false)
         }else{
             //correct
@@ -226,6 +230,7 @@ class QuizViewController: PlayBaseViewController {
             self.correct_counter += 1
             self.correct_list.append(self.tmp_ziten)
             self.finished_list.append(self.tmp_ziten)
+            self.finished_isCorrectList.append(true)
             correctDraw(isCorrect: true)
         }
     }

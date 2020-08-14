@@ -36,17 +36,15 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hg3-jU-ZlX">
-                    <rect key="frame" x="16" y="436" width="382" height="432"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="432" id="Iz2-JT-yZW"/>
-                    </constraints>
+                    <rect key="frame" x="16" y="332" width="382" height="518"/>
                 </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hg3-jU-ZlX" secondAttribute="trailing" constant="16" id="8nB-cE-GGC"/>
-                <constraint firstItem="hg3-jU-ZlX" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="6" id="LaG-eV-IkK"/>
                 <constraint firstItem="hg3-jU-ZlX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Sbc-3i-ptU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hg3-jU-ZlX" secondAttribute="bottom" constant="12" id="Z6Y-hF-sJr"/>
+                <constraint firstItem="hg3-jU-ZlX" firstAttribute="top" secondItem="RZA-rZ-XgX" secondAttribute="bottom" constant="6" id="gWS-UG-RKx"/>
                 <constraint firstItem="RZA-rZ-XgX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wo2-V3-f8o"/>
                 <constraint firstItem="RZA-rZ-XgX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="y75-b0-ePd"/>
             </constraints>

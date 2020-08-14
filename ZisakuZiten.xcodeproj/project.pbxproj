@@ -33,6 +33,8 @@
 		D36418D324C13BA2009E0499 /* PlaySelectItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36418D124C13BA2009E0499 /* PlaySelectItemTableViewCell.xib */; };
 		D36F823924E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F823724E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.swift */; };
 		D36F823A24E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36F823824E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.xib */; };
+		D36F823D24E65058004CFFFB /* QuizinCorrectCountPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F823B24E65058004CFFFB /* QuizinCorrectCountPageTableViewCell.swift */; };
+		D36F823E24E65058004CFFFB /* QuizinCorrectCountPageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36F823C24E65058004CFFFB /* QuizinCorrectCountPageTableViewCell.xib */; };
 		D374B96924E56AF900745360 /* QuizGradePageItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D374B96724E56AF900745360 /* QuizGradePageItemViewController.swift */; };
 		D374B96A24E56AF900745360 /* QuizGradePageItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D374B96824E56AF900745360 /* QuizGradePageItemViewController.xib */; };
 		D374B97224E56D5E00745360 /* QuizGradePageItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D374B97024E56D5E00745360 /* QuizGradePageItemTableViewCell.swift */; };
@@ -124,6 +126,8 @@
 		D36418D124C13BA2009E0499 /* PlaySelectItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaySelectItemTableViewCell.xib; sourceTree = "<group>"; };
 		D36F823724E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizinCorrectCountPageItemViewController.swift; sourceTree = "<group>"; };
 		D36F823824E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizinCorrectCountPageItemViewController.xib; sourceTree = "<group>"; };
+		D36F823B24E65058004CFFFB /* QuizinCorrectCountPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizinCorrectCountPageTableViewCell.swift; sourceTree = "<group>"; };
+		D36F823C24E65058004CFFFB /* QuizinCorrectCountPageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizinCorrectCountPageTableViewCell.xib; sourceTree = "<group>"; };
 		D374B96724E56AF900745360 /* QuizGradePageItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGradePageItemViewController.swift; sourceTree = "<group>"; };
 		D374B96824E56AF900745360 /* QuizGradePageItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizGradePageItemViewController.xib; sourceTree = "<group>"; };
 		D374B97024E56D5E00745360 /* QuizGradePageItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGradePageItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -273,6 +277,8 @@
 				D374B97124E56D5E00745360 /* QuizGradePageItemTableViewCell.xib */,
 				D36F823724E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.swift */,
 				D36F823824E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.xib */,
+				D36F823B24E65058004CFFFB /* QuizinCorrectCountPageTableViewCell.swift */,
+				D36F823C24E65058004CFFFB /* QuizinCorrectCountPageTableViewCell.xib */,
 			);
 			path = Grade;
 			sourceTree = "<group>";
@@ -539,6 +545,7 @@
 				D33692B524DD9B140027FB17 /* QuizGradeViewController.xib in Resources */,
 				D36F823A24E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.xib in Resources */,
 				D335624E24CC789E0057D12B /* GroupPickerView.xib in Resources */,
+				D36F823E24E65058004CFFFB /* QuizinCorrectCountPageTableViewCell.xib in Resources */,
 				D3AB70C0249F076B00DFDDB7 /* LaunchScreen.storyboard in Resources */,
 				D3AB70BD249F076B00DFDDB7 /* Assets.xcassets in Resources */,
 				D3AB70F2249F3A8B00DFDDB7 /* ZitenTableViewCell.xib in Resources */,
@@ -706,6 +713,7 @@
 				D3AB70F8249F88E400DFDDB7 /* Category.swift in Sources */,
 				D3AB70B4249F076A00DFDDB7 /* AppDelegate.swift in Sources */,
 				D3C0985624D2E65900419F45 /* PlayBaseViewController.swift in Sources */,
+				D36F823D24E65058004CFFFB /* QuizinCorrectCountPageTableViewCell.swift in Sources */,
 				D3C0984F24D015BA00419F45 /* FlashCardViewController.swift in Sources */,
 				D335623A24C96C9E0057D12B /* UIColor+random.swift in Sources */,
 				D335624224CC56BC0057D12B /* PlayStartButton.swift in Sources */,
