@@ -9,6 +9,8 @@
 import UIKit
 
 class QuizinCorrectCountPageTableViewCell: UITableViewCell {
+    @IBOutlet weak var mainLabel:UILabel!
+    @IBOutlet weak var countLabel:UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

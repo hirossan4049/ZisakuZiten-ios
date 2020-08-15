@@ -38,13 +38,22 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hg3-jU-ZlX">
                     <rect key="frame" x="16" y="332" width="382" height="518"/>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXU-Nk-gje">
+                    <rect key="frame" x="376" y="52" width="30" height="30"/>
+                    <state key="normal" title="Exit"/>
+                    <connections>
+                        <action selector="exit_onPress" destination="-1" eventType="touchUpInside" id="lBb-84-lIF"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hg3-jU-ZlX" secondAttribute="trailing" constant="16" id="8nB-cE-GGC"/>
                 <constraint firstItem="hg3-jU-ZlX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Sbc-3i-ptU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hg3-jU-ZlX" secondAttribute="bottom" constant="12" id="Z6Y-hF-sJr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TXU-Nk-gje" secondAttribute="trailing" constant="8" id="c1D-0F-Bhm"/>
                 <constraint firstItem="hg3-jU-ZlX" firstAttribute="top" secondItem="RZA-rZ-XgX" secondAttribute="bottom" constant="6" id="gWS-UG-RKx"/>
+                <constraint firstItem="TXU-Nk-gje" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="oPH-4g-vep"/>
                 <constraint firstItem="RZA-rZ-XgX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wo2-V3-f8o"/>
                 <constraint firstItem="RZA-rZ-XgX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="y75-b0-ePd"/>
             </constraints>

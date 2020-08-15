@@ -177,8 +177,24 @@ class QuizViewController: PlayBaseViewController {
     func excellent_quiz(){
         log.debug(incorrect_list?.isEmpty)
         let answr = self.incorrect_list.first
-        let randomlist = random_zitenList().shuffled()
-        var shuffled_list = [answr,randomlist[0],randomlist[1],randomlist[2]]
+        var randomlist = random_zitenList().shuffled()
+        var shuffled_list = [answr]
+        //ランダムリストと答えが重ならないように。
+        var listindx = 1
+        for _ in randomlist{
+            if listindx == 4{
+                print("BREAK")
+                break
+            }
+            let randomitem = randomlist.popLast()
+            // !=が使えない奴←
+            if answr?.updateTime == randomitem?.updateTime{ } else{
+                shuffled_list.append(randomitem)
+                listindx += 1
+            }
+            
+        }
+//        ,randomlist[0],randomlist[1],randomlist[2]]
 
         var shuffled_buttons:[UIButton] = self.buttons
         // tag all reset
@@ -212,6 +228,11 @@ class QuizViewController: PlayBaseViewController {
         playVC.modalPresentationStyle = .fullScreen
         self.present(playVC, animated: true, completion: nil)
 //        self.dismiss(animated: true, completion: nil)
+    }
+    
+    //ダイアログもなにも出さずにただdismissするだけ。
+    func display_discard(){
+        self.dismiss(animated: true, completion: nil)
     }
     
     // Quiz 4 Buttons click event

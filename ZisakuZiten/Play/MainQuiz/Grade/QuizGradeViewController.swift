@@ -71,19 +71,34 @@ class QuizGradeViewController: UIViewController, UIPageViewControllerDataSource,
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         UIView.animate(withDuration: 1.0, delay: 0.0, options: .allowAnimatedContent, animations: {
-            print("CORRECT COUNT",self.getCorrectCount(),  round((self.getCorrectCount()/30) * 100))
-            self.progressBarView.value = round(self.getCorrectCount()/30 * 100)
+            let nms:Double = self.getCorrectCount() / 30 * 100
+            let correctrate = round(nms)
+            print("CORRECT COUNT",self.getCorrectCount(),  correctrate)
+            self.progressBarView.value = CGFloat(correctrate)
         }, completion: nil)
     }
     
-    func getCorrectCount() -> Int{
+    func getCorrectCount() -> Double{
         var count = 0
         for i in self.finished_isCorrectList{
             if i{
                 count += 1
             }
         }
-        return count
+        return Double(count)
+    }
+    
+    
+    @IBAction func exit_onPress(){
+        exit()
+    }
+    func exit(){
+        guard let secondVc = self.presentingViewController as? QuizViewController else {return}
+        secondVc.dismiss(animated: false, completion: nil)
+        secondVc.display_discard()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
 

@@ -16,27 +16,35 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dal-C8-g0d">
-                        <rect key="frame" x="16" y="17.5" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="回" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOa-hg-ter">
+                        <rect key="frame" x="254" y="17.5" width="50" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="p0e-2Z-SVy"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="回" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOa-hg-ter">
-                        <rect key="frame" x="286" y="17.5" width="18" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dal-C8-g0d">
+                        <rect key="frame" x="16" y="17.5" width="222" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="iOa-hg-ter" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="rHH-v0-7kv"/>
-                    <constraint firstAttribute="trailing" secondItem="iOa-hg-ter" secondAttribute="trailing" constant="16" id="tkw-TJ-huC"/>
-                    <constraint firstItem="Dal-C8-g0d" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="u6f-Cy-Tqb"/>
-                    <constraint firstItem="Dal-C8-g0d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="wqR-X6-X5Q"/>
+                    <constraint firstItem="iOa-hg-ter" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Bi7-lT-KJi"/>
+                    <constraint firstItem="Dal-C8-g0d" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ll5-gz-QGp"/>
+                    <constraint firstItem="iOa-hg-ter" firstAttribute="leading" secondItem="Dal-C8-g0d" secondAttribute="trailing" constant="16" id="P2t-U9-uKX"/>
+                    <constraint firstAttribute="trailing" secondItem="iOa-hg-ter" secondAttribute="trailing" constant="16" id="gN9-At-SUX"/>
+                    <constraint firstItem="Dal-C8-g0d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="vJD-SA-ePE"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="countLabel" destination="iOa-hg-ter" id="zp6-EH-vQS"/>
+                <outlet property="mainLabel" destination="Dal-C8-g0d" id="2ol-cH-8RY"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="122.54464285714285"/>
         </tableViewCell>
     </objects>
