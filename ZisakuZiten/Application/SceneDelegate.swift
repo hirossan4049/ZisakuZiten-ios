@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 //@available(iOS 13.0, *)
 //class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //
@@ -54,12 +55,11 @@ import UIKit
 
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+//    let access = FileManager.default.url.startAccessingSecurityScopedResource()
+    let support = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
 
     var window: UIWindow?
 
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let _ = (scene as? UIWindowScene) else { return }
-    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
     }
@@ -74,6 +74,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
+    }
+    
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        guard let _ = (scene as? UIWindowScene) else { return }
+     
+        if connectionOptions.urlContexts.count == 1 {
+            let content = connectionOptions.urlContexts.first!
+            print(content.url)
+
+        }
+         
     }
 
 

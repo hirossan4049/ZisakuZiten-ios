@@ -93,6 +93,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        cell_animation()
     }
     
+    
     override func viewDidLayoutSubviews(){
         super.viewDidLayoutSubviews()
         cell_animation()
@@ -354,27 +355,42 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in 
             action.fulfill(with: .reset)
         }
+        let editAction = SwipeAction(style: .destructive, title: "Edit") { action, indexPath in}
+        let tagAction = SwipeAction(style: .destructive, title: "Category") { action, indexPath in}
         let btn:CategoryColorButton = CategoryColorButton()
         btn.backgroundColor = .red
         btn.tintColor = .green
         
-        btn.setTitle("Delete", for: .normal)
+        btn.setTitle("削除", for: .normal)
+        btn.frame.size = CGSize(width: 80, height: 35)
+        btn.backgroundColor = .red
         
 //        let img = UIImage(named: "del_sample")
-        let img = btn.asImage()
-        
-        let resized_img = img.resize(size: CGSize(width: cellHeight + 10, height: cellHeight))
+//        let img = btn.asImage()
+                
+//        let resized_img = img.resize(size: CGSize(width: cellHeight + 10, height: cellHeight))
         deleteAction.transitionDelegate = ScaleTransition.default
         
 //        deleteAction.image = UIImage(named: "del_sample")
         
-        deleteAction.image = resized_img
+        deleteAction.image = btn.asImage()
         deleteAction.title = nil
+        deleteAction.backgroundColor = .white
+        btn.setTitle("編集", for: .normal)
+        btn.backgroundColor = .blue
+        editAction.image = btn.asImage()
+        editAction.title = nil
+        editAction.backgroundColor = .white
+        btn.setTitle("カテゴリ", for: .normal)
+        btn.backgroundColor = .cyan
+        tagAction.image = btn.asImage()
+        tagAction.title = nil
+        tagAction.backgroundColor = .white
 
         deleteAction.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         
 
-        return [deleteAction,deleteAction,deleteAction]
+        return [deleteAction,editAction,tagAction]
     }
     
     // option

@@ -82,6 +82,14 @@ class QuizViewController: PlayBaseViewController {
     }
     
     func set(){
+        if self.counter == NUMBER_OF_QUIZ{
+            let playVC = QuizGradeViewController()
+            playVC.finished_isCorrectList = self.finished_isCorrectList
+            playVC.finished_list = self.finished_list
+    //        let playVC = FlashCardViewController(nibName: "FlashCardViewController", bundle: nil)
+            playVC.modalPresentationStyle = .fullScreen
+            self.present(playVC, animated: true, completion: nil)
+        }
         if self.counter <= self.zitens.count{
             log.debug("quiz : NOMAL")
             normal_quiz()
@@ -221,13 +229,19 @@ class QuizViewController: PlayBaseViewController {
     }
     
     @IBAction func exit(){
-        let playVC = QuizGradeViewController()
-        playVC.finished_isCorrectList = self.finished_isCorrectList
-        playVC.finished_list = self.finished_list
-//        let playVC = FlashCardViewController(nibName: "FlashCardViewController", bundle: nil)
-        playVC.modalPresentationStyle = .fullScreen
-        self.present(playVC, animated: true, completion: nil)
-//        self.dismiss(animated: true, completion: nil)
+        let alert: UIAlertController = UIAlertController(title: "本当に終了してもいいですか？", message: "Quizの途中です。学習結果が保存されません。よろしいですか？", preferredStyle:  UIAlertController.Style.alert)
+        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
+            (action: UIAlertAction!) -> Void in
+            print("OK")
+            self.dismiss(animated: true, completion: nil)
+        })
+        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler:{
+            (action: UIAlertAction!) -> Void in
+            print("Cancel")
+        })
+        alert.addAction(cancelAction)
+        alert.addAction(defaultAction)
+        present(alert, animated: true, completion: nil)
     }
     
     //ダイアログもなにも出さずにただdismissするだけ。
