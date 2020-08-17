@@ -15,7 +15,7 @@ class GroupTableViewCell: SwipeTableViewCell {
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var categoryLabel: UILabel!
-    @IBOutlet var cateColorView: UIView!
+//    @IBOutlet var cateColorView: UIView!
     @IBOutlet var categoryBodyColorView: UIView!
     
 
@@ -23,13 +23,16 @@ class GroupTableViewCell: SwipeTableViewCell {
         super.awakeFromNib()
         // Initialization code
         categoryBodyColorView.layer.cornerRadius = 7
-        categoryBodyColorView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+//        categoryBodyColorView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
         
         // thanks https://qiita.com/hachinobu/items/dc2ff32fa2be6b78ea86
 //        layerMinXMinYCorner    左上
 //        layerMaxXMinYCorner    右上
 //        layerMinXMaxYCorner    左下
 //        layerMaxXMaxYCorner    右下
+        
+        self.backgroundColor =  UIColor(hex: "17122B")
+        self.categoryBodyColorView.backgroundColor = UIColor(hex: "4D4D4D")
         
         // 影の方向（width=右方向、height=下方向、CGSize.zero=方向指定なし）
         categoryBodyColorView.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
@@ -40,7 +43,10 @@ class GroupTableViewCell: SwipeTableViewCell {
         // 影をぼかし
         categoryBodyColorView.layer.shadowRadius = 2
         
-        titleLabel.font = UIFont(name: "KosugiMaru-Regular", size: 17)
+        titleLabel.font = UIFont(name: "KosugiMaru", size: 17)
+        
+        categoryLabel.layer.cornerRadius = 100
+        categoryLabel.backgroundColor = UIColor.red
 
 //        self.CELL_HIGHT = self.bounds.height
         

@@ -95,7 +95,8 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! PlaySelectItemTableViewCell
         print("didHightlightRowAt")
-        cell.bodyView.backgroundColor = .lightGray
+//        cell.bodyView.backgroundColor = .lightGray
+        cell.bodyView.frame.size = CGSize(width: cell.bodyView.frame.size.width - 30, height: cell.bodyView.frame.size.height - 30)
     }
     func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! PlaySelectItemTableViewCell

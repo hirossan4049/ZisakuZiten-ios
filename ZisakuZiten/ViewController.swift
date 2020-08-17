@@ -69,19 +69,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         print("View controller")
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = UIColor(hex: "17122B")
         // Do any additional setup after loading the view.
         let nib = UINib(nibName: "GroupTableViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: cellReuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = UIColor(hex: "17122B")
 
         let realm = try! Realm()
         self.groupList = realm.objects(Group.self)
 //        print(groupList)
 //        print(realm.objects(Category.self))
         
-
+        self.tabBarItem.title = nil
         // 3D Touchが使える端末か確認
         if self.traitCollection.forceTouchCapability == UIForceTouchCapability.available {
             // どのビューをPeek and Popの対象にするか指定
@@ -298,7 +299,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print(group.updateTime)
         cell.titleLabel.text = group.title
         ///TODO:カテゴリ系の処理
-        cell.categoryLabel.text = "カテゴリ:その他"
+        cell.categoryLabel.text = "その他"
         return cell
     }
 
