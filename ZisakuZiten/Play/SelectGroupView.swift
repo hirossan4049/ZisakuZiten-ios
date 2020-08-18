@@ -8,6 +8,7 @@
 
 import UIKit
 
+//使ってない？もしかして
 class SelectGroupView: UIView {
 
     /*

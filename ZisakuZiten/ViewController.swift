@@ -91,13 +91,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         
-//        cell_animation()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.cell_animation()
+        }
     }
     
     
     override func viewDidLayoutSubviews(){
         super.viewDidLayoutSubviews()
-        cell_animation()
+//        cell_animation()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -112,6 +114,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
           navigationController.scrollingNavbarDelegate = self
           navigationController.expandOnActive = false
         }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     func scrollingNavigationController(_ controller: ScrollingNavigationController, didChangeState state: NavigationBarState) {
@@ -137,7 +143,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction
     func createGroup_on_press() {
         ///FIXME: category
-        createGroupDialog()
+//        createGroupDialog()
+        createGroupDialog_new()
     }
     @IBAction func createCategory_on_press(){
         self.performSegue(withIdentifier: "toCategoryEdit", sender: nil)
@@ -178,6 +185,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 }
         )
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func createGroupDialog_new(){
+        let alertView = CreateGroupViewController()
+        alertView.modalTransitionStyle = .crossDissolve
+        alertView.modalPresentationStyle = .overCurrentContext
+        present(alertView, animated: true, completion: nil)
+        print("CreateCatPress")
     }
 
     func createGroupDialog() {

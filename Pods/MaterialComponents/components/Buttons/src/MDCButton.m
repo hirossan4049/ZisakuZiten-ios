@@ -20,6 +20,7 @@
 #import "MaterialShadowElevations.h"
 #import "MaterialShadowLayer.h"
 #import "MaterialShapeLibrary.h"
+#import "MaterialShapes.h"
 #import "MaterialTypography.h"
 #import "MaterialMath.h"
 #import <MDFTextAccessibility/MDFTextAccessibility.h>
@@ -32,6 +33,7 @@
 static const CGFloat MDCButtonMinimumTouchTargetHeight = 48;
 static const CGFloat MDCButtonMinimumTouchTargetWidth = 48;
 static const CGFloat MDCButtonDefaultCornerRadius = 2.0;
+static const CGFloat kDefaultRippleAlpha = (CGFloat)0.12;
 
 static const NSTimeInterval MDCButtonAnimationDuration = 0.2;
 
@@ -64,7 +66,7 @@ static inline CGSize CGSizeShrinkWithInsets(CGSize size, UIEdgeInsets edgeInsets
                     MAX(0, size.height - (edgeInsets.top + edgeInsets.bottom)));
 }
 
-static NSAttributedString *uppercaseAttributedString(NSAttributedString *string) {
+static NSAttributedString *UppercaseAttributedString(NSAttributedString *string) {
   // Store the attributes.
   NSMutableArray<NSDictionary *> *attributes = [NSMutableArray array];
   [string enumerateAttributesInRange:NSMakeRange(0, [string length])
@@ -110,16 +112,23 @@ static NSAttributedString *uppercaseAttributedString(NSAttributedString *string)
 
   BOOL _mdc_adjustsFontForContentSizeCategory;
   BOOL _cornerRadiusObserverAdded;
+  CGFloat _inkMaxRippleRadius;
 }
 @property(nonatomic, strong, readonly, nonnull) MDCStatefulRippleView *rippleView;
 @property(nonatomic, strong) MDCInkView *inkView;
 @property(nonatomic, readonly, strong) MDCShapedShadowLayer *layer;
+@property(nonatomic, assign) BOOL accessibilityTraitsIncludesButton;
+@property(nonatomic, assign) BOOL enableTitleFontForState;
+@property(nonatomic, assign) UIEdgeInsets visibleAreaInsets;
+@property(nonatomic) UIEdgeInsets hitAreaInsets;
+@property(nonatomic, assign) UIEdgeInsets currentVisibleAreaInsets;
 @end
 
 @implementation MDCButton
 
 @synthesize mdc_overrideBaseElevation = _mdc_overrideBaseElevation;
 @synthesize mdc_elevationDidChangeBlock = _mdc_elevationDidChangeBlock;
+@synthesize visibleAreaInsets = _visibleAreaInsets;
 @dynamic layer;
 
 + (Class)layerClass {
@@ -223,7 +232,8 @@ static NSAttributedString *uppercaseAttributedString(NSAttributedString *string)
   _inkView.inkColor = [UIColor colorWithWhite:1 alpha:(CGFloat)0.2];
 
   _rippleView = [[MDCStatefulRippleView alloc] initWithFrame:self.bounds];
-  _rippleView.rippleColor = [UIColor colorWithWhite:1 alpha:(CGFloat)0.12];
+  _rippleColor = [UIColor colorWithWhite:0 alpha:kDefaultRippleAlpha];
+  _rippleView.rippleColor = [UIColor colorWithWhite:0 alpha:(CGFloat)0.12];
 
   // Default content insets
   // The default contentEdgeInsets are set here (instead of above, as they were previously) because
@@ -300,6 +310,18 @@ static NSAttributedString *uppercaseAttributedString(NSAttributedString *string)
   [self updateShadowColor];
   [self updateBackgroundColor];
   [self updateBorderColor];
+
+  if (self.centerVisibleArea) {
+    UIEdgeInsets visibleAreaInsets = self.visibleAreaInsets;
+    if (!UIEdgeInsetsEqualToEdgeInsets(visibleAreaInsets, self.currentVisibleAreaInsets)) {
+      self.currentVisibleAreaInsets = visibleAreaInsets;
+      MDCRectangleShapeGenerator *shapeGenerator =
+          [self generateShapeWithCornerRadius:self.layer.cornerRadius
+                            visibleAreaInsets:visibleAreaInsets];
+      [self configureLayerWithShapeGenerator:shapeGenerator];
+    }
+  }
+
   if (!self.layer.shapeGenerator) {
     self.layer.shadowPath = [self boundingPath].CGPath;
   }
@@ -318,6 +340,7 @@ static NSAttributedString *uppercaseAttributedString(NSAttributedString *string)
   } else {
     CGRect bounds = CGRectStandardize(self.bounds);
     bounds = CGRectOffset(bounds, self.inkViewOffset.width, self.inkViewOffset.height);
+    bounds = UIEdgeInsetsInsetRect(bounds, self.rippleEdgeInsets);
     _inkView.frame = bounds;
     self.rippleView.frame = bounds;
   }
@@ -354,7 +377,7 @@ static NSAttributedString *uppercaseAttributedString(NSAttributedString *string)
 }
 
 - (CGSize)sizeThatFits:(CGSize)size {
-  CGSize givenSizeWithInsets = CGSizeShrinkWithInsets(size, self.visibleAreaInsets);
+  CGSize givenSizeWithInsets = CGSizeShrinkWithInsets(size, _visibleAreaInsets);
   CGSize superSize = [super sizeThatFits:givenSizeWithInsets];
 
   if (self.minimumSize.height > 0) {
@@ -370,7 +393,7 @@ static NSAttributedString *uppercaseAttributedString(NSAttributedString *string)
     superSize.width = MIN(self.maximumSize.width, superSize.width);
   }
 
-  CGSize adjustedSize = CGSizeExpandWithInsets(superSize, self.visibleAreaInsets);
+  CGSize adjustedSize = CGSizeExpandWithInsets(superSize, _visibleAreaInsets);
   return adjustedSize;
 }
 
@@ -540,7 +563,7 @@ static NSAttributedString *uppercaseAttributedString(NSAttributedString *string)
   }
 
   if (_uppercaseTitle) {
-    title = uppercaseAttributedString(title);
+    title = UppercaseAttributedString(title);
   }
   [super setAttributedTitle:title forState:state];
 }
@@ -602,6 +625,12 @@ static NSAttributedString *uppercaseAttributedString(NSAttributedString *string)
       (inkStyle == MDCInkStyleUnbounded) ? MDCRippleStyleUnbounded : MDCRippleStyleBounded;
 }
 
+- (void)setRippleStyle:(MDCRippleStyle)rippleStyle {
+  _rippleStyle = rippleStyle;
+
+  self.rippleView.rippleStyle = rippleStyle;
+}
+
 - (UIColor *)inkColor {
   return _inkView.inkColor;
 }
@@ -611,14 +640,35 @@ static NSAttributedString *uppercaseAttributedString(NSAttributedString *string)
   [self.rippleView setRippleColor:inkColor forState:MDCRippleStateHighlighted];
 }
 
+- (void)setRippleColor:(UIColor *)rippleColor {
+  _rippleColor = rippleColor ?: [UIColor colorWithWhite:0 alpha:kDefaultRippleAlpha];
+  [self.rippleView setRippleColor:_rippleColor forState:MDCRippleStateHighlighted];
+}
+
+- (CGFloat)inkMaxRippleRadius {
+  return _inkMaxRippleRadius;
+}
+
 - (void)setInkMaxRippleRadius:(CGFloat)inkMaxRippleRadius {
   _inkMaxRippleRadius = inkMaxRippleRadius;
   _inkView.maxRippleRadius = inkMaxRippleRadius;
   self.rippleView.maximumRadius = inkMaxRippleRadius;
 }
 
+- (void)setRippleMaximumRadius:(CGFloat)rippleMaximumRadius {
+  _rippleMaximumRadius = rippleMaximumRadius;
+
+  self.rippleView.maximumRadius = rippleMaximumRadius;
+}
+
 - (void)setInkViewOffset:(CGSize)inkViewOffset {
   _inkViewOffset = inkViewOffset;
+  [self setNeedsLayout];
+}
+
+- (void)setRippleEdgeInsets:(UIEdgeInsets)rippleEdgeInsets {
+  _rippleEdgeInsets = rippleEdgeInsets;
+
   [self setNeedsLayout];
 }
 
@@ -980,8 +1030,10 @@ static NSAttributedString *uppercaseAttributedString(NSAttributedString *string)
 }
 
 - (void)setShapeGenerator:(id<MDCShapeGenerating>)shapeGenerator {
-  if (!UIEdgeInsetsEqualToEdgeInsets(self.visibleAreaInsets, UIEdgeInsetsZero)) {
-    // When visibleAreaInsets is set, custom shapeGenerater is not allow to be set through setter.
+  if (!UIEdgeInsetsEqualToEdgeInsets(_visibleAreaInsets, UIEdgeInsetsZero) ||
+      self.centerVisibleArea) {
+    // When visibleAreaInsets or centerVisibleArea is set, custom shapeGenerater is not allow
+    // to be set through setter.
     return;
   }
 
@@ -1057,14 +1109,14 @@ static NSAttributedString *uppercaseAttributedString(NSAttributedString *string)
 
 #pragma mark - Visible area
 
-- (void)setVisibleAreaInsets:(UIEdgeInsets)visibleAreaInsets {
-  if (UIEdgeInsetsEqualToEdgeInsets(visibleAreaInsets, _visibleAreaInsets)) {
+- (void)setCenterVisibleArea:(BOOL)centerVisibleArea {
+  if (_centerVisibleArea == centerVisibleArea) {
     return;
   }
 
-  _visibleAreaInsets = visibleAreaInsets;
+  _centerVisibleArea = centerVisibleArea;
 
-  if (UIEdgeInsetsEqualToEdgeInsets(visibleAreaInsets, UIEdgeInsetsZero)) {
+  if (!centerVisibleArea && UIEdgeInsetsEqualToEdgeInsets(_visibleAreaInsets, UIEdgeInsetsZero)) {
     self.shapeGenerator = nil;
 
     if (_cornerRadiusObserverAdded) {
@@ -1074,8 +1126,10 @@ static NSAttributedString *uppercaseAttributedString(NSAttributedString *string)
       _cornerRadiusObserverAdded = NO;
     }
   } else {
-    [self configureLayerWithShapeGenerator:[self generateShapeWithCornerRadius:self.layer
-                                                                                   .cornerRadius]];
+    MDCRectangleShapeGenerator *shapeGenerator =
+        [self generateShapeWithCornerRadius:self.layer.cornerRadius
+                          visibleAreaInsets:self.visibleAreaInsets];
+    [self configureLayerWithShapeGenerator:shapeGenerator];
 
     if (!_cornerRadiusObserverAdded) {
       [self.layer addObserver:self
@@ -1087,6 +1141,60 @@ static NSAttributedString *uppercaseAttributedString(NSAttributedString *string)
   }
 }
 
+- (void)setVisibleAreaInsets:(UIEdgeInsets)visibleAreaInsets {
+  if (UIEdgeInsetsEqualToEdgeInsets(visibleAreaInsets, _visibleAreaInsets)) {
+    return;
+  }
+
+  _visibleAreaInsets = visibleAreaInsets;
+
+  if (UIEdgeInsetsEqualToEdgeInsets(visibleAreaInsets, UIEdgeInsetsZero) &&
+      !self.centerVisibleArea) {
+    self.shapeGenerator = nil;
+
+    if (_cornerRadiusObserverAdded) {
+      [self.layer removeObserver:self
+                      forKeyPath:NSStringFromSelector(@selector(cornerRadius))
+                         context:kKVOContextCornerRadius];
+      _cornerRadiusObserverAdded = NO;
+    }
+  } else {
+    MDCRectangleShapeGenerator *shapeGenerator =
+        [self generateShapeWithCornerRadius:self.layer.cornerRadius
+                          visibleAreaInsets:visibleAreaInsets];
+    [self configureLayerWithShapeGenerator:shapeGenerator];
+
+    if (!_cornerRadiusObserverAdded) {
+      [self.layer addObserver:self
+                   forKeyPath:NSStringFromSelector(@selector(cornerRadius))
+                      options:NSKeyValueObservingOptionNew
+                      context:kKVOContextCornerRadius];
+      _cornerRadiusObserverAdded = YES;
+    }
+  }
+}
+
+- (UIEdgeInsets)visibleAreaInsets {
+  if (!UIEdgeInsetsEqualToEdgeInsets(_visibleAreaInsets, UIEdgeInsetsZero)) {
+    // Use custom visibleAreaInsets value when user sets it.
+    return _visibleAreaInsets;
+  }
+
+  UIEdgeInsets visibleAreaInsets = UIEdgeInsetsZero;
+  if (self.centerVisibleArea) {
+    CGSize visibleAreaSize = [self sizeThatFits:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
+    CGFloat additionalRequiredHeight =
+        MAX(0, CGRectGetHeight(self.bounds) - visibleAreaSize.height);
+    CGFloat additionalRequiredWidth = MAX(0, CGRectGetWidth(self.bounds) - visibleAreaSize.width);
+    visibleAreaInsets.top = MDCCeil(additionalRequiredHeight * 0.5f);
+    visibleAreaInsets.bottom = additionalRequiredHeight - visibleAreaInsets.top;
+    visibleAreaInsets.left = MDCCeil(additionalRequiredWidth * 0.5f);
+    visibleAreaInsets.right = additionalRequiredWidth - visibleAreaInsets.left;
+  }
+
+  return visibleAreaInsets;
+}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary *)change
@@ -1094,28 +1202,29 @@ static NSAttributedString *uppercaseAttributedString(NSAttributedString *string)
   if (context == kKVOContextCornerRadius) {
     if (!UIEdgeInsetsEqualToEdgeInsets(self.visibleAreaInsets, UIEdgeInsetsZero) &&
         self.shapeGenerator) {
-      [self
-          configureLayerWithShapeGenerator:[self generateShapeWithCornerRadius:self.layer
-                                                                                   .cornerRadius]];
+      MDCRectangleShapeGenerator *shapeGenerator =
+          [self generateShapeWithCornerRadius:self.layer.cornerRadius
+                            visibleAreaInsets:self.visibleAreaInsets];
+      [self configureLayerWithShapeGenerator:shapeGenerator];
     }
   } else {
     [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
   }
 }
 
-- (MDCRectangleShapeGenerator *)generateShapeWithCornerRadius:(CGFloat)cornerRadius {
+- (MDCRectangleShapeGenerator *)generateShapeWithCornerRadius:(CGFloat)cornerRadius
+                                            visibleAreaInsets:(UIEdgeInsets)visibleAreaInsets {
   MDCRectangleShapeGenerator *shapeGenerator = [[MDCRectangleShapeGenerator alloc] init];
   MDCCornerTreatment *cornerTreatment =
       [[MDCRoundedCornerTreatment alloc] initWithRadius:cornerRadius];
   [shapeGenerator setCorners:cornerTreatment];
-  shapeGenerator.topLeftCornerOffset =
-      CGPointMake(self.visibleAreaInsets.left, self.visibleAreaInsets.top);
+  shapeGenerator.topLeftCornerOffset = CGPointMake(visibleAreaInsets.left, visibleAreaInsets.top);
   shapeGenerator.topRightCornerOffset =
-      CGPointMake(-self.visibleAreaInsets.right, self.visibleAreaInsets.top);
+      CGPointMake(-visibleAreaInsets.right, visibleAreaInsets.top);
   shapeGenerator.bottomLeftCornerOffset =
-      CGPointMake(self.visibleAreaInsets.left, -self.visibleAreaInsets.bottom);
+      CGPointMake(visibleAreaInsets.left, -visibleAreaInsets.bottom);
   shapeGenerator.bottomRightCornerOffset =
-      CGPointMake(-self.visibleAreaInsets.right, -self.visibleAreaInsets.bottom);
+      CGPointMake(-visibleAreaInsets.right, -visibleAreaInsets.bottom);
   return shapeGenerator;
 }
 
