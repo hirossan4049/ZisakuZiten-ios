@@ -55,6 +55,8 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.view.backgroundColor = .white
 
         self.tableView.register(nib, forCellReuseIdentifier: cellReuseIdentifier)
+        self.view.backgroundColor = UIColor(hex: "17122B")
+        self.tableView.backgroundColor =  UIColor(hex: "17122B")
 
         tableView.delegate = self
         tableView.dataSource = self

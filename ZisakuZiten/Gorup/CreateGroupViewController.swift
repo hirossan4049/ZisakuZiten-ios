@@ -17,6 +17,8 @@ class CreateGroupViewController: UIViewController {
     
     @IBOutlet weak var nameTextField:UITextField!
     
+    @IBOutlet weak var categoryView:CategoryView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,7 @@ class CreateGroupViewController: UIViewController {
         viewRadiuser(view: self.cancelBtn, radius: 20)
         viewRadiuser(view: self.categoryBtn, radius: 20)
         viewRadiuser(view: self.nameTextField, radius: 10)
+        viewRadiuser(view: self.categoryView, radius: 5)
 
         // Do any additional setup after loading the view.
     }

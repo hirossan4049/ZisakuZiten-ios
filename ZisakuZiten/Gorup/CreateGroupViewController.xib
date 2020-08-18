@@ -17,6 +17,7 @@
                 <outlet property="bodyView" destination="fuy-fj-h10" id="yoD-WR-x7A"/>
                 <outlet property="cancelBtn" destination="SIF-la-fd7" id="DW1-Ra-Sa1"/>
                 <outlet property="categoryBtn" destination="PJF-z0-Rfu" id="D55-2o-Fvu"/>
+                <outlet property="categoryView" destination="51E-3l-cBq" id="Icm-ir-MCs"/>
                 <outlet property="createBtn" destination="ORX-vm-lJy" id="NEz-T6-N8r"/>
                 <outlet property="nameTextField" destination="Ks9-55-yhU" id="Kfx-zt-iTL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -38,7 +39,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="51E-3l-cBq" customClass="CategoryView" customModule="自作辞典" customModuleProvider="target">
-                            <rect key="frame" x="24" y="50" width="54" height="23"/>
+                            <rect key="frame" x="24" y="50" width="66" height="23"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </view>

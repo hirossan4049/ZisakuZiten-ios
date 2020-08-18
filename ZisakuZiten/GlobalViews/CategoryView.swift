@@ -15,11 +15,6 @@ class CategoryView: UIView {
     override func draw(_ rect: CGRect) {
         // Drawing code
         
-        self.layer.cornerRadius = 10
-//        let nib = UINib(nibName: "CategoryView", bundle: nil)
-//        self.addSubview(nib.instantiate(withOwner: self, options: nil).first as! UIView)
-        
-        
         print("THISI IS CATEGORY VIEW. DRAWD VIEW. DOU?")
         
     }
@@ -31,12 +26,18 @@ class CategoryView: UIView {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         loadNib()
+
     }
 
     func loadNib(){
         let view = Bundle.main.loadNibNamed("CategoryView", owner: self, options: nil)?.first as! UIView
         view.frame = self.bounds
+        view.layer.cornerRadius = 3
+        self.layer.cornerRadius = 3
+
         self.addSubview(view)
+        print(self.subviews)
+
     }
     
 
