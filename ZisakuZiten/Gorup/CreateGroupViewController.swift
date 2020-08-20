@@ -28,7 +28,8 @@ class CreateGroupViewController: UIViewController {
         viewRadiuser(view: self.cancelBtn, radius: 20)
         viewRadiuser(view: self.categoryBtn, radius: 20)
         viewRadiuser(view: self.nameTextField, radius: 10)
-        viewRadiuser(view: self.categoryView, radius: 5)
+//        viewRadiuser(view: self.categoryView, radius: 5)
+        self.categoryView.backgroundColor = .none
 
         // Do any additional setup after loading the view.
     }
