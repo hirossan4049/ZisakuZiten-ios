@@ -30,6 +30,8 @@ class CreateGroupViewController: UIViewController {
         viewRadiuser(view: self.nameTextField, radius: 10)
 //        viewRadiuser(view: self.categoryView, radius: 5)
         self.categoryView.backgroundColor = .none
+        nameTextField.attributedPlaceholder = NSAttributedString(string: "どんな辞典の名前にする？", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
+
 
         // Do any additional setup after loading the view.
     }

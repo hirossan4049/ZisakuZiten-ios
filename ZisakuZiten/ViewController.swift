@@ -75,7 +75,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tableView.register(nib, forCellReuseIdentifier: cellReuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = UIColor(hex: "17122B")
+        tableView.backgroundColor = .backgroundColor
+        self.view.backgroundColor = .backgroundColor
+        
 
         let realm = try! Realm()
         self.groupList = realm.objects(Group.self)
@@ -83,6 +85,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        print(realm.objects(Category.self))
         
         self.tabBarItem.title = nil
+            
         // 3D Touchが使える端末か確認
         if self.traitCollection.forceTouchCapability == UIForceTouchCapability.available {
             // どのビューをPeek and Popの対象にするか指定
@@ -389,21 +392,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
 //        deleteAction.image = UIImage(named: "del_sample")
         
-        deleteAction.image = btn.asImage()
+//        deleteAction.image = btn.asImage()
+        var deleteimg = UIImage(named: "deleteicon")
+        deleteimg = deleteimg?.resize(size: CGSize(width: 35, height: 35))
+        deleteAction.image = deleteimg
         deleteAction.title = nil
-        deleteAction.backgroundColor = .white
+//        deleteAction.backgroundColor = UIColor(hex: "32005D")
+        deleteAction.backgroundColor = .backgroundColor
+
+        var editimg = UIImage(named: "editicon")
+        editimg = deleteimg?.resize(size: CGSize(width: 25, height: 25))
         btn.setTitle("編集", for: .normal)
         btn.backgroundColor = .blue
-        editAction.image = btn.asImage()
+//        editAction.image = btn.asImage()
+        editAction.image = editimg
         editAction.title = nil
-        editAction.backgroundColor = .white
+        editAction.backgroundColor = UIColor(hex: "42007C")
         btn.setTitle("カテゴリ", for: .normal)
         btn.backgroundColor = .cyan
         tagAction.image = btn.asImage()
         tagAction.title = nil
-        tagAction.backgroundColor = .white
+        tagAction.backgroundColor = UIColor(hex: "520098")
 
-        deleteAction.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         
 
         return [deleteAction,editAction,tagAction]

@@ -31,7 +31,7 @@ class GroupTableViewCell: SwipeTableViewCell {
 //        layerMinXMaxYCorner    左下
 //        layerMaxXMaxYCorner    右下
         
-        self.backgroundColor =  UIColor(hex: "17122B")
+        self.backgroundColor =  .backgroundColor
         self.categoryBodyColorView.backgroundColor = UIColor(hex: "4D4D4D")
         
         // 影の方向（width=右方向、height=下方向、CGSize.zero=方向指定なし）

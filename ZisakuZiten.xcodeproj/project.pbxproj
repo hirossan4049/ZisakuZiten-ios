@@ -16,6 +16,7 @@
 		D30D2AD924EBC59900FCC53E /* SelectCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D30D2AD724EBC59900FCC53E /* SelectCategoryViewController.xib */; };
 		D30D2ADC24EBC73E00FCC53E /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D2ADB24EBC73E00FCC53E /* CategoryView.swift */; };
 		D30D2ADE24EBC75600FCC53E /* CategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D30D2ADD24EBC75600FCC53E /* CategoryView.xib */; };
+		D30D2AE024F2108C00FCC53E /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D2ADF24F2108C00FCC53E /* UIColor+.swift */; };
 		D335623A24C96C9E0057D12B /* UIColor+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = D335623924C96C9E0057D12B /* UIColor+random.swift */; };
 		D335623C24C988170057D12B /* PlayNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D335623B24C988170057D12B /* PlayNavigationController.swift */; };
 		D335623E24CB243E0057D12B /* SelectGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D335623D24CB243E0057D12B /* SelectGroupView.swift */; };
@@ -115,6 +116,7 @@
 		D30D2AD724EBC59900FCC53E /* SelectCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectCategoryViewController.xib; sourceTree = "<group>"; };
 		D30D2ADB24EBC73E00FCC53E /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		D30D2ADD24EBC75600FCC53E /* CategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryView.xib; sourceTree = "<group>"; };
+		D30D2ADF24F2108C00FCC53E /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		D335623924C96C9E0057D12B /* UIColor+random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+random.swift"; sourceTree = "<group>"; };
 		D335623B24C988170057D12B /* PlayNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayNavigationController.swift; sourceTree = "<group>"; };
 		D335623D24CB243E0057D12B /* SelectGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupView.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				D335624524CC5F110057D12B /* UIColor+hex.swift */,
 				D33692AB24DAA0A20027FB17 /* UIView+Blur.swift */,
 				D33692AF24DBE9860027FB17 /* UIColor+convertToRGBA.swift */,
+				D30D2ADF24F2108C00FCC53E /* UIColor+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -728,6 +731,7 @@
 				D30D2ADC24EBC73E00FCC53E /* CategoryView.swift in Sources */,
 				D335624C24CC78650057D12B /* GroupPickerView.swift in Sources */,
 				D3C594DD24CDF07200066E42 /* PlayListItem.swift in Sources */,
+				D30D2AE024F2108C00FCC53E /* UIColor+.swift in Sources */,
 				D3AB70FA24A09A9A00DFDDB7 /* ZitenEditerViewController.swift in Sources */,
 				D3A6A4DB24A26CBB00CF6C87 /* EditCategoryViewController.swift in Sources */,
 				D3A96A9A24A1F0D70053639B /* CreateCategoryDialogViewController.swift in Sources */,

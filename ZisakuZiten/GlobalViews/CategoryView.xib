@@ -18,14 +18,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tag" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="80F-Gh-pco">
-                    <rect key="frame" x="2" y="2" width="15" height="43"/>
+                    <rect key="frame" x="4" y="2" width="15" height="43"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="15" id="Twx-r7-3Rs"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sample" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mD2-zB-gDC">
-                    <rect key="frame" x="17" y="14" width="49.5" height="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="サンプル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mD2-zB-gDC">
+                    <rect key="frame" x="21" y="14" width="62" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -34,9 +34,9 @@
             <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="80F-Gh-pco" secondAttribute="bottom" constant="2" id="2le-r3-HZp"/>
-                <constraint firstItem="80F-Gh-pco" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="2" id="8jU-tG-sf9"/>
+                <constraint firstItem="80F-Gh-pco" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="4" id="8jU-tG-sf9"/>
                 <constraint firstItem="80F-Gh-pco" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="2" id="g34-2V-RPd"/>
-                <constraint firstItem="mD2-zB-gDC" firstAttribute="leading" secondItem="80F-Gh-pco" secondAttribute="trailing" id="nlU-SY-PQN"/>
+                <constraint firstItem="mD2-zB-gDC" firstAttribute="leading" secondItem="80F-Gh-pco" secondAttribute="trailing" constant="2" id="nlU-SY-PQN"/>
                 <constraint firstItem="mD2-zB-gDC" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="pLN-E6-cqG"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
