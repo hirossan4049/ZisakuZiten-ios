@@ -98,10 +98,13 @@
 			<array/>
 			<key>UTTypeIdentifier</key>
 			<string>com.com.com.ZisakuZiten</string>
-			<key>public.filename-extension</key>
-			<array>
-				<string>json</string>
-			</array>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>json</string>
+				</array>
+			</dict>
 		</dict>
 		<dict/>
 	</array>

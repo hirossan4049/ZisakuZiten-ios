@@ -81,6 +81,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         let realm = try! Realm()
         self.groupList = realm.objects(Group.self)
+        
+                
+        
 //        print(groupList)
 //        print(realm.objects(Category.self))
         
@@ -361,12 +364,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //
 //        return UISwipeActionsConfiguration(actions: [editAction, deleteAction])
 //    }
+    func error_aa(){
+        print("errororaaraaa")
+    }
 //    
     // CELL EDIT
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         guard orientation == .right else { return nil }
         print("CELL EDIT")
         print(indexPath)
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GroupTableViewCell
+        let zitenList = Array(arrayLiteral: self.groupList[(indexPath as IndexPath).section])
+        print(zitenList,self.groupList[(indexPath as IndexPath).section])
+//        let data = JSONSerialization.dataWithJSONObject(zitenList, options: nil, error: nil)
+//        let string = NSString(data: data!, encoding: NSUTF8StringEncoding)
+//        print(string)
+        
 
         let row = tableView.cellForRow(at: indexPath)
         let cellHeight = (row?.bounds.height)!
@@ -375,7 +388,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             action.fulfill(with: .reset)
         }
         let editAction = SwipeAction(style: .destructive, title: "Edit") { action, indexPath in}
-        let tagAction = SwipeAction(style: .destructive, title: "Category") { action, indexPath in}
+        let tagAction = SwipeAction(style: .destructive, title: "Category") { action, indexPath in
+            print("Hellelefienfeionfoenfnie")
+        }
         let btn:CategoryColorButton = CategoryColorButton()
         btn.backgroundColor = .red
         btn.tintColor = .green

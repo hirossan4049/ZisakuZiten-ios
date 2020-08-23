@@ -35,6 +35,7 @@
 		D33692B124DBF84A0027FB17 /* KosugiMaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D33692A524D7AF310027FB17 /* KosugiMaru-Regular.ttf */; };
 		D33692B424DD9B140027FB17 /* QuizGradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33692B224DD9B140027FB17 /* QuizGradeViewController.swift */; };
 		D33692B524DD9B140027FB17 /* QuizGradeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D33692B324DD9B140027FB17 /* QuizGradeViewController.xib */; };
+		D339668224F23D49008A2194 /* Object+toDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D339668124F23D49008A2194 /* Object+toDictionary.swift */; };
 		D358122424AD60900042FEA7 /* CategoryColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D358122324AD60900042FEA7 /* CategoryColors.swift */; };
 		D36418D224C13BA2009E0499 /* PlaySelectItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36418D024C13BA2009E0499 /* PlaySelectItemTableViewCell.swift */; };
 		D36418D324C13BA2009E0499 /* PlaySelectItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36418D124C13BA2009E0499 /* PlaySelectItemTableViewCell.xib */; };
@@ -135,6 +136,7 @@
 		D33692AF24DBE9860027FB17 /* UIColor+convertToRGBA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+convertToRGBA.swift"; sourceTree = "<group>"; };
 		D33692B224DD9B140027FB17 /* QuizGradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGradeViewController.swift; sourceTree = "<group>"; };
 		D33692B324DD9B140027FB17 /* QuizGradeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizGradeViewController.xib; sourceTree = "<group>"; };
+		D339668124F23D49008A2194 /* Object+toDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Object+toDictionary.swift"; sourceTree = "<group>"; };
 		D358122324AD60900042FEA7 /* CategoryColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColors.swift; sourceTree = "<group>"; };
 		D36418D024C13BA2009E0499 /* PlaySelectItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySelectItemTableViewCell.swift; sourceTree = "<group>"; };
 		D36418D124C13BA2009E0499 /* PlaySelectItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaySelectItemTableViewCell.xib; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				D33692AB24DAA0A20027FB17 /* UIView+Blur.swift */,
 				D33692AF24DBE9860027FB17 /* UIColor+convertToRGBA.swift */,
 				D30D2ADF24F2108C00FCC53E /* UIColor+.swift */,
+				D339668124F23D49008A2194 /* Object+toDictionary.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -724,6 +727,7 @@
 				D33692AE24DBE84A0027FB17 /* QuizItemButton.swift in Sources */,
 				D3AB70F4249F66DE00DFDDB7 /* Group.swift in Sources */,
 				D3AB70F1249F3A8B00DFDDB7 /* ZitenTableViewCell.swift in Sources */,
+				D339668224F23D49008A2194 /* Object+toDictionary.swift in Sources */,
 				D335625024CC8F6C0057D12B /* GroupPickerViewOwner.swift in Sources */,
 				D39FC4F124C408E800C4C0A1 /* QuizNavigationController.swift in Sources */,
 				D3A6A4DF24A36FC800CF6C87 /* CategoryEditTableViewCell.swift in Sources */,
