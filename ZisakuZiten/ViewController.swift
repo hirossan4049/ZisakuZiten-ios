@@ -65,6 +65,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet private weak var createBtn:UIButton!
     @IBOutlet weak var toolbar: UIToolbar!
     
+    var dController :UIDocumentInteractionController!
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +80,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         tableView.backgroundColor = .backgroundColor
         self.view.backgroundColor = .backgroundColor
-        
+        createBtn.backgroundColor = .floatingBtnColor
 
         let realm = try! Realm()
         self.groupList = realm.objects(Group.self)
@@ -272,6 +275,59 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // 生成したダイアログを実際に表示します
         self.present(dialog, animated: true, completion: nil)
     }
+    
+    func group2json(group:Group) -> String{
+//                let mirror = Mirror(reflecting: self.groupList[(indexPath as IndexPath).section])
+//                print("for back")
+//                for child in mirror.children {
+//                    print(child.label ?? "")
+//        //            print(child.value)
+//                    print(String(describing: type(of: child.value)))
+//                    print(child.value == nil?)
+        //            if child.value ?? as! Bool{
+        //                print("this is nil")
+        //            }else{
+        //                print("not nil, value :",child.value)
+        //            }
+//                }
+        var zitenList:[[String:Any]] = []
+        var groupDict:[String:Any] = [:]
+        groupDict["title"] = group.title
+        groupDict["createTime"] = group.createTime?.toString()
+        for ziten in group.ziten_upT_List{
+            var zitenDict:[String:Any] = [:]
+            zitenDict["title"] = ziten.title
+            zitenDict["content"] = ziten.content
+            zitenDict["updateTime"] = ziten.createTime?.toString()
+            zitenList.append(zitenDict)
+        }
+        groupDict["ziten_updT_List"] = zitenList
+        
+        let jsonData = try! JSONSerialization.data(withJSONObject: groupDict, options: [])
+        let jsonStr = String(bytes: jsonData, encoding: .utf8)!
+//        print(jsonStr)
+//        let data = jsonStr!.data(using: .utf8)!
+//        let obj = try! JSONSerialization.jsonObject(with: jsonData, options: [])
+//        let myData = Group(value: obj)
+//        print(myData)
+        return jsonStr
+    }
+    
+    func saveFile(filename:String,data:String){
+    //        // ファイル一時保存してNSURLを取得
+           let url2 = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(filename)!
+           do{
+               try data.write(to: url2,atomically: true, encoding: String.Encoding.utf8)
+           }catch{
+               print("データ保存でエラー")
+               return
+           }
+
+           dController = UIDocumentInteractionController.init(url: url2)
+            if !(dController.presentOpenInMenu(from: CGRect(x: 0, y: 0, width: 500, height: 300), in: self.view, animated: true)) {
+               print("ファイルに対応するアプリがない")
+           }
+    }
 
     // https://www.it-swarm.dev/ja/ios/uitableviewcell%E3%81%AE%E9%96%93%E9%9A%94%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/972967975/
     
@@ -374,18 +430,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print("CELL EDIT")
         print(indexPath)
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GroupTableViewCell
-        let zitenList = Array(arrayLiteral: self.groupList[(indexPath as IndexPath).section])
-        print(zitenList,self.groupList[(indexPath as IndexPath).section])
+        let group = self.groupList[(indexPath as IndexPath).section]
+//        print(zitenList,self.groupList[(indexPath as IndexPath).section])
 //        let data = JSONSerialization.dataWithJSONObject(zitenList, options: nil, error: nil)
 //        let string = NSString(data: data!, encoding: NSUTF8StringEncoding)
 //        print(string)
+    
+        let jsondata = group2json(group: group)
+        let filename = group.title! + ".json"
+        saveFile(filename: filename, data: jsondata)
         
-
+        
         let row = tableView.cellForRow(at: indexPath)
         let cellHeight = (row?.bounds.height)!
 
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in 
             action.fulfill(with: .reset)
+            print("DELETE")
         }
         let editAction = SwipeAction(style: .destructive, title: "Edit") { action, indexPath in}
         let tagAction = SwipeAction(style: .destructive, title: "Category") { action, indexPath in
@@ -409,25 +470,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
 //        deleteAction.image = btn.asImage()
         var deleteimg = UIImage(named: "deleteicon")
-        deleteimg = deleteimg?.resize(size: CGSize(width: 35, height: 35))
+        deleteimg = deleteimg?.resize(size: CGSize(width: 40, height: 40))
         deleteAction.image = deleteimg
         deleteAction.title = nil
 //        deleteAction.backgroundColor = UIColor(hex: "32005D")
         deleteAction.backgroundColor = .backgroundColor
 
         var editimg = UIImage(named: "editicon")
-        editimg = deleteimg?.resize(size: CGSize(width: 25, height: 25))
+        editimg = editimg?.resize(size: CGSize(width: 40, height: 40))
         btn.setTitle("編集", for: .normal)
         btn.backgroundColor = .blue
 //        editAction.image = btn.asImage()
         editAction.image = editimg
         editAction.title = nil
-        editAction.backgroundColor = UIColor(hex: "42007C")
+        editAction.backgroundColor = .backgroundColor
         btn.setTitle("カテゴリ", for: .normal)
         btn.backgroundColor = .cyan
-        tagAction.image = btn.asImage()
+        var shareimg = UIImage(named: "shareicon")
+        shareimg = shareimg?.resize(size: CGSize(width: 40, height: 40))
+//        tagAction.image = btn.asImage()
+        tagAction.image = shareimg
         tagAction.title = nil
-        tagAction.backgroundColor = UIColor(hex: "520098")
+        tagAction.backgroundColor = .backgroundColor
 
         
 

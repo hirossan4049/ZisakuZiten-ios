@@ -76,16 +76,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidEnterBackground(_ scene: UIScene) {
     }
     
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let _ = (scene as? UIWindowScene) else { return }
-        print("hfeajifjfeafei ")
-        if connectionOptions.urlContexts.count == 1 {
-            let content = connectionOptions.urlContexts.first!
-            print(content.url)
-
-        }
+//    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+//        guard let _ = (scene as? UIWindowScene) else { return }
+//        print("hfeajifjfeafei ")
+//        if connectionOptions.urlContexts.count == 1 {
+//            let content = connectionOptions.urlContexts.first!
+//            print(content.url)
+//
+//        }
          
-    }
+//    }
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>){
+           print(URLContexts)
+       }
 
 
 }
