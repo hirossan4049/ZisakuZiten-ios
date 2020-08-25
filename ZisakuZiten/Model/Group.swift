@@ -15,6 +15,7 @@ class Group:Object{
     @objc dynamic var updateTime: Date? = nil
     
     // zitenのリスト。Androidとサーバーサイドがこう実装しちゃってるから仕方なく。自分が書いたんですけどね。
+    /// FIXME;ziten_upT_Listじゃなくてziten_updT_Listでした。キレそう
     dynamic var ziten_upT_List = List<Ziten>()
     @objc dynamic var category: Date? = nil
     

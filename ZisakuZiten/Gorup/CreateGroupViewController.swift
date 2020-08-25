@@ -8,12 +8,15 @@
 
 import UIKit
 
+/// FIXME:UIPresentationController :(((((
 class CreateGroupViewController: UIViewController {
     
     @IBOutlet weak var bodyView:UIView!
     @IBOutlet weak var createBtn:UIButton!
     @IBOutlet weak var cancelBtn:UIButton!
     @IBOutlet weak var categoryBtn:UIButton!
+    
+    @IBOutlet weak var titleLabel:UILabel!
     
     @IBOutlet weak var nameTextField:UITextField!
     
@@ -30,6 +33,11 @@ class CreateGroupViewController: UIViewController {
         viewRadiuser(view: self.nameTextField, radius: 10)
 //        viewRadiuser(view: self.categoryView, radius: 5)
         self.categoryView.backgroundColor = .none
+        self.bodyView.backgroundColor = .baseColor
+        self.titleLabel.textColor = .baseTextColor
+        self.createBtn.backgroundColor = .buttonBaseColor
+        self.nameTextField.backgroundColor = .createGrouptextFieldColor
+        self.categoryBtn.backgroundColor = .buttonSubColor
         nameTextField.attributedPlaceholder = NSAttributedString(string: "どんな辞典の名前にする？", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
 
 
@@ -40,20 +48,20 @@ class CreateGroupViewController: UIViewController {
         self.dismiss(animated: false, completion: nil)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //        outputText.text = inputText.text
+        print("touchesBegan")
+        self.view.endEditing(true)
+    }
+    
     @IBAction func exit(){
         self.dismiss(animated: true, completion: nil)
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func categorySettingOnPrs(){
+        let viewController = SelectCategoryViewController()
+        viewController.modalPresentationStyle = .pageSheet
+        self.present(viewController, animated: true, completion: nil)
     }
-    */
     
     func viewRadiuser(view:UIView,radius:CGFloat){
         view.layer.cornerRadius = radius

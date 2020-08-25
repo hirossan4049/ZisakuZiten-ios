@@ -436,10 +436,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        let string = NSString(data: data!, encoding: NSUTF8StringEncoding)
 //        print(string)
     
-        let jsondata = group2json(group: group)
-        let filename = group.title! + ".json"
-        saveFile(filename: filename, data: jsondata)
-        
         
         let row = tableView.cellForRow(at: indexPath)
         let cellHeight = (row?.bounds.height)!
@@ -449,8 +445,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print("DELETE")
         }
         let editAction = SwipeAction(style: .destructive, title: "Edit") { action, indexPath in}
-        let tagAction = SwipeAction(style: .destructive, title: "Category") { action, indexPath in
-            print("Hellelefienfeionfoenfnie")
+        let tagAction = SwipeAction(style: .destructive, title: "share") { action, indexPath in
+            let jsondata = self.group2json(group: group)
+            let filename = group.title! + ".json"
+            self.saveFile(filename: filename, data: jsondata)
         }
         let btn:CategoryColorButton = CategoryColorButton()
         btn.backgroundColor = .red
@@ -493,7 +491,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tagAction.title = nil
         tagAction.backgroundColor = .backgroundColor
 
-        
+        tableView.isEditing = false
 
         return [deleteAction,editAction,tagAction]
     }
