@@ -442,6 +442,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in 
             action.fulfill(with: .reset)
+            self.deleteGroup(id: (indexPath as IndexPath).section)
             print("DELETE")
         }
         let editAction = SwipeAction(style: .destructive, title: "Edit") { action, indexPath in}
@@ -450,13 +451,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let filename = group.title! + ".json"
             self.saveFile(filename: filename, data: jsondata)
         }
-        let btn:CategoryColorButton = CategoryColorButton()
-        btn.backgroundColor = .red
-        btn.tintColor = .green
+//        let btn:CategoryColorButton = CategoryColorButton()
+//        btn.backgroundColor = .red
+//        btn.tintColor = .green
         
-        btn.setTitle("削除", for: .normal)
-        btn.frame.size = CGSize(width: 80, height: 35)
-        btn.backgroundColor = .red
+//        btn.setTitle("削除", for: .normal)
+//        btn.frame.size = CGSize(width: 80, height: 35)
+//        btn.backgroundColor = .red
         
 //        let img = UIImage(named: "del_sample")
 //        let img = btn.asImage()
@@ -476,14 +477,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         var editimg = UIImage(named: "editicon")
         editimg = editimg?.resize(size: CGSize(width: 40, height: 40))
-        btn.setTitle("編集", for: .normal)
-        btn.backgroundColor = .blue
+//        btn.setTitle("編集", for: .normal)
+//        btn.backgroundColor = .blue
 //        editAction.image = btn.asImage()
         editAction.image = editimg
         editAction.title = nil
         editAction.backgroundColor = .backgroundColor
-        btn.setTitle("カテゴリ", for: .normal)
-        btn.backgroundColor = .cyan
+//        btn.setTitle("カテゴリ", for: .normal)
+//        btn.backgroundColor = .cyan
         var shareimg = UIImage(named: "shareicon")
         shareimg = shareimg?.resize(size: CGSize(width: 40, height: 40))
 //        tagAction.image = btn.asImage()

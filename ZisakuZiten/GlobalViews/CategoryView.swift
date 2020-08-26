@@ -29,23 +29,25 @@ class CategoryView: UIView {
         loadNib()
 
     }
+    
+    func resetView(){
+        self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.mainLabel.frame.width - 15, height: self.frame.height)
+//        self.frame = CGRect(x: 0, y: 0, width: self.mainLabel.frame.width + 60, height: self.frame.height)
+        self.backgroundColor = .cyan
+    }
 
     func loadNib(){
+        print("loaded nib!")
         let view = Bundle.main.loadNibNamed("CategoryView", owner: self, options: nil)?.first as! UIView
         view.frame = self.bounds
         view.layer.cornerRadius = 10
         self.layer.cornerRadius = 10
 //        self.backgroundColor = .none
+
         print(self.frame)
-        print(self.mainLabel.frame.width)
-        print(self.mainLabel.font.pointSize)
-        print(self.mainLabel.text)
-        self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.mainLabel.frame.width + 30, height: self.frame.height)
-        view.frame = CGRect(x: 0, y: 0, width: self.mainLabel.frame.width + 30, height: self.frame.height)
-        self.backgroundColor = .cyan
-        print(self.frame)
-        
+        resetView()
         self.addSubview(view)
+        resetView()
         print(self.subviews)
 
     }

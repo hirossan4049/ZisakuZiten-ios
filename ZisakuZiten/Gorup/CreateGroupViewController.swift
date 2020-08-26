@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 /// FIXME:UIPresentationController :(((((
 class CreateGroupViewController: UIViewController {
@@ -38,7 +39,7 @@ class CreateGroupViewController: UIViewController {
         self.createBtn.backgroundColor = .buttonBaseColor
         self.nameTextField.backgroundColor = .createGrouptextFieldColor
         self.categoryBtn.backgroundColor = .buttonSubColor
-        nameTextField.attributedPlaceholder = NSAttributedString(string: "どんな辞典の名前にする？", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
+        nameTextField.attributedPlaceholder = NSAttributedString(string: "どんな辞典の名前にする？", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
 
 
         // Do any additional setup after loading the view.
@@ -70,8 +71,20 @@ class CreateGroupViewController: UIViewController {
     func createPost(title:String,category:Category){
         let postArgs:[String: String] = ["title": title]
         NotificationCenter.default.post(name: .toExitView,object: nil,userInfo: postArgs)
+    }
     
-
+    
+    func create(title:String,category:Category){
+        let instanceGroup: Group = Group()
+        let now = Date()
+        instanceGroup.title = title
+        instanceGroup.createTime = now
+        instanceGroup.updateTime = now
+//        instanceGroup.category
+        let insRealm = try! Realm()
+        try! insRealm.write {
+            insRealm.add(instanceGroup)
+        }
     }
 
 }

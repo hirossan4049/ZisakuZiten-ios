@@ -88,7 +88,30 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //    }
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>){
            print(URLContexts)
-       }
+        let json = String(data:getFileData(URLContexts.first!.url)!, encoding: .utf8)
+        let data = json!.data(using: .utf8)!
+        do{
+//            let couponData = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [Any]
+            let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
+//            print(json[0]["title"])
+        }catch{return}
+        
+//        let obj = try! JSONDecoder().decode(Group.self, from: data)
+//        print(obj)
+
+    }
+    
+    func getFileData(_ filePath: URL) -> Data? {
+        let fileData: Data?
+        do {
+//            let fileUrl:URL = URL(fileURLWithPath: filePath)
+            fileData = try Data(contentsOf: filePath)
+        } catch {
+            // ファイルデータの取得でエラーの場合
+            fileData = nil
+        }
+        return fileData
+    }
 
 
 }
