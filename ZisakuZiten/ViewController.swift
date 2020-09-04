@@ -111,9 +111,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        cell_animation()
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 //        cell_animation()
+        print("ViewDidApper")
+        tableView.reloadData()
         if let navigationController = self.navigationController as? ScrollingNavigationController {
           if let tabBarController = tabBarController {
             navigationController.followScrollView(tableView, delay: 0, scrollSpeedFactor: 2, followers: [NavigationBarFollower(view: tabBarController.tabBar, direction: .scrollDown)])
@@ -253,6 +256,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             insRealm.add(instanceGroup)
         }
     }
+    
+    func editGroupDialog(createTime:Date){
+        let alertView = CreateGroupViewController()
+        alertView.modalTransitionStyle = .crossDissolve
+        alertView.modalPresentationStyle = .overCurrentContext
+        alertView.createTime = createTime
+        alertView.EDIT_MODE = true
+        present(alertView, animated: true, completion: nil)
+        print("CreateCatPress")
+    }
+
 
     func updateGroup(title: String, id: Int) {
         let realm = try! Realm()
@@ -420,9 +434,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //
 //        return UISwipeActionsConfiguration(actions: [editAction, deleteAction])
 //    }
-    func error_aa(){
-        print("errororaaraaa")
-    }
+
 //    
     // CELL EDIT
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
@@ -445,7 +457,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.deleteGroup(id: (indexPath as IndexPath).section)
             print("DELETE")
         }
-        let editAction = SwipeAction(style: .destructive, title: "Edit") { action, indexPath in}
+        let editAction = SwipeAction(style: .destructive, title: "Edit") { action, indexPath in
+            self.editGroupDialog(createTime: group.createTime!)
+        }
         let tagAction = SwipeAction(style: .destructive, title: "share") { action, indexPath in
             let jsondata = self.group2json(group: group)
             let filename = group.title! + ".json"

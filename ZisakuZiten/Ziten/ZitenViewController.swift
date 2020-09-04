@@ -55,11 +55,12 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.view.backgroundColor = .white
 
         self.tableView.register(nib, forCellReuseIdentifier: cellReuseIdentifier)
-        self.view.backgroundColor = UIColor(hex: "17122B")
-        self.tableView.backgroundColor =  UIColor(hex: "17122B")
+        self.view.backgroundColor = .backgroundColor
+        self.tableView.backgroundColor =  .backgroundColor
 
         tableView.delegate = self
         tableView.dataSource = self
+        
         print("texttexttext",group_createTime)
 
         let realm = try! Realm()
