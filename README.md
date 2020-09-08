@@ -1,4 +1,4 @@
-![LOGO](https://github.com/touchlane/CampcotCollectionView/blob/master/Assets/logo.svg)
+![LOGO](https://github.com/hirossan4049/ZisakuZiten-ios/blob/master/imgs/head.png)
 
 # ZisakuZiten for iOS
 ### 開発中
