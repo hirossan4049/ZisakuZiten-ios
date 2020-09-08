@@ -66,13 +66,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var toolbar: UIToolbar!
     
     var dController :UIDocumentInteractionController!
+    var isBegin = true
 
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         print("View controller")
-        self.view.backgroundColor = UIColor(hex: "17122B")
+        self.view.backgroundColor = .backgroundColor
         // Do any additional setup after loading the view.
         let nib = UINib(nibName: "GroupTableViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: cellReuseIdentifier)
@@ -86,6 +87,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.groupList = realm.objects(Group.self)
         
                 
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         
 //        print(groupList)
 //        print(realm.objects(Category.self))
@@ -116,7 +119,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidAppear(animated)
 //        cell_animation()
         print("ViewDidApper")
-        tableView.reloadData()
+        print(self.isBegin)
+        if !self.isBegin{
+            tableView.reloadData()
+        }else{
+            self.isBegin = false
+        }
         if let navigationController = self.navigationController as? ScrollingNavigationController {
           if let tabBarController = tabBarController {
             navigationController.followScrollView(tableView, delay: 0, scrollSpeedFactor: 2, followers: [NavigationBarFollower(view: tabBarController.tabBar, direction: .scrollDown)])

@@ -17,6 +17,15 @@ class PlayNavigationController: UINavigationController, UIGestureRecognizerDeleg
 //        self.navigationController.interactivePopGestureRecognizer.delegate = self;
         self.interactivePopGestureRecognizer?.delegate = self
         self.navigationBar.backgroundColor = .navigationBarColor
+        
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+//        self.view.layer.masksToBounds = false
+//        self.view.layer.shadowOffset = CGSize(width: 3, height: 3)
+//        self.view.layer.shadowColor = UIColor.black.cgColor
+//        self.view.layer.shadowRadius = 3.0
+//        self.view.layer.shadowOpacity = 1.0
         // Do any additional setup after loading the view.
     }
     
