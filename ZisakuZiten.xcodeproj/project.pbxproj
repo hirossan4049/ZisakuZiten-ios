@@ -11,6 +11,8 @@
 		1ED0FF00FACB1A940F7A7EDF /* Pods_ZisakuZiten_ZisakuZitenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2317EC509AFE1F37142D0597 /* Pods_ZisakuZiten_ZisakuZitenUITests.framework */; };
 		8136D6BD8420788BE2B2311E /* Pods_ZisakuZiten.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E6717DA6FB73D645000A58 /* Pods_ZisakuZiten.framework */; };
 		D309E9B7250C67FC0043E2BA /* String+toDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D309E9B6250C67FC0043E2BA /* String+toDate.swift */; };
+		D309E9BA250CA12C0043E2BA /* SelectCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D309E9B8250CA12C0043E2BA /* SelectCategoryTableViewCell.swift */; };
+		D309E9BB250CA12C0043E2BA /* SelectCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D309E9B9250CA12C0043E2BA /* SelectCategoryTableViewCell.xib */; };
 		D30D2AD424EAA27E00FCC53E /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D2AD224EAA27E00FCC53E /* CreateGroupViewController.swift */; };
 		D30D2AD524EAA27E00FCC53E /* CreateGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D30D2AD324EAA27E00FCC53E /* CreateGroupViewController.xib */; };
 		D30D2AD824EBC59900FCC53E /* SelectCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D2AD624EBC59900FCC53E /* SelectCategoryViewController.swift */; };
@@ -114,6 +116,8 @@
 		6A8D1B79B4FDB77B5BF64472 /* Pods-ZisakuZitenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZisakuZitenTests.debug.xcconfig"; path = "Target Support Files/Pods-ZisakuZitenTests/Pods-ZisakuZitenTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9F53344879C4469E50AF8A01 /* Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig"; path = "Target Support Files/Pods-ZisakuZiten-ZisakuZitenUITests/Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D309E9B6250C67FC0043E2BA /* String+toDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+toDate.swift"; sourceTree = "<group>"; };
+		D309E9B8250CA12C0043E2BA /* SelectCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		D309E9B9250CA12C0043E2BA /* SelectCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectCategoryTableViewCell.xib; sourceTree = "<group>"; };
 		D30D2AD224EAA27E00FCC53E /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
 		D30D2AD324EAA27E00FCC53E /* CreateGroupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateGroupViewController.xib; sourceTree = "<group>"; };
 		D30D2AD624EBC59900FCC53E /* SelectCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryViewController.swift; sourceTree = "<group>"; };
@@ -287,6 +291,8 @@
 				D30D2AD324EAA27E00FCC53E /* CreateGroupViewController.xib */,
 				D30D2AD624EBC59900FCC53E /* SelectCategoryViewController.swift */,
 				D30D2AD724EBC59900FCC53E /* SelectCategoryViewController.xib */,
+				D309E9B8250CA12C0043E2BA /* SelectCategoryTableViewCell.swift */,
+				D309E9B9250CA12C0043E2BA /* SelectCategoryTableViewCell.xib */,
 			);
 			path = Gorup;
 			sourceTree = "<group>";
@@ -592,6 +598,7 @@
 				D3AB70BB249F076A00DFDDB7 /* Main.storyboard in Resources */,
 				D3A6A4E024A36FC800CF6C87 /* CategoryEditTableViewCell.xib in Resources */,
 				D30D2AD924EBC59900FCC53E /* SelectCategoryViewController.xib in Resources */,
+				D309E9BB250CA12C0043E2BA /* SelectCategoryTableViewCell.xib in Resources */,
 				D3A96A9B24A1F0D70053639B /* CreateCategoryDialogViewController.xib in Resources */,
 				D3AB70EC249F1EE700DFDDB7 /* GroupTableViewCell.xib in Resources */,
 				D33692AA24D91E0A0027FB17 /* CorrectPopupViewController.xib in Resources */,
@@ -754,6 +761,7 @@
 				D3AB70B8249F076A00DFDDB7 /* ViewController.swift in Sources */,
 				D3F79FFE24BEFB3500127E7A /* PlayViewController.swift in Sources */,
 				D335623E24CB243E0057D12B /* SelectGroupView.swift in Sources */,
+				D309E9BA250CA12C0043E2BA /* SelectCategoryTableViewCell.swift in Sources */,
 				D374B96924E56AF900745360 /* QuizGradePageItemViewController.swift in Sources */,
 				D374B97224E56D5E00745360 /* QuizGradePageItemTableViewCell.swift in Sources */,
 				D335624424CC5E460057D12B /* PlayStartViewController.swift in Sources */,

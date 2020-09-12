@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="KosugiMaru-Regular.ttf">
-            <string>MotoyaLMaru-W3-90ms-RKSJ-H</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectCategoryViewController" customModule="自作辞典" customModuleProvider="target">
             <connections>
+                <outlet property="createViewController" destination="Mva-fD-bgs" id="O1w-qz-Mmm"/>
+                <outlet property="fragmentView" destination="0Mx-Ci-hHH" id="TQe-kN-MFt"/>
+                <outlet property="navigationBar" destination="8WC-wb-N71" id="e6H-gp-2ze"/>
+                <outlet property="selectViewController" destination="aKl-fm-xA6" id="dey-bt-isl"/>
+                <outlet property="tableView" destination="oMe-5m-yhr" id="KxB-jq-a9e"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,37 +22,103 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カテゴリーを設定して！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfh-fq-fv6">
-                    <rect key="frame" x="12" y="94" width="390" height="24"/>
-                    <fontDescription key="fontDescription" name="MotoyaLMaru-W3-90ms-RKSJ-H" family="MotoyaLMaru" pointSize="24"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="つくる" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smI-6a-DyY">
-                    <rect key="frame" x="32" y="150" width="350" height="17"/>
-                    <fontDescription key="fontDescription" name="MotoyaLMaru-W3-90ms-RKSJ-H" family="MotoyaLMaru" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="選ぶ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYi-l5-ncS">
-                    <rect key="frame" x="163" y="438" width="34" height="17"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="MotoyaLMaru-W3-90ms-RKSJ-H" family="MotoyaLMaru" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8WC-wb-N71">
+                    <rect key="frame" x="0.0" y="44" width="414" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="E58-ps-xH7"/>
+                    </constraints>
+                    <color key="barTintColor" red="1" green="0.77472586369999996" blue="0.53546787179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <textAttributes key="titleTextAttributes">
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </textAttributes>
+                    <items>
+                        <navigationItem title="カテゴリ" id="K2S-TD-Tc9">
+                            <barButtonItem key="leftBarButtonItem" title="キャンセル" id="KCW-Zg-Nla">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </barButtonItem>
+                            <barButtonItem key="rightBarButtonItem" title="完了" style="done" id="CDt-tJ-8Nq">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Mx-Ci-hHH">
+                    <rect key="frame" x="0.0" y="91" width="414" height="771"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="smI-6a-DyY" firstAttribute="top" secondItem="Mfh-fq-fv6" secondAttribute="bottom" constant="32" id="0n1-aQ-7rX"/>
-                <constraint firstItem="Mfh-fq-fv6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="5dZ-XE-Swu"/>
-                <constraint firstItem="smI-6a-DyY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="A9Z-mL-rpP"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="smI-6a-DyY" secondAttribute="trailing" constant="32" id="QQS-f1-Cwx"/>
-                <constraint firstItem="Mfh-fq-fv6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="YCS-Lu-IJn"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Mfh-fq-fv6" secondAttribute="trailing" constant="12" id="wrA-gN-Z4G"/>
+                <constraint firstItem="0Mx-Ci-hHH" firstAttribute="top" secondItem="8WC-wb-N71" secondAttribute="bottom" id="9cj-e9-WkS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0Mx-Ci-hHH" secondAttribute="bottom" id="Lv3-Uh-DaQ"/>
+                <constraint firstItem="8WC-wb-N71" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Q49-hf-G5j"/>
+                <constraint firstAttribute="trailing" secondItem="8WC-wb-N71" secondAttribute="trailing" id="WiT-th-gdn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0Mx-Ci-hHH" secondAttribute="trailing" id="bhR-7a-r2g"/>
+                <constraint firstItem="8WC-wb-N71" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="do1-SE-XzH"/>
+                <constraint firstItem="0Mx-Ci-hHH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="z1S-EC-s5x"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
         </view>
+        <viewController restorationIdentifier="ComponentSelect" id="aKl-fm-xA6">
+            <view key="view" contentMode="scaleToFill" restorationIdentifier="CategorySelect" id="Tnu-z4-Tvz">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oMe-5m-yhr">
+                        <rect key="frame" x="25" y="97" width="364" height="765"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </tableView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z6Z-P8-ThU">
+                        <rect key="frame" x="20" y="50" width="374" height="35"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SM4-4h-b9j">
+                                <rect key="frame" x="33" y="0.0" width="30" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="heh"/>
+                                <connections>
+                                    <action selector="testclicked" destination="-1" eventType="touchUpInside" id="ft9-MZ-WB2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="Obu-r8-80c"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="oMe-5m-yhr" firstAttribute="leading" secondItem="8E3-jd-ooy" secondAttribute="leading" constant="25" id="2C7-8j-6aF"/>
+                    <constraint firstItem="oMe-5m-yhr" firstAttribute="top" secondItem="z6Z-P8-ThU" secondAttribute="bottom" constant="12" id="8Se-Wj-A0r"/>
+                    <constraint firstItem="8E3-jd-ooy" firstAttribute="trailing" secondItem="z6Z-P8-ThU" secondAttribute="trailing" constant="20" id="93Z-ZQ-oJN"/>
+                    <constraint firstItem="8E3-jd-ooy" firstAttribute="bottom" secondItem="oMe-5m-yhr" secondAttribute="bottom" id="GTj-CN-9MY"/>
+                    <constraint firstItem="8E3-jd-ooy" firstAttribute="trailing" secondItem="oMe-5m-yhr" secondAttribute="trailing" constant="25" id="Tte-LF-vHT"/>
+                    <constraint firstItem="z6Z-P8-ThU" firstAttribute="top" secondItem="8E3-jd-ooy" secondAttribute="top" constant="6" id="cDR-Y3-g1A"/>
+                    <constraint firstItem="z6Z-P8-ThU" firstAttribute="leading" secondItem="8E3-jd-ooy" secondAttribute="leading" constant="20" id="vdY-gY-XAe"/>
+                </constraints>
+                <viewLayoutGuide key="safeArea" id="8E3-jd-ooy"/>
+            </view>
+            <point key="canvasLocation" x="915.94202898550736" y="118.52678571428571"/>
+        </viewController>
+        <viewController restorationIdentifier="ComponentCreate" id="Mva-fD-bgs">
+            <view key="view" contentMode="scaleToFill" id="78p-92-Q8a">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2I8-A9-VtB">
+                        <rect key="frame" x="109" y="433" width="46" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="testseni" destination="-1" eventType="touchUpInside" id="H4Y-NR-23T"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <viewLayoutGuide key="safeArea" id="b1i-Y9-cWp"/>
+            </view>
+            <point key="canvasLocation" x="915.94202898550736" y="859.82142857142856"/>
+        </viewController>
     </objects>
 </document>
