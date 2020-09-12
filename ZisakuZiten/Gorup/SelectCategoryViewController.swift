@@ -12,7 +12,7 @@ class SelectCategoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = .backgroundColor
         // Do any additional setup after loading the view.
     }
 

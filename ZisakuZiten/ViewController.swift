@@ -11,6 +11,7 @@ import RealmSwift
 import SwipeCellKit
 import AudioToolbox
 import ViewAnimator
+import Log
 import AMScrollingNavbar
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate, UIViewControllerPreviewingDelegate, ScrollingNavigationControllerDelegate {
@@ -67,6 +68,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var dController :UIDocumentInteractionController!
     var isBegin = true
+    var log:Logger!
 
     
 
@@ -86,9 +88,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let realm = try! Realm()
         self.groupList = realm.objects(Group.self)
         
+        self.log = Logger()
+        
                 
 //        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        self.navigationController?.navigationBar.barTintColor = .navigationBarColor
+
         
 //        print(groupList)
 //        print(realm.objects(Category.self))
@@ -316,11 +323,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var groupDict:[String:Any] = [:]
         groupDict["title"] = group.title
         groupDict["createTime"] = group.createTime?.toString()
+        groupDict["updateTime"] = group.updateTime?.toString()
         for ziten in group.ziten_upT_List{
             var zitenDict:[String:Any] = [:]
             zitenDict["title"] = ziten.title
             zitenDict["content"] = ziten.content
-            zitenDict["updateTime"] = ziten.createTime?.toString()
+            zitenDict["createTime"] = ziten.createTime?.toString()
+            zitenDict["updateTime"] = ziten.updateTime?.toString()
             zitenList.append(zitenDict)
         }
         groupDict["ziten_updT_List"] = zitenList
@@ -333,6 +342,36 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        let myData = Group(value: obj)
 //        print(myData)
         return jsonStr
+    }
+    
+    func jsonDict2Group(title:String,createTime:Date,updateTime:Date,ziten_dict:[NSDictionary]){
+        let realm = try! Realm()
+        let group = Group()
+//        let ziten_upT_List = List<Ziten>()
+        log.debug("THIS IS JSON DICT 2 GROUP!")
+        group.title = title
+        group.createTime = createTime
+        group.updateTime = updateTime
+        
+        for item in ziten_dict{
+            let ziten = Ziten()
+            ziten.title = item["title"] as! String
+            ziten.content = item["content"] as! String
+            ziten.createTime = (item["createTime"] as! String).toDate()
+            ziten.updateTime = (item["updateTime"] as! String).toDate()
+
+            group.ziten_upT_List.append(ziten)
+        }
+        
+        print(group)
+        try! realm.write({
+            realm.add(group)
+        })
+        tableView.reloadData()
+        log.debug("json2Group imported!")
+        
+//        let appended_ziten = dict.map{$0["ziten_updT_List"]}
+        
     }
     
     func saveFile(filename:String,data:String){

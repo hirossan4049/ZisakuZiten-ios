@@ -10,6 +10,7 @@
 		1E8988613597FC18751CFE78 /* Pods_ZisakuZitenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414B85174E0B2EE309638A3E /* Pods_ZisakuZitenTests.framework */; };
 		1ED0FF00FACB1A940F7A7EDF /* Pods_ZisakuZiten_ZisakuZitenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2317EC509AFE1F37142D0597 /* Pods_ZisakuZiten_ZisakuZitenUITests.framework */; };
 		8136D6BD8420788BE2B2311E /* Pods_ZisakuZiten.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E6717DA6FB73D645000A58 /* Pods_ZisakuZiten.framework */; };
+		D309E9B7250C67FC0043E2BA /* String+toDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D309E9B6250C67FC0043E2BA /* String+toDate.swift */; };
 		D30D2AD424EAA27E00FCC53E /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D2AD224EAA27E00FCC53E /* CreateGroupViewController.swift */; };
 		D30D2AD524EAA27E00FCC53E /* CreateGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D30D2AD324EAA27E00FCC53E /* CreateGroupViewController.xib */; };
 		D30D2AD824EBC59900FCC53E /* SelectCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D2AD624EBC59900FCC53E /* SelectCategoryViewController.swift */; };
@@ -112,6 +113,7 @@
 		68E6717DA6FB73D645000A58 /* Pods_ZisakuZiten.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZisakuZiten.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A8D1B79B4FDB77B5BF64472 /* Pods-ZisakuZitenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZisakuZitenTests.debug.xcconfig"; path = "Target Support Files/Pods-ZisakuZitenTests/Pods-ZisakuZitenTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9F53344879C4469E50AF8A01 /* Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig"; path = "Target Support Files/Pods-ZisakuZiten-ZisakuZitenUITests/Pods-ZisakuZiten-ZisakuZitenUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D309E9B6250C67FC0043E2BA /* String+toDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+toDate.swift"; sourceTree = "<group>"; };
 		D30D2AD224EAA27E00FCC53E /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
 		D30D2AD324EAA27E00FCC53E /* CreateGroupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateGroupViewController.xib; sourceTree = "<group>"; };
 		D30D2AD624EBC59900FCC53E /* SelectCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryViewController.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				D30D2ADF24F2108C00FCC53E /* UIColor+.swift */,
 				D339668124F23D49008A2194 /* Object+toDictionary.swift */,
 				D388B96824F51FA400ED5DAF /* Date+toString.swift */,
+				D309E9B6250C67FC0043E2BA /* String+toDate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -724,6 +727,7 @@
 				D3C0985324D10D6F00419F45 /* QuizViewController.swift in Sources */,
 				D3AB70F6249F888800DFDDB7 /* Ziten.swift in Sources */,
 				D37AED8424B84663001E6302 /* UIImage+resize.swift in Sources */,
+				D309E9B7250C67FC0043E2BA /* String+toDate.swift in Sources */,
 				D36F823924E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.swift in Sources */,
 				D388B96924F51FA400ED5DAF /* Date+toString.swift in Sources */,
 				D30D2AD424EAA27E00FCC53E /* CreateGroupViewController.swift in Sources */,
