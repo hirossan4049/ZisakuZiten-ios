@@ -17,10 +17,12 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
     weak var currentViewController: UIViewController!
     @IBOutlet var selectViewController:UIViewController!
     @IBOutlet var createViewController:UIViewController!
-    
-    @IBOutlet weak var colorStackView:UIStackView!
+    @IBOutlet weak var doneBarButtonItem: UIBarButtonItem!
     
     @IBOutlet weak var tableView:UITableView!
+
+    @IBOutlet weak var colorStackView:UIStackView!
+    @IBOutlet weak var createTextField:UITextField!
     
     var selected_index:Int!
 
@@ -53,8 +55,11 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
         changeFragments(.select)
         print("currentVC",currentViewController)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(createTextFieldDidEndEditing(notification:)), name: UITextField.textDidChangeNotification, object: createTextField)
+        
         colorStackView.axis = .horizontal
         colorStackView.alignment = .center
+        
 //        colorStackView.distribution = .fill
 //        colorStackView.spacing = 20
         
@@ -122,6 +127,15 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
         }
     }
     
+    @objc func createTextFieldDidEndEditing(notification:NSNotification) {
+        let textField = notification.object as! UITextField
+        if textField.text == "" {
+            doneBarButtonItem.isEnabled = false
+        } else {
+            doneBarButtonItem.isEnabled = true
+        }
+    }
+
     func changeFragments(_ type:FragmentsViewType){
         let id = type.id()
         print(id)
@@ -131,11 +145,14 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
 //            self.currentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ComponentSelect")
             self.currentViewController = self.selectViewController
             self.isCreatemode = false
+            doneBarButtonItem.isEnabled = true
         case 1:
             // create
 //        self.currentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ComponentCreate")
             self.currentViewController = self.createViewController
             self.isCreatemode = true
+            createTextField.becomeFirstResponder()
+            doneBarButtonItem.isEnabled = false
         default: break
             
         }
@@ -193,3 +210,4 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
 
 
 }
+

@@ -10,7 +10,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectCategoryViewController" customModule="自作辞典" customModuleProvider="target">
             <connections>
                 <outlet property="colorStackView" destination="AVl-N8-tNd" id="oX3-rO-Jk1"/>
+                <outlet property="createTextField" destination="Zw7-Mt-Yzs" id="Mjf-at-QPL"/>
                 <outlet property="createViewController" destination="Mva-fD-bgs" id="O1w-qz-Mmm"/>
+                <outlet property="doneBarButtonItem" destination="CDt-tJ-8Nq" id="dJZ-g5-LJE"/>
                 <outlet property="fragmentView" destination="0Mx-Ci-hHH" id="TQe-kN-MFt"/>
                 <outlet property="navigationBar" destination="8WC-wb-N71" id="e6H-gp-2ze"/>
                 <outlet property="selectViewController" destination="aKl-fm-xA6" id="dey-bt-isl"/>
