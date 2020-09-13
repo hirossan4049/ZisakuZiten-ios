@@ -18,8 +18,19 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet var selectViewController:UIViewController!
     @IBOutlet var createViewController:UIViewController!
     
+    @IBOutlet weak var colorStackView:UIStackView!
+    
     @IBOutlet weak var tableView:UITableView!
+    
+    var selected_index:Int!
 
+
+    var createCategorySelectedColor:UIColor!
+    
+    var isCreatemode = true
+
+    /// tag 1~2 CATEGORY COLOR ONLY. DO NOT USE.
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .backgroundColor
@@ -39,8 +50,20 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
 //        toolbar.layer.borderColor = UIColor.darkGray.cgColor
         // Do any additional setup after loading the view.
         print("VCs",selectViewController,createViewController)
-        changeFragments(.create)
+        changeFragments(.select)
         print("currentVC",currentViewController)
+        
+        colorStackView.axis = .horizontal
+        colorStackView.alignment = .center
+//        colorStackView.distribution = .fill
+//        colorStackView.spacing = 20
+        
+//        let switchh = UISwitch()
+//        switchh.isOn = true
+//        switchh.backgroundColor = UIColor.cyan
+//        colorStackView.addArrangedSubview(switchh)
+
+        
 
     }
     
@@ -62,27 +85,57 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
     
     @IBAction func testclicked(){
         print("CLICKED!")
-        changeFragments(.select)
+        changeFragments(.create)
     }
     @IBAction func testseni(){
         print("CLICKED")
-        changeFragments(.create)
+        changeFragments(.select)
+    }
+    @IBAction func clicked(){
+        print("CLICKED")
+    }
+    
+    @IBAction func cancel(){
+        if isCreatemode{
+            changeFragments(.select)
+        }else{
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    @IBAction func done(){
+        
+    }
+    
+    @IBAction func categoryColor(sender: UIButton){
+        self.createCategorySelectedColor = sender.tintColor
+        switch sender.tag{
+        case 1:
+            let button: UIButton = self.view.viewWithTag(2) as! UIButton
+            button.tag = 1
+            button.setBackgroundImage(UIImage(systemName:"circle.fill"), for: .normal)
+            sender.tag = 2
+            sender.setBackgroundImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+        case 2:
+            break
+        default:
+            break
+        }
     }
     
     func changeFragments(_ type:FragmentsViewType){
         let id = type.id()
         print(id)
-        print( createViewController)
-        print(selectViewController)
         switch id{
         case 0:
             // select
 //            self.currentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ComponentSelect")
-            self.currentViewController = self.createViewController
+            self.currentViewController = self.selectViewController
+            self.isCreatemode = false
         case 1:
             // create
 //        self.currentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ComponentCreate")
-            self.currentViewController = self.selectViewController
+            self.currentViewController = self.createViewController
+            self.isCreatemode = true
         default: break
             
         }
@@ -112,12 +165,14 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SelectCategoryTableViewCell
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
-
+        cell.categoryColor = "ffffff"
+        cell.categoryColorView.backgroundColor = UIColor(hex: cell.categoryColor)
         return cell
     }
     
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("selected")
+        self.selected_index = indexPath.section
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SelectCategoryTableViewCell
         cell.backgroundColor = UIColor(hex: cell.categoryColor,alpha: 0.4)
 //        tableView.deselectRow(at: indexPath, animated: true)

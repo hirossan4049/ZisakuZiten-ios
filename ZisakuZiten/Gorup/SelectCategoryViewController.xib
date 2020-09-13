@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectCategoryViewController" customModule="自作辞典" customModuleProvider="target">
             <connections>
+                <outlet property="colorStackView" destination="AVl-N8-tNd" id="oX3-rO-Jk1"/>
                 <outlet property="createViewController" destination="Mva-fD-bgs" id="O1w-qz-Mmm"/>
                 <outlet property="fragmentView" destination="0Mx-Ci-hHH" id="TQe-kN-MFt"/>
                 <outlet property="navigationBar" destination="8WC-wb-N71" id="e6H-gp-2ze"/>
@@ -35,6 +36,9 @@
                         <navigationItem title="カテゴリ" id="K2S-TD-Tc9">
                             <barButtonItem key="leftBarButtonItem" title="キャンセル" id="KCW-Zg-Nla">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="cancel" destination="-1" id="jMN-ZU-y7m"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem key="rightBarButtonItem" title="完了" style="done" id="CDt-tJ-8Nq">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -106,19 +110,161 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="カテゴリー名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zw7-Mt-Yzs">
+                        <rect key="frame" x="20" y="56" width="374" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="2br-iL-xUp"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2I8-A9-VtB">
-                        <rect key="frame" x="109" y="433" width="46" height="30"/>
+                        <rect key="frame" x="272" y="386" width="46" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" title="Button"/>
                         <connections>
                             <action selector="testseni" destination="-1" eventType="touchUpInside" id="H4Y-NR-23T"/>
                         </connections>
                     </button>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AVl-N8-tNd">
+                        <rect key="frame" x="20" y="99" width="374" height="50"/>
+                        <subviews>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHM-Iy-qwO">
+                                <rect key="frame" x="0.0" y="8" width="35" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="Rer-XX-MBv"/>
+                                    <constraint firstAttribute="height" constant="35" id="tv7-2b-KTH"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" backgroundImage="checkmark.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="categoryColorWithSender:" destination="-1" eventType="touchUpInside" id="P2k-8T-t3p"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXy-aC-qQp">
+                                <rect key="frame" x="48.5" y="8" width="35" height="34"/>
+                                <color key="backgroundColor" red="0.96891278030000005" green="0.55397397280000005" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="p7k-UK-uU7"/>
+                                    <constraint firstAttribute="height" constant="35" id="y0c-NQ-pfi"/>
+                                </constraints>
+                                <color key="tintColor" red="0.96891278030000005" green="0.55397397280000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="categoryColorWithSender:" destination="-1" eventType="touchUpInside" id="WOM-J1-4Fp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3S7-dA-B4A">
+                                <rect key="frame" x="97" y="8" width="35" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="IgK-Hb-QBu"/>
+                                    <constraint firstAttribute="height" constant="35" id="bCc-e3-XIr"/>
+                                </constraints>
+                                <color key="tintColor" red="0.98273846870684589" green="0.99264830350875854" blue="0.13926906217687765" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" backgroundImage="circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="categoryColorWithSender:" destination="-1" eventType="touchUpInside" id="GXE-2f-jsi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWy-1L-KQb">
+                                <rect key="frame" x="145.5" y="8" width="35" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="Xjp-yh-gTc"/>
+                                    <constraint firstAttribute="height" constant="35" id="k6F-jy-pPr"/>
+                                </constraints>
+                                <color key="tintColor" red="0.42406805034242645" green="0.9852258563041687" blue="0.145845004121126" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" backgroundImage="circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="categoryColorWithSender:" destination="-1" eventType="touchUpInside" id="k9Y-6a-QqU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtu-Lq-W8e">
+                                <rect key="frame" x="193.5" y="8" width="35" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="MxY-hy-QRC"/>
+                                    <constraint firstAttribute="width" constant="35" id="trS-M5-nSH"/>
+                                </constraints>
+                                <color key="tintColor" red="0.31655330659923397" green="0.98857694864273071" blue="0.84382608177156015" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" backgroundImage="circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="categoryColorWithSender:" destination="-1" eventType="touchUpInside" id="Nx6-gO-lSb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYw-Zl-2YX">
+                                <rect key="frame" x="242" y="8" width="35" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="o3m-Bj-4zf"/>
+                                    <constraint firstAttribute="width" constant="35" id="xny-B0-KKv"/>
+                                </constraints>
+                                <color key="tintColor" red="0.40584103499711155" green="0.38925818691665665" blue="0.96634405851364136" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" backgroundImage="circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="categoryColorWithSender:" destination="-1" eventType="touchUpInside" id="zm3-no-Uog"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVw-ZP-iVV">
+                                <rect key="frame" x="290.5" y="8" width="35" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="bqs-d6-ahE"/>
+                                    <constraint firstAttribute="width" constant="35" id="mOC-Lw-Vua"/>
+                                </constraints>
+                                <color key="tintColor" red="0.96878510709999999" green="0.42687699200000001" blue="0.93055140970000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="categoryColorWithSender:" destination="-1" eventType="touchUpInside" id="6fh-rJ-p4W"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9XG-9Y-Un0">
+                                <rect key="frame" x="339" y="8" width="35" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="1YV-KL-8jD"/>
+                                    <constraint firstAttribute="height" constant="35" id="GNF-r7-yte"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="categoryColorWithSender:" destination="-1" eventType="touchUpInside" id="e2f-Ji-Hai"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="ouw-9x-dzj"/>
+                        </constraints>
+                    </stackView>
                 </subviews>
                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="Zw7-Mt-Yzs" firstAttribute="leading" secondItem="b1i-Y9-cWp" secondAttribute="leading" constant="20" id="AbD-HP-trU"/>
+                    <constraint firstItem="b1i-Y9-cWp" firstAttribute="trailing" secondItem="AVl-N8-tNd" secondAttribute="trailing" constant="20" id="Dan-5o-fog"/>
+                    <constraint firstItem="AVl-N8-tNd" firstAttribute="leading" secondItem="b1i-Y9-cWp" secondAttribute="leading" constant="20" id="Kbw-yF-D4W"/>
+                    <constraint firstItem="AVl-N8-tNd" firstAttribute="top" secondItem="Zw7-Mt-Yzs" secondAttribute="bottom" constant="8" id="Nq6-UQ-1vJ"/>
+                    <constraint firstItem="Zw7-Mt-Yzs" firstAttribute="top" secondItem="b1i-Y9-cWp" secondAttribute="top" constant="12" id="SSD-Wz-J2O"/>
+                    <constraint firstItem="b1i-Y9-cWp" firstAttribute="trailing" secondItem="Zw7-Mt-Yzs" secondAttribute="trailing" constant="20" id="Wjc-XB-Y67"/>
+                    <constraint firstItem="AVl-N8-tNd" firstAttribute="centerX" secondItem="78p-92-Q8a" secondAttribute="centerX" id="c6a-RI-lja"/>
+                </constraints>
                 <viewLayoutGuide key="safeArea" id="b1i-Y9-cWp"/>
             </view>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
             <point key="canvasLocation" x="915.94202898550736" y="859.82142857142856"/>
         </viewController>
     </objects>
+    <resources>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="circle.fill" catalog="system" width="128" height="121"/>
+    </resources>
 </document>
