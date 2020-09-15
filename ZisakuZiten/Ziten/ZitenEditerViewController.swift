@@ -25,18 +25,30 @@ class CreateZitenViewController: UIViewController {
     @IBOutlet weak var explainTextField: UILabel!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var contentTextField: UITextField!
+    
+    @IBOutlet weak var okButton:UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        okButton.layer.cornerRadius = 15
+        okButton.backgroundColor = .buttonBaseColor
+        self.view.backgroundColor = .backgroundColor
+        titleTextField.backgroundColor = .textFieldBackgroundColor
+        contentTextField.backgroundColor = .textFieldBackgroundColor
+        
+        
         self.group = realm.objects(Group.self).filter("createTime==%@", group_createTime)[0]
         // TODO:説明とか編集なら単語をTextFieldに入れるだとか。
         if self.mode == 0 {
             // Create mode
             explainTextField.text = "単語を作成"
+            okButton.titleLabel!.text = "作成"
         } else if self.mode == 1 {
             // Detail mode
             let ziten:Ziten = group.ziten_upT_List.filter("createTime==%@",ziten_createTime)[0]
             explainTextField.text = "単語を編集"
+            okButton.titleLabel!.text = "更新"
             titleTextField.text = ziten.title
             contentTextField.text = ziten.content
         }

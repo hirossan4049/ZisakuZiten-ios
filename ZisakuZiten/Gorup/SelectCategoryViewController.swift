@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -20,11 +21,12 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var doneBarButtonItem: UIBarButtonItem!
     
     @IBOutlet weak var tableView:UITableView!
+    var selected_index:Int!
+    var categorys:Results<Category>!
 
     @IBOutlet weak var colorStackView:UIStackView!
     @IBOutlet weak var createTextField:UITextField!
     
-    var selected_index:Int!
 
 
     var createCategorySelectedColor:UIColor!
@@ -35,10 +37,13 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let realm = try! Realm()
+        categorys = realm.objects(Category.self)
+        
         self.view.backgroundColor = .backgroundColor
         navigationBar.backgroundColor = .backgroundColor
         navigationBar.barTintColor = .backgroundColor
-        navigationBar.layer.borderWidth = 0.3
+//        navigationBar.layer.borderWidth = 0.3
         
         tableView.backgroundColor = .backgroundColor
         let nib = UINib(nibName: "SelectCategoryTableViewCell", bundle: nil)
@@ -56,6 +61,8 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
         print("currentVC",currentViewController)
         
         NotificationCenter.default.addObserver(self, selector: #selector(createTextFieldDidEndEditing(notification:)), name: UITextField.textDidChangeNotification, object: createTextField)
+        
+        doneBarButtonItem.isEnabled = false
         
         colorStackView.axis = .horizontal
         colorStackView.alignment = .center
@@ -108,7 +115,26 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
         }
     }
     @IBAction func done(){
-        
+        print("DONE")
+        if isCreatemode{
+            //create
+            print("CREATE")
+            let category = Category()
+            category.createTime = Date()
+            category.title = createTextField.text
+            category.colorCode = createCategorySelectedColor.toHexString()
+            let realm = try! Realm()
+            try! realm.write({
+                realm.add(category)
+            })
+            createTextField.text = ""
+            changeFragments(.select)
+        }else{
+            let createTime = categorys[selected_index].createTime!
+            let postArgs:[String: Date] = ["createTime": createTime]
+            NotificationCenter.default.post(name: SelectCategoryViewController.selectedNotification ,object: nil,userInfo: postArgs)
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     @IBAction func categoryColor(sender: UIButton){
@@ -145,7 +171,14 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
 //            self.currentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ComponentSelect")
             self.currentViewController = self.selectViewController
             self.isCreatemode = false
-            doneBarButtonItem.isEnabled = true
+            if selected_index == nil{
+                doneBarButtonItem.isEnabled = false
+
+            }else{
+                doneBarButtonItem.isEnabled = true
+                tableView.selectRow(at: IndexPath(row: 1, section: selected_index), animated: false, scrollPosition: .bottom)
+            }
+            tableView.reloadData()
         case 1:
             // create
 //        self.currentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ComponentCreate")
@@ -176,19 +209,22 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
         return 1
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return self.categorys.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SelectCategoryTableViewCell
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
-        cell.categoryColor = "ffffff"
+        cell.titleLabel.text = self.categorys[indexPath.section].title
+        cell.categoryColor = self.categorys[indexPath.section].colorCode ?? "ffffff"
+        print(self.categorys[indexPath.section].colorCode)
         cell.categoryColorView.backgroundColor = UIColor(hex: cell.categoryColor)
         return cell
     }
     
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("selected")
+        self.doneBarButtonItem.isEnabled = true
         self.selected_index = indexPath.section
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SelectCategoryTableViewCell
         cell.backgroundColor = UIColor(hex: cell.categoryColor,alpha: 0.4)
@@ -211,3 +247,6 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
 
 }
 
+extension SelectCategoryViewController{
+    static let selectedNotification = Notification.Name("selectedNotification")
+}

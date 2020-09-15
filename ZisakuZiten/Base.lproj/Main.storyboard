@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Znh-KR-zuf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Znh-KR-zuf">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="KosugiMaru-Regular.ttf">
+            <string>MotoyaLMaru-W3-90ms-RKSJ-H</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Edit Category View Controller-->
         <scene sceneID="wS5-1d-HxJ">
@@ -456,59 +461,72 @@ HIS IS COMMENT.これはコメントです。</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="YsA-XG-Sr4">
-                                <rect key="frame" x="130" y="662" width="115" height="30"/>
+                                <rect key="frame" x="47.666666666666657" y="657" width="280" height="35"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Lk-Tp-Iez">
-                                        <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
-                                        <state key="normal" title="cancel"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="573-Cd-tnB"/>
+                                            <constraint firstAttribute="width" constant="120" id="yib-yA-4Rb"/>
+                                        </constraints>
+                                        <state key="normal" title="キャンセル">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="cancel_on_press" destination="DqE-N4-rpe" eventType="touchUpInside" id="L2h-YY-1HG"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJc-ZT-qFa">
-                                        <rect key="frame" x="85" y="0.0" width="30" height="30"/>
-                                        <state key="normal" title="ok"/>
+                                        <rect key="frame" x="160" y="0.0" width="120" height="35"/>
+                                        <color key="backgroundColor" red="1" green="0.77472586369999996" blue="0.53546787179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="7qc-uE-YB0"/>
+                                            <constraint firstAttribute="height" constant="35" id="vLE-eI-7uo"/>
+                                        </constraints>
+                                        <state key="normal" title="作成">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="ok_on_press" destination="DqE-N4-rpe" eventType="touchUpInside" id="jx4-a4-WNJ"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="n4T-as-NpF">
-                                <rect key="frame" x="137.66666666666666" y="337" width="100" height="84"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="単語" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P6e-CX-NLG">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="34"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="pzS-ES-fZY"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="意味" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sJu-jt-GRr">
-                                        <rect key="frame" x="0.0" y="50" width="100" height="34"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="Rz1-Vk-cE3"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="単語を作成" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3Z-ib-0sU">
-                                <rect key="frame" x="87" y="252" width="87" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="単語を作成" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3Z-ib-0sU">
+                                <rect key="frame" x="32" y="25" width="95" height="19"/>
+                                <fontDescription key="fontDescription" name="MotoyaLMaru-W3-90ms-RKSJ-H" family="MotoyaLMaru" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="単語" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P6e-CX-NLG">
+                                <rect key="frame" x="32" y="60" width="311" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="nHN-Jx-P9Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="意味" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sJu-jt-GRr">
+                                <rect key="frame" x="32" y="263" width="311" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="bD2-Qu-9Gt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="n4T-as-NpF" firstAttribute="centerY" secondItem="Xu1-rf-Tx3" secondAttribute="centerY" id="JSb-ux-62b"/>
+                            <constraint firstItem="xBe-vo-rkD" firstAttribute="trailing" secondItem="P6e-CX-NLG" secondAttribute="trailing" constant="32" id="N8i-WG-PKm"/>
+                            <constraint firstItem="xBe-vo-rkD" firstAttribute="trailing" secondItem="sJu-jt-GRr" secondAttribute="trailing" constant="32" id="PMo-Ba-09E"/>
+                            <constraint firstItem="D3Z-ib-0sU" firstAttribute="leading" secondItem="xBe-vo-rkD" secondAttribute="leading" constant="32" id="Td4-lG-Twg"/>
                             <constraint firstItem="YsA-XG-Sr4" firstAttribute="centerX" secondItem="Xu1-rf-Tx3" secondAttribute="centerX" id="YuK-QA-tQz"/>
-                            <constraint firstItem="n4T-as-NpF" firstAttribute="centerX" secondItem="Xu1-rf-Tx3" secondAttribute="centerX" id="gr1-JY-r6a"/>
+                            <constraint firstItem="sJu-jt-GRr" firstAttribute="leading" secondItem="xBe-vo-rkD" secondAttribute="leading" constant="32" id="bIR-p3-hpT"/>
+                            <constraint firstItem="P6e-CX-NLG" firstAttribute="top" secondItem="D3Z-ib-0sU" secondAttribute="bottom" constant="16" id="lnu-ac-ojk"/>
+                            <constraint firstItem="sJu-jt-GRr" firstAttribute="top" secondItem="P6e-CX-NLG" secondAttribute="bottom" constant="3" id="nIt-KY-IwW"/>
                             <constraint firstItem="xBe-vo-rkD" firstAttribute="bottom" secondItem="YsA-XG-Sr4" secondAttribute="bottom" constant="32" id="vTG-ub-QfL"/>
+                            <constraint firstItem="D3Z-ib-0sU" firstAttribute="top" secondItem="xBe-vo-rkD" secondAttribute="top" constant="25" id="wmN-0E-jmd"/>
+                            <constraint firstItem="P6e-CX-NLG" firstAttribute="leading" secondItem="xBe-vo-rkD" secondAttribute="leading" constant="32" id="zuM-fg-GPM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xBe-vo-rkD"/>
                     </view>
@@ -516,6 +534,7 @@ HIS IS COMMENT.これはコメントです。</string>
                     <connections>
                         <outlet property="contentTextField" destination="sJu-jt-GRr" id="YYP-dJ-vzD"/>
                         <outlet property="explainTextField" destination="D3Z-ib-0sU" id="Qrv-Kw-sGx"/>
+                        <outlet property="okButton" destination="wJc-ZT-qFa" id="Y9n-KE-CPZ"/>
                         <outlet property="titleTextField" destination="P6e-CX-NLG" id="A7x-Cm-gas"/>
                     </connections>
                 </viewController>

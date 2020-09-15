@@ -11,6 +11,7 @@ import UIKit
 
 extension UIColor{
     // 頻繁に使うやつ
+    static let titleBaseColor = light_dark_changer(light: UIColor.white, dark: UIColor.black)
     static let backgroundColor = light_dark_changer(light: UIColor(hex:"FFD740"), dark: UIColor(hex:"17122B"))
     static let baseColor = light_dark_changer(light: UIColor(hex: "FFD740"), dark: UIColor(hex: "382C6A"))
     static let tabBarColor = light_dark_changer(light: UIColor(hex:"00ACC1"), dark: UIColor(hex:"2D2A36"))
@@ -19,11 +20,14 @@ extension UIColor{
     static let baseTextColor = light_dark_changer(light: UIColor(hex:"151515"), dark: UIColor(hex:"C1C1C1"))
     static let buttonBaseColor = light_dark_changer(light: UIColor(hex: "00ACC1"), dark: UIColor(hex: "9E03FF"))
     static let buttonSubColor = light_dark_changer(light: UIColor(hex:"6D4C41"), dark: UIColor(hex:"4400B1"))
-
+    static let textFieldBackgroundColor = light_dark_changer(light: UIColor(hex: "FFEDA8"), dark: UIColor(hex:"6C53D5"))
+    
     
     // そんなに使わんやつ
     static let groupCellColor = light_dark_changer(light: UIColor(hex:"BFBFBF"), dark: UIColor(hex:"4D4D4D"))
     static let createGrouptextFieldColor = light_dark_changer(light: UIColor(hex:"C7A00C"), dark: UIColor(hex:"6C53D5"))
+    static let SelectCategoryTableViewCellBackgroundColor = light_dark_changer(light: UIColor(hex:"000000",alpha: 0.1), dark: UIColor(hex:"ffffff",alpha: 0.1))
+    static let playCellBackgroundColor = light_dark_changer(light: UIColor(hex: "BFBFBF"), dark: UIColor(hex: "2E2E2E"))
 
 
     

@@ -141,7 +141,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         do{
             let filedata = try Data(contentsOf: url)
-            print("filedata get ok")
+            print("filedata get ok",filedata)
             var jsonArray = try JSONSerialization.jsonObject(with: filedata, options: []) as! NSDictionary
             print("jsonArray ok")
 //            print(NSAnyDictparser(dict: jsonArray))
@@ -169,7 +169,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //            vc.
             
         }catch{
-            print("ERROR")
+            print("ERROR\(error)")
         }
     }
     

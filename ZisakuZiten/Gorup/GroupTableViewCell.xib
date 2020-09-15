@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -30,31 +30,32 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カテゴリ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ai-0R-EoX">
-                                <rect key="frame" x="32" y="35" width="61.5" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.7692586666331982" green="0.78409162788940645" blue="0.8285905116580311" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X月X日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7J-6L-6vZ">
                                 <rect key="frame" x="260.5" y="36" width="47.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4eF-qW-DRp" customClass="CategoryView" customModule="自作辞典" customModuleProvider="target">
+                                <rect key="frame" x="16" y="40" width="30" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Dae-uG-3Yd"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.087093286219999996" green="0.071694009010000004" blue="0.16079327460000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="60" id="07z-2W-NLK"/>
                             <constraint firstItem="Bux-nc-7De" firstAttribute="top" secondItem="fSq-XZ-jVC" secondAttribute="top" constant="14" id="5v3-VK-noC"/>
+                            <constraint firstItem="4eF-qW-DRp" firstAttribute="leading" secondItem="fSq-XZ-jVC" secondAttribute="leading" constant="16" id="71k-Hz-iTA"/>
                             <constraint firstAttribute="width" constant="320" id="9k6-Xy-Kkk"/>
                             <constraint firstItem="Bux-nc-7De" firstAttribute="leading" secondItem="fSq-XZ-jVC" secondAttribute="leading" constant="32" id="DLj-u5-3fH"/>
-                            <constraint firstAttribute="bottom" secondItem="4ai-0R-EoX" secondAttribute="bottom" constant="7" id="GCp-cD-0SK"/>
                             <constraint firstAttribute="trailing" secondItem="Bux-nc-7De" secondAttribute="trailing" constant="8" id="GvA-oN-oXB"/>
                             <constraint firstItem="Bux-nc-7De" firstAttribute="leading" secondItem="fSq-XZ-jVC" secondAttribute="leading" constant="32" id="N6N-OZ-nvT"/>
-                            <constraint firstItem="4ai-0R-EoX" firstAttribute="leading" secondItem="fSq-XZ-jVC" secondAttribute="leading" constant="32" id="S4c-vK-lBM"/>
                             <constraint firstAttribute="bottom" secondItem="U7J-6L-6vZ" secondAttribute="bottom" constant="7" id="Uqo-Im-P4J"/>
                             <constraint firstAttribute="trailing" secondItem="U7J-6L-6vZ" secondAttribute="trailing" constant="12" id="b5e-lJ-xMX"/>
+                            <constraint firstItem="4eF-qW-DRp" firstAttribute="top" secondItem="Bux-nc-7De" secondAttribute="bottom" constant="4" id="fJV-5x-smm"/>
+                            <constraint firstAttribute="bottom" secondItem="4eF-qW-DRp" secondAttribute="bottom" constant="4" id="thQ-0T-6m1"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -70,7 +71,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="categoryBodyColorView" destination="fSq-XZ-jVC" id="sOj-17-BwK"/>
-                <outlet property="categoryLabel" destination="4ai-0R-EoX" id="Qfj-YX-88c"/>
+                <outlet property="categoryView" destination="4eF-qW-DRp" id="xw9-ve-YKo"/>
+                <outlet property="dateLabel" destination="U7J-6L-6vZ" id="aTv-Bc-cPt"/>
                 <outlet property="titleLabel" destination="Bux-nc-7De" id="9zU-n7-jC6"/>
             </connections>
             <point key="canvasLocation" x="180.43478260869566" y="204.57589285714286"/>

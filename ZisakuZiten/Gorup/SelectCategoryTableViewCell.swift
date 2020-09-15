@@ -15,12 +15,13 @@ class SelectCategoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var categoryColorView:UIView!
     @IBOutlet weak var checkImgView:UIImageView!
+    @IBOutlet weak var titleLabel:UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         self.layer.cornerRadius = 6
-        self.backgroundColor = UIColor(hex: "000000",alpha: 0.1)
+        self.backgroundColor = .SelectCategoryTableViewCellBackgroundColor
 //        self.categoryColorView.backgroundColor = UIColor(hex: categoryColor)
         
         categoryColorView.layer.cornerRadius = categoryColorView.frame.size.width/2
@@ -35,7 +36,7 @@ class SelectCategoryTableViewCell: UITableViewCell {
             self.checkImgView.tintColor = UIColor(hex: categoryColor)
             self.checkImgView.isHidden = false
         }else{
-            self.backgroundColor = UIColor(hex: "000000",alpha: 0.1)
+            self.backgroundColor = .SelectCategoryTableViewCellBackgroundColor
             self.checkImgView.isHidden = true
         }
         // Configure the view for the selected state

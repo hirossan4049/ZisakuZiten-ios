@@ -22,11 +22,13 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         print("PLAY VIEW CONTROLLER")
         // Do any additional setup after loading the view.
+        self.view.backgroundColor = .backgroundColor
         
         let nib = UINib(nibName: "PlaySelectItemTableViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "cell")
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.backgroundColor = .backgroundColor
         
         self.playlists = Playlist().getAllItems()
         
@@ -100,7 +102,8 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! PlaySelectItemTableViewCell
-        cell.bodyView.backgroundColor = .white
+        cell.bodyView.backgroundColor = .playCellBackgroundColor
+
 //        cell?.backgroundView
         
     }

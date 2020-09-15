@@ -25,7 +25,9 @@ class PlaySelectItemTableViewCell: UITableViewCell {
         bodyView.layer.cornerRadius = 15
         plyimageView.layer.cornerRadius = 15
 //        plyimageView.layer.cornerRadius = 15
-        
+        self.backgroundColor = .backgroundColor
+        bodyView.backgroundColor = .playCellBackgroundColor
+                
         // FIXME: TESTTESTEEETTETETE
         plyimageView.backgroundColor = UIColor.randomColor
         

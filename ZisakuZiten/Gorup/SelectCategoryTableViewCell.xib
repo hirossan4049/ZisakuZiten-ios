@@ -52,6 +52,7 @@
             <connections>
                 <outlet property="categoryColorView" destination="NdC-Qd-zn3" id="bES-5b-tkf"/>
                 <outlet property="checkImgView" destination="NhI-cA-mQX" id="lem-92-BfA"/>
+                <outlet property="titleLabel" destination="gx2-3h-cja" id="XEa-Fk-k3t"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
         </tableViewCell>

@@ -17,6 +17,7 @@ class PlayNavigationController: UINavigationController, UIGestureRecognizerDeleg
 //        self.navigationController.interactivePopGestureRecognizer.delegate = self;
         self.interactivePopGestureRecognizer?.delegate = self
         self.navigationBar.backgroundColor = .navigationBarColor
+        self.view.backgroundColor = .backgroundColor
         
 //        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()

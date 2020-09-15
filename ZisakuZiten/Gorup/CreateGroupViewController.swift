@@ -28,6 +28,8 @@ class CreateGroupViewController: UIViewController {
     // edit mode only
     var createTime:Date!
     
+    var group_category:Category!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,12 +48,25 @@ class CreateGroupViewController: UIViewController {
         self.categoryBtn.backgroundColor = .buttonSubColor
 //        nameTextField.attributedPlaceholder = NSAttributedString(string: "どんな辞典の名前にする？", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         
+        NotificationCenter.default.addObserver(self,
+                                                selector: #selector(self.categorySelected(_:)),
+                                                name: SelectCategoryViewController.selectedNotification,
+                                                object: nil)
+         
+        
         if EDIT_MODE{
             print("EDIT MODE SET TITLE LABEL")
             let realm = try! Realm()
             let group = realm.objects(Group.self).filter("createTime==%@", createTime)[0]
             self.nameTextField.text = group.title
             self.titleLabel.text = "辞典の名前を編集"
+            if group.category != nil{
+                let category = realm.objects(Category.self).filter("createTime==%@", group.category)[0]
+                self.group_category = category
+                self.categoryView.isHidden = false
+                self.categoryView.mainLabel.text = category.title
+                self.categoryView.categoryColorView.tintColor = UIColor(hex:category.colorCode ?? "ffffff")
+            }
         }
 
 
@@ -81,6 +96,7 @@ class CreateGroupViewController: UIViewController {
     @IBAction func categorySettingOnPrs(){
         let viewController = SelectCategoryViewController()
         viewController.modalPresentationStyle = .pageSheet
+        //TODO:observer
         self.present(viewController, animated: true, completion: nil)
     }
     @IBAction func createOnPrs(){
@@ -92,36 +108,58 @@ class CreateGroupViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    
+    
     func viewRadiuser(view:UIView,radius:CGFloat){
         view.layer.cornerRadius = radius
     }
     
-    func createPost(title:String,category:Category){
-        let postArgs:[String: String] = ["title": title]
-        NotificationCenter.default.post(name: .toExitView,object: nil,userInfo: postArgs)
+    @objc func categorySelected(_ notification: NSNotification){
+        print("Exit called!!")
+        let createTime = notification.userInfo!["createTime"] as! Date
+        let realm = try! Realm()
+        let category = realm.objects(Category.self).filter("createTime==%@", createTime)[0]
+        self.group_category = category
+        self.categoryView.isHidden = false
+        self.categoryView.mainLabel.text = category.title
+        self.categoryView.categoryColorView.tintColor = UIColor(hex:category.colorCode ?? "ffffff")
+
     }
+    
+//    func createPost(title:String,category:Category){
+//        let postArgs:[String: String] = ["title": title]
+//        NotificationCenter.default.post(name: .toExitView,object: nil,userInfo: postArgs)
+//    }
     
     
 //    func create(title:String,category:Category){
     func create(title:String){
         let instanceGroup: Group = Group()
         let now = Date()
+        let insRealm = try! Realm()
         instanceGroup.title = title
         instanceGroup.createTime = now
         instanceGroup.updateTime = now
+        if group_category != nil{
+            instanceGroup.category = group_category.createTime
+        }
 //        instanceGroup.category
-        let insRealm = try! Realm()
         try! insRealm.write {
             insRealm.add(instanceGroup)
         }
+
     }
     func update(title:String,createTime:Date){
         let realm = try! Realm()
         let group = realm.objects(Group.self).filter("createTime==%@", createTime)[0]
         let now:Date = Date()
+
         try! realm.write{
             group.title = title
             group.updateTime = now
+            if group_category != nil{
+                group.category = group_category.createTime
+            }
         }
         print("done")
         

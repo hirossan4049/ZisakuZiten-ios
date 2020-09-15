@@ -11,6 +11,7 @@ import UIKit
 
 class CategoryView: UIView {
     @IBOutlet weak var mainLabel:UILabel!
+    @IBOutlet weak var categoryColorView:UIImageView!
 
     
     override func draw(_ rect: CGRect) {
@@ -33,7 +34,7 @@ class CategoryView: UIView {
     func resetView(){
         self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.mainLabel.frame.width - 15, height: self.frame.height)
 //        self.frame = CGRect(x: 0, y: 0, width: self.mainLabel.frame.width + 60, height: self.frame.height)
-        self.backgroundColor = .cyan
+//        self.backgroundColor = .cyan
     }
 
     func loadNib(){

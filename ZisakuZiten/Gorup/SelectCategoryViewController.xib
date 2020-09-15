@@ -26,9 +26,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8WC-wb-N71">
-                    <rect key="frame" x="0.0" y="44" width="414" height="47"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="47" id="E58-ps-xH7"/>
+                        <constraint firstAttribute="height" constant="50" id="E58-ps-xH7"/>
                     </constraints>
                     <color key="barTintColor" red="1" green="0.77472586369999996" blue="0.53546787179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <textAttributes key="titleTextAttributes">
@@ -44,12 +44,15 @@
                             </barButtonItem>
                             <barButtonItem key="rightBarButtonItem" title="完了" style="done" id="CDt-tJ-8Nq">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="done" destination="-1" id="Ymc-h8-qBX"/>
+                                </connections>
                             </barButtonItem>
                         </navigationItem>
                     </items>
                 </navigationBar>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Mx-Ci-hHH">
-                    <rect key="frame" x="0.0" y="91" width="414" height="771"/>
+                    <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
             </subviews>
@@ -64,7 +67,7 @@
                 <constraint firstItem="0Mx-Ci-hHH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="z1S-EC-s5x"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
+            <point key="canvasLocation" x="-128" y="510"/>
         </view>
         <viewController restorationIdentifier="ComponentSelect" id="aKl-fm-xA6">
             <view key="view" contentMode="scaleToFill" restorationIdentifier="CategorySelect" id="Tnu-z4-Tvz">
@@ -78,10 +81,13 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z6Z-P8-ThU">
                         <rect key="frame" x="20" y="50" width="374" height="35"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SM4-4h-b9j">
-                                <rect key="frame" x="33" y="0.0" width="30" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="heh"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SM4-4h-b9j">
+                                <rect key="frame" x="4" y="0.0" width="200" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="24V-gc-wmd"/>
+                                    <constraint firstAttribute="width" constant="200" id="Lay-mQ-w7i"/>
+                                </constraints>
+                                <state key="normal" title="カテゴリーを作成する"/>
                                 <connections>
                                     <action selector="testclicked" destination="-1" eventType="touchUpInside" id="ft9-MZ-WB2"/>
                                 </connections>
@@ -90,6 +96,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="35" id="Obu-r8-80c"/>
+                            <constraint firstItem="SM4-4h-b9j" firstAttribute="leading" secondItem="z6Z-P8-ThU" secondAttribute="leading" constant="4" id="pqh-gr-LVk"/>
                         </constraints>
                     </view>
                 </subviews>

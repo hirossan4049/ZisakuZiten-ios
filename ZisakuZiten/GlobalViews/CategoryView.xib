@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="KosugiMaru-Regular.ttf">
+            <string>MotoyaLMaru-W3-90ms-RKSJ-H</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoryView" customModule="自作辞典" customModuleProvider="target">
             <connections>
+                <outlet property="categoryColorView" destination="80F-Gh-pco" id="gr4-yW-kMl"/>
                 <outlet property="mainLabel" destination="mD2-zB-gDC" id="hef-tT-coE"/>
             </connections>
         </placeholder>
@@ -17,26 +23,25 @@
             <rect key="frame" x="0.0" y="0.0" width="150" height="46"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tag" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="80F-Gh-pco">
-                    <rect key="frame" x="4" y="2" width="15" height="43"/>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="80F-Gh-pco">
+                    <rect key="frame" x="4" y="2.5" width="20" height="41"/>
+                    <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="15" id="Twx-r7-3Rs"/>
+                        <constraint firstAttribute="width" constant="20" id="Twx-r7-3Rs"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="サンプル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mD2-zB-gDC">
-                    <rect key="frame" x="21" y="14" width="62" height="18"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="サンプル" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mD2-zB-gDC">
+                    <rect key="frame" x="28" y="17" width="48" height="12"/>
+                    <fontDescription key="fontDescription" name="MotoyaLMaru-W3-90ms-RKSJ-H" family="MotoyaLMaru" pointSize="12"/>
+                    <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="80F-Gh-pco" secondAttribute="bottom" constant="2" id="2le-r3-HZp"/>
                 <constraint firstItem="80F-Gh-pco" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="4" id="8jU-tG-sf9"/>
                 <constraint firstItem="80F-Gh-pco" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="2" id="g34-2V-RPd"/>
-                <constraint firstItem="mD2-zB-gDC" firstAttribute="leading" secondItem="80F-Gh-pco" secondAttribute="trailing" constant="2" id="nlU-SY-PQN"/>
+                <constraint firstItem="mD2-zB-gDC" firstAttribute="leading" secondItem="80F-Gh-pco" secondAttribute="trailing" constant="4" id="nlU-SY-PQN"/>
                 <constraint firstItem="mD2-zB-gDC" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="pLN-E6-cqG"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
@@ -47,6 +52,6 @@
         </view>
     </objects>
     <resources>
-        <image name="tag" catalog="system" width="128" height="116"/>
+        <image name="circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>

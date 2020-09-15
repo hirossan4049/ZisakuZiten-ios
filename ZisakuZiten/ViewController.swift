@@ -436,8 +436,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print(group.title)
         print(group.updateTime)
         cell.titleLabel.text = group.title
+        cell.dateLabel.text = group.createTime?.toStringJapanese()
+        let realm = try! Realm()
+        let categorys = realm.objects(Category.self).filter("createTime==%@",group.category)
+        if categorys.isEmpty{
+            cell.categoryView.isHidden = true
+        }else{
+            cell.categoryView.isHidden = false
+            cell.categoryView.categoryColorView.tintColor = UIColor(hex:categorys[0].colorCode ?? "fffffff")
+            cell.categoryView.mainLabel.text = categorys[0].title
+        }
+//        do {
+//            let category = realm.objects(Category.self).filter("createTime==%@",group.category)[0]
+//            print(category)
+//        } catch {
+//            print("category not found")
+//        }
+            
         ///TODO:カテゴリ系の処理
-        cell.categoryLabel.text = "その他"
+//        cell.categoryLabel.text = "その他"
         return cell
     }
 

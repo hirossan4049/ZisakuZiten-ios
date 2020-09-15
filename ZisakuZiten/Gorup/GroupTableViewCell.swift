@@ -14,8 +14,9 @@ class GroupTableViewCell: SwipeTableViewCell {
 
     
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var categoryLabel: UILabel!
+    @IBOutlet weak var dateLabel:UILabel!
 //    @IBOutlet var cateColorView: UIView!
+    @IBOutlet weak var categoryView:CategoryView!
     @IBOutlet var categoryBodyColorView: UIView!
     
 
@@ -46,8 +47,8 @@ class GroupTableViewCell: SwipeTableViewCell {
         
         titleLabel.font = UIFont(name: "KosugiMaru", size: 17)
         
-        categoryLabel.layer.cornerRadius = 100
-        categoryLabel.backgroundColor = UIColor.red
+//        categoryLabel.layer.cornerRadius = 100
+//        categoryLabel.backgroundColor = UIColor.red
 
 //        self.CELL_HIGHT = self.bounds.height
         
