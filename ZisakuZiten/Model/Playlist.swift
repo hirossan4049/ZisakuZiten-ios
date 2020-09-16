@@ -14,7 +14,7 @@ class Playlist{
     let quiz = PlayListItem(title: "quiz", subtitle: "苦手な単語を中心的にクイズとして出題されます。", comment: "苦手な単語を中心的にクイズとして出題されます。",
                                  groupMinCount: 4,viewController: QuizViewController(nibName: "QuizViewController", bundle: nil))
     let play_audio = PlayListItem(title: "音声で再生", subtitle: "単語と意味を読み上げてくれます。", comment: "単語と意味を読み上げてくれます。",
-                                  groupMinCount: 1,viewController: ViewController())
+                                  groupMinCount: 1,viewController: AudioPlayViewController(nibName: "AudioPlayViewController", bundle: nil))
     
     func getAllItems() -> [PlayListItem]{
         return [flashcard, quiz, play_audio]

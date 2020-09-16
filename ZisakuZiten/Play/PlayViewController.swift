@@ -88,7 +88,6 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "toQuiz") as! PlayStartViewController
         secondViewController.playItem = self.playlists[indexPath.section]
         //self.navigationController = UINavigationController(rootViewController: self)
-        print(self.navigationController)
         self.navigationController?.pushViewController(secondViewController, animated: true)
 
 

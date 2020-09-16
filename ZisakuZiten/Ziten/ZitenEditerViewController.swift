@@ -38,7 +38,7 @@ class CreateZitenViewController: UIViewController {
         contentTextField.backgroundColor = .textFieldBackgroundColor
         
         
-        self.group = realm.objects(Group.self).filter("createTime==%@", group_createTime)[0]
+        self.group = realm.objects(Group.self).filter("createTime==%@", group_createTime!)[0]
         // TODO:説明とか編集なら単語をTextFieldに入れるだとか。
         if self.mode == 0 {
             // Create mode
@@ -46,7 +46,7 @@ class CreateZitenViewController: UIViewController {
             okButton.titleLabel!.text = "作成"
         } else if self.mode == 1 {
             // Detail mode
-            let ziten:Ziten = group.ziten_upT_List.filter("createTime==%@",ziten_createTime)[0]
+            let ziten:Ziten = group.ziten_upT_List.filter("createTime==%@",ziten_createTime!)[0]
             explainTextField.text = "単語を編集"
             okButton.titleLabel!.text = "更新"
             titleTextField.text = ziten.title
@@ -72,14 +72,14 @@ class CreateZitenViewController: UIViewController {
         try! realm.write {
             self.group.ziten_upT_List.append(ziten)
         }
-        print(group)
+        print(group!)
         print("Done!")
     }
 
     func update_ziten(title: String, content: String) {
         ///titleとcontentがもとより異なってるか確認してもいいけど無駄な希ガス
         print("updating.... ziten")
-        var ziten:Ziten = group.ziten_upT_List.filter("createTime==%@",ziten_createTime)[0]
+        let ziten:Ziten = group.ziten_upT_List.filter("createTime==%@",ziten_createTime!)[0]
         let now:Date = Date()
         try! realm.write{
             ziten.title = title

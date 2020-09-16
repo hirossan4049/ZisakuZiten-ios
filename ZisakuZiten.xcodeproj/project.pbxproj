@@ -13,6 +13,11 @@
 		D309E9B7250C67FC0043E2BA /* String+toDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D309E9B6250C67FC0043E2BA /* String+toDate.swift */; };
 		D309E9BA250CA12C0043E2BA /* SelectCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D309E9B8250CA12C0043E2BA /* SelectCategoryTableViewCell.swift */; };
 		D309E9BB250CA12C0043E2BA /* SelectCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D309E9B9250CA12C0043E2BA /* SelectCategoryTableViewCell.xib */; };
+		D309E9BF251105C30043E2BA /* AudioPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D309E9BD251105C30043E2BA /* AudioPlayViewController.swift */; };
+		D309E9C0251105C30043E2BA /* AudioPlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D309E9BE251105C30043E2BA /* AudioPlayViewController.xib */; };
+		D309E9C2251106850043E2BA /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D309E9C1251106850043E2BA /* SpeechService.swift */; };
+		D309E9C52511D7A50043E2BA /* AudioPlayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D309E9C32511D7A50043E2BA /* AudioPlayTableViewCell.swift */; };
+		D309E9C62511D7A50043E2BA /* AudioPlayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D309E9C42511D7A50043E2BA /* AudioPlayTableViewCell.xib */; };
 		D30D2AD424EAA27E00FCC53E /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D2AD224EAA27E00FCC53E /* CreateGroupViewController.swift */; };
 		D30D2AD524EAA27E00FCC53E /* CreateGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D30D2AD324EAA27E00FCC53E /* CreateGroupViewController.xib */; };
 		D30D2AD824EBC59900FCC53E /* SelectCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D2AD624EBC59900FCC53E /* SelectCategoryViewController.swift */; };
@@ -118,6 +123,11 @@
 		D309E9B6250C67FC0043E2BA /* String+toDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+toDate.swift"; sourceTree = "<group>"; };
 		D309E9B8250CA12C0043E2BA /* SelectCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		D309E9B9250CA12C0043E2BA /* SelectCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectCategoryTableViewCell.xib; sourceTree = "<group>"; };
+		D309E9BD251105C30043E2BA /* AudioPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayViewController.swift; sourceTree = "<group>"; };
+		D309E9BE251105C30043E2BA /* AudioPlayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioPlayViewController.xib; sourceTree = "<group>"; };
+		D309E9C1251106850043E2BA /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
+		D309E9C32511D7A50043E2BA /* AudioPlayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayTableViewCell.swift; sourceTree = "<group>"; };
+		D309E9C42511D7A50043E2BA /* AudioPlayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioPlayTableViewCell.xib; sourceTree = "<group>"; };
 		D30D2AD224EAA27E00FCC53E /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
 		D30D2AD324EAA27E00FCC53E /* CreateGroupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateGroupViewController.xib; sourceTree = "<group>"; };
 		D30D2AD624EBC59900FCC53E /* SelectCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryViewController.swift; sourceTree = "<group>"; };
@@ -250,6 +260,18 @@
 				617F337C3E67A6BB3A803229 /* Pods-ZisakuZitenTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D309E9BC251105A50043E2BA /* AudioPlay */ = {
+			isa = PBXGroup;
+			children = (
+				D309E9BD251105C30043E2BA /* AudioPlayViewController.swift */,
+				D309E9BE251105C30043E2BA /* AudioPlayViewController.xib */,
+				D309E9C1251106850043E2BA /* SpeechService.swift */,
+				D309E9C32511D7A50043E2BA /* AudioPlayTableViewCell.swift */,
+				D309E9C42511D7A50043E2BA /* AudioPlayTableViewCell.xib */,
+			);
+			path = AudioPlay;
 			sourceTree = "<group>";
 		};
 		D30D2ADA24EBC64400FCC53E /* GlobalViews */ = {
@@ -454,6 +476,7 @@
 		D3F79FFF24BEFB4000127E7A /* Play */ = {
 			isa = PBXGroup;
 			children = (
+				D309E9BC251105A50043E2BA /* AudioPlay */,
 				D39FC4ED24C3F1DC00C4C0A1 /* FlashCard */,
 				D39FC4E724C3D9A700C4C0A1 /* MainQuiz */,
 				D3F79FFD24BEFB3500127E7A /* PlayViewController.swift */,
@@ -582,6 +605,7 @@
 			files = (
 				D33692B124DBF84A0027FB17 /* KosugiMaru-Regular.ttf in Resources */,
 				D36418D324C13BA2009E0499 /* PlaySelectItemTableViewCell.xib in Resources */,
+				D309E9C62511D7A50043E2BA /* AudioPlayTableViewCell.xib in Resources */,
 				D335624024CB244B0057D12B /* SelectGroupView.xib in Resources */,
 				D374B96A24E56AF900745360 /* QuizGradePageItemViewController.xib in Resources */,
 				D374B97324E56D5E00745360 /* QuizGradePageItemTableViewCell.xib in Resources */,
@@ -591,6 +615,7 @@
 				D36F823A24E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.xib in Resources */,
 				D335624E24CC789E0057D12B /* GroupPickerView.xib in Resources */,
 				D36F823E24E65058004CFFFB /* QuizinCorrectCountPageTableViewCell.xib in Resources */,
+				D309E9C0251105C30043E2BA /* AudioPlayViewController.xib in Resources */,
 				D3AB70C0249F076B00DFDDB7 /* LaunchScreen.storyboard in Resources */,
 				D30D2ADE24EBC75600FCC53E /* CategoryView.xib in Resources */,
 				D3AB70BD249F076B00DFDDB7 /* Assets.xcassets in Resources */,
@@ -734,10 +759,12 @@
 				D3C0985324D10D6F00419F45 /* QuizViewController.swift in Sources */,
 				D3AB70F6249F888800DFDDB7 /* Ziten.swift in Sources */,
 				D37AED8424B84663001E6302 /* UIImage+resize.swift in Sources */,
+				D309E9BF251105C30043E2BA /* AudioPlayViewController.swift in Sources */,
 				D309E9B7250C67FC0043E2BA /* String+toDate.swift in Sources */,
 				D36F823924E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.swift in Sources */,
 				D388B96924F51FA400ED5DAF /* Date+toString.swift in Sources */,
 				D30D2AD424EAA27E00FCC53E /* CreateGroupViewController.swift in Sources */,
+				D309E9C52511D7A50043E2BA /* AudioPlayTableViewCell.swift in Sources */,
 				D335623C24C988170057D12B /* PlayNavigationController.swift in Sources */,
 				D33692AE24DBE84A0027FB17 /* QuizItemButton.swift in Sources */,
 				D3AB70F4249F66DE00DFDDB7 /* Group.swift in Sources */,
@@ -752,6 +779,7 @@
 				D3C594DD24CDF07200066E42 /* PlayListItem.swift in Sources */,
 				D30D2AE024F2108C00FCC53E /* UIColor+.swift in Sources */,
 				D3AB70FA24A09A9A00DFDDB7 /* ZitenEditerViewController.swift in Sources */,
+				D309E9C2251106850043E2BA /* SpeechService.swift in Sources */,
 				D3A6A4DB24A26CBB00CF6C87 /* EditCategoryViewController.swift in Sources */,
 				D3A96A9A24A1F0D70053639B /* CreateCategoryDialogViewController.swift in Sources */,
 				D39FC4EC24C3E76400C4C0A1 /* UIView+asImage.swift in Sources */,

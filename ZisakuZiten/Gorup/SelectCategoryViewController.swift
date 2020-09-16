@@ -56,9 +56,9 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
 //        toolbar.layer.borderWidth = 0.3
 //        toolbar.layer.borderColor = UIColor.darkGray.cgColor
         // Do any additional setup after loading the view.
-        print("VCs",selectViewController,createViewController)
+//        print("VCs",selectViewController,createViewController)
         changeFragments(.select)
-        print("currentVC",currentViewController)
+//        print("currentVC",currentViewController)
         
         NotificationCenter.default.addObserver(self, selector: #selector(createTextFieldDidEndEditing(notification:)), name: UITextField.textDidChangeNotification, object: createTextField)
         
