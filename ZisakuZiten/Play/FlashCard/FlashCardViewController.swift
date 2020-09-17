@@ -27,8 +27,8 @@ class FlashCardViewController: PlayBaseViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(nextWord(sender:)))
         backgroundView.addGestureRecognizer(tapGesture)
         
-        let realm = try! Realm()
-        self.zitens = realm.objects(Group.self).filter("createTime==%@",createTime)[0].ziten_upT_List
+//        let realm = try! Realm()
+//        self.zitens = realm.objects(Group.self).filter("createTime==%@",createTime)[0].ziten_upT_List
 
         mainLabel.adjustsFontSizeToFitWidth = true
 //        mainLabel.text = self.group[0].title
@@ -39,6 +39,8 @@ class FlashCardViewController: PlayBaseViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let realm = try! Realm()
+        self.zitens = realm.objects(Group.self).filter("createTime==%@",createTime)[0].ziten_upT_List
         setFlashCard()
     }
     
