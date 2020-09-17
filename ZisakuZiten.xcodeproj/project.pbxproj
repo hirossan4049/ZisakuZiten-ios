@@ -66,6 +66,8 @@
 		D3A6A4DF24A36FC800CF6C87 /* CategoryEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A6A4DD24A36FC800CF6C87 /* CategoryEditTableViewCell.swift */; };
 		D3A6A4E024A36FC800CF6C87 /* CategoryEditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3A6A4DE24A36FC800CF6C87 /* CategoryEditTableViewCell.xib */; };
 		D3A6A4E224A640FA00CF6C87 /* CategoryColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A6A4E124A640FA00CF6C87 /* CategoryColorButton.swift */; };
+		D3A8B28825139B90009C4E9C /* UserDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A8B28725139B90009C4E9C /* UserDataViewController.swift */; };
+		D3A8B28B2513A5AF009C4E9C /* AppInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A8B28A2513A5AF009C4E9C /* AppInfoViewController.swift */; };
 		D3A96A9A24A1F0D70053639B /* CreateCategoryDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A96A9824A1F0D70053639B /* CreateCategoryDialogViewController.swift */; };
 		D3A96A9B24A1F0D70053639B /* CreateCategoryDialogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3A96A9924A1F0D70053639B /* CreateCategoryDialogViewController.xib */; };
 		D3AB70B4249F076A00DFDDB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB70B3249F076A00DFDDB7 /* AppDelegate.swift */; };
@@ -178,6 +180,8 @@
 		D3A6A4DD24A36FC800CF6C87 /* CategoryEditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEditTableViewCell.swift; sourceTree = "<group>"; };
 		D3A6A4DE24A36FC800CF6C87 /* CategoryEditTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryEditTableViewCell.xib; sourceTree = "<group>"; };
 		D3A6A4E124A640FA00CF6C87 /* CategoryColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColorButton.swift; sourceTree = "<group>"; };
+		D3A8B28725139B90009C4E9C /* UserDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataViewController.swift; sourceTree = "<group>"; };
+		D3A8B28A2513A5AF009C4E9C /* AppInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoViewController.swift; sourceTree = "<group>"; };
 		D3A96A9824A1F0D70053639B /* CreateCategoryDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryDialogViewController.swift; sourceTree = "<group>"; };
 		D3A96A9924A1F0D70053639B /* CreateCategoryDialogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCategoryDialogViewController.xib; sourceTree = "<group>"; };
 		D3AB70B0249F076A00DFDDB7 /* 自作辞典.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "自作辞典.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -390,6 +394,22 @@
 			path = FlashCard;
 			sourceTree = "<group>";
 		};
+		D3A8B28625139B76009C4E9C /* UserData */ = {
+			isa = PBXGroup;
+			children = (
+				D3A8B28725139B90009C4E9C /* UserDataViewController.swift */,
+			);
+			path = UserData;
+			sourceTree = "<group>";
+		};
+		D3A8B2892513A592009C4E9C /* AppInfo */ = {
+			isa = PBXGroup;
+			children = (
+				D3A8B28A2513A5AF009C4E9C /* AppInfoViewController.swift */,
+			);
+			path = AppInfo;
+			sourceTree = "<group>";
+		};
 		D3AB70A7249F076A00DFDDB7 = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +437,8 @@
 			children = (
 				D30D2ADA24EBC64400FCC53E /* GlobalViews */,
 				D33692A424D7AF1F0027FB17 /* Fonts */,
+				D3A8B28625139B76009C4E9C /* UserData */,
+				D3A8B2892513A592009C4E9C /* AppInfo */,
 				D33692A324D775B20027FB17 /* Gorup */,
 				D335623824C9616F0057D12B /* Application */,
 				D335623724C95FFD0057D12B /* Ziten */,
@@ -770,6 +792,7 @@
 				D309E9B7250C67FC0043E2BA /* String+toDate.swift in Sources */,
 				D36F823924E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.swift in Sources */,
 				D388B96924F51FA400ED5DAF /* Date+toString.swift in Sources */,
+				D3A8B28B2513A5AF009C4E9C /* AppInfoViewController.swift in Sources */,
 				D30D2AD424EAA27E00FCC53E /* CreateGroupViewController.swift in Sources */,
 				D309E9C52511D7A50043E2BA /* AudioPlayTableViewCell.swift in Sources */,
 				D335623C24C988170057D12B /* PlayNavigationController.swift in Sources */,
@@ -804,6 +827,7 @@
 				D33692B024DBE9860027FB17 /* UIColor+convertToRGBA.swift in Sources */,
 				D3AB70F8249F88E400DFDDB7 /* Category.swift in Sources */,
 				D3AB70B4249F076A00DFDDB7 /* AppDelegate.swift in Sources */,
+				D3A8B28825139B90009C4E9C /* UserDataViewController.swift in Sources */,
 				D3C0985624D2E65900419F45 /* PlayBaseViewController.swift in Sources */,
 				D36F823D24E65058004CFFFB /* QuizinCorrectCountPageTableViewCell.swift in Sources */,
 				D3C0984F24D015BA00419F45 /* FlashCardViewController.swift in Sources */,

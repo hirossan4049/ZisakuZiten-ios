@@ -30,6 +30,9 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.delegate = self
         tableView.backgroundColor = .backgroundColor
         
+        self.navigationController?.navigationBar.barTintColor = .navigationBarColor
+
+        
         self.playlists = Playlist().getAllItems()
         
         // memory ok...?

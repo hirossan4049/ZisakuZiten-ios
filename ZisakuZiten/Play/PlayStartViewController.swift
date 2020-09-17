@@ -47,6 +47,9 @@ class PlayStartViewController: UIViewController {
         groupSelectView.layer.cornerRadius = 20
         groupSelectView.layer.borderColor = UIColor(hex: "EBEBEB").cgColor
         groupSelectView.layer.borderWidth = 1
+        
+        self.view.backgroundColor = .backgroundColor
+        groupSelectView.backgroundColor = .textFieldBackgroundColor
                 
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.pickerExitCall(_:)),
@@ -56,6 +59,8 @@ class PlayStartViewController: UIViewController {
         self.startBtn.btnStatus(isEnb:false)
         self.selectLabel.text = NO_SELECTED_TEXT
         self.erorrLabel.isHidden = true
+        
+        self.navigationController?.navigationBar.barTintColor = .navigationBarColor
         
         // TEST
 //        self.playItem = Playlist().flashcard
@@ -186,7 +191,7 @@ class PlayStartViewController: UIViewController {
         
         if group.ziten_upT_List.count < self.playItem.groupMinCount{
             self.startBtn.btnStatus(isEnb: false)
-            errorTextDraw(error: "単語がn個以上必要です")
+            errorTextDraw(error: "単語が\(self.playItem.groupMinCount)個以上必要です")
             return false
         }else{
             self.erorrLabel.isHidden = true

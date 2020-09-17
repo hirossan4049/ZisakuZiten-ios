@@ -45,6 +45,9 @@ class GroupPickerView: UIView, UITableViewDataSource, UITableViewDelegate {
 //        self.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         print("GROUP PICKERVIEW")
         
+        self.backgroundColor = .none
+        tableView.backgroundColor = .textFieldBackgroundColor
+        
         let realm = try! Realm()
         self.groupList = realm.objects(Group.self)
         
@@ -55,6 +58,7 @@ class GroupPickerView: UIView, UITableViewDataSource, UITableViewDelegate {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.reloadData()
+        self.tableView.layer.cornerRadius = 15
         
         let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
         UIView.animate(views: tableView.visibleCells, animations: animations, completion: {})
@@ -72,6 +76,7 @@ class GroupPickerView: UIView, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.text = self.groupList[indexPath.row].title
+        cell.backgroundColor = .textFieldBackgroundColor
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
