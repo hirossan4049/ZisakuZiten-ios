@@ -20,6 +20,8 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "遊ぶ"
+        self.navigationController?.title = ""
         print("PLAY VIEW CONTROLLER")
         // Do any additional setup after loading the view.
         self.view.backgroundColor = .backgroundColor

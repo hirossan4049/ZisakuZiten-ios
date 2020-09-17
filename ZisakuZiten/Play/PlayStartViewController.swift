@@ -68,6 +68,7 @@ class PlayStartViewController: UIViewController {
         //
         self.titleLabel.text = self.playItem.title
         self.commentLabel.text = self.playItem.comment
+        self.title = self.playItem.title
         
         // Do any additional setup after loading the view.
         selected_Group_playruncheck()
