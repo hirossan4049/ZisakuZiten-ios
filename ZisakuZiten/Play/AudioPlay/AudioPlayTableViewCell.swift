@@ -12,6 +12,20 @@ class AudioPlayTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel:UILabel!
     @IBOutlet weak var playButton:UIButton!
+    
+    var index:Int!
+    
+    var isPlaying = false{
+        didSet{
+            if isPlaying{
+                playButton.setBackgroundImage(UIImage(systemName: "stop.circle.fill"), for: .normal)
+                self.backgroundColor = .buttonBaseColor
+            }else{
+                playButton.setBackgroundImage(UIImage(systemName: "play.circle.fill"), for: .normal)
+                self.backgroundColor = .groupCellColor
+            }
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -15,7 +15,8 @@ class SpeechService {
      // 再生速度を設定
     var rate: Float = AVSpeechUtteranceDefaultSpeechRate
     // 言語を英語に設定
-    var voice = AVSpeechSynthesisVoice(language: "en-US")
+//    var voice = AVSpeechSynthesisVoice(language: "en-US")
+    var voice = AVSpeechSynthesisVoice(language: "ja-JP")
 
     func say(_ phrase: String) {
         // 話す内容をセット

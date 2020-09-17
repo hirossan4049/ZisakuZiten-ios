@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PickerPopupViewController" customModule="自作辞典" customModuleProvider="target">
+            <connections>
+                <outlet property="backView" destination="ga8-0e-69d" id="qYP-s5-nY4"/>
+                <outlet property="navigationBar" destination="YGu-Rs-Nt6" id="709-nx-IKo"/>
+                <outlet property="pickerView" destination="4tR-kI-Cah" id="NpA-md-IZR"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ga8-0e-69d">
+                    <rect key="frame" x="0.0" y="596" width="414" height="300"/>
+                    <subviews>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4tR-kI-Cah">
+                            <rect key="frame" x="0.0" y="35" width="414" height="265"/>
+                        </pickerView>
+                        <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YGu-Rs-Nt6">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="nuQ-cN-3qW"/>
+                            </constraints>
+                            <color key="barTintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <items>
+                                <navigationItem title="Title" id="mtb-Rj-2V8">
+                                    <barButtonItem key="leftBarButtonItem" title="Cancel" id="gec-Bl-OBX">
+                                        <connections>
+                                            <action selector="cancel" destination="-1" id="r2F-T6-j6n"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="5bt-tF-hVm">
+                                        <connections>
+                                            <action selector="done" destination="-1" id="4vJ-ac-8bb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="YGu-Rs-Nt6" secondAttribute="trailing" id="3WR-dO-tZ2"/>
+                        <constraint firstItem="YGu-Rs-Nt6" firstAttribute="top" secondItem="ga8-0e-69d" secondAttribute="top" id="5an-rY-vQd"/>
+                        <constraint firstAttribute="height" constant="300" id="CY4-st-Ih0"/>
+                        <constraint firstAttribute="trailing" secondItem="4tR-kI-Cah" secondAttribute="trailing" id="EAK-Fy-Rsz"/>
+                        <constraint firstItem="4tR-kI-Cah" firstAttribute="top" secondItem="YGu-Rs-Nt6" secondAttribute="bottom" id="g0B-W9-2VX"/>
+                        <constraint firstItem="YGu-Rs-Nt6" firstAttribute="leading" secondItem="ga8-0e-69d" secondAttribute="leading" id="jG0-CA-Fdi"/>
+                        <constraint firstItem="4tR-kI-Cah" firstAttribute="leading" secondItem="ga8-0e-69d" secondAttribute="leading" id="nVv-Gz-vhn"/>
+                        <constraint firstAttribute="bottom" secondItem="4tR-kI-Cah" secondAttribute="bottom" id="uA0-9Q-GiM"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ga8-0e-69d" secondAttribute="trailing" id="9IH-Q1-zMz"/>
+                <constraint firstAttribute="bottom" secondItem="ga8-0e-69d" secondAttribute="bottom" id="ajq-GF-L3T"/>
+                <constraint firstItem="ga8-0e-69d" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vFT-pI-rlY"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="114"/>
+        </view>
+    </objects>
+</document>

@@ -82,6 +82,7 @@ class PlayStartViewController: UIViewController {
         self.present(playVC, animated: true, completion: nil)
     }
     
+    // FIXME: FIX
     func add_groupPickerView(){
         // -------- DROPDOWN IMAGE -------
         let imtiming = UICubicTimingParameters(animationCurve: .linear)

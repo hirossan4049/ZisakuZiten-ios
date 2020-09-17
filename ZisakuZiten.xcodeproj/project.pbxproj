@@ -45,6 +45,8 @@
 		D33692B524DD9B140027FB17 /* QuizGradeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D33692B324DD9B140027FB17 /* QuizGradeViewController.xib */; };
 		D339668224F23D49008A2194 /* Object+toDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D339668124F23D49008A2194 /* Object+toDictionary.swift */; };
 		D358122424AD60900042FEA7 /* CategoryColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D358122324AD60900042FEA7 /* CategoryColors.swift */; };
+		D35FEF6125133899007A4721 /* PickerPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35FEF5F25133899007A4721 /* PickerPopupViewController.swift */; };
+		D35FEF6225133899007A4721 /* PickerPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D35FEF6025133899007A4721 /* PickerPopupViewController.xib */; };
 		D36418D224C13BA2009E0499 /* PlaySelectItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36418D024C13BA2009E0499 /* PlaySelectItemTableViewCell.swift */; };
 		D36418D324C13BA2009E0499 /* PlaySelectItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36418D124C13BA2009E0499 /* PlaySelectItemTableViewCell.xib */; };
 		D36F823924E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F823724E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.swift */; };
@@ -155,6 +157,8 @@
 		D33692B324DD9B140027FB17 /* QuizGradeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizGradeViewController.xib; sourceTree = "<group>"; };
 		D339668124F23D49008A2194 /* Object+toDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Object+toDictionary.swift"; sourceTree = "<group>"; };
 		D358122324AD60900042FEA7 /* CategoryColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColors.swift; sourceTree = "<group>"; };
+		D35FEF5F25133899007A4721 /* PickerPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerPopupViewController.swift; sourceTree = "<group>"; };
+		D35FEF6025133899007A4721 /* PickerPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerPopupViewController.xib; sourceTree = "<group>"; };
 		D36418D024C13BA2009E0499 /* PlaySelectItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySelectItemTableViewCell.swift; sourceTree = "<group>"; };
 		D36418D124C13BA2009E0499 /* PlaySelectItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaySelectItemTableViewCell.xib; sourceTree = "<group>"; };
 		D36F823724E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizinCorrectCountPageItemViewController.swift; sourceTree = "<group>"; };
@@ -279,6 +283,8 @@
 			children = (
 				D30D2ADB24EBC73E00FCC53E /* CategoryView.swift */,
 				D30D2ADD24EBC75600FCC53E /* CategoryView.xib */,
+				D35FEF5F25133899007A4721 /* PickerPopupViewController.swift */,
+				D35FEF6025133899007A4721 /* PickerPopupViewController.xib */,
 			);
 			path = GlobalViews;
 			sourceTree = "<group>";
@@ -626,6 +632,7 @@
 				D309E9BB250CA12C0043E2BA /* SelectCategoryTableViewCell.xib in Resources */,
 				D3A96A9B24A1F0D70053639B /* CreateCategoryDialogViewController.xib in Resources */,
 				D3AB70EC249F1EE700DFDDB7 /* GroupTableViewCell.xib in Resources */,
+				D35FEF6225133899007A4721 /* PickerPopupViewController.xib in Resources */,
 				D33692AA24D91E0A0027FB17 /* CorrectPopupViewController.xib in Resources */,
 				D3C0985424D10D6F00419F45 /* QuizViewController.xib in Resources */,
 			);
@@ -790,6 +797,7 @@
 				D3F79FFE24BEFB3500127E7A /* PlayViewController.swift in Sources */,
 				D335623E24CB243E0057D12B /* SelectGroupView.swift in Sources */,
 				D309E9BA250CA12C0043E2BA /* SelectCategoryTableViewCell.swift in Sources */,
+				D35FEF6125133899007A4721 /* PickerPopupViewController.swift in Sources */,
 				D374B96924E56AF900745360 /* QuizGradePageItemViewController.swift in Sources */,
 				D374B97224E56D5E00745360 /* QuizGradePageItemTableViewCell.swift in Sources */,
 				D335624424CC5E460057D12B /* PlayStartViewController.swift in Sources */,
