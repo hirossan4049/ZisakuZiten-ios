@@ -27,6 +27,8 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var colorStackView:UIStackView!
     @IBOutlet weak var createTextField:UITextField!
     
+    @IBOutlet weak var createCategoryBackView:UIView!
+    
 
 
     var createCategorySelectedColor:UIColor!
@@ -50,6 +52,10 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
         tableView.register(nib, forCellReuseIdentifier: "cell")
         tableView.delegate = self
         tableView.dataSource = self
+        
+        createCategoryBackView.backgroundColor = .textFieldBackgroundColor
+        createCategoryBackView.layer.cornerRadius = 10
+        createTextField.backgroundColor = .textFieldBackgroundColor
 //        toolbar.backgroundColor = .backgroundColor
 //        toolbar.barTintColor = .backgroundColor
 //        toolbar.tintColor = .white

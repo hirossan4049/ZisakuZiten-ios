@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectCategoryViewController" customModule="自作辞典" customModuleProvider="target">
             <connections>
                 <outlet property="colorStackView" destination="AVl-N8-tNd" id="oX3-rO-Jk1"/>
+                <outlet property="createCategoryBackView" destination="z6Z-P8-ThU" id="CHE-6Q-ZYd"/>
                 <outlet property="createTextField" destination="Zw7-Mt-Yzs" id="Mjf-at-QPL"/>
                 <outlet property="createViewController" destination="Mva-fD-bgs" id="O1w-qz-Mmm"/>
                 <outlet property="doneBarButtonItem" destination="CDt-tJ-8Nq" id="dJZ-g5-LJE"/>
@@ -81,8 +82,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z6Z-P8-ThU">
                         <rect key="frame" x="20" y="50" width="374" height="35"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SM4-4h-b9j">
-                                <rect key="frame" x="4" y="0.0" width="200" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SM4-4h-b9j">
+                                <rect key="frame" x="8" y="0.0" width="200" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="24V-gc-wmd"/>
                                     <constraint firstAttribute="width" constant="200" id="Lay-mQ-w7i"/>
@@ -96,7 +97,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="35" id="Obu-r8-80c"/>
-                            <constraint firstItem="SM4-4h-b9j" firstAttribute="leading" secondItem="z6Z-P8-ThU" secondAttribute="leading" constant="4" id="pqh-gr-LVk"/>
+                            <constraint firstItem="SM4-4h-b9j" firstAttribute="leading" secondItem="z6Z-P8-ThU" secondAttribute="leading" constant="8" id="pqh-gr-LVk"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -127,14 +128,6 @@
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2I8-A9-VtB">
-                        <rect key="frame" x="272" y="386" width="46" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button"/>
-                        <connections>
-                            <action selector="testseni" destination="-1" eventType="touchUpInside" id="H4Y-NR-23T"/>
-                        </connections>
-                    </button>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AVl-N8-tNd">
                         <rect key="frame" x="20" y="99" width="374" height="50"/>
                         <subviews>
