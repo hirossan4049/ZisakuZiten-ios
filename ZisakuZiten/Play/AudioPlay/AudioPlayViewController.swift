@@ -21,6 +21,8 @@ class AudioPlayViewController: PlayBaseViewController, AVSpeechSynthesizerDelega
     var contentLang = "ja-JP"
     
     let langs:[String: String] = ["日本語": "ja-JP", "英語": "en-US","韓国語":"ko-KR"]
+    
+    var isFirstLoad = true
 
     
     var isPlaying = false{
@@ -56,6 +58,8 @@ class AudioPlayViewController: PlayBaseViewController, AVSpeechSynthesizerDelega
         let realm = try! Realm()
         group = realm.objects(Group.self).filter("createTime==%@",createTime!)[0]
         
+        isFirstLoad = false
+        
         self.view.backgroundColor = .backgroundColor
         tableView.backgroundColor = .backgroundColor
         
@@ -63,6 +67,7 @@ class AudioPlayViewController: PlayBaseViewController, AVSpeechSynthesizerDelega
         tableView.dataSource = self
         let nib = UINib(nibName: "AudioPlayTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "cell")
+        tableView.reloadData()
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.pickerExitCall(_:)),
@@ -70,6 +75,18 @@ class AudioPlayViewController: PlayBaseViewController, AVSpeechSynthesizerDelega
                                                object: nil)
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if !isFirstLoad{
+            play_index = 0
+
+            let realm = try! Realm()
+            group = realm.objects(Group.self).filter("createTime==%@",createTime!)[0]
+            tableView.reloadData()
+        }
+    }
+    
     
     @IBAction func start(){
 //        speechService.say("hoge")
