@@ -27,11 +27,14 @@ class CreateZitenViewController: UIViewController {
     @IBOutlet weak var contentTextField: UITextField!
     
     @IBOutlet weak var okButton:UIButton!
+    @IBOutlet weak var cancelButton:UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        okButton.layer.cornerRadius = 15
+        okButton.layer.cornerRadius = 17
+        cancelButton.layer.cornerRadius = 17
+        cancelButton.backgroundColor = .navigationBarColor
         okButton.backgroundColor = .buttonBaseColor
         self.view.backgroundColor = .backgroundColor
         titleTextField.backgroundColor = .textFieldBackgroundColor

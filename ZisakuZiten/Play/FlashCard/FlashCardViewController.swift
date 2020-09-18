@@ -23,6 +23,8 @@ class FlashCardViewController: PlayBaseViewController {
         super.viewDidLoad()
         self.backgroundView.layer.cornerRadius = 13
         
+        self.mainLabel.textColor = .baseTextColor
+        backgroundView.backgroundColor = .lightGray
         //Viewのクリックを
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(nextWord(sender:)))
         backgroundView.addGestureRecognizer(tapGesture)

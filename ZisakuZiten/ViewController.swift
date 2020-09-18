@@ -437,6 +437,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print(group.updateTime)
         cell.titleLabel.text = group.title
         cell.dateLabel.text = group.createTime?.toStringJapanese()
+        cell.dateLabel.textColor = .baseTextColor
         let realm = try! Realm()
         let categorys = realm.objects(Category.self).filter("createTime==%@",group.category)
         if categorys.isEmpty{
