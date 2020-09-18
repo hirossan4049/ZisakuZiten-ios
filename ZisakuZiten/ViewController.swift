@@ -166,9 +166,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
 
+    @IBAction func openhelp(){
+        let url = URL(string: "https://github.com/hirossan4049/ZisakuZiten-ios/blob/master/README.md")
+        if UIApplication.shared.canOpenURL(url!){
+            UIApplication.shared.openURL(url!)
+        }
+    }
 
-    @IBAction
-    func createGroup_on_press() {
+    @IBAction func createGroup_on_press() {
         ///FIXME: category
 //        createGroupDialog()
         createGroupDialog_new()
