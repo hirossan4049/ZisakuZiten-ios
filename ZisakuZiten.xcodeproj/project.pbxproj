@@ -40,7 +40,6 @@
 		D33692AC24DAA0A20027FB17 /* UIView+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33692AB24DAA0A20027FB17 /* UIView+Blur.swift */; };
 		D33692AE24DBE84A0027FB17 /* QuizItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33692AD24DBE84A0027FB17 /* QuizItemButton.swift */; };
 		D33692B024DBE9860027FB17 /* UIColor+convertToRGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33692AF24DBE9860027FB17 /* UIColor+convertToRGBA.swift */; };
-		D33692B124DBF84A0027FB17 /* KosugiMaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D33692A524D7AF310027FB17 /* KosugiMaru-Regular.ttf */; };
 		D33692B424DD9B140027FB17 /* QuizGradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33692B224DD9B140027FB17 /* QuizGradeViewController.swift */; };
 		D33692B524DD9B140027FB17 /* QuizGradeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D33692B324DD9B140027FB17 /* QuizGradeViewController.xib */; };
 		D339668224F23D49008A2194 /* Object+toDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D339668124F23D49008A2194 /* Object+toDictionary.swift */; };
@@ -59,6 +58,7 @@
 		D374B97324E56D5E00745360 /* QuizGradePageItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D374B97124E56D5E00745360 /* QuizGradePageItemTableViewCell.xib */; };
 		D37AED8424B84663001E6302 /* UIImage+resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37AED8324B84663001E6302 /* UIImage+resize.swift */; };
 		D388B96924F51FA400ED5DAF /* Date+toString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D388B96824F51FA400ED5DAF /* Date+toString.swift */; };
+		D389893B2514CB4300EC2969 /* KosugiMaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D389893A2514CB4300EC2969 /* KosugiMaru-Regular.ttf */; };
 		D39FC4E924C3DEB000C4C0A1 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FC4E824C3DEB000C4C0A1 /* Playlist.swift */; };
 		D39FC4EC24C3E76400C4C0A1 /* UIView+asImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FC4EB24C3E76400C4C0A1 /* UIView+asImage.swift */; };
 		D39FC4F124C408E800C4C0A1 /* QuizNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FC4F024C408E800C4C0A1 /* QuizNavigationController.swift */; };
@@ -149,7 +149,6 @@
 		D335624B24CC78650057D12B /* GroupPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPickerView.swift; sourceTree = "<group>"; };
 		D335624D24CC789E0057D12B /* GroupPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupPickerView.xib; sourceTree = "<group>"; };
 		D335624F24CC8F6C0057D12B /* GroupPickerViewOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPickerViewOwner.swift; sourceTree = "<group>"; };
-		D33692A524D7AF310027FB17 /* KosugiMaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KosugiMaru-Regular.ttf"; path = "../../../../../../../Downloads/Kosugi_Maru/KosugiMaru-Regular.ttf"; sourceTree = "<group>"; };
 		D33692A724D91E0A0027FB17 /* CorrectPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectPopupViewController.swift; sourceTree = "<group>"; };
 		D33692A824D91E0A0027FB17 /* CorrectPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CorrectPopupViewController.xib; sourceTree = "<group>"; };
 		D33692AB24DAA0A20027FB17 /* UIView+Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Blur.swift"; sourceTree = "<group>"; };
@@ -173,6 +172,7 @@
 		D374B97124E56D5E00745360 /* QuizGradePageItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizGradePageItemTableViewCell.xib; sourceTree = "<group>"; };
 		D37AED8324B84663001E6302 /* UIImage+resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+resize.swift"; sourceTree = "<group>"; };
 		D388B96824F51FA400ED5DAF /* Date+toString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+toString.swift"; sourceTree = "<group>"; };
+		D389893A2514CB4300EC2969 /* KosugiMaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KosugiMaru-Regular.ttf"; sourceTree = "<group>"; };
 		D39FC4E824C3DEB000C4C0A1 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		D39FC4EB24C3E76400C4C0A1 /* UIView+asImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+asImage.swift"; sourceTree = "<group>"; };
 		D39FC4F024C408E800C4C0A1 /* QuizNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizNavigationController.swift; sourceTree = "<group>"; };
@@ -332,7 +332,7 @@
 		D33692A424D7AF1F0027FB17 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				D33692A524D7AF310027FB17 /* KosugiMaru-Regular.ttf */,
+				D389893A2514CB4300EC2969 /* KosugiMaru-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -631,7 +631,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D33692B124DBF84A0027FB17 /* KosugiMaru-Regular.ttf in Resources */,
 				D36418D324C13BA2009E0499 /* PlaySelectItemTableViewCell.xib in Resources */,
 				D309E9C62511D7A50043E2BA /* AudioPlayTableViewCell.xib in Resources */,
 				D335624024CB244B0057D12B /* SelectGroupView.xib in Resources */,
@@ -651,6 +650,7 @@
 				D3AB70BB249F076A00DFDDB7 /* Main.storyboard in Resources */,
 				D3A6A4E024A36FC800CF6C87 /* CategoryEditTableViewCell.xib in Resources */,
 				D30D2AD924EBC59900FCC53E /* SelectCategoryViewController.xib in Resources */,
+				D389893B2514CB4300EC2969 /* KosugiMaru-Regular.ttf in Resources */,
 				D309E9BB250CA12C0043E2BA /* SelectCategoryTableViewCell.xib in Resources */,
 				D3A96A9B24A1F0D70053639B /* CreateCategoryDialogViewController.xib in Resources */,
 				D3AB70EC249F1EE700DFDDB7 /* GroupTableViewCell.xib in Resources */,
