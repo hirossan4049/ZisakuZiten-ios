@@ -43,6 +43,7 @@ class QuizViewController: PlayBaseViewController {
         
         self.view.backgroundColor = .backgroundColor
         self.mainLabelBackView.backgroundColor = .textFieldBackgroundColor
+        self.correctRateLabel.textColor = .baseTextColor
         
         mainLabelBackView.layer.cornerRadius = 13
         mainLabelBackView.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
