@@ -20,15 +20,30 @@ extension UIColor {
     }
 
     func toHexString() -> String {
-        var r:CGFloat = 0
-        var g:CGFloat = 0
-        var b:CGFloat = 0
-        var a:CGFloat = 0
+        var red: CGFloat     = 1.0
+        var green: CGFloat   = 1.0
+        var blue: CGFloat    = 1.0
+        var alpha: CGFloat   = 1.0
+        self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        print(Int(red*255),Int(green*255),Int(blue*255))
+        
+        // FIXME
+        let r = Int(String(Int(floor(red*100)/100 * 255)).replacingOccurrences(of: "-", with: ""))!
+        let g = Int(String(Int(floor(green*100)/100 * 255)).replacingOccurrences(of: "-", with: ""))!
+        let b = Int(String(Int(floor(blue*100)/100 * 255)).replacingOccurrences(of: "-", with: ""))!
+        
+//        print(String(b,radix:16).leftPadding(toLength: 2, withPad: "0"))
+        
+        let res = String(r, radix: 16).leftPadding(toLength: 2, withPad: "0") + String(g, radix: 16).leftPadding(toLength: 2, withPad: "0") + String(b, radix: 16).leftPadding(toLength: 2, withPad: "0")
+//        print(String(r,radix: 16))
+//        print(r,g,b)
+//        print(String(51, radix: 16),String(255, radix: 16),String(61, radix: 16))
+//        print("noconvert",red,green,blue)
+        print("rgb",r,g,b)
+        print(res)
+//        return res
+//        RGB -0.20103156566619873 1.0005059242248535 -0.2682051658630371 1.0 -68
 
-        getRed(&r, green: &g, blue: &b, alpha: &a)
-
-        let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
-
-        return String(format:"%06x", rgb)
+        return res
     }
 }

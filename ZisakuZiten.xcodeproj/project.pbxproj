@@ -59,6 +59,7 @@
 		D37AED8424B84663001E6302 /* UIImage+resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37AED8324B84663001E6302 /* UIImage+resize.swift */; };
 		D388B96924F51FA400ED5DAF /* Date+toString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D388B96824F51FA400ED5DAF /* Date+toString.swift */; };
 		D389893B2514CB4300EC2969 /* KosugiMaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D389893A2514CB4300EC2969 /* KosugiMaru-Regular.ttf */; };
+		D389893D25170DE500EC2969 /* String+leftPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D389893C25170DE500EC2969 /* String+leftPadding.swift */; };
 		D39FC4E924C3DEB000C4C0A1 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FC4E824C3DEB000C4C0A1 /* Playlist.swift */; };
 		D39FC4EC24C3E76400C4C0A1 /* UIView+asImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FC4EB24C3E76400C4C0A1 /* UIView+asImage.swift */; };
 		D39FC4F124C408E800C4C0A1 /* QuizNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FC4F024C408E800C4C0A1 /* QuizNavigationController.swift */; };
@@ -173,6 +174,7 @@
 		D37AED8324B84663001E6302 /* UIImage+resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+resize.swift"; sourceTree = "<group>"; };
 		D388B96824F51FA400ED5DAF /* Date+toString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+toString.swift"; sourceTree = "<group>"; };
 		D389893A2514CB4300EC2969 /* KosugiMaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KosugiMaru-Regular.ttf"; sourceTree = "<group>"; };
+		D389893C25170DE500EC2969 /* String+leftPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+leftPadding.swift"; sourceTree = "<group>"; };
 		D39FC4E824C3DEB000C4C0A1 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		D39FC4EB24C3E76400C4C0A1 /* UIView+asImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+asImage.swift"; sourceTree = "<group>"; };
 		D39FC4F024C408E800C4C0A1 /* QuizNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizNavigationController.swift; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 				D339668124F23D49008A2194 /* Object+toDictionary.swift */,
 				D388B96824F51FA400ED5DAF /* Date+toString.swift */,
 				D309E9B6250C67FC0043E2BA /* String+toDate.swift */,
+				D389893C25170DE500EC2969 /* String+leftPadding.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -813,6 +816,7 @@
 				D3A6A4DB24A26CBB00CF6C87 /* EditCategoryViewController.swift in Sources */,
 				D3A96A9A24A1F0D70053639B /* CreateCategoryDialogViewController.swift in Sources */,
 				D39FC4EC24C3E76400C4C0A1 /* UIView+asImage.swift in Sources */,
+				D389893D25170DE500EC2969 /* String+leftPadding.swift in Sources */,
 				D30D2AD824EBC59900FCC53E /* SelectCategoryViewController.swift in Sources */,
 				D33692AC24DAA0A20027FB17 /* UIView+Blur.swift in Sources */,
 				D3AB70EE249F2B1A00DFDDB7 /* ZitenViewController.swift in Sources */,
