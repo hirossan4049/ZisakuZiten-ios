@@ -41,6 +41,9 @@ class QuizViewController: PlayBaseViewController {
         mainLabel.adjustsFontSizeToFitWidth = true
         self.buttons = [btn1,btn2,btn3,btn4]
         
+        self.view.backgroundColor = .backgroundColor
+        self.mainLabelBackView.backgroundColor = .textFieldBackgroundColor
+        
         mainLabelBackView.layer.cornerRadius = 13
         mainLabelBackView.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
         mainLabelBackView.layer.shadowColor = UIColor.black.cgColor
