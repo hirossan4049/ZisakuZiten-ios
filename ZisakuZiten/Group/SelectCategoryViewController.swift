@@ -237,6 +237,17 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
 //        tableView.deselectRow(at: indexPath, animated: true)
         
    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
+        // 先にデータを削除しないと、エラーが発生します。
+        let realm = try! Realm()
+        try! realm.write({
+            realm.delete(categorys[indexPath.section])
+        })
+//        tableView.deleteRows(at: [indexPath], with: .automatic)
+        tableView.deleteSections([indexPath.section], with: .automatic)
+    }
 
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

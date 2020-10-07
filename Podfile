@@ -11,6 +11,7 @@ target 'ZisakuZiten' do
   pod 'AMScrollingNavbar'
   pod 'Log'
   pod "MBCircularProgressBar"
+  pod 'LSDialogViewController', '~> 4.0'
   # Pods for ZisakuZiten
 
   target 'ZisakuZitenTests' do

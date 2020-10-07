@@ -18,7 +18,7 @@ class QuizinCorrectCountPageItemViewController: UIViewController, UITableViewDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(hex: "FFF4A3")
+        self.view.backgroundColor = .textFieldBackgroundColor
         self.view.layer.cornerRadius = 13
         self.tableView.layer.cornerRadius = 13
         

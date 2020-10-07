@@ -12,14 +12,12 @@ import UIKit
 
 class CategoryColorButton: UIButton{
     override init(frame: CGRect) {
-        print("CategoryColorBUtton")
         super.init(frame: frame)
         commonInit()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        print("CategoryColorBUttonREQUE")
 
         commonInit()
     }

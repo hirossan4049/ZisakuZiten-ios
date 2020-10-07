@@ -11,6 +11,7 @@ import RealmSwift
 
 /// FIXME:UIPresentationController :(((((
 class CreateGroupViewController: UIViewController {
+    var delegate: ViewController?
     
     @IBOutlet weak var bodyView:UIView!
     @IBOutlet weak var createBtn:UIButton!
@@ -54,6 +55,8 @@ class CreateGroupViewController: UIViewController {
                                                 name: SelectCategoryViewController.selectedNotification,
                                                 object: nil)
          
+        popupanimate()
+
         
         if EDIT_MODE{
             print("EDIT MODE SET TITLE LABEL")
@@ -68,6 +71,7 @@ class CreateGroupViewController: UIViewController {
                 self.categoryView.mainLabel.text = category.title
                 self.categoryView.categoryColorView.tintColor = UIColor(hex:category.colorCode ?? "ffffff")
             }
+            
         }
 
 
@@ -91,8 +95,24 @@ class CreateGroupViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    func popupanimate(){
+        print("POPUPANIMATE")
+//        UIView.animate(withDuration: 1, delay: 0.25,options: UIView.AnimationOptions.curveEaseOut,animations: {
+//            self.bodyView.transform = CGAffineTransform(scaleX: 245, y: 318)
+//
+//            },completion: nil)
+//        UIView.animate(withDuration: 1, delay: 1, options: .curveLinear, animations: {
+//
+//            self.bodyView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+//        }, completion: { _ in
+//             self.bodyView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+//        })
+          
+    }
+    
     @IBAction func exit(){
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        delegate?.dismissDialog()
     }
     @IBAction func categorySettingOnPrs(){
         let viewController = SelectCategoryViewController()
@@ -106,7 +126,8 @@ class CreateGroupViewController: UIViewController {
         }else{
             create(title: nameTextField.text!)
         }
-        dismiss(animated: true, completion: nil)
+//        dismiss(animated: true, completion: nil)
+        delegate?.dismissDialog()
     }
     
     

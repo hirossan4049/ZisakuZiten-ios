@@ -22,7 +22,10 @@ class QuizGradeViewController: UIViewController, UIPageViewControllerDataSource,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 正解したやつとかここで処理するとグッチャグチャになりそうだから向こうでやる。これぐらいならメモリ大丈夫やろ（軽視
+        self.view.backgroundColor = .backgroundColor
+        self.progressBarView.backgroundColor = .backgroundColor
+        
+        
         let vc1 = QuizinCorrectCountPageItemViewController()
         vc1.view.tag = 0
         vc1.finished_isCorrectList = self.finished_isCorrectList

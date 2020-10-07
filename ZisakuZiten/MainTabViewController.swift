@@ -42,7 +42,7 @@ class MainTabViewController: UITabBarController {
     
     func removeTabbarItemsText() {
         
-        let images = ["homeicon","playicon","userdataicon","settingicon"]
+        let images = ["homeicon","checkicon","userdataicon","settingicon"]
 
         var offset: CGFloat = 1.0
 
@@ -53,12 +53,13 @@ class MainTabViewController: UITabBarController {
 
         if let items = tabBar.items {
             for (index,item) in items.enumerated() {
-                print("foofoofofo")
                 item.title = ""
-                item.image = UIImage(named: images[index])?.resize(size: CGSize(width: 20, height: 20))
+                item.image = UIImage(named: images[index])?.resize(size: CGSize(width: 23, height: 23))
                 
-                print(item.image?.accessibilityIdentifier)
-                item.selectedImage = UIImage(named: images[index])?.resize(size: CGSize(width: 25, height: 25))
+//                print(item.image?.accessibilityIdentifier)
+//                item.selectedImage = UIImage(named: images[index])?.resize(size: CGSize(width: 25, height: 25))
+                item.selectedImage = UIImage(named: images[index] + "Bold")?.resize(size: CGSize(width: 25, height: 25))
+
                 item.imageInsets = UIEdgeInsets(top: offset, left: 0, bottom: -offset, right: 0)
             }
         }

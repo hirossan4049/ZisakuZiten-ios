@@ -14,12 +14,10 @@ class CategoryView: UIView {
     @IBOutlet weak var categoryColorView:UIImageView!
 
     
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-        
-        print("THISI IS CATEGORY VIEW. DRAWD VIEW. DOU?")
-        
-    }
+    // override func draw(_ rect: CGRect) {
+
+    // }
+
     override init(frame: CGRect){
         super.init(frame: frame)
         loadNib()
@@ -38,7 +36,6 @@ class CategoryView: UIView {
     }
 
     func loadNib(){
-        print("loaded nib!")
         let view = Bundle.main.loadNibNamed("CategoryView", owner: self, options: nil)?.first as! UIView
         view.frame = self.bounds
         view.layer.cornerRadius = 10

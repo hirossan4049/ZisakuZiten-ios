@@ -34,7 +34,8 @@ class QuizViewController: PlayBaseViewController {
     var finished_isCorrectList:[Bool] = []
     var counter:Int = 0
     var correct_counter:Int = 0
-    let NUMBER_OF_QUIZ:Int = 30
+    //FIXME!!!!!!!!!!!!!!!!!!!!
+    let NUMBER_OF_QUIZ:Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,6 +120,11 @@ class QuizViewController: PlayBaseViewController {
     }
     
     func normal_quiz(){
+        if self.zitens.count <= 4{
+            random_quiz()
+            return
+            
+        }
 //        var shuffled:List<Ziten> = self.zitens.shuffled()
         
 //        var buttons = [btn1,btn2,btn3,btn4]
@@ -130,7 +136,7 @@ class QuizViewController: PlayBaseViewController {
         self.tmp_ziten = self.zitens.first
         shuffled_buttons[0].tag = 1
         for item in shuffled_buttons{
-            print("ZITEN COUNT",self.zitens.count,self.zitens.first?.title)
+//            print("ZITEN COUNT",self.zitens.count,self.zitens.first?.title)
             if self.zitens.count == 0{
                 item.setTitle(random_ziten().content, for: .normal)
             }
@@ -174,14 +180,14 @@ class QuizViewController: PlayBaseViewController {
     func random_ziten() -> Ziten{
         // FIXME: 毎回取得するのなんかやだ。
         let realm = try! Realm()
-        let l_zitens = realm.objects(Group.self).filter("createTime==%@",createTime)[0].ziten_upT_List
+        let l_zitens = realm.objects(Group.self).filter("createTime==%@",createTime!)[0].ziten_upT_List
         //ランダムな数字にして取ったほうが早そう。
         let random_int = Int.random(in: 0 ... l_zitens.count)
         return l_zitens[random_int]
     }
     func random_zitenList() -> [Ziten]{
         let realm = try! Realm()
-        let l_zitens = realm.objects(Group.self).filter("createTime==%@",createTime)[0].ziten_upT_List
+        let l_zitens = realm.objects(Group.self).filter("createTime==%@",createTime!)[0].ziten_upT_List
         return l_zitens.shuffled()
     }
 
@@ -199,8 +205,7 @@ class QuizViewController: PlayBaseViewController {
                 break
             }
             let randomitem = randomlist.popLast()
-            // !=が使えない奴←
-            if answr?.updateTime == randomitem?.updateTime{ } else{
+            if answr!.updateTime != randomitem!.updateTime{
                 shuffled_list.append(randomitem)
                 listindx += 1
             }
