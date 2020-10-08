@@ -33,6 +33,8 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.backgroundColor = .backgroundColor
         
         self.navigationController?.navigationBar.barTintColor = .navigationBarColor
+        
+        self.tableView.separatorStyle = .none
 
         
         self.playlists = Playlist().getAllItems()

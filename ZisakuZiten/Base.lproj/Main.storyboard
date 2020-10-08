@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Znh-KR-zuf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Znh-KR-zuf">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -120,6 +120,9 @@
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <connections>
+                                    <action selector="createGroupOnTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="GGw-Ya-lBi"/>
+                                    <action selector="createGroupTouchUp:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="M6z-C6-AZx"/>
+                                    <action selector="createGroupTouchUp:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="ZQT-a1-Xlv"/>
                                     <action selector="createGroup_on_press" destination="BYZ-38-t0r" eventType="touchUpInside" id="skt-EI-6vJ"/>
                                 </connections>
                             </button>
@@ -164,9 +167,16 @@
                                 <action selector="openhelp" destination="BYZ-38-t0r" id="jdL-Iy-bxs"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="import" id="jQT-sy-BkU">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="importGroupOpen" destination="BYZ-38-t0r" id="SIE-OE-0xD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="createBtn" destination="vdD-Br-p16" id="CpZ-7A-iXI"/>
+                        <outlet property="importBtn" destination="jQT-sy-BkU" id="cbB-c9-fkO"/>
                         <outlet property="tableView" destination="1vA-lf-Ex4" id="Cwv-Vg-Sy5"/>
                         <segue destination="b6P-Pn-etv" kind="presentation" identifier="toZiten" modalPresentationStyle="fullScreen" id="AlG-fT-Q3t"/>
                         <segue destination="TZl-gt-kYH" kind="presentation" identifier="toCategoryEdit" modalPresentationStyle="automatic" id="elm-lg-Hew"/>
@@ -570,6 +580,7 @@ HIS IS COMMENT.これはコメントです。</string>
     <resources>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="commingsoon" width="271" height="302"/>
+        <image name="import" width="71.5" height="71.5"/>
         <image name="info.circle.fill" catalog="system" width="128" height="121"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="person" catalog="system" width="128" height="117"/>

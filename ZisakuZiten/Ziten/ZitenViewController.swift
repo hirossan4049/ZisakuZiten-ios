@@ -25,27 +25,6 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet var createBtn: UIButton!
     @IBOutlet var tableView: UITableView!
 
-//    let label: UILabel
-//    init(group_createTime: Date) {
-//        label = UILabel()
-//        tableView = UITableView()
-//        super.init(nibName: nil, bundle: nil)
-//        self.group_createTime = group_createTime
-//        label.text = "hello"
-//        label.textAlignment = .center
-////        self.view.addSubview(label)
-//        self.view.addSubview(tableView)
-//        tableView.translatesAutoresizingMaskIntoConstraints = false
-//        tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
-//        tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-//        tableView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-//        tableView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +44,9 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let group = realm.objects(Group.self).filter("createTime==%@", group_createTime!)[0]
         self.ziten_list = group.ziten_upT_List
         self.title = group.title
-//        tableView.reloadData()
+        
+        self.tableView.separatorStyle = .none
+
         
         if PREVIEW_MODE{
             self.createBtn.isHidden = true
@@ -107,6 +88,7 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
 //        cell.layer.borderWidth = 1
 //        cell.layer.cornerRadius = 8
         cell.clipsToBounds = true
+        cell.backgroundColor = .groupCellColor
 
         let ziten:Ziten = self.ziten_list[indexPath.section]
         cell.titleLabel.text = ziten.title

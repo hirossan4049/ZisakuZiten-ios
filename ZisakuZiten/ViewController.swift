@@ -24,6 +24,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var tableView: UITableView!
     @IBOutlet private weak var createBtn:UIButton!
     @IBOutlet weak var toolbar: UIToolbar!
+    @IBOutlet weak var importBtn:UIBarButtonItem!
     
     var dController :UIDocumentInteractionController!
     var isBegin = true
@@ -43,6 +44,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.backgroundColor = .backgroundColor
         self.view.backgroundColor = .backgroundColor
         createBtn.backgroundColor = .floatingBtnColor
+        
+        importBtn.image = importBtn.image!.resize(size:CGSize(width: 20, height: 20))
 
         let realm = try! Realm()
         self.groupList = realm.objects(Group.self)
@@ -117,6 +120,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                        animations: [fromAnimation, zoomAnimation], delay: 0)
     }
     
+    
+    @IBAction func importGroupOpen(){
+        let vc = GroupShareImportViewController()
+        vc.delegate = self
+        vc.modalPresentationStyle = .overFullScreen
+        self.navigationController?.definesPresentationContext = false
+        presentDialogViewController(vc, animationPattern: .fadeInOut)
+    
+    }
 
     @IBAction func openhelp(){
         let url = URL(string: "https://github.com/hirossan4049/ZisakuZiten-ios/blob/master/README.md")
@@ -128,8 +140,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func createGroup_on_press() {
         ///FIXME: category
 //        createGroupDialog()
+        UIView.animate(withDuration: 0.1 , delay: 0, animations: {
+            self.createBtn.frame.size = CGSize(width: 60, height: 60)
+        })
         createGroupDialog_new()
     }
+    
+    @IBAction func createGroupTouchUp(_ sender: Any) {
+        print("on touch up")
+        UIView.animate(withDuration: 0.1 , delay: 0, animations: {
+            self.createBtn.frame.size = CGSize(width: 60, height: 60)
+        })
+    }
+    
+    @IBAction func createGroupOnTouchDown(_ sender: Any) {
+        print("on touch down")
+        createBtn.translatesAutoresizingMaskIntoConstraints = true
+        UIView.animate(withDuration: 0.1 , delay: 0, animations: {
+            self.createBtn.frame.size = CGSize(width: 55, height: 55)
+        })
+    }
+    
+    
+    
     @IBAction func createCategory_on_press(){
         self.performSegue(withIdentifier: "toCategoryEdit", sender: nil)
     }
@@ -371,10 +404,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func urlShare(data:Group){
         let jsondata = self.group2json(group: data)
         let api = ShareAPI()
-        startIndicator()
+        self.startIndicator()
 
         DispatchQueue.global(qos: .default).async {
             api.post(params: jsondata, result: {(res: ShareAPI.Result,id: String,passwd: String) in
+                DispatchQueue.main.async {
+                    self.dismissIndicator()
+
+                }
                 print(res)
                 if res == .ng{
                     DispatchQueue.main.async {
@@ -396,17 +433,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     self.simpleDialog(title: "送信失敗", message: "サーバーに送信できませんでした。もう一度試してください。インターネットが接続されていないかサーバー側で不具合がある可能性があります。")
                 }
                 })
-//            DispatchQueue.main.async {
-//                // ローディング非表示
-//                self.dismissIndicator()
-//
-//            }
         }
-        DispatchQueue.main.async {
-            // ローディング非表示
-            self.dismissIndicator()
 
-        }
     }
     
     // List item の数。

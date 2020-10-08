@@ -18,12 +18,14 @@ class ShareAPI{
         case ng = "ng"
     }
     
-    let urlString = "https://http3.herokuapp.com/post"
-//    let urlString = "http://127.0.0.1:8000/post"
+    let posturlString = "https://http3.herokuapp.com/post"
+    let geturlString = "https://http3.herokuapp.com/get/"
+//    let posturlString = "http://127.0.0.1:8000/post"
+//    let geturlString = "http://127.0.0.1:8000/get/"
 
     
     func post(params:String,result:@escaping(_ res: Result, _ id: String, _ passwd: String)->Void){
-        let request = NSMutableURLRequest(url: URL(string: urlString)!)
+        let request = NSMutableURLRequest(url: URL(string: posturlString)!)
 
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -41,12 +43,10 @@ class ShareAPI{
                     jsonres = try JSONSerialization.jsonObject(with: data!) as! Dictionary<String, Any>
                     result(Result(rawValue: jsonres["res"] as! String)!,jsonres["id"] as! String,jsonres["passwd"] as! String)
                 }catch{
+                    result(.ng, "", "")
                     return
                 }
                 let resultData = String(data: data!, encoding: .utf8)!
-                
-                
-
                 print("result:\(resultData)")
 //                print("response:\(response)")
 
@@ -57,16 +57,37 @@ class ShareAPI{
             result(Result.ng ,"","")
 //            return (res: Result.ng, id: "", passwd: "")
         }
-        if jsonres == nil{
-//            return (res: Result.ng, id: "", passwd: "")
-        }else{
-//            return (res: Result(rawValue: jsonres["res"] as! String)!, id: jsonres["id"] as! String, passwd: jsonres["passwd"] as! String)
-        }
     }
     
     func parse(response: String){
         
-        
-        
+    }
+    
+    func get(id:String ,result:@escaping(_ res: Result, _ data: String)->Void){
+        if id.lengthOfBytes(using: .utf8) != 36{
+            result(.ng ,"")
+            return
+        }
+        do{
+            let request:NSMutableURLRequest = NSMutableURLRequest(url: URL(string: geturlString+id)!)
+
+            var jsonres:Dictionary<String, Any>!
+            let task:URLSessionDataTask = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: {(data,response,error) -> Void in
+                if data == nil{
+                    result(.ng ,"")
+                    return
+                }
+                do{
+                    jsonres = try JSONSerialization.jsonObject(with: data!) as? Dictionary<String, Any>
+                    result(Result(rawValue: jsonres["res"] as! String)!,jsonres["data"] as! String)
+                }catch{
+                    result(.ng, "")
+                    return
+                }
+            })
+            task.resume()
+        }catch{
+            result(.ng ,"")
+        }
     }
 }

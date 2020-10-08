@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GroupShareImportViewController" customModule="自作辞典" customModuleProvider="target">
+            <connections>
+                <outlet property="bodyView" destination="AhC-NA-Xya" id="WDK-Go-Eqz"/>
+                <outlet property="codeTextField" destination="acH-MW-wmp" id="b1t-O3-jNe"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AhC-NA-Xya">
+                    <rect key="frame" x="57" y="348" width="300" height="200"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="コードから辞典を追加" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eym-e6-ejM">
+                            <rect key="frame" x="12" y="25" width="276" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRh-ur-o1I">
+                            <rect key="frame" x="175" y="150" width="125" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="REk-nq-7Mg"/>
+                                <constraint firstAttribute="width" constant="125" id="Vvq-X0-VZa"/>
+                            </constraints>
+                            <state key="normal" title="追加"/>
+                            <connections>
+                                <action selector="append" destination="-1" eventType="touchUpInside" id="mAe-Dk-Nyr"/>
+                            </connections>
+                        </button>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="コードを入力" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="acH-MW-wmp">
+                            <rect key="frame" x="25" y="83" width="250" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdD-h6-XB4">
+                            <rect key="frame" x="0.0" y="150" width="125" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="125" id="SGD-pO-ybe"/>
+                                <constraint firstAttribute="height" constant="50" id="hkV-Lv-wUr"/>
+                            </constraints>
+                            <state key="normal" title="キャンセル"/>
+                            <connections>
+                                <action selector="cancel" destination="-1" eventType="touchUpInside" id="94V-46-k6P"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="MRh-ur-o1I" secondAttribute="bottom" id="2Rb-h5-hmt"/>
+                        <constraint firstAttribute="width" constant="300" id="Bij-Yy-kiN"/>
+                        <constraint firstAttribute="bottom" secondItem="fdD-h6-XB4" secondAttribute="bottom" id="D0P-it-251"/>
+                        <constraint firstAttribute="height" constant="200" id="KQa-0V-rlk"/>
+                        <constraint firstItem="eym-e6-ejM" firstAttribute="top" secondItem="AhC-NA-Xya" secondAttribute="top" constant="25" id="TPA-aL-UDS"/>
+                        <constraint firstAttribute="trailing" secondItem="MRh-ur-o1I" secondAttribute="trailing" id="VSd-ke-LdR"/>
+                        <constraint firstItem="acH-MW-wmp" firstAttribute="centerY" secondItem="AhC-NA-Xya" secondAttribute="centerY" id="e82-5p-jS3"/>
+                        <constraint firstItem="acH-MW-wmp" firstAttribute="leading" secondItem="AhC-NA-Xya" secondAttribute="leading" constant="25" id="ga9-o6-nWR"/>
+                        <constraint firstItem="eym-e6-ejM" firstAttribute="leading" secondItem="AhC-NA-Xya" secondAttribute="leading" constant="12" id="opk-Rf-GaW"/>
+                        <constraint firstItem="fdD-h6-XB4" firstAttribute="leading" secondItem="AhC-NA-Xya" secondAttribute="leading" id="rey-yI-3pu"/>
+                        <constraint firstAttribute="trailing" secondItem="eym-e6-ejM" secondAttribute="trailing" constant="12" id="uGC-ea-ZXx"/>
+                        <constraint firstAttribute="trailing" secondItem="acH-MW-wmp" secondAttribute="trailing" constant="25" id="yfI-oj-Hla"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.36911770700000002" green="0.43027782440000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
+        </view>
+    </objects>
+</document>

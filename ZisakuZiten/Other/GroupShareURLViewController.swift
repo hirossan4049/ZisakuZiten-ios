@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AudioToolbox
+
 
 class GroupShareURLViewController: UIViewController {
     var delegate: ViewController?
@@ -25,9 +27,11 @@ class GroupShareURLViewController: UIViewController {
     }
     
     @IBAction func codeCopy(){
+        AudioServicesPlaySystemSound( 1102 )
         UIPasteboard.general.string = codeLabel.text
     }
     @IBAction func deleteCopy(){
+        AudioServicesPlaySystemSound( 1102 )
         UIPasteboard.general.string = deleteLabel.text
     }
     
