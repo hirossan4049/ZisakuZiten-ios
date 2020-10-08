@@ -103,6 +103,7 @@
 		D3E0727E252DE25800A4DCDE /* GroupShareImportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3E0727C252DE25800A4DCDE /* GroupShareImportViewController.xib */; };
 		D3E07281252EA6D400A4DCDE /* GroupShareImportCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0727F252EA6D400A4DCDE /* GroupShareImportCheckViewController.swift */; };
 		D3E07282252EA6D400A4DCDE /* GroupShareImportCheckViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3E07280252EA6D400A4DCDE /* GroupShareImportCheckViewController.xib */; };
+		D3E07284252F46AA00A4DCDE /* UITextView+PlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E07283252F46AA00A4DCDE /* UITextView+PlaceHolder.swift */; };
 		D3F79FFE24BEFB3500127E7A /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F79FFD24BEFB3500127E7A /* PlayViewController.swift */; };
 		D3FEFFDA24C8E0FD0069A356 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FEFFD924C8E0FD0069A356 /* MainTabViewController.swift */; };
 /* End PBXBuildFile section */
@@ -232,6 +233,7 @@
 		D3E0727C252DE25800A4DCDE /* GroupShareImportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupShareImportViewController.xib; sourceTree = "<group>"; };
 		D3E0727F252EA6D400A4DCDE /* GroupShareImportCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupShareImportCheckViewController.swift; sourceTree = "<group>"; };
 		D3E07280252EA6D400A4DCDE /* GroupShareImportCheckViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupShareImportCheckViewController.xib; sourceTree = "<group>"; };
+		D3E07283252F46AA00A4DCDE /* UITextView+PlaceHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+PlaceHolder.swift"; sourceTree = "<group>"; };
 		D3F79FFD24BEFB3500127E7A /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		D3FEFFD924C8E0FD0069A356 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		E96D2E82B4094384A88DED24 /* Pods-ZisakuZiten.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZisakuZiten.debug.xcconfig"; path = "Target Support Files/Pods-ZisakuZiten/Pods-ZisakuZiten.debug.xcconfig"; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 				D309E9B6250C67FC0043E2BA /* String+toDate.swift */,
 				D389893C25170DE500EC2969 /* String+leftPadding.swift */,
 				D3E07274252CD64500A4DCDE /* UIViewController+Loading.swift */,
+				D3E07283252F46AA00A4DCDE /* UITextView+PlaceHolder.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -852,6 +855,7 @@
 				D33692B424DD9B140027FB17 /* QuizGradeViewController.swift in Sources */,
 				D3E07279252D95DC00A4DCDE /* GroupShareURLViewController.swift in Sources */,
 				D30D2ADC24EBC73E00FCC53E /* CategoryView.swift in Sources */,
+				D3E07284252F46AA00A4DCDE /* UITextView+PlaceHolder.swift in Sources */,
 				D335624C24CC78650057D12B /* GroupPickerView.swift in Sources */,
 				D3C594DD24CDF07200066E42 /* PlayListItem.swift in Sources */,
 				D30D2AE024F2108C00FCC53E /* UIColor+.swift in Sources */,

@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GroupShareImportCheckViewController" customModule="自作辞典" customModuleProvider="target">
             <connections>
+                <outlet property="navigationbar" destination="Wi3-wY-ILC" id="Td9-pZ-HZE"/>
                 <outlet property="tableView" destination="GD5-68-n5J" id="4JU-74-eHC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

@@ -10,16 +10,17 @@ import UIKit
 
 class ZitenTableViewCell: UITableViewCell {
     
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var contentLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
+    
+    @IBOutlet weak var bodyView: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.layer.borderColor = UIColor(hex: "878787").cgColor
-//        self.layer.borderWidth = 1
-        self.layer.cornerRadius = 8
-        self.backgroundColor = .groupCellColor
-        // Initialization code
+        self.backgroundColor = .none
+        
+        bodyView.layer.cornerRadius = 13
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

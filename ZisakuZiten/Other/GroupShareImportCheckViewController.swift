@@ -14,9 +14,13 @@ class GroupShareImportCheckViewController: UIViewController, UITableViewDelegate
     var data: String!
     private var group:Group!
     @IBOutlet weak var tableView:UITableView!
+    @IBOutlet weak var navigationbar:UINavigationBar!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationbar.barTintColor = .backgroundColor
+        tableView.backgroundColor = .backgroundColor
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -64,6 +68,13 @@ class GroupShareImportCheckViewController: UIViewController, UITableViewDelegate
 //        })
     }
     
+    @IBAction func append(){
+        
+    }
+    @IBAction func cancel(){
+        
+    }
+    
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,6 +84,7 @@ class GroupShareImportCheckViewController: UIViewController, UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ZitenTableViewCell
         cell.titleLabel.text = self.group.ziten_upT_List[indexPath.row].title
+        cell.contentLabel.text = self.group.ziten_upT_List[indexPath.row].content
         return cell
     }
 

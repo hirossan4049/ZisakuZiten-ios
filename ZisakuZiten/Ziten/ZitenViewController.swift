@@ -82,13 +82,11 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //        let cell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as GroupTableViewCell!
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ZitenTableViewCell
-        cell.backgroundColor = UIColor.white
 //        cell.layer.borderColor = UIColor.black.cgColor
 //        cell.layer.borderColor = UIColor(hex: "878787").cgColor
 //        cell.layer.borderWidth = 1
 //        cell.layer.cornerRadius = 8
         cell.clipsToBounds = true
-        cell.backgroundColor = .groupCellColor
 
         let ziten:Ziten = self.ziten_list[indexPath.section]
         cell.titleLabel.text = ziten.title
@@ -98,7 +96,7 @@ class ZitenViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     // spacing 間隔
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 10
+        return -3
     }
 
     // 背景透けるように
