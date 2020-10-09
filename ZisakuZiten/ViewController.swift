@@ -269,12 +269,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func editGroupDialog(createTime:Date){
         let alertView = CreateGroupViewController()
+        alertView.delegate = self
         alertView.modalTransitionStyle = .crossDissolve
         alertView.modalPresentationStyle = .overCurrentContext
         alertView.createTime = createTime
         alertView.EDIT_MODE = true
-        present(alertView, animated: true, completion: nil)
-        print("CreateCatPress")
+        presentDialogViewController(alertView, animationPattern: .fadeInOut)
+        
     }
 
 
@@ -296,7 +297,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.tableView.reloadData()
         }))
         dialog.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        // 生成したダイアログを実際に表示します
         self.present(dialog, animated: true, completion: nil)
     }
     

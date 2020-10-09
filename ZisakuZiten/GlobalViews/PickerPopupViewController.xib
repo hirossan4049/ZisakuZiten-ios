@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,6 +12,7 @@
             <connections>
                 <outlet property="backView" destination="ga8-0e-69d" id="qYP-s5-nY4"/>
                 <outlet property="navigationBar" destination="YGu-Rs-Nt6" id="709-nx-IKo"/>
+                <outlet property="pickerNavigationItem" destination="mtb-Rj-2V8" id="y11-rB-nMU"/>
                 <outlet property="pickerView" destination="4tR-kI-Cah" id="NpA-md-IZR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -33,7 +35,7 @@
                             </constraints>
                             <color key="barTintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <items>
-                                <navigationItem title="Title" id="mtb-Rj-2V8">
+                                <navigationItem title="aaa" id="mtb-Rj-2V8">
                                     <barButtonItem key="leftBarButtonItem" title="Cancel" id="gec-Bl-OBX">
                                         <connections>
                                             <action selector="cancel" destination="-1" id="r2F-T6-j6n"/>
@@ -48,7 +50,7 @@
                             </items>
                         </navigationBar>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" name="basecolor"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="YGu-Rs-Nt6" secondAttribute="trailing" id="3WR-dO-tZ2"/>
                         <constraint firstItem="YGu-Rs-Nt6" firstAttribute="top" secondItem="ga8-0e-69d" secondAttribute="top" id="5an-rY-vQd"/>
@@ -61,7 +63,6 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ga8-0e-69d" secondAttribute="trailing" id="9IH-Q1-zMz"/>
                 <constraint firstAttribute="bottom" secondItem="ga8-0e-69d" secondAttribute="bottom" id="ajq-GF-L3T"/>
@@ -71,4 +72,9 @@
             <point key="canvasLocation" x="139" y="114"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="basecolor">
+            <color red="0.62099999189376831" green="0.92799997329711914" blue="0.65200001001358032" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
 </document>

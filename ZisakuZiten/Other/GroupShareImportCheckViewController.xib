@@ -32,15 +32,21 @@
                         <navigationItem title="インポート" id="aiN-Om-EYQ">
                             <barButtonItem key="leftBarButtonItem" title="キャンセル" id="KYe-PN-KGX">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="cancel" destination="-1" id="iLL-cM-3R9"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem key="rightBarButtonItem" title="追加" style="done" id="imv-kk-5xU">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="append" destination="-1" id="b7R-HY-alF"/>
+                                </connections>
                             </barButtonItem>
                         </navigationItem>
                     </items>
                 </navigationBar>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GD5-68-n5J">
-                    <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GD5-68-n5J">
+                    <rect key="frame" x="0.0" y="94" width="414" height="802"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
             </subviews>
@@ -48,14 +54,14 @@
             <constraints>
                 <constraint firstItem="Wi3-wY-ILC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="6lQ-rI-WzD"/>
                 <constraint firstItem="GD5-68-n5J" firstAttribute="top" secondItem="Wi3-wY-ILC" secondAttribute="bottom" id="8Sv-HE-v5w"/>
+                <constraint firstAttribute="bottom" secondItem="GD5-68-n5J" secondAttribute="bottom" id="8xj-OO-Jtv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Wi3-wY-ILC" secondAttribute="trailing" id="hiY-GL-Eju"/>
                 <constraint firstItem="GD5-68-n5J" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="n8s-cu-gX0"/>
                 <constraint firstItem="Wi3-wY-ILC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ola-Pa-94K"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="GD5-68-n5J" secondAttribute="bottom" id="t6n-ed-JAK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GD5-68-n5J" secondAttribute="trailing" id="zUh-TD-wjn"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="131"/>
+            <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
         </view>
     </objects>
 </document>

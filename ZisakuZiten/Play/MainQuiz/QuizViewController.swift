@@ -35,7 +35,7 @@ class QuizViewController: PlayBaseViewController {
     var counter:Int = 0
     var correct_counter:Int = 0
     //FIXME!!!!!!!!!!!!!!!!!!!!
-    let NUMBER_OF_QUIZ:Int = 1
+    let NUMBER_OF_QUIZ:Int = 30
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,8 +55,6 @@ class QuizViewController: PlayBaseViewController {
         exitButton.imageView?.contentMode = .scaleAspectFit
         exitButton.contentHorizontalAlignment = .fill
         exitButton.contentVerticalAlignment = .fill
-
-        // ScrollViewどうしよ
 
         // Do any additional setup after loading the view.
         reset()
@@ -82,7 +80,7 @@ class QuizViewController: PlayBaseViewController {
     func reset(){
         self.counter = 0
         let realm = try! Realm()
-        let zitens = realm.objects(Group.self).filter("createTime==%@",createTime)[0].ziten_upT_List
+        let zitens = realm.objects(Group.self).filter("createTime==%@",createTime!)[0].ziten_upT_List
         self.zitens = zitens.shuffled()
     }
     
@@ -120,7 +118,7 @@ class QuizViewController: PlayBaseViewController {
     }
     
     func normal_quiz(){
-        if self.zitens.count <= 4{
+        if self.zitens.count < 4{
             random_quiz()
             return
             
@@ -159,6 +157,7 @@ class QuizViewController: PlayBaseViewController {
         while true{
             log.debug("ziten tempziten same... repart")
             ztns = random_zitenList()
+            print("ztns!!!",self.tmp_ziten)
             if ztns[0].createTime == self.tmp_ziten.createTime{
                 log.debug("ziten temp ziten same repear...")
             }else{
@@ -178,16 +177,16 @@ class QuizViewController: PlayBaseViewController {
     
     // 適当に返すだけ
     func random_ziten() -> Ziten{
-        // FIXME: 毎回取得するのなんかやだ。
         let realm = try! Realm()
         let l_zitens = realm.objects(Group.self).filter("createTime==%@",createTime!)[0].ziten_upT_List
-        //ランダムな数字にして取ったほうが早そう。
         let random_int = Int.random(in: 0 ... l_zitens.count)
         return l_zitens[random_int]
     }
     func random_zitenList() -> [Ziten]{
+        print(createTime)
         let realm = try! Realm()
         let l_zitens = realm.objects(Group.self).filter("createTime==%@",createTime!)[0].ziten_upT_List
+        print(l_zitens)
         return l_zitens.shuffled()
     }
 

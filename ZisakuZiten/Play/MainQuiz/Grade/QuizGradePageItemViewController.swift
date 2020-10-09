@@ -19,7 +19,7 @@ class QuizGradePageItemViewController: UIViewController, UITableViewDelegate, UI
         super.viewDidLoad()
         
         self.view.layer.cornerRadius = 13
-        self.view.backgroundColor = UIColor(hex: "FFF4A3")
+       self.view.backgroundColor = .textFieldBackgroundColor
         
         let nib = UINib(nibName: "QuizGradePageItemTableViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "cell")

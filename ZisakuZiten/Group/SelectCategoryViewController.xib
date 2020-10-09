@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="colorStackView" destination="AVl-N8-tNd" id="oX3-rO-Jk1"/>
                 <outlet property="createCategoryBackView" destination="z6Z-P8-ThU" id="CHE-6Q-ZYd"/>
+                <outlet property="createCategoryBtn" destination="SM4-4h-b9j" id="I6A-B8-E9P"/>
                 <outlet property="createTextField" destination="Zw7-Mt-Yzs" id="Mjf-at-QPL"/>
                 <outlet property="createViewController" destination="Mva-fD-bgs" id="O1w-qz-Mmm"/>
                 <outlet property="doneBarButtonItem" destination="CDt-tJ-8Nq" id="dJZ-g5-LJE"/>
@@ -82,13 +83,15 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z6Z-P8-ThU">
                         <rect key="frame" x="20" y="50" width="374" height="35"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SM4-4h-b9j">
-                                <rect key="frame" x="8" y="0.0" width="200" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SM4-4h-b9j">
+                                <rect key="frame" x="16" y="-1.5" width="200" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="24V-gc-wmd"/>
                                     <constraint firstAttribute="width" constant="200" id="Lay-mQ-w7i"/>
                                 </constraints>
-                                <state key="normal" title="カテゴリーを作成する"/>
+                                <state key="normal" title="カテゴリーを作成する">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="testclicked" destination="-1" eventType="touchUpInside" id="ft9-MZ-WB2"/>
                                 </connections>
@@ -97,7 +100,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="35" id="Obu-r8-80c"/>
-                            <constraint firstItem="SM4-4h-b9j" firstAttribute="leading" secondItem="z6Z-P8-ThU" secondAttribute="leading" constant="8" id="pqh-gr-LVk"/>
+                            <constraint firstItem="SM4-4h-b9j" firstAttribute="centerY" secondItem="z6Z-P8-ThU" secondAttribute="centerY" id="cdU-KX-o4D"/>
+                            <constraint firstItem="SM4-4h-b9j" firstAttribute="leading" secondItem="z6Z-P8-ThU" secondAttribute="leading" constant="16" id="pqh-gr-LVk"/>
                         </constraints>
                     </view>
                 </subviews>

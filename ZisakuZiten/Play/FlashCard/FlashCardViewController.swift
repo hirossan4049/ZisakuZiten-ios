@@ -42,7 +42,7 @@ class FlashCardViewController: PlayBaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let realm = try! Realm()
-        self.zitens = realm.objects(Group.self).filter("createTime==%@",createTime)[0].ziten_upT_List
+        self.zitens = realm.objects(Group.self).filter("createTime==%@",createTime!)[0].ziten_upT_List
         setFlashCard()
     }
     
@@ -54,7 +54,7 @@ class FlashCardViewController: PlayBaseViewController {
     func setFlashCard(){
         print(self.counter,self.zitens.count)
         if self.counter >= (self.zitens.count * 2){
-            mainLabel.text =  "END"
+            exitDialog()
             return
         }
         if counter % 2 == 0{
@@ -68,27 +68,27 @@ class FlashCardViewController: PlayBaseViewController {
         self.counter += 1
     }
     
-    @IBAction func dismissClicked(){
+    func exit(){
         self.dismiss(animated: true, completion: nil)
         self.counter = 0
-
-//        UIView.transition(with: backgroundView, duration: 0.3, options: [.transitionFlipFromRight], animations: nil, completion: nil)
-//        mainLabel.text = "ura"
-        
-
     }
     
-    
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func dismissClicked(){
+        exit()
     }
-    */
+    
+    func exitDialog(){
+        let dialog = UIAlertController(title: "終了", message: "すべての単語が表示し終わりました。もう一度プレイしたい場合はもう一度を押してください。", preferredStyle: .alert)
+        dialog.addAction(UIAlertAction(title: "閉じる", style: .default, handler: { action in
+            self.exit()
+        }))
+        dialog.addAction(UIAlertAction(title: "もう一度", style: .default, handler: { action in
+            self.counter = 0
+            self.setFlashCard()
+        }))
+
+        self.present(dialog, animated: true, completion: nil)
+    }
+
 
 }

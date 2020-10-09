@@ -27,8 +27,6 @@
 		D30D2AE024F2108C00FCC53E /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D2ADF24F2108C00FCC53E /* UIColor+.swift */; };
 		D335623A24C96C9E0057D12B /* UIColor+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = D335623924C96C9E0057D12B /* UIColor+random.swift */; };
 		D335623C24C988170057D12B /* PlayNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D335623B24C988170057D12B /* PlayNavigationController.swift */; };
-		D335623E24CB243E0057D12B /* SelectGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D335623D24CB243E0057D12B /* SelectGroupView.swift */; };
-		D335624024CB244B0057D12B /* SelectGroupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D335623F24CB244B0057D12B /* SelectGroupView.xib */; };
 		D335624224CC56BC0057D12B /* PlayStartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D335624124CC56BC0057D12B /* PlayStartButton.swift */; };
 		D335624424CC5E460057D12B /* PlayStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D335624324CC5E460057D12B /* PlayStartViewController.swift */; };
 		D335624624CC5F110057D12B /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D335624524CC5F110057D12B /* UIColor+hex.swift */; };
@@ -151,8 +149,6 @@
 		D30D2ADF24F2108C00FCC53E /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		D335623924C96C9E0057D12B /* UIColor+random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+random.swift"; sourceTree = "<group>"; };
 		D335623B24C988170057D12B /* PlayNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayNavigationController.swift; sourceTree = "<group>"; };
-		D335623D24CB243E0057D12B /* SelectGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupView.swift; sourceTree = "<group>"; };
-		D335623F24CB244B0057D12B /* SelectGroupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectGroupView.xib; sourceTree = "<group>"; };
 		D335624124CC56BC0057D12B /* PlayStartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayStartButton.swift; sourceTree = "<group>"; };
 		D335624324CC5E460057D12B /* PlayStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayStartViewController.swift; sourceTree = "<group>"; };
 		D335624524CC5F110057D12B /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
@@ -557,8 +553,6 @@
 				D3C0985524D2E65900419F45 /* PlayBaseViewController.swift */,
 				D36418D024C13BA2009E0499 /* PlaySelectItemTableViewCell.swift */,
 				D36418D124C13BA2009E0499 /* PlaySelectItemTableViewCell.xib */,
-				D335623D24CB243E0057D12B /* SelectGroupView.swift */,
-				D335623F24CB244B0057D12B /* SelectGroupView.xib */,
 				D335624124CC56BC0057D12B /* PlayStartButton.swift */,
 				D335624324CC5E460057D12B /* PlayStartViewController.swift */,
 				D335624B24CC78650057D12B /* GroupPickerView.swift */,
@@ -679,7 +673,6 @@
 			files = (
 				D36418D324C13BA2009E0499 /* PlaySelectItemTableViewCell.xib in Resources */,
 				D309E9C62511D7A50043E2BA /* AudioPlayTableViewCell.xib in Resources */,
-				D335624024CB244B0057D12B /* SelectGroupView.xib in Resources */,
 				D374B96A24E56AF900745360 /* QuizGradePageItemViewController.xib in Resources */,
 				D374B97324E56D5E00745360 /* QuizGradePageItemTableViewCell.xib in Resources */,
 				D3C0985024D015BA00419F45 /* FlashCardViewController.xib in Resources */,
@@ -871,7 +864,6 @@
 				D3AB70EE249F2B1A00DFDDB7 /* ZitenViewController.swift in Sources */,
 				D3AB70B8249F076A00DFDDB7 /* ViewController.swift in Sources */,
 				D3F79FFE24BEFB3500127E7A /* PlayViewController.swift in Sources */,
-				D335623E24CB243E0057D12B /* SelectGroupView.swift in Sources */,
 				D309E9BA250CA12C0043E2BA /* SelectCategoryTableViewCell.swift in Sources */,
 				D35FEF6125133899007A4721 /* PickerPopupViewController.swift in Sources */,
 				D374B96924E56AF900745360 /* QuizGradePageItemViewController.swift in Sources */,

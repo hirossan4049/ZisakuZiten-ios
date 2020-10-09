@@ -35,6 +35,9 @@ class CorrectPopupViewController: UIViewController {
         imageView.image = img
         textLabel.text = text
         
+        self.backgroundView.backgroundColor = .backgroundColor
+        self.textLabel.textColor = .baseTextColor
+        
 //        self.backgroundView.addBlur()
         self.backgroundView.layer.cornerRadius = 10
 

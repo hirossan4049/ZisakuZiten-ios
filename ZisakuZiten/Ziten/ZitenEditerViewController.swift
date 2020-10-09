@@ -44,8 +44,7 @@ class CreateZitenViewController: UIViewController, UITextViewDelegate {
         titleTextField.backgroundColor = .textFieldBackgroundColor
         contentTextField.backgroundColor = .textFieldBackgroundColor
         
-        var tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer( target: self,
-        action: #selector(tapGestureTitle(_:)))
+        var tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer( target: self, action: #selector(tapGestureTitle(_:)))
         titleTextField.addGestureRecognizer(tapGestureRecognizer)
         tapGestureRecognizer = UITapGestureRecognizer( target: self,action: #selector(tapGestureContent(_:)))
         contentTextField.addGestureRecognizer(tapGestureRecognizer)
@@ -58,20 +57,7 @@ class CreateZitenViewController: UIViewController, UITextViewDelegate {
         
         titleTextField.layer.cornerRadius = 10
         contentTextField.layer.cornerRadius = 10
-        
-        if titleTextField.text.isEmpty {
-            titleTextField.text = titleLabelHintText
-            titleTextField.textColor = UIColor.lightGray
-        }
-        if contentTextField.text.isEmpty{
-            contentTextField.text = contentLabelHintText
-            contentTextField.textColor = UIColor.lightGray
-        }
 
-         
-        
-//        titleTextField.placeHolder = "単語を入力"
-//        contentTextField.placeHolder = "意味を入力"
         
         
         self.group = realm.objects(Group.self).filter("createTime==%@", group_createTime!)[0]
@@ -88,6 +74,19 @@ class CreateZitenViewController: UIViewController, UITextViewDelegate {
             titleTextField.text = ziten.title
             contentTextField.text = ziten.content
         }
+        
+        titleTextField.textColor = .baseTextColor
+        contentTextField.textColor = .baseTextColor
+        
+        if titleTextField.text.isEmpty {
+            titleTextField.text = titleLabelHintText
+            titleTextField.textColor = UIColor.lightGray
+        }
+        if contentTextField.text.isEmpty{
+            contentTextField.text = contentLabelHintText
+            contentTextField.textColor = UIColor.lightGray
+        }
+
     }
     
     enum TextViewType:Int {
@@ -124,14 +123,9 @@ class CreateZitenViewController: UIViewController, UITextViewDelegate {
     
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        print("TEXT VIEW")
-        // Combine the textView text and the replacement text to
-        // create the updated text string
         let currentText:String = textView.text
         let updatedText = (currentText as NSString).replacingCharacters(in: range, with: text)
 
-        // If updated text view will be empty, add the placeholder
-        // and set the cursor to the beginning of the text view
         if updatedText.isEmpty {
             if textView.tag == TextViewType.title.rawValue{
                 textView.text = titleLabelHintText
@@ -142,24 +136,13 @@ class CreateZitenViewController: UIViewController, UITextViewDelegate {
             textView.textColor = UIColor.lightGray
             textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
         }
-
-        // Else if the text view's placeholder is showing and the
-        // length of the replacement string is greater than 0, set
-        // the text color to black then set its text to the
-        // replacement string
          else if textView.textColor == UIColor.lightGray && !text.isEmpty {
-            textView.textColor = UIColor.black
+            textView.textColor = .baseTextColor
             textView.text = text
         }
-
-        // For every other case, the text should change with the usual
-        // behavior...
         else {
             return true
         }
-
-        // ...otherwise return false since the updates have already
-        // been made
         return false
     }
 
@@ -172,7 +155,6 @@ class CreateZitenViewController: UIViewController, UITextViewDelegate {
 
 
     func create_ziten(title: String, content: String) {
-        print("辞典を登録しています.....")
         let ziten: Ziten = Ziten()
         let now: Date = Date()
         ziten.title = title
@@ -203,22 +185,28 @@ class CreateZitenViewController: UIViewController, UITextViewDelegate {
     @IBAction func ok_on_press() {
         if (titleTextField.text == "") {
             print("タイトルがない。")
-        } else if (contentTextField.text == "") {
-            print("コンテンツがない。")
-        } else {
-            //FIXME:もしある単語であれば確認Dialog出す。
-            switch self.mode {
-            case 0:
-                create_ziten(title: titleTextField.text!, content: contentTextField.text!)
-            case 1:
-                update_ziten(title: titleTextField.text!, content: contentTextField.text!)
-            default:
-                print("error:mode not found")
-            }
-
-            self.dismiss(animated: true, completion: nil)
-
         }
+        if (contentTextField.text == "") {
+            print("コンテンツがない。")
+        }
+        if (titleTextField.text == titleLabelHintText){
+            print("title not found")
+            titleTextField.text = ""
+        }
+        if (contentTextField.text == contentLabelHintText){
+            print("contennt not found")
+            contentTextField.text = ""
+        }
+        switch self.mode {
+        case 0:
+            create_ziten(title: titleTextField.text!, content: contentTextField.text!)
+        case 1:
+            update_ziten(title: titleTextField.text!, content: contentTextField.text!)
+        default:
+            print("error:mode not found")
+        }
+
+        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func cancel_on_press() {

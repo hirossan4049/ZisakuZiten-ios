@@ -42,8 +42,12 @@
                     <rect key="frame" x="16" y="332" width="382" height="518"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXU-Nk-gje">
-                    <rect key="frame" x="376" y="52" width="30" height="30"/>
-                    <state key="normal" title="Exit"/>
+                    <rect key="frame" x="374" y="52" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="9Y2-rO-8Ig"/>
+                        <constraint firstAttribute="width" constant="32" id="eFk-LK-ZY6"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="delete"/>
                     <connections>
                         <action selector="exit_onPress" destination="-1" eventType="touchUpInside" id="lBb-84-lIF"/>
                     </connections>
@@ -64,4 +68,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
         </view>
     </objects>
+    <resources>
+        <image name="delete" width="64" height="64"/>
+    </resources>
 </document>

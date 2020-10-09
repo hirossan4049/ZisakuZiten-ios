@@ -20,7 +20,7 @@ class AudioPlayViewController: PlayBaseViewController, AVSpeechSynthesizerDelega
     var titleLang = "en-US"
     var contentLang = "ja-JP"
     
-    let langs:[String: String] = ["日本語": "ja-JP", "英語": "en-US","韓国語":"ko-KR"]
+    let langs:[String: String] = ["日本語": "ja-JP", "英語": "en-US","韓国語":"ko-KR","中国語(簡体字)":"zh-cn","中国語(繁体字)":"zh-tw"]
     
     var isFirstLoad = true
 
@@ -118,19 +118,22 @@ class AudioPlayViewController: PlayBaseViewController, AVSpeechSynthesizerDelega
     }
     
     @IBAction func exit(){
+        stop()
         self.dismiss(animated: true, completion: nil)
     }
     
     func openLangSelectPopup(){
-            let pickerVC = PickerPopupViewController()
-            pickerVC.modalTransitionStyle = .crossDissolve
-            pickerVC.dataList = [String](langs.keys)
-    //        pickerVC.backView.layer.cornerRadius = 10
-            pickerVC.view.backgroundColor = UIColor(hex: "000000",alpha: 0.3)
+        let pickerVC = PickerPopupViewController()
+        pickerVC.modalTransitionStyle = .crossDissolve
+        pickerVC.modalPresentationStyle = .formSheet
+//        pickerVC.pickerNavigationItem.title = "言語を選択"
+        pickerVC.dataList = [String](langs.keys)
+//        pickerVC.backView.layer.cornerRadius = 10
+//        pickerVC.view.backgroundColor = UIColor(hex: "000000",alpha: 0.3)
 
-    //        alertView.modalPresentationStyle = .fullScreen
-            present(pickerVC, animated: true, completion: nil)
-            print("CreateCatPress")
+//        alertView.modalPresentationStyle = .fullScreen
+        present(pickerVC, animated: true, completion: nil)
+        print("CreateCatPress")
     }
     
     @objc func pickerExitCall(_ notification: NSNotification){

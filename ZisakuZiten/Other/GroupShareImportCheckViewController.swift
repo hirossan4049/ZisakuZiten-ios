@@ -21,6 +21,7 @@ class GroupShareImportCheckViewController: UIViewController, UITableViewDelegate
         
         navigationbar.barTintColor = .backgroundColor
         tableView.backgroundColor = .backgroundColor
+        self.tableView.separatorStyle = .none
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -47,7 +48,6 @@ class GroupShareImportCheckViewController: UIViewController, UITableViewDelegate
     }
     
     func jsonDict2Group(title:String,updateTime:Date,ziten_dict:[NSDictionary]){
-        let realm = try! Realm()
         let group = Group()
         group.title = title
         group.createTime = updateTime
@@ -69,10 +69,17 @@ class GroupShareImportCheckViewController: UIViewController, UITableViewDelegate
     }
     
     @IBAction func append(){
-        
+        let realm = try! Realm()
+        try! realm.write({
+            realm.add(self.group)
+        })
+        self.dismiss(animated: true, completion: nil)
+        (self.presentingViewController as! GroupShareImportViewController).exit()
+
     }
     @IBAction func cancel(){
-        
+        self.dismiss(animated: true, completion: nil)
+        (self.presentingViewController as! GroupShareImportViewController).exit()
     }
     
     

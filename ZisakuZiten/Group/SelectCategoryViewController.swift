@@ -28,6 +28,7 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var createTextField:UITextField!
     
     @IBOutlet weak var createCategoryBackView:UIView!
+    @IBOutlet weak var createCategoryBtn:UIButton!
     
 
 
@@ -45,6 +46,7 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
         self.view.backgroundColor = .backgroundColor
         navigationBar.backgroundColor = .backgroundColor
         navigationBar.barTintColor = .backgroundColor
+        createCategoryBtn.setTitleColor(.baseTextColor, for: .normal)
 //        navigationBar.layer.borderWidth = 0.3
         
         tableView.backgroundColor = .backgroundColor
@@ -52,6 +54,8 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
         tableView.register(nib, forCellReuseIdentifier: "cell")
         tableView.delegate = self
         tableView.dataSource = self
+        
+        self.tableView.separatorStyle = .none
         
         createCategoryBackView.backgroundColor = .textFieldBackgroundColor
         createCategoryBackView.layer.cornerRadius = 10

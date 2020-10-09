@@ -111,7 +111,8 @@ class CreateGroupViewController: UIViewController {
     }
     
     @IBAction func exit(){
-//        self.dismiss(animated: true, completion: nil)
+        print("dismiss")
+        self.dismiss(animated: true, completion: nil)
         delegate?.dismissDialog()
     }
     @IBAction func categorySettingOnPrs(){

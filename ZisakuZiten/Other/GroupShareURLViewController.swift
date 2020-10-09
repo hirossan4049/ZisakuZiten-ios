@@ -21,6 +21,8 @@ class GroupShareURLViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bodyView.layer.cornerRadius = 13
+        self.bodyView.backgroundColor = .backgroundColor
+        
         self.view.backgroundColor = UIColor(hex: "000000",alpha: 0.3)
 
         // Do any additional setup after loading the view.

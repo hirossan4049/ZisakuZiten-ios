@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,16 +25,16 @@
                     <rect key="frame" x="57" y="348" width="300" height="200"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILh-Qc-CLb">
-                            <rect key="frame" x="0.0" y="149" width="300" height="1"/>
+                            <rect key="frame" x="0.0" y="154" width="300" height="1"/>
                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="xjd-8g-ohl"/>
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PeJ-I4-wzE">
-                            <rect key="frame" x="0.0" y="150" width="300" height="50"/>
+                            <rect key="frame" x="0.0" y="155" width="300" height="45"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="50" id="7Of-eT-CLU"/>
+                                <constraint firstAttribute="height" constant="45" id="7Of-eT-CLU"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" title="OK"/>
@@ -71,13 +72,17 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTf-0h-BJZ">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTf-0h-BJZ">
                             <rect key="frame" x="250" y="67" width="25" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="25" id="5hL-ef-pnW"/>
                                 <constraint firstAttribute="height" constant="25" id="pne-zP-rPW"/>
                             </constraints>
-                            <state key="normal" backgroundImage="copy"/>
+                            <color key="tintColor" name="basecolor"/>
+                            <state key="normal" image="copy">
+                                <color key="titleColor" name="basecolor"/>
+                                <color key="titleShadowColor" red="0.36911770700000002" green="0.43027782440000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
                             <connections>
                                 <action selector="codeCopy" destination="-1" eventType="touchUpInside" id="4cy-D5-E0m"/>
                             </connections>
@@ -149,6 +154,9 @@
         </view>
     </objects>
     <resources>
-        <image name="copy" width="512" height="512"/>
+        <image name="copy" width="45" height="45"/>
+        <namedColor name="basecolor">
+            <color red="0.62099999189376831" green="0.92799997329711914" blue="0.65200001001358032" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
 </document>

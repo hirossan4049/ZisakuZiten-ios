@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -40,8 +40,12 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZy-8C-btH">
-                    <rect key="frame" x="340" y="44" width="62" height="30"/>
-                    <state key="normal" title="終了する">
+                    <rect key="frame" x="370" y="44" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="8Th-Kj-ghR"/>
+                        <constraint firstAttribute="width" constant="32" id="O8R-de-NDg"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="delete">
                         <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                     </state>
                     <connections>
@@ -60,4 +64,7 @@
             <point key="canvasLocation" x="149" y="117"/>
         </view>
     </objects>
+    <resources>
+        <image name="delete" width="64" height="64"/>
+    </resources>
 </document>

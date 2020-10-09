@@ -31,20 +31,10 @@ class GroupPickerView: UIView, UITableViewDataSource, UITableViewDelegate {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        print("GROUP PICKER VIEW : required?")
-//        print(testlabel.text)
 
     }
     
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
     override func draw(_ rect: CGRect) {
-        // Drawing code
-//        self.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        print("GROUP PICKERVIEW")
-        
         self.backgroundColor = .none
         tableView.backgroundColor = .textFieldBackgroundColor
         
@@ -54,6 +44,7 @@ class GroupPickerView: UIView, UITableViewDataSource, UITableViewDelegate {
         radiusView.layer.cornerRadius = 15        
         radiusView.layer.borderColor = UIColor(hex: "EBEBEB").cgColor
         radiusView.layer.borderWidth = 1
+        radiusView.backgroundColor = .textFieldBackgroundColor
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
@@ -86,12 +77,6 @@ class GroupPickerView: UIView, UITableViewDataSource, UITableViewDelegate {
     
     
     func exitPost(createTime:Date){
-//        let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
-//        UIView.animate(views: tableView.visibleCells, animations: animations, reversed: true,
-//                       initialAlpha: 1.0, finalAlpha: 0.0, completion: {
-//                        
-//        })
-        
         let postArgs:[String: Date] = ["createTime": createTime]
         NotificationCenter.default.post(name: .toExitView,object: nil,userInfo: postArgs)
     }

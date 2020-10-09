@@ -24,8 +24,7 @@ class QuizGradeViewController: UIViewController, UIPageViewControllerDataSource,
         
         self.view.backgroundColor = .backgroundColor
         self.progressBarView.backgroundColor = .backgroundColor
-        
-        
+                
         let vc1 = QuizinCorrectCountPageItemViewController()
         vc1.view.tag = 0
         vc1.finished_isCorrectList = self.finished_isCorrectList
@@ -58,7 +57,7 @@ class QuizGradeViewController: UIViewController, UIPageViewControllerDataSource,
         
         //PageControlの生成
         pageControl = UIPageControl(frame: CGRect(x:0, y:self.pageView.frame.height, width:self.pageView.frame.width, height:100))
-        pageControl.backgroundColor = .orange
+        pageControl.backgroundColor = .none
         
         // PageControlするページ数を設定する.
         pageControl.numberOfPages = 2

@@ -20,7 +20,7 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "遊ぶ"
+        self.title = "学ぶ"
         self.navigationController?.title = ""
         print("PLAY VIEW CONTROLLER")
         // Do any additional setup after loading the view.
@@ -83,6 +83,9 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let playlist = self.playlists[indexPath.section]
         cell.titleLabel.text = playlist.title
         cell.detailLabel.text = playlist.subtitle
+        cell.plyimageView1.image = UIImage(named: playlist.image1)
+        cell.plyimageView2.image = UIImage(named: playlist.image2)
+        cell.plyimageView3.image = UIImage(named: playlist.image3)
 //        cell.detailLabel.text = playlist.detail
         return cell
     }
@@ -104,12 +107,17 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell = tableView.cellForRow(at: indexPath) as! PlaySelectItemTableViewCell
         print("didHightlightRowAt")
 //        cell.bodyView.backgroundColor = .lightGray
-        cell.bodyView.frame.size = CGSize(width: cell.bodyView.frame.size.width - 30, height: cell.bodyView.frame.size.height - 30)
+//        cell.translatesAutoresizingMaskIntoConstraints = true
+        UIView.animate(withDuration: 0.1 , delay: 0, animations: {
+            cell.bodyView.frame.size = CGSize(width: 30, height: 30)
+        })
     }
     func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! PlaySelectItemTableViewCell
         cell.bodyView.backgroundColor = .playCellBackgroundColor
-
+        UIView.animate(withDuration: 0.1 , delay: 0, animations: {
+            cell.bodyView.frame.size = CGSize(width: 100, height: 100)
+        })
 //        cell?.backgroundView
         
     }

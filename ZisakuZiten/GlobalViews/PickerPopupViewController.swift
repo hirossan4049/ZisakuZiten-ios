@@ -13,6 +13,7 @@ class PickerPopupViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var pickerView:UIPickerView!
     
     @IBOutlet weak var navigationBar:UINavigationBar!
+    @IBOutlet weak var pickerNavigationItem: UINavigationItem!
 //    @IBOutlet weak var doneButton:UIButton!
     
     var dataList = Array<String>()
@@ -23,6 +24,8 @@ class PickerPopupViewController: UIViewController, UIPickerViewDelegate, UIPicke
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = .none
+        
         pickerView.delegate = self
         pickerView.dataSource = self
         
@@ -31,6 +34,9 @@ class PickerPopupViewController: UIViewController, UIPickerViewDelegate, UIPicke
 
         backView.layer.cornerRadius = 10
         selected_item = dataList[0]
+        
+        pickerNavigationItem.title = "言語を選択"
+                
     }
     
     @IBAction func done(){

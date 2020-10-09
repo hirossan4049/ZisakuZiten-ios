@@ -13,7 +13,10 @@ class PlaySelectItemTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
     
-    @IBOutlet var plyimageView: UIImageView!
+    @IBOutlet var plyimageView1: UIImageView!
+    @IBOutlet var plyimageView2: UIImageView!
+    @IBOutlet var plyimageView3: UIImageView!
+
 
     @IBOutlet weak var bodyView: UIView!
 
@@ -23,14 +26,16 @@ class PlaySelectItemTableViewCell: UITableViewCell {
         // Initialization code
 
         bodyView.layer.cornerRadius = 15
-        plyimageView.layer.cornerRadius = 15
+        plyimageView1.layer.cornerRadius = 8
+        plyimageView2.layer.cornerRadius = 8
+        plyimageView3.layer.cornerRadius = 8
+        
+        self.translatesAutoresizingMaskIntoConstraints = true
+
 //        plyimageView.layer.cornerRadius = 15
         self.backgroundColor = .backgroundColor
         bodyView.backgroundColor = .playCellBackgroundColor
                 
-        // FIXME: TESTTESTEEETTETETE
-        plyimageView.backgroundColor = UIColor.randomColor
-        
 //        BodyView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
         
 

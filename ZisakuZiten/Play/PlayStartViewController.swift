@@ -23,7 +23,7 @@ class PlayStartViewController: UIViewController {
     var playItem:PlayListItem!
     let groupPickerViewOwner:GroupPickerViewOwner = GroupPickerViewOwner()
     
-    let NO_SELECTED_TEXT:String = "-- No Selected --"
+    let NO_SELECTED_TEXT:String = "-- 選択されていません --"
     var selected_createTime:Date? = nil
 
     
@@ -44,12 +44,14 @@ class PlayStartViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(groupPickerClicked(sender:)))
         print(tapGesture)
         groupSelectView.addGestureRecognizer(tapGesture)
-        groupSelectView.layer.cornerRadius = 20
-        groupSelectView.layer.borderColor = UIColor(hex: "EBEBEB").cgColor
-        groupSelectView.layer.borderWidth = 1
+        groupSelectView.layer.cornerRadius = 13
+//        groupSelectView.layer.borderColor = UIColor(hex: "EBEBEB").cgColor
+//        groupSelectView.layer.borderWidth = 1
         
         self.view.backgroundColor = .backgroundColor
         groupSelectView.backgroundColor = .textFieldBackgroundColor
+        selectLabel.textColor = .baseTextColor
+        chevronDownImg.tintColor = .baseTextColor
                 
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.pickerExitCall(_:)),

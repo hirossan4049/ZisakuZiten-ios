@@ -21,6 +21,9 @@ class GroupShareImportViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.keyboardHideBodyViewRect = self.bodyView.frame
         
+        self.bodyView.backgroundColor = .backgroundColor
+        self.codeTextField.backgroundColor = .textFieldBackgroundColor
+        
         self.bodyView.translatesAutoresizingMaskIntoConstraints = true
         
         self.bodyView.center = self.view.center
