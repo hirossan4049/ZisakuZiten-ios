@@ -107,12 +107,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         let isBeenHome = UserDefaults.standard.bool(forKey: "isBeenHome")
-        if isBeenHome {
-            
+        let isBeenTutorial = UserDefaults.standard.bool(forKey: "isBeenTutorial")
+        if isBeenTutorial {
+            if !isBeenHome{
+                tutorialListReset()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.coachMarksController.start(in: .currentWindow(of: self))
+                }
+                UserDefaults.standard.set(true, forKey: "isBeenHome")
+            }
         } else {
-            tutorialListReset()
-            self.coachMarksController.start(in: .currentWindow(of: self))
-            UserDefaults.standard.set(true, forKey: "isBeenHome")
+            let vc = TutorialViewController()
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+            
+//            tutorialListReset()
+//            self.coachMarksController.start(in: .currentWindow(of: self))
+            UserDefaults.standard.set(true, forKey: "isBeenTutorial")
         }
 
     }
@@ -173,6 +184,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tutorialListReset()
        self.coachMarksController.start(in: .currentWindow(of: self))
 //        let vc = TutorialViewController()
+//        vc.modalPresentationStyle = .overFullScreen
 //        self.present(vc, animated: true, completion: nil)
 //        let url = URL(string: "https://github.com/hirossan4049/ZisakuZiten-ios/blob/master/README.md")
 //        if UIApplication.shared.canOpenURL(url!){
