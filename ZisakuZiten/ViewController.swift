@@ -141,7 +141,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             tutorialLists.append([cell!, "タップすると単語リストが表示されます", "次へ"])
             tutorialLists.append([cell!, "セルをスワイプすると共有や編集、削除などができます", "次へ"])
         }else{
-            print(createGroup(title: "sample"))
+            let group = createGroup(title: "英語")
+            create_ziten(title: "improve", content: "を改良する", group: group)
+            create_ziten(title: "borrow", content: "借りる", group: group)
+            create_ziten(title: "appear", content: "出現する", group: group)
+            create_ziten(title: "agree", content: "同意する", group: group)
+            create_ziten(title: "reply", content: "返事をする", group: group)
+            create_ziten(title: "cause", content: "引き起こす", group: group)
+            create_ziten(title: "however", content: "しかしながら", group: group)
+            create_ziten(title: "instead", content: "その代わりに", group: group)
+            create_ziten(title: "plant", content: "植える", group: group)
+            create_ziten(title: "quickly", content: "すぐに", group: group)
+            create_ziten(title: "citizen", content: "市民", group: group)
+            create_ziten(title: "conversation", content: "会話", group: group)
+
+
+            
             tableView.reloadData()
              let cell = tableView.cellForRow(at: indexPath)
             tutorialLists.append([cell!, "タップすると単語リストが表示されます", "次へ"])
@@ -161,6 +176,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
       case .scrolling:
         print("navbar is moving")
       }
+    }
+    
+    func create_ziten(title: String, content: String, group:Group) {
+        let realm = try! Realm()
+        let ziten: Ziten = Ziten()
+        let now: Date = Date()
+        ziten.title = title
+        ziten.content = content
+        ziten.createTime = now
+        ziten.updateTime = now
+        try! realm.write {
+            group.ziten_upT_List.append(ziten)
+        }
     }
     
     func cell_animation(){
