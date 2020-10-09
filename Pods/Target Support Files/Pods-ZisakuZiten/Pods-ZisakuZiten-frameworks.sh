@@ -198,6 +198,7 @@ fi
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AMScrollingNavbar/AMScrollingNavbar.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Instructions/Instructions.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LSDialogViewController/LSDialogViewController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Log/Log.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MBCircularProgressBar/MBCircularProgressBar.framework"
@@ -208,9 +209,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ViewAnimator/ViewAnimator.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/paper-onboarding/paper_onboarding.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AMScrollingNavbar/AMScrollingNavbar.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Instructions/Instructions.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LSDialogViewController/LSDialogViewController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Log/Log.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MBCircularProgressBar/MBCircularProgressBar.framework"
@@ -221,6 +224,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ViewAnimator/ViewAnimator.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/paper-onboarding/paper_onboarding.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

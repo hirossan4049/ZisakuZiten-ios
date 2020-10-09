@@ -14,9 +14,12 @@ import ViewAnimator
 import Log
 import AMScrollingNavbar
 import LSDialogViewController
+import Instructions
 
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate, UIViewControllerPreviewingDelegate, ScrollingNavigationControllerDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate, UIViewControllerPreviewingDelegate, ScrollingNavigationControllerDelegate, CoachMarksControllerDataSource {
+
+    
 
     let cellReuseIdentifier = "cell"
     var groupList: Results<Group>!
@@ -25,10 +28,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet private weak var createBtn:UIButton!
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var importBtn:UIBarButtonItem!
+    @IBOutlet weak var helpBtn:UIBarButtonItem!
     
     var dController :UIDocumentInteractionController!
     var isBegin = true
     var log:Logger!
+    
+    let coachMarksController = CoachMarksController()
+    var tutorialLists = [[Any]]()
 
     
 
@@ -41,6 +48,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tableView.register(nib, forCellReuseIdentifier: cellReuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
+        self.coachMarksController.dataSource = self
+        
         tableView.backgroundColor = .backgroundColor
         self.view.backgroundColor = .backgroundColor
         createBtn.backgroundColor = .floatingBtnColor
@@ -59,7 +68,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         
         self.tabBarItem.title = nil
-            
+                
         // 3D Touchが使える端末か確認
         if self.traitCollection.forceTouchCapability == UIForceTouchCapability.available {
             registerForPreviewing(with: self, sourceView: tableView)
@@ -96,10 +105,40 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
           navigationController.scrollingNavbarDelegate = self
           navigationController.expandOnActive = false
         }
+        
+        let isBeenHome = UserDefaults.standard.bool(forKey: "isBeenHome")
+        if isBeenHome {
+            
+        } else {
+            tutorialListReset()
+            self.coachMarksController.start(in: .currentWindow(of: self))
+            UserDefaults.standard.set(true, forKey: "isBeenHome")
+        }
+
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    func tutorialListReset(){
+        tutorialLists = [[self.createBtn!, "ここから辞典を作成できます", "次へ"]]
+        let indexPath = IndexPath(row: 0, section: 0)
+        if self.groupList.count >= 1 {
+            tableView.reloadData()
+            let cell = tableView.cellForRow(at: indexPath)
+            tutorialLists.append([cell!, "タップすると単語リストが表示されます", "次へ"])
+            tutorialLists.append([cell!, "セルをスワイプすると共有や編集、削除などができます", "次へ"])
+        }else{
+            print(createGroup(title: "sample"))
+            tableView.reloadData()
+             let cell = tableView.cellForRow(at: indexPath)
+            tutorialLists.append([cell!, "タップすると単語リストが表示されます", "次へ"])
+            tutorialLists.append([cell!, "セルをスワイプすると共有や編集、削除などができます", "次へ"])
+        }
+        tutorialLists.append([self.importBtn.value(forKey: "view")!, "ここから辞典インポートできます。", "次へ"])
+        tutorialLists.append([self.tabBarController?.tabBar.subviews[2], "ここから登録した単語を学習することができます", "次へ"])
+        tutorialLists.append([self.helpBtn.value(forKey: "view")!, "もう一度見たい場合はここを押してください", "OK"])
     }
     
     func scrollingNavigationController(_ controller: ScrollingNavigationController, didChangeState state: NavigationBarState) {
@@ -131,10 +170,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     @IBAction func openhelp(){
-        let url = URL(string: "https://github.com/hirossan4049/ZisakuZiten-ios/blob/master/README.md")
-        if UIApplication.shared.canOpenURL(url!){
-            UIApplication.shared.openURL(url!)
-        }
+        tutorialListReset()
+       self.coachMarksController.start(in: .currentWindow(of: self))
+//        let vc = TutorialViewController()
+//        self.present(vc, animated: true, completion: nil)
+//        let url = URL(string: "https://github.com/hirossan4049/ZisakuZiten-ios/blob/master/README.md")
+//        if UIApplication.shared.canOpenURL(url!){
+//            UIApplication.shared.openURL(url!)
+//        }
     }
 
     @IBAction func createGroup_on_press() {
@@ -261,7 +304,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.present(alert, animated: true, completion: nil)
     }
 
-    func createGroup(title: String) {
+    func createGroup(title: String) -> Group{
         let instanceGroup: Group = Group()
         let now = Date()
         instanceGroup.title = title
@@ -272,6 +315,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         try! insRealm.write {
             insRealm.add(instanceGroup)
         }
+        return instanceGroup
     }
     
     func editGroupDialog(createTime:Date){
@@ -444,7 +488,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     }
     
-    // List item の数。
+    
+    // MARK: CoachMarksController
+    func numberOfCoachMarks(for coachMarksController: CoachMarksController) -> Int {
+        return tutorialLists.count
+    }
+    func coachMarksController(_ coachMarksController: CoachMarksController,
+                                  coachMarkAt index: Int) -> CoachMark {
+        let view = tutorialLists[index][0] as! UIView
+        return coachMarksController.helper.makeCoachMark(for: view)
+    }
+
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkViewsAt index: Int, madeFrom coachMark: CoachMark) -> (bodyView: (UIView & CoachMarkBodyView), arrowView: (UIView & CoachMarkArrowView)?) {
+        let coachViews = coachMarksController.helper.makeDefaultCoachViews(withArrow: true, withNextText: true, arrowOrientation: coachMark.arrowOrientation)
+        coachViews.bodyView.hintLabel.text = tutorialLists[index][1] as! String
+        coachViews.bodyView.nextLabel.text = tutorialLists[index][2] as! String
+        return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
+    }
+
+    
+    
+    // MARK: TableView
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.groupList.count
     }
@@ -484,12 +548,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
 
-    // spacing 間隔
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 5
     }
 
-    // 背景透けるように
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         headerView.backgroundColor = UIColor.clear
@@ -573,6 +635,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
 
+    // MARK: transition
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toZiten" {
             let nextVC = segue.destination as! ZitenViewController
@@ -580,39 +643,40 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-        func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-            print("PRESSED")
-    //        self.performSegue(withIdentifier: "toZiten", sender: nil)
+    // MARK: 3DTouch
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        print("PRESSED")
+//        self.performSegue(withIdentifier: "toZiten", sender: nil)
+        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "toZiten") as! ZitenViewController
+        secondViewController.group_createTime = self.clicked_group.createTime
+        self.navigationController?.pushViewController(secondViewController, animated: true)
+
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        print("3D Touched!")
+//        AudioServicesPlaySystemSound( 1102 )
+
+        let indexPath = tableView.indexPathForRow(at: location)
+        print(createBtn.bounds.contains(location))
+        
+        if (indexPath != nil){
+            self.clicked_group = self.groupList[(indexPath! as IndexPath).section]
+            print("in TableView 3DTouch")
+
             let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "toZiten") as! ZitenViewController
+            secondViewController.PREVIEW_MODE = true
             secondViewController.group_createTime = self.clicked_group.createTime
-            self.navigationController?.pushViewController(secondViewController, animated: true)
-
-        }
-        
-        func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-            print("3D Touched!")
-    //        AudioServicesPlaySystemSound( 1102 )
-
-            let indexPath = tableView.indexPathForRow(at: location)
-            print(createBtn.bounds.contains(location))
             
-            if (indexPath != nil){
-                self.clicked_group = self.groupList[(indexPath! as IndexPath).section]
-                print("in TableView 3DTouch")
-
-                let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "toZiten") as! ZitenViewController
-                secondViewController.PREVIEW_MODE = true
-                secondViewController.group_createTime = self.clicked_group.createTime
-                
-                return secondViewController
-                
-            }else if(false){
-                // floating button
-                
-            }else{
-                return nil
-            }
+            return secondViewController
+            
+        }else if(false){
+            // floating button
+            
+        }else{
+            return nil
         }
-        
+    }
+    
 
 }

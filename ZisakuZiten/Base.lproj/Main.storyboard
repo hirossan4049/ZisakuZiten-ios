@@ -176,6 +176,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="createBtn" destination="vdD-Br-p16" id="CpZ-7A-iXI"/>
+                        <outlet property="helpBtn" destination="20T-Qv-57n" id="pep-Ox-YzM"/>
                         <outlet property="importBtn" destination="jQT-sy-BkU" id="cbB-c9-fkO"/>
                         <outlet property="tableView" destination="1vA-lf-Ex4" id="Cwv-Vg-Sy5"/>
                         <segue destination="b6P-Pn-etv" kind="presentation" identifier="toZiten" modalPresentationStyle="fullScreen" id="AlG-fT-Q3t"/>

@@ -12,6 +12,9 @@ target 'ZisakuZiten' do
   pod 'Log'
   pod "MBCircularProgressBar"
   pod 'LSDialogViewController', '~> 4.0'
+  pod 'paper-onboarding'
+  pod 'Instructions', '~> 2.0.0'
+
   # Pods for ZisakuZiten
 
   target 'ZisakuZitenTests' do
