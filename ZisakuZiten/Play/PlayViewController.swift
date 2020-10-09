@@ -108,16 +108,16 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         print("didHightlightRowAt")
 //        cell.bodyView.backgroundColor = .lightGray
 //        cell.translatesAutoresizingMaskIntoConstraints = true
-        UIView.animate(withDuration: 0.1 , delay: 0, animations: {
-            cell.bodyView.frame.size = CGSize(width: 30, height: 30)
-        })
+//        UIView.animate(withDuration: 0.1 , delay: 0, animations: {
+//            cell.bodyView.frame.size = CGSize(width: 30, height: 30)
+//        })
     }
     func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! PlaySelectItemTableViewCell
         cell.bodyView.backgroundColor = .playCellBackgroundColor
-        UIView.animate(withDuration: 0.1 , delay: 0, animations: {
-            cell.bodyView.frame.size = CGSize(width: 100, height: 100)
-        })
+//        UIView.animate(withDuration: 0.1 , delay: 0, animations: {
+//            cell.bodyView.frame.size = CGSize(width: 100, height: 100)
+//        })
 //        cell?.backgroundView
         
     }

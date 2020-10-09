@@ -142,6 +142,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        createGroupDialog()
         UIView.animate(withDuration: 0.1 , delay: 0, animations: {
             self.createBtn.frame.size = CGSize(width: 60, height: 60)
+            self.createBtn.frame.origin.x -= 2.5
+            self.createBtn.frame.origin.y -= 2.5
         })
         createGroupDialog_new()
     }
@@ -150,6 +152,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print("on touch up")
         UIView.animate(withDuration: 0.1 , delay: 0, animations: {
             self.createBtn.frame.size = CGSize(width: 60, height: 60)
+            self.createBtn.frame.origin.x -= 2.5
+            self.createBtn.frame.origin.y -= 2.5
         })
     }
     
@@ -158,6 +162,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         createBtn.translatesAutoresizingMaskIntoConstraints = true
         UIView.animate(withDuration: 0.1 , delay: 0, animations: {
             self.createBtn.frame.size = CGSize(width: 55, height: 55)
+            self.createBtn.frame.origin.x += 2.5
+            self.createBtn.frame.origin.y += 2.5
+            
         })
     }
     
