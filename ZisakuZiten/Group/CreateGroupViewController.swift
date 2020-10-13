@@ -46,7 +46,8 @@ class CreateGroupViewController: UIViewController {
         self.titleLabel.textColor = .baseTextColor
         self.createBtn.backgroundColor = .buttonBaseColor
         self.cancelBtn.backgroundColor = .navigationBarColor
-        self.nameTextField.backgroundColor = .createGrouptextFieldColor
+        self.nameTextField.backgroundColor = .textFieldBackgroundColor
+        self.nameTextField.textColor = .baseTextColor
         self.categoryBtn.backgroundColor = .buttonSubColor
 //        nameTextField.attributedPlaceholder = NSAttributedString(string: "どんな辞典の名前にする？", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         

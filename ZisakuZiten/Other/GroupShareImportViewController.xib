@@ -47,7 +47,7 @@
                             </connections>
                         </button>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="コードを入力" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="acH-MW-wmp">
-                            <rect key="frame" x="25" y="83" width="250" height="34"/>
+                            <rect key="frame" x="25" y="83" width="217" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
@@ -69,8 +69,20 @@
                                 <constraint firstAttribute="width" constant="1" id="hdu-ig-Az2"/>
                             </constraints>
                         </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xv1-DO-kmH">
+                            <rect key="frame" x="250" y="86" width="30" height="27.5"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="Qn2-0J-Nvn"/>
+                                <constraint firstAttribute="width" constant="30" id="wKC-zN-BJI"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" backgroundImage="qrcode.viewfinder" catalog="system"/>
+                            <connections>
+                                <action selector="qrcode" destination="-1" eventType="touchUpInside" id="QNc-7u-hZq"/>
+                            </connections>
+                        </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="yZD-eh-ZFL" secondAttribute="bottom" id="1QK-8F-yjz"/>
                         <constraint firstAttribute="bottom" secondItem="MRh-ur-o1I" secondAttribute="bottom" id="2Rb-h5-hmt"/>
@@ -82,7 +94,9 @@
                         <constraint firstItem="MRh-ur-o1I" firstAttribute="top" secondItem="oIP-Rz-ku3" secondAttribute="bottom" id="FQS-3g-2Xc"/>
                         <constraint firstAttribute="height" constant="200" id="KQa-0V-rlk"/>
                         <constraint firstItem="yZD-eh-ZFL" firstAttribute="leading" secondItem="fdD-h6-XB4" secondAttribute="trailing" id="Kma-ZT-gYc"/>
+                        <constraint firstItem="Xv1-DO-kmH" firstAttribute="centerY" secondItem="AhC-NA-Xya" secondAttribute="centerY" id="LUN-FX-u0m"/>
                         <constraint firstItem="MRh-ur-o1I" firstAttribute="leading" secondItem="yZD-eh-ZFL" secondAttribute="trailing" id="Res-1n-wLL"/>
+                        <constraint firstItem="Xv1-DO-kmH" firstAttribute="leading" secondItem="acH-MW-wmp" secondAttribute="trailing" constant="8" id="Sso-oD-bMJ"/>
                         <constraint firstItem="eym-e6-ejM" firstAttribute="top" secondItem="AhC-NA-Xya" secondAttribute="top" constant="25" id="TPA-aL-UDS"/>
                         <constraint firstItem="yZD-eh-ZFL" firstAttribute="centerX" secondItem="AhC-NA-Xya" secondAttribute="centerX" id="biL-ae-wN2"/>
                         <constraint firstItem="acH-MW-wmp" firstAttribute="centerY" secondItem="AhC-NA-Xya" secondAttribute="centerY" id="e82-5p-jS3"/>
@@ -90,8 +104,8 @@
                         <constraint firstItem="eym-e6-ejM" firstAttribute="leading" secondItem="AhC-NA-Xya" secondAttribute="leading" constant="12" id="opk-Rf-GaW"/>
                         <constraint firstItem="yZD-eh-ZFL" firstAttribute="top" secondItem="oIP-Rz-ku3" secondAttribute="bottom" id="rY8-It-mlP"/>
                         <constraint firstItem="fdD-h6-XB4" firstAttribute="leading" secondItem="AhC-NA-Xya" secondAttribute="leading" id="rey-yI-3pu"/>
+                        <constraint firstAttribute="trailing" secondItem="Xv1-DO-kmH" secondAttribute="trailing" constant="20" id="tdY-3G-ufz"/>
                         <constraint firstAttribute="trailing" secondItem="eym-e6-ejM" secondAttribute="trailing" constant="12" id="uGC-ea-ZXx"/>
-                        <constraint firstAttribute="trailing" secondItem="acH-MW-wmp" secondAttribute="trailing" constant="25" id="yfI-oj-Hla"/>
                     </constraints>
                 </view>
             </subviews>
@@ -100,4 +114,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
         </view>
     </objects>
+    <resources>
+        <image name="qrcode.viewfinder" catalog="system" width="128" height="114"/>
+    </resources>
 </document>

@@ -57,7 +57,7 @@ public extension UIViewController {
         
         // background View
         self.ls_dialogBackgroundView = LSDialogBackgroundView(frame: sourceView.bounds)
-        self.ls_dialogBackgroundView!.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        self.ls_dialogBackgroundView!.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.ls_dialogBackgroundView!.backgroundColor = .clear
         self.ls_dialogBackgroundView!.backgroundViewType = backgroundViewType
         self.ls_dialogBackgroundView!.alpha = 0.0
@@ -65,6 +65,7 @@ public extension UIViewController {
             overlayView.addSubview(self.ls_dialogBackgroundView!)
         }
         
+            
         // dismiss button
         let dismissButton = UIButton(type: .custom)
         dismissButton.autoresizingMask = [.flexibleWidth, .flexibleHeight]

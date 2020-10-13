@@ -9,21 +9,23 @@
 import Foundation
 
 class ShareAPI{
-    init() {
-
-    }
-    
     enum Result:String {
         case ok = "ok"
         case ng = "ng"
     }
     
-    let posturlString = "https://http3.herokuapp.com/post"
-    let geturlString = "https://http3.herokuapp.com/get/"
-//    let posturlString = "http://127.0.0.1:8000/post"
-//    let geturlString = "http://127.0.0.1:8000/get/"
-
+//    let posturlString = "https://http3.herokuapp.com/post"
+//    let geturlString = "https://http3.herokuapp.com/get/"
+    public let baseurl = "http://192.168.0.104:8000"
+    var posturlString = ""
+    var geturlString = ""
     
+    init() {
+        self.posturlString = self.baseurl + "/post"
+        self.geturlString = self.baseurl + "/get/"
+        
+    }
+
     func post(params:String,result:@escaping(_ res: Result, _ id: String, _ passwd: String)->Void){
         let request = NSMutableURLRequest(url: URL(string: posturlString)!)
 

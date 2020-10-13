@@ -14,7 +14,7 @@ target 'ZisakuZiten' do
   pod 'LSDialogViewController', '~> 4.0'
   pod 'paper-onboarding'
   pod 'Instructions', '~> 2.0.0'
-
+  pod 'MercariQRScanner'
   # Pods for ZisakuZiten
 
   target 'ZisakuZitenTests' do

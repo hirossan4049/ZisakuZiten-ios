@@ -16,7 +16,9 @@ class GroupShareImportViewController: UIViewController, UITextFieldDelegate {
     
     var keyboardHideBodyViewRect:CGRect!
     var keyboardShowBodyViewRect:CGRect!
-
+    
+    private var firstLaunch = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.keyboardHideBodyViewRect = self.bodyView.frame
@@ -26,7 +28,6 @@ class GroupShareImportViewController: UIViewController, UITextFieldDelegate {
         
         self.bodyView.translatesAutoresizingMaskIntoConstraints = true
         
-        self.bodyView.center = self.view.center
         self.bodyView.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant:0).isActive = true
         self.bodyView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant:0).isActive = true
 
@@ -47,14 +48,15 @@ class GroupShareImportViewController: UIViewController, UITextFieldDelegate {
           object: nil
         )
         
-
-
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.codeTextField.becomeFirstResponder()
         }
-
+        
+        self.firstLaunch = true
+        
     }
     
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool{
         codeTextField.resignFirstResponder()
         return true
@@ -68,16 +70,15 @@ class GroupShareImportViewController: UIViewController, UITextFieldDelegate {
         guard let userInfo = notification.userInfo as? [String: Any] else {
           return
         }
-        guard let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {
+        guard (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double) != nil else {
           return
         }
-        guard let rect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+        guard ((notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue) != nil else {
           return
         }
         let oframe = self.keyboardHideBodyViewRect!
         let nx = oframe.origin.y - 50
         self.keyboardShowBodyViewRect = CGRect(x: oframe.origin.x, y: nx, width: oframe.width, height: oframe.height)
-        print("nannde??ww")
 //        UIView.animate(withDuration: duration , delay: 0.1, animations: {
 //            self.bodyView.frame = self.keyboardShowBodyViewRect
 //        })
@@ -85,7 +86,6 @@ class GroupShareImportViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc private func keyboardWillHide(_ notification: Notification) {
-        print("hide")
 //        UIView.animate(withDuration: 1.0 , delay: 0.1, animations: {
 //            self.bodyView.frame = self.keyboardHideBodyViewRect
 //        })
@@ -103,6 +103,8 @@ class GroupShareImportViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+
+    
     func exit(){
         delegate?.dismissDialog()
     }
@@ -115,6 +117,14 @@ class GroupShareImportViewController: UIViewController, UITextFieldDelegate {
         })
         alert.addAction(defaultAction)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func qrcode(){
+        delegate?.dismissDialog()
+        let alertView = QRCodeImportViewController()
+        alertView.modalPresentationStyle = .fullScreen
+        alertView.delegate = delegate
+        self.present(alertView, animated: true, completion: nil)
     }
     
     

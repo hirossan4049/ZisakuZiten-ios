@@ -87,7 +87,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
          
 //    }
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>){
-           print(URLContexts)
+       print(URLContexts)
+        let strurl = URLContexts.first!.url.absoluteString
+        if strurl.contains("zisakuziten://"){
+            let id = strurl.replacingOccurrences(of: "zisakuziten://", with: "")
+            guard let rootVC = window?.rootViewController as? MainTabViewController,let navVC = rootVC.viewControllers?.first, let vc = navVC.children.first as? ViewController else{return}
+            vc.importFromUrl(id: id)
+            return
+        }
         loadJSON(from: URLContexts.first!.url)
 //        let json = String(data:getFileData(URLContexts.first!.url)!, encoding: .utf8)
 //        let data = json!.data(using: .utf8)!
@@ -163,6 +170,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         return nil
     }
+    
+    
 
 
 }

@@ -51,6 +51,7 @@ PODS:
   - MBCircularProgressBar (0.3.5)
   - MDFInternationalization (2.0.0)
   - MDFTextAccessibility (2.0.0)
+  - MercariQRScanner (1.6)
   - paper-onboarding (6.1.5)
   - Realm (5.3.4):
     - Realm/Headers (= 5.3.4)
@@ -67,6 +68,7 @@ DEPENDENCIES:
   - LSDialogViewController (~> 4.0)
   - MaterialComponents/Buttons
   - MBCircularProgressBar
+  - MercariQRScanner
   - paper-onboarding
   - RealmSwift
   - SwipeCellKit
@@ -82,6 +84,7 @@ SPEC REPOS:
     - MBCircularProgressBar
     - MDFInternationalization
     - MDFTextAccessibility
+    - MercariQRScanner
     - paper-onboarding
     - Realm
     - RealmSwift
@@ -97,12 +100,13 @@ SPEC CHECKSUMS:
   MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
+  MercariQRScanner: e1ee83878c2b4606661afa72d54af82bb6e355aa
   paper-onboarding: fede1799b1da6988f3788e3b71654583c6f3bce1
   Realm: 4dd457b6ed025041cf7efe05dae78c027ba842e0
   RealmSwift: 233af88fffe05ed7f9305eecef100d477c0c2c42
   SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
   ViewAnimator: 5af1c6f3b310f012bf081259c43717aa54fbae73
 
-PODFILE CHECKSUM: 4d651a6c2a6e7cb9f481a6158d702cfa2f84c801
+PODFILE CHECKSUM: a4fe7d0d216f5830721a0e572fa46eab07f75d87
 
 COCOAPODS: 1.9.1

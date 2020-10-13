@@ -49,6 +49,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MercariQRScanner.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ZisakuZiten-ZisakuZitenUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>

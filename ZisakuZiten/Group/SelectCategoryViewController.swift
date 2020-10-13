@@ -21,8 +21,8 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var doneBarButtonItem: UIBarButtonItem!
     
     @IBOutlet weak var tableView:UITableView!
-    var selected_index:Int!
-    var categorys:Results<Category>!
+    private var selected_index:Int!
+    private var categorys:Results<Category>!
 
     @IBOutlet weak var colorStackView:UIStackView!
     @IBOutlet weak var createTextField:UITextField!
@@ -30,11 +30,11 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var createCategoryBackView:UIView!
     @IBOutlet weak var createCategoryBtn:UIButton!
     
-
-
-    var createCategorySelectedColor:UIColor!
+    private var createCategorySelectedColor:UIColor!
     
-    var isCreatemode = true
+    private var isCreatemode = true
+    
+    private var selectedUpdateTime:Date!
 
     /// tag 1~2 CATEGORY COLOR ONLY. DO NOT USE.
     
@@ -227,7 +227,6 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         cell.titleLabel.text = self.categorys[indexPath.section].title
         cell.categoryColor = self.categorys[indexPath.section].colorCode ?? "ffffff"
-        print(self.categorys[indexPath.section].colorCode)
         cell.categoryColorView.backgroundColor = UIColor(hex: cell.categoryColor)
         return cell
     }
@@ -238,18 +237,15 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
         self.selected_index = indexPath.section
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SelectCategoryTableViewCell
         cell.backgroundColor = UIColor(hex: cell.categoryColor,alpha: 0.4)
-//        tableView.deselectRow(at: indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
         
    }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-
-        // 先にデータを削除しないと、エラーが発生します。
         let realm = try! Realm()
         try! realm.write({
             realm.delete(categorys[indexPath.section])
         })
-//        tableView.deleteRows(at: [indexPath], with: .automatic)
         tableView.deleteSections([indexPath.section], with: .automatic)
     }
 

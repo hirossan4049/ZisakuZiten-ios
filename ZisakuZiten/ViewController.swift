@@ -17,7 +17,7 @@ import LSDialogViewController
 import Instructions
 
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate, UIViewControllerPreviewingDelegate, ScrollingNavigationControllerDelegate, CoachMarksControllerDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate, UIViewControllerPreviewingDelegate, ScrollingNavigationControllerDelegate, CoachMarksControllerDataSource, UIAdaptivePresentationControllerDelegate {
 
     
 
@@ -78,6 +78,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.cell_animation()
         }
+        
     }
     
     
@@ -229,6 +230,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.createBtn.frame.origin.y -= 2.5
         })
         createGroupDialog_new()
+//        tabBarController?.tabBar.barTintColor = .red
     }
     
     @IBAction func createGroupTouchUp(_ sender: Any) {
@@ -293,12 +295,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func createGroupDialog_new(){
-//        let alertView = CreateGroupViewController()
-//        alertView.modalTransitionStyle = .crossDissolve
-//        alertView.modalPresentationStyle = .overCurrentContext
-//        present(alertView, animated: true, completion: nil)
-//        print("CreateCatPress")
-        
         let vc = CreateGroupViewController()
         vc.delegate = self
         vc.modalPresentationStyle = .overFullScreen
@@ -517,8 +513,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         self.navigationController?.definesPresentationContext = false
                         self.presentDialogViewController(vc, animationPattern: .fadeInOut)
                         vc.modalPresentationStyle = .overFullScreen
-                        vc.codeLabel.text = id
-                        vc.deleteLabel.text = passwd
+//                        vc.codeLabel.text = id
+//                        vc.deleteLabel.text = passwd
+                        vc.id = id
+                        let qrstr = ShareAPI().baseurl + "/share/" + id
+//                        vc.url = qrstr
+                        vc.url = "https://google.com"
+                        vc.qrImageView.image = UIImage.makeQRCode(text: qrstr)
                     }
                 }else{
                     self.simpleDialog(title: "送信失敗", message: "サーバーに送信できませんでした。もう一度試してください。インターネットが接続されていないかサーバー側で不具合がある可能性があります。")
@@ -526,6 +527,51 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 })
         }
 
+    }
+    
+    // MARK: url import
+    func checkOpen(data:String){
+        DispatchQueue.main.sync {
+            let alertView = GroupShareImportCheckViewController()
+            alertView.data = data
+            alertView.presentationController?.delegate = self
+            self.present(alertView, animated: true, completion: nil)
+        }
+    }
+    func errorDialog(){
+        let alert: UIAlertController = UIAlertController(title: "取得失敗", message: "辞典の取得に失敗しました。URLが間違っているか、インターネットに接続されていないか、サーバー側に問題があります。", preferredStyle:  UIAlertController.Style.alert)
+        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
+            (action: UIAlertAction!) -> Void in
+        })
+        alert.addAction(defaultAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    func importFromUrl(id:String){
+        startIndicator()
+        let api = ShareAPI()
+        api.get(id: id, result: {(res: ShareAPI.Result, data: String) in
+            if res == .ok{
+                DispatchQueue.main.sync {
+                    self.dismissIndicator()
+                }
+                self.checkOpen(data:data)
+            }else{
+                if Thread.isMainThread{
+                    self.errorDialog()
+                }else{
+                    DispatchQueue.main.sync {
+                        self.errorDialog()
+                    }
+                }
+            }
+            })
+        dismissIndicator()
+    }
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        print("presentationControllerDidDismiss")
+        tableView.reloadData()
     }
     
     

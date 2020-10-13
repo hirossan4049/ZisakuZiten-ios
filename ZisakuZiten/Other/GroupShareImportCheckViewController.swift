@@ -29,6 +29,13 @@ class GroupShareImportCheckViewController: UIViewController, UITableViewDelegate
         tableView.register(nib, forCellReuseIdentifier: "cell")
         json2group()
     }
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        super.dismiss(animated: flag, completion: completion)
+        guard let presentationController = presentationController else {
+            return
+        }
+        presentationController.delegate?.presentationControllerDidDismiss?(presentationController)
+    }
     
     func json2group(){
         do{
@@ -68,18 +75,22 @@ class GroupShareImportCheckViewController: UIViewController, UITableViewDelegate
 //        })
     }
     
+    func exit(){
+        self.dismiss(animated: true, completion: nil)
+        let gvc = (self.presentingViewController as? GroupShareImportViewController)
+        gvc?.exit()
+    }
+    
     @IBAction func append(){
         let realm = try! Realm()
         try! realm.write({
             realm.add(self.group)
         })
-        self.dismiss(animated: true, completion: nil)
-        (self.presentingViewController as! GroupShareImportViewController).exit()
+        exit()
 
     }
     @IBAction func cancel(){
-        self.dismiss(animated: true, completion: nil)
-        (self.presentingViewController as! GroupShareImportViewController).exit()
+        exit()
     }
     
     

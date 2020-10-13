@@ -58,6 +58,7 @@
 		D388B96924F51FA400ED5DAF /* Date+toString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D388B96824F51FA400ED5DAF /* Date+toString.swift */; };
 		D389893B2514CB4300EC2969 /* KosugiMaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D389893A2514CB4300EC2969 /* KosugiMaru-Regular.ttf */; };
 		D389893D25170DE500EC2969 /* String+leftPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D389893C25170DE500EC2969 /* String+leftPadding.swift */; };
+		D39D63662532130500CDE204 /* UIImage+QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39D63652532130500CDE204 /* UIImage+QRCode.swift */; };
 		D39FC4E924C3DEB000C4C0A1 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FC4E824C3DEB000C4C0A1 /* Playlist.swift */; };
 		D39FC4EC24C3E76400C4C0A1 /* UIView+asImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FC4EB24C3E76400C4C0A1 /* UIView+asImage.swift */; };
 		D39FC4F124C408E800C4C0A1 /* QuizNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FC4F024C408E800C4C0A1 /* QuizNavigationController.swift */; };
@@ -103,6 +104,9 @@
 		D3E07282252EA6D400A4DCDE /* GroupShareImportCheckViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3E07280252EA6D400A4DCDE /* GroupShareImportCheckViewController.xib */; };
 		D3E07284252F46AA00A4DCDE /* UITextView+PlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E07283252F46AA00A4DCDE /* UITextView+PlaceHolder.swift */; };
 		D3F79FFE24BEFB3500127E7A /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F79FFD24BEFB3500127E7A /* PlayViewController.swift */; };
+		D3FB748C253304FF004BA96F /* LINEActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FB748B253304FF004BA96F /* LINEActivity.swift */; };
+		D3FB748F25330FBB004BA96F /* QRCodeImportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FB748D25330FBB004BA96F /* QRCodeImportViewController.swift */; };
+		D3FB749025330FBB004BA96F /* QRCodeImportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3FB748E25330FBB004BA96F /* QRCodeImportViewController.xib */; };
 		D3FC077B2530A75600B55D37 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FC07792530A75600B55D37 /* TutorialViewController.swift */; };
 		D3FC077C2530A75600B55D37 /* TutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3FC077A2530A75600B55D37 /* TutorialViewController.xib */; };
 		D3FEFFDA24C8E0FD0069A356 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FEFFD924C8E0FD0069A356 /* MainTabViewController.swift */; };
@@ -182,6 +186,7 @@
 		D388B96824F51FA400ED5DAF /* Date+toString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+toString.swift"; sourceTree = "<group>"; };
 		D389893A2514CB4300EC2969 /* KosugiMaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KosugiMaru-Regular.ttf"; sourceTree = "<group>"; };
 		D389893C25170DE500EC2969 /* String+leftPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+leftPadding.swift"; sourceTree = "<group>"; };
+		D39D63652532130500CDE204 /* UIImage+QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+QRCode.swift"; sourceTree = "<group>"; };
 		D39FC4E824C3DEB000C4C0A1 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		D39FC4EB24C3E76400C4C0A1 /* UIView+asImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+asImage.swift"; sourceTree = "<group>"; };
 		D39FC4F024C408E800C4C0A1 /* QuizNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizNavigationController.swift; sourceTree = "<group>"; };
@@ -233,6 +238,9 @@
 		D3E07280252EA6D400A4DCDE /* GroupShareImportCheckViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupShareImportCheckViewController.xib; sourceTree = "<group>"; };
 		D3E07283252F46AA00A4DCDE /* UITextView+PlaceHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+PlaceHolder.swift"; sourceTree = "<group>"; };
 		D3F79FFD24BEFB3500127E7A /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		D3FB748B253304FF004BA96F /* LINEActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LINEActivity.swift; sourceTree = "<group>"; };
+		D3FB748D25330FBB004BA96F /* QRCodeImportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeImportViewController.swift; sourceTree = "<group>"; };
+		D3FB748E25330FBB004BA96F /* QRCodeImportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeImportViewController.xib; sourceTree = "<group>"; };
 		D3FC07792530A75600B55D37 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		D3FC077A2530A75600B55D37 /* TutorialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialViewController.xib; sourceTree = "<group>"; };
 		D3FEFFD924C8E0FD0069A356 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
@@ -390,6 +398,7 @@
 				D389893C25170DE500EC2969 /* String+leftPadding.swift */,
 				D3E07274252CD64500A4DCDE /* UIViewController+Loading.swift */,
 				D3E07283252F46AA00A4DCDE /* UITextView+PlaceHolder.swift */,
+				D39D63652532130500CDE204 /* UIImage+QRCode.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -458,6 +467,7 @@
 		D3AB70B2249F076A00DFDDB7 /* ZisakuZiten */ = {
 			isa = PBXGroup;
 			children = (
+				D3FB748A253304E7004BA96F /* Activitys */,
 				D3FC0774253077FA00B55D37 /* Tutorial */,
 				D3E07271252CB76900A4DCDE /* Api */,
 				D3E07276252D8CF600A4DCDE /* Other */,
@@ -477,7 +487,6 @@
 				D3AB70BC249F076B00DFDDB7 /* Assets.xcassets */,
 				D3AB70BE249F076B00DFDDB7 /* LaunchScreen.storyboard */,
 				D3AB70C1249F076B00DFDDB7 /* Info.plist */,
-				D335623B24C988170057D12B /* PlayNavigationController.swift */,
 				D3FEFFD924C8E0FD0069A356 /* MainTabViewController.swift */,
 			);
 			path = ZisakuZiten;
@@ -518,6 +527,8 @@
 				D3E0727C252DE25800A4DCDE /* GroupShareImportViewController.xib */,
 				D3E0727F252EA6D400A4DCDE /* GroupShareImportCheckViewController.swift */,
 				D3E07280252EA6D400A4DCDE /* GroupShareImportCheckViewController.xib */,
+				D3FB748D25330FBB004BA96F /* QRCodeImportViewController.swift */,
+				D3FB748E25330FBB004BA96F /* QRCodeImportViewController.xib */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -554,6 +565,7 @@
 				D309E9BC251105A50043E2BA /* AudioPlay */,
 				D39FC4ED24C3F1DC00C4C0A1 /* FlashCard */,
 				D39FC4E724C3D9A700C4C0A1 /* MainQuiz */,
+				D335623B24C988170057D12B /* PlayNavigationController.swift */,
 				D3F79FFD24BEFB3500127E7A /* PlayViewController.swift */,
 				D3C0985524D2E65900419F45 /* PlayBaseViewController.swift */,
 				D36418D024C13BA2009E0499 /* PlaySelectItemTableViewCell.swift */,
@@ -565,6 +577,14 @@
 				D335624F24CC8F6C0057D12B /* GroupPickerViewOwner.swift */,
 			);
 			path = Play;
+			sourceTree = "<group>";
+		};
+		D3FB748A253304E7004BA96F /* Activitys */ = {
+			isa = PBXGroup;
+			children = (
+				D3FB748B253304FF004BA96F /* LINEActivity.swift */,
+			);
+			path = Activitys;
 			sourceTree = "<group>";
 		};
 		D3FC0774253077FA00B55D37 /* Tutorial */ = {
@@ -712,6 +732,7 @@
 				D3A96A9B24A1F0D70053639B /* CreateCategoryDialogViewController.xib in Resources */,
 				D3AB70EC249F1EE700DFDDB7 /* GroupTableViewCell.xib in Resources */,
 				D35FEF6225133899007A4721 /* PickerPopupViewController.xib in Resources */,
+				D3FB749025330FBB004BA96F /* QRCodeImportViewController.xib in Resources */,
 				D33692AA24D91E0A0027FB17 /* CorrectPopupViewController.xib in Resources */,
 				D3C0985424D10D6F00419F45 /* QuizViewController.xib in Resources */,
 			);
@@ -848,6 +869,7 @@
 				D309E9BF251105C30043E2BA /* AudioPlayViewController.swift in Sources */,
 				D309E9B7250C67FC0043E2BA /* String+toDate.swift in Sources */,
 				D36F823924E5794C004CFFFB /* QuizinCorrectCountPageItemViewController.swift in Sources */,
+				D39D63662532130500CDE204 /* UIImage+QRCode.swift in Sources */,
 				D388B96924F51FA400ED5DAF /* Date+toString.swift in Sources */,
 				D3A8B28B2513A5AF009C4E9C /* AppInfoViewController.swift in Sources */,
 				D30D2AD424EAA27E00FCC53E /* CreateGroupViewController.swift in Sources */,
@@ -877,6 +899,7 @@
 				D389893D25170DE500EC2969 /* String+leftPadding.swift in Sources */,
 				D30D2AD824EBC59900FCC53E /* SelectCategoryViewController.swift in Sources */,
 				D33692AC24DAA0A20027FB17 /* UIView+Blur.swift in Sources */,
+				D3FB748C253304FF004BA96F /* LINEActivity.swift in Sources */,
 				D3AB70EE249F2B1A00DFDDB7 /* ZitenViewController.swift in Sources */,
 				D3AB70B8249F076A00DFDDB7 /* ViewController.swift in Sources */,
 				D3F79FFE24BEFB3500127E7A /* PlayViewController.swift in Sources */,
@@ -885,6 +908,7 @@
 				D374B96924E56AF900745360 /* QuizGradePageItemViewController.swift in Sources */,
 				D374B97224E56D5E00745360 /* QuizGradePageItemTableViewCell.swift in Sources */,
 				D3E07275252CD64500A4DCDE /* UIViewController+Loading.swift in Sources */,
+				D3FB748F25330FBB004BA96F /* QRCodeImportViewController.swift in Sources */,
 				D335624424CC5E460057D12B /* PlayStartViewController.swift in Sources */,
 				D33692B024DBE9860027FB17 /* UIColor+convertToRGBA.swift in Sources */,
 				D3AB70F8249F88E400DFDDB7 /* Category.swift in Sources */,
