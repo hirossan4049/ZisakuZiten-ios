@@ -92,6 +92,10 @@ class QRCodeImportViewController: UIViewController, QRScannerViewDelegate, UIAda
     func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
         if isOpenChecker{
             self.dismiss(animated: true)
+            self.delegate?.tableView.reloadData()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.delegate?.cell_animation()
+            }
         }
     }
     
