@@ -74,6 +74,8 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
         
         doneBarButtonItem.isEnabled = false
         
+        createCategorySelectedColor = .white
+        
         colorStackView.axis = .horizontal
         colorStackView.alignment = .center
         
@@ -85,16 +87,17 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
 //        switchh.backgroundColor = UIColor.cyan
 //        colorStackView.addArrangedSubview(switchh)
 
-        
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
 
     enum FragmentsViewType{
-
         case select
         case create
-
         func id() -> Int{
             switch self {
             case .select:
@@ -173,12 +176,8 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
     }
 
     func changeFragments(_ type:FragmentsViewType){
-        let id = type.id()
-        print(id)
-        switch id{
-        case 0:
-            // select
-//            self.currentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ComponentSelect")
+        switch type{
+        case .select:
             self.currentViewController = self.selectViewController
             self.isCreatemode = false
             if selected_index == nil{
@@ -186,12 +185,9 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
 
             }else{
                 doneBarButtonItem.isEnabled = true
-                tableView.selectRow(at: IndexPath(row: 1, section: selected_index), animated: false, scrollPosition: .bottom)
             }
             tableView.reloadData()
-        case 1:
-            // create
-//        self.currentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ComponentCreate")
+        case .create:
             self.currentViewController = self.createViewController
             self.isCreatemode = true
             createTextField.becomeFirstResponder()
@@ -200,8 +196,6 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
             
         }
 
-//        self.currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
-//        self.addChild(self.currentViewController!)
 
         currentViewController!.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.fragmentView.frame.height)
         currentViewController!.view.backgroundColor = .backgroundColor
@@ -224,9 +218,18 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SelectCategoryTableViewCell
+
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         cell.titleLabel.text = self.categorys[indexPath.section].title
         cell.categoryColor = self.categorys[indexPath.section].colorCode ?? "ffffff"
+        if indexPath.section == selected_index{
+            cell.backgroundColor = UIColor(hex: cell.categoryColor, alpha: 0.4)
+            cell.checkImgView.tintColor = UIColor(hex: cell.categoryColor)
+            cell.checkImgView.isHidden = false
+        }else{
+            cell.backgroundColor = .SelectCategoryTableViewCellBackgroundColor
+            cell.checkImgView.isHidden = true
+        }
         cell.categoryColorView.backgroundColor = UIColor(hex: cell.categoryColor)
         return cell
     }
@@ -235,9 +238,8 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
         print("selected")
         self.doneBarButtonItem.isEnabled = true
         self.selected_index = indexPath.section
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SelectCategoryTableViewCell
-        cell.backgroundColor = UIColor(hex: cell.categoryColor,alpha: 0.4)
         tableView.deselectRow(at: indexPath, animated: true)
+        tableView.reloadData()
         
    }
     

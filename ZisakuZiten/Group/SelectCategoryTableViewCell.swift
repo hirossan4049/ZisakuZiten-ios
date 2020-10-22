@@ -21,7 +21,7 @@ class SelectCategoryTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         self.layer.cornerRadius = 6
-        self.backgroundColor = .SelectCategoryTableViewCellBackgroundColor
+//        self.backgroundColor = .SelectCategoryTableViewCellBackgroundColor
 //        self.categoryColorView.backgroundColor = UIColor(hex: categoryColor)
         
         categoryColorView.layer.cornerRadius = categoryColorView.frame.size.width/2
@@ -30,16 +30,26 @@ class SelectCategoryTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        print("SET SELECTED",selected)
-        if selected{
-            self.backgroundColor = UIColor(hex: categoryColor,alpha: 0.4)
-            self.checkImgView.tintColor = UIColor(hex: categoryColor)
-            self.checkImgView.isHidden = false
-        }else{
-            self.backgroundColor = .SelectCategoryTableViewCellBackgroundColor
-            self.checkImgView.isHidden = true
-        }
+//        print("SET SELECTED",selected)
+//        if selected{
+//            self.backgroundColor = UIColor(hex: categoryColor,alpha: 0.4)
+//            self.checkImgView.tintColor = UIColor(hex: categoryColor)
+//            self.checkImgView.isHidden = false
+//        }else{
+//            self.backgroundColor = .SelectCategoryTableViewCellBackgroundColor
+//            self.checkImgView.isHidden = true
+//        }
         // Configure the view for the selected state
+    }
+    
+    func selected(_ selected:Bool){
+        if selected{
+            print("selected true")
+            self.backgroundColor = UIColor(hex: categoryColor,alpha: 0.4)
+            self.backgroundColor = .red
+        }else{
+            self.backgroundColor = UIColor(hex: categoryColor)
+        }
     }
     
 }

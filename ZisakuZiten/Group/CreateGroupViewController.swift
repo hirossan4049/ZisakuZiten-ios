@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 /// FIXME:UIPresentationController :(((((
-class CreateGroupViewController: UIViewController {
+class CreateGroupViewController: UIViewController, UITextFieldDelegate {
     var delegate: ViewController?
     
     @IBOutlet weak var bodyView:UIView!
@@ -24,6 +24,9 @@ class CreateGroupViewController: UIViewController {
     
     @IBOutlet weak var categoryView:CategoryView!
     
+    var keyboardHideBodyViewRect:CGRect!
+    var keyboardShowBodyViewRect:CGRect!
+    
     // true == edit mode
     var EDIT_MODE:Bool = false
     // edit mode only
@@ -34,6 +37,7 @@ class CreateGroupViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.keyboardHideBodyViewRect = self.bodyView.frame
         
         viewRadiuser(view: self.bodyView, radius: 13)
         viewRadiuser(view: self.createBtn, radius: 20)
@@ -51,12 +55,34 @@ class CreateGroupViewController: UIViewController {
         self.categoryBtn.backgroundColor = .buttonSubColor
 //        nameTextField.attributedPlaceholder = NSAttributedString(string: "どんな辞典の名前にする？", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         
+        
+        self.bodyView.translatesAutoresizingMaskIntoConstraints = true
+        
+        self.bodyView.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant:0).isActive = true
+        self.bodyView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant:0).isActive = true
+        
         NotificationCenter.default.addObserver(self,
                                                 selector: #selector(self.categorySelected(_:)),
                                                 name: SelectCategoryViewController.selectedNotification,
                                                 object: nil)
+        
+        nameTextField.delegate = self
+        NotificationCenter.default.addObserver(
+          self,
+          selector:#selector(keyboardWillShow(_:)),
+          name: UIResponder.keyboardWillShowNotification,
+          object: nil
+        )
+        NotificationCenter.default.addObserver(
+          self,
+          selector: #selector(keyboardWillHide(_:)),
+          name: UIResponder.keyboardWillHideNotification,
+          object: nil
+        )
+        
          
         popupanimate()
+        self.nameTextField.becomeFirstResponder()
 
         
         if EDIT_MODE{
@@ -187,6 +213,36 @@ class CreateGroupViewController: UIViewController {
         }
         print("done")
         
+    }
+    
+    
+    /// MARK : keyboard
+    @objc func keyboardWillShow(_ notification: Notification) {
+        guard let userInfo = notification.userInfo as? [String: Any] else {
+          return
+        }
+        guard (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double) != nil else {
+          return
+        }
+        guard ((notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue) != nil else {
+          return
+        }
+        let oframe = self.keyboardHideBodyViewRect!
+        let nx = oframe.origin.y - 80
+        self.keyboardShowBodyViewRect = CGRect(x: oframe.origin.x, y: nx, width: oframe.width, height: oframe.height)
+//        UIView.animate(withDuration: duration , delay: 0.1, animations: {
+//            self.bodyView.frame = self.keyboardShowBodyViewRect
+//        })
+        self.bodyView.frame = self.keyboardShowBodyViewRect
+    }
+    
+    @objc private func keyboardWillHide(_ notification: Notification) {
+//        UIView.animate(withDuration: 1.0 , delay: 0.1, animations: {
+//            self.bodyView.frame = self.keyboardHideBodyViewRect
+//        })
+//        self.bodyView.frame = self.keyboardShowBodyViewRect
+
+        self.bodyView.frame = self.keyboardHideBodyViewRect
     }
 
 }

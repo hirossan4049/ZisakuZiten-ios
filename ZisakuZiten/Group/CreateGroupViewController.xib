@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -40,13 +42,13 @@
                         </label>
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="51E-3l-cBq" customClass="CategoryView" customModule="自作辞典" customModuleProvider="target">
                             <rect key="frame" x="24" y="50" width="66" height="23"/>
-                            <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" systemColor="systemRedColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="23" id="WUv-Eh-Xbb"/>
                                 <constraint firstAttribute="width" constant="66" id="cHj-Xk-B7K"/>
                             </constraints>
                         </view>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="辞典の名前を入力" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ks9-55-yhU">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" 辞典の名前を入力" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ks9-55-yhU">
                             <rect key="frame" x="24" y="81" width="270" height="35"/>
                             <color key="backgroundColor" red="0.5097987732" green="0.2317965826" blue="0.86171478430000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -57,7 +59,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJF-z0-Rfu">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJF-z0-Rfu">
                             <rect key="frame" x="90" y="132" width="138" height="45"/>
                             <color key="backgroundColor" red="0.30288232799101755" green="0.24342551577446248" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
@@ -70,7 +72,7 @@
                                 <action selector="categorySettingOnPrs" destination="-1" eventType="touchUpInside" id="fhp-pw-faE"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIF-la-fd7">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIF-la-fd7">
                             <rect key="frame" x="16" y="192" width="130" height="43"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="130" id="4hb-NI-KQa"/>
@@ -84,7 +86,7 @@
                                 <action selector="exit" destination="-1" eventType="touchUpInside" id="AsR-DA-Byb"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORX-vm-lJy">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORX-vm-lJy">
                             <rect key="frame" x="172" y="192" width="130" height="43"/>
                             <color key="backgroundColor" red="0.61896763902871688" green="0.13290746442011736" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
@@ -122,13 +124,18 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.35822452910958902" colorSpace="custom" customColorSpace="displayP3"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="fuy-fj-h10" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="aEk-hr-PNh"/>
                 <constraint firstItem="fuy-fj-h10" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="rgY-ID-xe7"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

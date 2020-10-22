@@ -32,7 +32,9 @@ class GroupShareImportViewController: UIViewController, UITextFieldDelegate {
         self.bodyView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant:0).isActive = true
 
         bodyView.layer.cornerRadius = 13
-        self.view.backgroundColor = UIColor(hex:"000000",alpha: 0.3)
+//        self.view.backgroundColor = UIColor(hex:"000000",alpha: 0.3)
+        self.view.backgroundColor = .none
+        
         self.modalPresentationStyle = .overFullScreen
         codeTextField.delegate = self
         NotificationCenter.default.addObserver(

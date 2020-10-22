@@ -478,6 +478,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             (action:UIAlertAction!) -> Void in self.urlShare(data: data)}))
         
         dialog.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        if let popoverController = dialog.popoverPresentationController {
+            popoverController.sourceView = self.view
+            let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0))
+            
+            popoverController.sourceRect = CGRect(x: self.view.bounds.size.width / 2.0, y: cell!.frame.origin.y, width: 1.0, height: 1.0)
+            popoverController.permittedArrowDirections = .up
+        }
         self.present(dialog, animated: true, completion: nil)
     }
     

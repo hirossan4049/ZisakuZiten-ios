@@ -154,12 +154,12 @@ class QuizViewController: PlayBaseViewController {
         shuffled_buttons.shuffle()
         
         var ztns = random_zitenList()
+        print(ztns[0].title)
         while true{
             log.debug("ziten tempziten same... repart")
-            ztns = random_zitenList()
-            print("ztns!!!",self.tmp_ziten)
             if ztns[0].createTime == self.tmp_ziten.createTime{
                 log.debug("ziten temp ziten same repear...")
+                ztns = random_zitenList()
             }else{
                 break
             }
@@ -183,10 +183,8 @@ class QuizViewController: PlayBaseViewController {
         return l_zitens[random_int]
     }
     func random_zitenList() -> [Ziten]{
-        print(createTime)
         let realm = try! Realm()
         let l_zitens = realm.objects(Group.self).filter("createTime==%@",createTime!)[0].ziten_upT_List
-        print(l_zitens)
         return l_zitens.shuffled()
     }
 
