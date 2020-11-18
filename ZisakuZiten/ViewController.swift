@@ -41,7 +41,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("View controller")
+        
+        let documentDirPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        print(documentDirPath)
+        
         self.view.backgroundColor = .backgroundColor
         // Do any additional setup after loading the view.
         let nib = UINib(nibName: "GroupTableViewCell", bundle: nil)
@@ -68,10 +71,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         
         self.tabBarItem.title = nil
-        
-        // FIXME DEBUG
-        koreanDebug()
-                
+                        
         // 3D Touchが使える端末か確認
         if self.traitCollection.forceTouchCapability == UIForceTouchCapability.available {
             registerForPreviewing(with: self, sourceView: tableView)
