@@ -68,6 +68,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         
         self.tabBarItem.title = nil
+        
+        // FIXME DEBUG
+        koreanDebug()
                 
         // 3D Touchが使える端末か確認
         if self.traitCollection.forceTouchCapability == UIForceTouchCapability.available {
@@ -155,8 +158,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             create_ziten(title: "quickly", content: "すぐに", group: group)
             create_ziten(title: "citizen", content: "市民", group: group)
             create_ziten(title: "conversation", content: "会話", group: group)
-
-
             
             tableView.reloadData()
              let cell = tableView.cellForRow(at: indexPath)
@@ -166,6 +167,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tutorialLists.append([self.importBtn.value(forKey: "view")!, "ここから辞典インポートできます。", "次へ"])
         tutorialLists.append([self.tabBarController?.tabBar.subviews[2], "ここから登録した単語を学習することができます", "次へ"])
         tutorialLists.append([self.helpBtn.value(forKey: "view")!, "もう一度見たい場合はここを押してください", "OK"])
+    }
+    
+    
+    func koreanDebug(){
+        let group = createGroup(title: "韓国語")
+        create_ziten(title: "가다", content: "行く", group: group)
+        create_ziten(title: "오다", content: "来る", group: group)
+        create_ziten(title: "말하다", content: "話す", group: group)
+        create_ziten(title: "듣다", content: "聞く", group: group)
+        create_ziten(title: "읽다", content: "読む", group: group)
+        create_ziten(title: "보다", content: "見る", group: group)
+        create_ziten(title: "먹다", content: "食べる", group: group)
+        create_ziten(title: "마시다", content: "飲む", group: group)
+        create_ziten(title: "나가다", content: "出る", group: group)
+        create_ziten(title: "들어가다", content: "入る", group: group)
+        create_ziten(title: "사다", content: "買う", group: group)
+        create_ziten(title: "팔다", content: "売る", group: group)
+        tableView.reloadData()
     }
     
     func scrollingNavigationController(_ controller: ScrollingNavigationController, didChangeState state: NavigationBarState) {
@@ -525,7 +544,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         vc.id = id
                         let qrstr = ShareAPI().baseurl + "/share/" + id
 //                        vc.url = qrstr
-                        vc.url = "https://google.com"
+                        vc.url = qrstr
                         vc.qrImageView.image = UIImage.makeQRCode(text: qrstr)
                     }
                 }else{

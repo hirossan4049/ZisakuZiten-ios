@@ -17,7 +17,8 @@ class ShareAPI{
 //    let posturlString = "https://http3.herokuapp.com/post"
 //    let geturlString = "https://http3.herokuapp.com/get/"
 //    public let baseurl = "http://192.168.0.103:8000"
-    public let baseurl = "http://59.137.252.9:8585"
+//    public let baseurl = "http://59.137.252.9:8585"
+    public let baseurl = "https://http3.herokuapp.com"
     var posturlString = ""
     var geturlString = ""
     

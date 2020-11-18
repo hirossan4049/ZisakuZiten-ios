@@ -81,11 +81,6 @@ class SelectCategoryViewController: UIViewController, UITableViewDelegate, UITab
         
 //        colorStackView.distribution = .fill
 //        colorStackView.spacing = 20
-        
-//        let switchh = UISwitch()
-//        switchh.isOn = true
-//        switchh.backgroundColor = UIColor.cyan
-//        colorStackView.addArrangedSubview(switchh)
 
     }
     

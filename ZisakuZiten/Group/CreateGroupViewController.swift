@@ -40,10 +40,10 @@ class CreateGroupViewController: UIViewController, UITextFieldDelegate {
         self.keyboardHideBodyViewRect = self.bodyView.frame
         
         viewRadiuser(view: self.bodyView, radius: 13)
-        viewRadiuser(view: self.createBtn, radius: 20)
-        viewRadiuser(view: self.cancelBtn, radius: 20)
+        viewRadiuser(view: self.createBtn, radius: 10)
+        viewRadiuser(view: self.cancelBtn, radius: 10)
         viewRadiuser(view: self.categoryBtn, radius: 20)
-        viewRadiuser(view: self.nameTextField, radius: 10)
+        viewRadiuser(view: self.nameTextField, radius: 5)
 //        viewRadiuser(view: self.categoryView, radius: 5)
         self.categoryView.backgroundColor = .none
         self.bodyView.backgroundColor = .baseColor
@@ -53,7 +53,6 @@ class CreateGroupViewController: UIViewController, UITextFieldDelegate {
         self.nameTextField.backgroundColor = .textFieldBackgroundColor
         self.nameTextField.textColor = .baseTextColor
         self.categoryBtn.backgroundColor = .buttonSubColor
-//        nameTextField.attributedPlaceholder = NSAttributedString(string: "どんな辞典の名前にする？", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         
         
         self.bodyView.translatesAutoresizingMaskIntoConstraints = true
