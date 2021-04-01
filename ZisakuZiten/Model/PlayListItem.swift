@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-// Playlistとかぶってるのまずい。
 class PlayListItem: NSObject {
     
     var title:String

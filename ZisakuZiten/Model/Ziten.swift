@@ -9,7 +9,6 @@
 import Foundation
 import RealmSwift
 
-///THINK OUT LOUD: 辞典ではないよね。って思ったけど多分気の所為。なぜ今まで気づかなかったかは謎。
 class Ziten:Object{
     @objc dynamic var title:String? = nil
     @objc dynamic var content: String? = nil
